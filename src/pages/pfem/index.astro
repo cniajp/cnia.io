@@ -1,0 +1,116 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Sessions from '~/components/widgets/Sessions.astro';
+import FullContent from '~/components/widgets/FullContent.astro';
+import { Picture } from '@astrojs/image/components';
+
+const meta = {
+  title: 'Platform Engineering Meetup',
+  description: 'Platform Engineeringについて考え方を学び、事例を共有していく勉強会',
+  dontUseTitleTemplate: true,
+};
+---
+
+<Layout {meta}>
+
+  <Hero>
+    <Fragment slot="subtitle">
+      <Picture
+        src={import('~/assets/images/logo_on_white@4x.png')}
+        alt=''
+        sizes='400'
+        widths={[2000]}
+        position='center'
+      />
+    </Fragment>
+  </Hero>
+
+  <a id="about-pfem"></a>
+  <Features
+    highlight="About this event"
+    title="このイベントについて"
+    subtitle="Platform Engineeringは、開発者の認知負荷を下げ、セルフサービスで利用できるプラットフォームを提供し、迅速なアプリケーションの開発体験とデリバリーを実現する考え方です。Gartnerの予測によると、5年以内に80%のソフトウェアエンジニアリング組織が採用すると言われています。本ミートアップは、そんなPlatform Engineeringについて学び、発信していくことを目的としています。"
+    items={[
+      [
+        {
+          title: '考え方を知る',
+          description:
+            'Platform Engineeringは生まれてまだ日の浅い考え方です。本ミートアップでは、Platform Engineeringの考え方を学び、その背景にある考え方を知ります。',
+          icon: 'tabler:friends',
+        },
+        {
+          title: '失敗から学ぶ',
+          description:
+            '上手くいった事例だけでなく、失敗から学ぶことも重要です。なぜ上手くいかなかったかを共有してもらい、次にどう生かしていくかを学びます。',
+          icon: 'tabler:affiliate',
+        }
+      ],
+      [
+        {
+          title: '先人に学ぶ',
+          description:
+            '素晴らしいプラットフォームを作り上げている先人から、生きた知識を学びます。',
+          icon: 'tabler:info-circle',
+        },
+        {
+          title: '技術を知る',
+          description:
+            'Platform Engineeringを支える技術を学びましょう。日々生まれる技術やツールを上手く取り入れることで、良いチーム作りの一助になるでしょう。',
+          icon: 'tabler:book',
+        }
+      ],
+    ]}
+  />
+
+  <a id="sessions"></a>
+  <Sessions
+    title="過去のセッション"
+    highlight="Sessions"
+    items={[
+      {
+        event: 'Platform Engineering Meetup #1',
+        title: 'Platform Engineeringへの招待 - Platform Engineeringって何？ 何故今注目なの？',
+        speaker: '草間一人 @jacopen',
+        videoUrl: 'https://www.youtube.com/embed/oYk_c_2hW7U?start=258',
+        documentUrl: 'https://speakerdeck.com/jacopen/platform-engineeringhenozhao-dai',
+      },
+      {
+        event: 'Platform Engineering Meetup #1',
+        title: 'Kubernetes as a Service の利用者を支える機能',
+        speaker: '青山真也 @amsy810',
+        videoUrl: 'https://www.youtube.com/embed/oYk_c_2hW7U?start=2085',
+        documentUrl: 'https://speakerdeck.com/masayaaoyama/pfem01-amsy810-k8s',
+      },
+      {
+        event: 'Platform Engineering Meetup #1',
+        title: 'Backstageで始める新たな開発者体験',
+        speaker: 'Shunsuke Yoshikawa',
+        videoUrl: 'https://www.youtube.com/embed/oYk_c_2hW7U?start=4064',
+        documentUrl: 'https://www.docswell.com/s/ussvgr/Z8GY72-2023-03-09-pfem-backstage',
+      },
+      {
+        event: 'Platform Engineering Meetup #1',
+        title: 'Platform Engineeringについて語ろう',
+        speaker: '草間一人 @jacopen',
+        videoUrl: 'https://www.youtube.com/embed/oYk_c_2hW7U?start=5370',
+        documentUrl: '',
+      }
+    ]}
+  />
+  <FullContent 
+    title={'メディア掲載事例'}
+    highlight='Media'
+  >
+    <Fragment slot="content">
+      <ul>
+        <li class="my-2"><a class="underline" href="https://www.publickey1.jp/blog/23/platform_engineeringplatform_engineering_meetup_1.html">Publickey - 「Platform Engineeringへの招待」、開発者の生産性を高めるプラットフォームを作り、運営していくための考え方とは（前編）</a></li>
+        <li class="my-2"><a class="underline" href="https://www.publickey1.jp/blog/23/platform_engineeringplatform_engineering_meetup_1_1.html">Publickey - 「Platform Engineeringへの招待」、開発者の生産性を高めるプラットフォームを作り、運営していくための考え方とは（後編）</a></li>
+      </ul>
+    </Fragment>
+  </FullContent>
+
+
+</Layout>

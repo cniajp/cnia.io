@@ -4,19 +4,19 @@ export const headerData = {
   links: [
     {
       text: 'About',
-      href: '#',
+      href: '/#about',
     },
     {
       text: 'Activity',
-      href: '#activity',
+      href: '/#activity',
     },
     {
       text: 'PFEM',
-      href: '#pfem',
+      href: '/pfem',
     },
     {
       text: 'FAQ',
-      href: '#faq',
+      href: '/#faq',
     },
   ],
   socialLinks: [
