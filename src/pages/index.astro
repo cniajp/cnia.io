@@ -19,6 +19,7 @@ const meta = {
 
   <Hero>
     <Fragment slot="subtitle">
+      <a id="about"></a>
       <span class="hidden sm:inline">
         <span class="font-semibold">Cloud Native Innovators Association</span>は、日本におけるクラウドネイティブ技術の普及を推進するため、人材育成の支援と交流の場を提供するための一般社団法人です。
       </span>
@@ -29,7 +30,7 @@ const meta = {
 
 
   <!-- Features Widget *************** -->
-
+  <a id="activity"></a>
   <Features
     highlight="Activity"
     title="活動一覧"
@@ -39,19 +40,19 @@ const meta = {
         {
           title: 'ミートアップ/カンファレンス開催',
           description:
-            '',
+            'クラウドネイティブ技術に関心を持つ人々が集まり、情報交換やスキルアップができるミートアップやカンファレンスを開催しています。これらのイベントでは、業界の専門家や先端技術を活用している企業が登壇し、最新の知識や実践的なノウハウを共有します。',
           icon: 'tabler:brand-tailwind',
         },
         {
           title: 'コミュニティ支援',
           description:
-            'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
+            'クラウドネイティブ技術を学ぶためのコミュニティをサポートします。開催会場の支援や運営サポート、告知協力等を行っています。',
           icon: 'tabler:components',
         },
         {
           title: 'セミナー',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.',
+            'クラウドネイティブ技術に関するセミナーを開催し、初心者から上級者まで幅広い層に対応した内容を提供します。これにより、学習者が自分に適したスキルや知識を効率的に習得できるようサポートします。',
           icon: 'tabler:list-check',
         },
       ],
@@ -59,27 +60,26 @@ const meta = {
         {
           title: 'クラウドネイティブ技術導入のサポート及びコンサルティング',
           description:
-            'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
+            'クラウドネイティブ技術がカバーする範囲は広く、導入するには敷居が高いのも事実です。そこで、適切なアーキテクチャ設計や運用方法に関するアドバイス、導入プロジェクトの管理やサポートを提供します。',
           icon: 'tabler:rocket',
         },
         {
           title: '書籍出版支援',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.',
+            'クラウドネイティブ技術に関する書籍の執筆や出版を支援し、知識の普及を促進します。多くの人々が質の高い情報や実践的なガイドラインにアクセスできるように支援します。',
           icon: 'tabler:arrows-right-left',
         },
         {
           title: 'OSSの企画・開発・メンテナンス',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.',
+            'クラウドネイティブ技術に関連するオープンソースソフトウェア(OSS)の企画、開発、及びメンテナンスを行います。',
           icon: 'tabler:bulb',
         },
       ],
     ]}
   />
 
-  <!-- Content Widget **************** -->
-
+  <a id="pfem"></a>
   <Content
     highlight="Community event"
     title="Platform Engineering Meetup"
@@ -89,12 +89,17 @@ const meta = {
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Ad vix debet docendi</h3>
-      Ne dicta praesent ocurreret has, diam theophrastus at pro. Eos etiam regione ut, persius eripuit quo id. Sit te euismod
-      tacimates.
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">話題のPlatform Engineeringを学ぶ</h3>
+      <p>Platform Engineeringは、開発者の認知負荷を下げ、セルフサービスで利用できるプラットフォームを提供し、迅速なアプリケーションの開発体験とデリバリーを実現する考え方です。Gartnerの予測によると、5年以内に80%のソフトウェアエンジニアリング組織が採用すると言われています。</p>
+      <p>本ミートアップでは、Platform Engineeringの考え方を学び、事例を共有していくことを目的としています。</p>
+      <p>&gt;<a href='pfem' class='underline'> イベントの詳細</a>
+        <br/>
+        &gt;<a href='https://platformengineering.connpass.com/' class='underline'> イベントに参加する(Connpass)</a>
+      </p>
     </Fragment>
   </Content>
 
+  <a id="faq"></a>
   <FAQs
     title="Frequently Asked Questions"
     subtitle="Duis turpis dui, fringilla mattis sem nec, fringilla euismod neque. Morbi tincidunt lacus nec tortor scelerisque pulvinar."
