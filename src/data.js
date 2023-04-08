@@ -18,7 +18,10 @@ export const headerData = {
       text: 'FAQ',
       href: '#faq',
     },
-  ]
+  ],
+  socialLinks: [
+    { ariaLabel: 'Twitter', icon: 'tabler:brand-twitter', href: '#' },
+  ],
 };
   
 export const footerData = {

@@ -17,9 +17,8 @@ const meta = {
 <Layout {meta}>
   <!-- Hero Widget ******************* -->
 
-  <Hero>
+  <Hero >
     <Fragment slot="subtitle">
-      <a id="about"></a>
       <span class="hidden sm:inline">
         <span class="font-semibold">Cloud Native Innovators Association</span>は、日本におけるクラウドネイティブ技術の普及を推進するため、人材育成の支援と交流の場を提供するための一般社団法人です。
       </span>
@@ -41,19 +40,19 @@ const meta = {
           title: 'ミートアップ/カンファレンス開催',
           description:
             'クラウドネイティブ技術に関心を持つ人々が集まり、情報交換やスキルアップができるミートアップやカンファレンスを開催しています。これらのイベントでは、業界の専門家や先端技術を活用している企業が登壇し、最新の知識や実践的なノウハウを共有します。',
-          icon: 'tabler:brand-tailwind',
+          icon: 'tabler:friends',
         },
         {
           title: 'コミュニティ支援',
           description:
             'クラウドネイティブ技術を学ぶためのコミュニティをサポートします。開催会場の支援や運営サポート、告知協力等を行っています。',
-          icon: 'tabler:components',
+          icon: 'tabler:affiliate',
         },
         {
           title: 'セミナー',
           description:
             'クラウドネイティブ技術に関するセミナーを開催し、初心者から上級者まで幅広い層に対応した内容を提供します。これにより、学習者が自分に適したスキルや知識を効率的に習得できるようサポートします。',
-          icon: 'tabler:list-check',
+          icon: 'tabler:school',
         },
       ],
       [
@@ -61,19 +60,19 @@ const meta = {
           title: 'クラウドネイティブ技術導入のサポート及びコンサルティング',
           description:
             'クラウドネイティブ技術がカバーする範囲は広く、導入するには敷居が高いのも事実です。そこで、適切なアーキテクチャ設計や運用方法に関するアドバイス、導入プロジェクトの管理やサポートを提供します。',
-          icon: 'tabler:rocket',
+          icon: 'tabler:info-circle',
         },
         {
           title: '書籍出版支援',
           description:
             'クラウドネイティブ技術に関する書籍の執筆や出版を支援し、知識の普及を促進します。多くの人々が質の高い情報や実践的なガイドラインにアクセスできるように支援します。',
-          icon: 'tabler:arrows-right-left',
+          icon: 'tabler:book',
         },
         {
           title: 'OSSの企画・開発・メンテナンス',
           description:
             'クラウドネイティブ技術に関連するオープンソースソフトウェア(OSS)の企画、開発、及びメンテナンスを行います。',
-          icon: 'tabler:bulb',
+          icon: 'tabler:apps',
         },
       ],
     ]}
@@ -101,44 +100,77 @@ const meta = {
 
   <a id="faq"></a>
   <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Duis turpis dui, fringilla mattis sem nec, fringilla euismod neque. Morbi tincidunt lacus nec tortor scelerisque pulvinar."
+    title="よくある質問"
+    subtitle=""
     highlight="FAQs"
     items={[
       [
         {
-          question: 'What do I need to start?',
+          question: '質問1',
           answer:
-            'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
+            '回答1',
         },
         {
-          question: 'How to install the Astro + Tailwind CSS template?',
+          question: '質問2',
           answer:
-            "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing.",
-        },
-        {
-          question: "What's something that you don't understand?",
-          answer:
-            "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
-        },
+            "回答2",
+        }
       ],
       [
         {
-          question: "What's an example of when you changed your mind?",
+          question: "質問3",
           answer:
-            "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
+            "回答3",
         },
         {
-          question: 'What is something that you would like to try again?',
+          question: '質問4',
           answer:
-            "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
-        },
-        {
-          question: 'If you could only ask one question to each person you meet, what would that question be?',
-          answer:
-            "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
+            "回答4",
         },
       ],
     ]}
   />
+
+  <a id="about"></a>
+  <Content
+    highlight="About"
+    title="団体情報"
+  >
+    <Fragment slot="content">
+      <table class="border-separate table-auto text-sm">
+        <tr>
+          <th>名称</th>
+          <td>一般社団法人 Cloud Native Innovators Association</td>
+        </tr>
+        <tr>
+          <th>目的</th>
+          <td>日本におけるクラウドネイティブ技術の普及を推進するため、人材育成の支援と交流の場を提供する</td>
+        </tr>
+        <tr>
+          <th>事業内容</th>
+          <td>
+            (1) ミートアップ/カンファレンス開催<br/>
+            (2) コミュニティ支援<br/>
+            (3) セミナー<br/>
+            (4) クラウドネイティブ技術導入のサポート及びコンサルティング<br/>
+            (5) 書籍出版支援<br/>
+            (6) OSSの企画・開発・メンテナンス<br/>
+            (7) 前各号に掲げるほか、当法人の目的を達成するために必要な一切の事業
+          </td>
+        </tr>
+        <tr>
+          <th>設立</th>
+          <td>2023(令和5)年4月20日 [決算期 : 1月]</td>
+        </tr>
+        <tr>
+          <th>役員</th>
+          <td>TBD</td>
+        </tr>
+        <tr>
+          <th>所在地</th>
+          <td>TBD</td>
+        </tr>
+      </table>
+    </Fragment>
+  </Content>
 </Layout>
