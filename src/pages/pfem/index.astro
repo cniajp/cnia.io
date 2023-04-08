@@ -5,7 +5,9 @@ import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Sessions from '~/components/widgets/Sessions.astro';
 import FullContent from '~/components/widgets/FullContent.astro';
+import Features2 from '~/components/widgets/Features2.astro';
 import { Picture } from '@astrojs/image/components';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const meta = {
   title: 'Platform Engineering Meetup',
@@ -112,5 +114,29 @@ const meta = {
     </Fragment>
   </FullContent>
 
+  <Features2 
+    title={'スポンサー'}
+    highlight='Sponsors'
+    subtitle={'イベントを支援してくださるスポンサー様を募集しています'}
+    items={[
+      {
+        title: '会場スポンサー',
+        icon: 'tabler:home-2',
+        description: 'イベントの開催会場をご提供いただくスポンサープランです。<br/>スポンサーセッション枠のご提供およびロゴの掲載を行います。'
+      },
+      {
+        title: 'フードスポンサー',
+        icon: 'tabler:tools-kitchen-2',
+        description: 'イベント終了後の懇親会で食事をご提供いただくプランです。<br/>イベント内でのLT枠のご提供およびロゴの掲載を行います。'
+      },
+      {
+        title: '通年スポンサー',
+        icon: 'tabler:gift',
+        description: 'Platform Engineering Meetupを通年で支えていただくプランです。<br/>サイトへのロゴの掲載、スポンサー期間中の全アーカイブへのロゴ掲載、特別コラボレーションのセッションなどを行います。'
+      }
+    ]}
+  >
+  </Features2>
+  <CallToAction title={'お問い合わせ'} callToAction={{text: 'Contact us', href: 'https://docs.google.com/forms/d/e/1FAIpQLSe7Rr6TeekGUM5q1R0WriaSsvokj9x00TtWtvvVd0L7BYRF-A/viewform'}} />
 
 </Layout>
