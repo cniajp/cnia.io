@@ -1,34 +1,34 @@
 import defaultImage from './assets/images/default.png';
 
 const CONFIG = {
-  name: 'AstroWind',
+  name: 'Cloud Native Innovators Association',
 
-  origin: 'https://astrowind.vercel.app',
+  origin: 'https://cnia.io',
   basePathname: '/',
   trailingSlash: false,
 
-  title: 'AstroWind — Free template for create a website with Astro + Tailwind CSS',
+  title: 'Cloud Native Innovators Association',
   description:
-    '🚀 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs.',
+    'クラウドネイティブ技術の発展・推進を支援するための一般社団法人です。',
   defaultImage: defaultImage,
 
   defaultTheme: 'system', // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
 
-  language: 'en',
+  language: 'ja',
   textDirection: 'ltr',
 
-  dateFormatter: new Intl.DateTimeFormat('en', {
+  dateFormatter: new Intl.DateTimeFormat('ja', {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
-    timeZone: 'UTC',
+    timeZone: 'JST',
   }),
 
   googleAnalyticsId: false, // or "G-XXXXXXXXXX",
   googleSiteVerificationId: 'orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M',
 
   blog: {
-    disabled: false,
+    disabled: true,
     postsPerPage: 4,
 
     post: {
