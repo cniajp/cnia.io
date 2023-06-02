@@ -1,13 +1,13 @@
-import defaultImage from './assets/images/default.png';
+import defaultImage from './assets/images/logo_horizontal.png';
 
 const CONFIG = {
-  name: 'クラウドネイティブイノベーターズ協会',
+  name: '一般社団法人クラウドネイティブイノベーターズ協会',
 
   origin: 'https://cnia.io',
   basePathname: '/',
   trailingSlash: false,
 
-  title: 'クラウドネイティブイノベーターズ協会',
+  title: '一般社団法人クラウドネイティブイノベーターズ協会',
   description:
     'クラウドネイティブ技術の発展・推進を支援するための一般社団法人です。',
   defaultImage: defaultImage,

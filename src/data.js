@@ -33,6 +33,6 @@ export const footerData = {
     { ariaLabel: 'Twitter', icon: 'tabler:brand-twitter', href: '#' },
   ],
   footNote: `
-    Copyright &copy; クラウドネイティブイノベーターズ協会
+    Copyright &copy; 一般社団法人クラウドネイティブイノベーターズ協会
   `,
 };
