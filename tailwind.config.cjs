@@ -10,9 +10,9 @@ module.exports = {
         accent: 'var(--aw-color-accent)',
       },
       fontFamily: {
-        sans: ['var(--aw-font-sans)', ...defaultTheme.fontFamily.sans],
+        sans: ['Quicksand', "游ゴシック体", "Yu Gothic", "YuGothic", "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", 'メイリオ' , "Meiryo" , "Osaka", "ＭＳ Ｐゴシック", "MS PGothic", ...defaultTheme.fontFamily.sans],
         serif: ['var(--aw-font-serif)', ...defaultTheme.fontFamily.serif],
-        heading: ['var(--aw-font-heading)', ...defaultTheme.fontFamily.sans],
+        heading: ['Quicksand', "游ゴシック体", "Yu Gothic", "YuGothic", "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", 'メイリオ' , "Meiryo" , "Osaka", "ＭＳ Ｐゴシック", "MS PGothic", ...defaultTheme.fontFamily.sans],
       },
     },
   },

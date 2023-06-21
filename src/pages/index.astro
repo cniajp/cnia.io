@@ -5,7 +5,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Content from '~/components/widgets/Content.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
+import LatestPosts from '~/components/blog/LatestPosts.astro';
 
 const meta = {
   title: SITE.title,
@@ -25,7 +25,34 @@ const meta = {
     </Fragment>
   </Hero>
 
-  <!-- Note Widget ******************* -->
+  <!-- Blog Widget ******************* -->
+  <LatestPosts
+  title="Blog"
+  postIds={[
+    'establishment-of-cnia.md'
+    ]}
+  />
+
+
+  <a id="pfem"></a>
+  <Content
+    highlight="Community event"
+    title="Platform Engineering Meetup"
+    image={{
+      src: import('~/assets/images/pfem_logo_square.png'),
+      alt: 'PFEM logo',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">話題のPlatform Engineeringを学ぶ</h3>
+      <p>Platform Engineeringは、開発者の認知負荷を下げ、セルフサービスで利用できるプラットフォームを提供し、迅速なアプリケーションの開発体験とデリバリーを実現する考え方です。Gartnerの予測によると、5年以内に80%のソフトウェアエンジニアリング組織が採用すると言われています。</p>
+      <p>本ミートアップでは、Platform Engineeringの考え方を学び、事例を共有していくことを目的としています。</p>
+      <p>&gt;<a href='pfem' class='underline'> イベントの詳細</a>
+        <br/>
+        &gt;<a href='https://platformengineering.connpass.com/' class='underline'> イベントに参加する(Connpass)</a>
+      </p>
+    </Fragment>
+  </Content>
 
 
   <!-- Features Widget *************** -->
@@ -73,59 +100,6 @@ const meta = {
           description:
             'クラウドネイティブ技術に関連するオープンソースソフトウェア(OSS)の企画、開発、及びメンテナンスを行います。',
           icon: 'tabler:apps',
-        },
-      ],
-    ]}
-  />
-
-  <a id="pfem"></a>
-  <Content
-    highlight="Community event"
-    title="Platform Engineering Meetup"
-    image={{
-      src: import('~/assets/images/pfem_logo_square.png'),
-      alt: 'PFEM logo',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">話題のPlatform Engineeringを学ぶ</h3>
-      <p>Platform Engineeringは、開発者の認知負荷を下げ、セルフサービスで利用できるプラットフォームを提供し、迅速なアプリケーションの開発体験とデリバリーを実現する考え方です。Gartnerの予測によると、5年以内に80%のソフトウェアエンジニアリング組織が採用すると言われています。</p>
-      <p>本ミートアップでは、Platform Engineeringの考え方を学び、事例を共有していくことを目的としています。</p>
-      <p>&gt;<a href='pfem' class='underline'> イベントの詳細</a>
-        <br/>
-        &gt;<a href='https://platformengineering.connpass.com/' class='underline'> イベントに参加する(Connpass)</a>
-      </p>
-    </Fragment>
-  </Content>
-
-  <a id="faq"></a>
-  <FAQs
-    title="よくある質問"
-    subtitle=""
-    highlight="FAQs"
-    items={[
-      [
-        {
-          question: '質問1',
-          answer:
-            '回答1',
-        },
-        {
-          question: '質問2',
-          answer:
-            "回答2",
-        }
-      ],
-      [
-        {
-          question: "質問3",
-          answer:
-            "回答3",
-        },
-        {
-          question: '質問4',
-          answer:
-            "回答4",
         },
       ],
     ]}

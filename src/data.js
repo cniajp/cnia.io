@@ -11,26 +11,24 @@ export const headerData = {
       href: '/#activity',
     },
     {
-      text: 'PFEM',
-      href: '/pfem',
+      text: 'Blog',
+      href: '/blog',
     },
     {
-      text: 'FAQ',
-      href: '/#faq',
-    },
+      text: 'PFEM',
+      href: '/pfem',
+    }
   ],
   socialLinks: [
-    { ariaLabel: 'Twitter', icon: 'tabler:brand-twitter', href: '#' },
+    // { ariaLabel: 'Twitter', icon: 'tabler:brand-twitter', href: '#' },
   ],
 };
   
 export const footerData = {
   secondaryLinks: [
-    { text: 'Terms', href: getPermalink('/terms') },
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
-    { ariaLabel: 'Twitter', icon: 'tabler:brand-twitter', href: '#' },
   ],
   footNote: `
     Copyright &copy; 一般社団法人クラウドネイティブイノベーターズ協会
