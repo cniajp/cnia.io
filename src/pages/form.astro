@@ -1,0 +1,14 @@
+---
+import { SITE } from '~/config.mjs';
+import Layout from '~/layouts/PageLayout.astro';
+
+const meta = {
+  title: "お問い合わせ | " + SITE.title,
+  dontUseTitleTemplate: true,
+};
+---
+
+<Layout {meta}>
+  <script is:inline src="https://ssl.form-mailer.jp/formfiles/js/embed.js"></script>
+  <div class="formmailer-embed" data-form-hash="5359f673789459" data-form-host="ssl.form-mailer.jp"></div>
+</Layout>

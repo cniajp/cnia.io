@@ -26,7 +26,8 @@ export const headerData = {
   
 export const footerData = {
   secondaryLinks: [
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
+    { text: 'プライバシーポリシー', href: getPermalink('/privacy') },
+    { text: 'お問い合わせ', href: getPermalink('/form') },
   ],
   socialLinks: [
   ],
