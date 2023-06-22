@@ -72,8 +72,11 @@ Platform Engineering Meetup #3
 名称：一般社団法人クラウドネイティブイノベーターズ協会（Cloud Native Innovators Association, CNIA）
 
 所在地：東京都中央区銀座1丁⽬12番4号N&E・BLD.6F
+
 設立日：2023年6月2日
+
 ウェブサイト：[https://www.cnia.io/](https://www.cnia.io/)
+
 事業内容：
 
 1. ミートアップ/カンファレンス開催
