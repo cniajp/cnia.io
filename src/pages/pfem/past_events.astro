@@ -1,0 +1,115 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Sessions from '~/components/widgets/Sessions.astro';
+import FullContent from '~/components/widgets/FullContent.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import { Picture } from '@astrojs/image/components';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Upcoming from '~/components/widgets/Upcoming.astro';
+
+const meta = {
+  title: 'Platform Engineering Meetup - アーカイブ一覧',
+  description: 'Platform Engineeringについて考え方を学び、事例を共有していく勉強会',
+  dontUseTitleTemplate: true,
+};
+---
+
+<Layout {meta}>
+  <a id="sessions"></a>
+  <Sessions
+    title="過去のセッション"
+    highlight="Sessions"
+    items={[
+      {
+        event: 'Platform Engineering Meetup #3',
+        title: 'CNCFが考えるPlatform ー Platforms White Paperについて',
+        speaker: '@jacopen',
+        videoUrl: 'https://www.youtube.com/embed/CwDaS0E3FTo&t=798s',
+        documentUrl: 'https://speakerdeck.com/jacopen/cncfgakao-eruplatform-platforms-white-papernituite',
+      },
+      {
+        event: 'Platform Engineering Meetup #3',
+        title: 'PlatformCon 2023 Recap',
+        speaker: 'APC亀崎さん',
+        videoUrl: 'https://www.youtube.com/embed/CwDaS0E3FTo&t=2430s',
+        documentUrl: '',
+      },
+      {
+        event: 'Platform Engineering Meetup #3',
+        title: 'PlatformCon 2023 Recap',
+        speaker: '@tanayan',
+        videoUrl: 'https://www.youtube.com/embed/CwDaS0E3FTo&t=4634s',
+        documentUrl: 'https://www.docswell.com/s/tananyan29/ZJL8QQ-2023-06-30-204644',
+      },
+      {
+        event: 'Platform Engineering Meetup #3',
+        title: 'スポンサーセッション - 株式会社スタメン',
+        speaker: '株式会社スタメン',
+        videoUrl: 'https://www.youtube.com/embed/CwDaS0E3FTo&t=6158s',
+        documentUrl: '',
+      },
+      {
+        event: 'Platform Engineering Meetup #2',
+        title: 'Platform Engineering at Mercari',
+        speaker: '@deeeet',
+        videoUrl: 'https://www.youtube.com/embed/uscW_w8J7Y8&t=502s',
+        documentUrl: 'https://speakerdeck.com/tcnksm/platform-engineering-at-mercari',
+      },
+      {
+        event: 'Platform Engineering Meetup #2',
+        title: 'AI 開発への未来へ備えよ！Platform Engineering と GitHub を使った開発',
+        speaker: 'Yuki Hattori@yuhattor',
+        videoUrl: 'https://www.youtube.com/embed/uscW_w8J7Y8&t=2090s',
+        documentUrl: 'https://speakerdeck.com/yuhattor/platform-engineering-and-innersource',
+      },
+      {
+        event: 'Platform Engineering Meetup #2',
+        title: 'IaaSにおけるPlatform Engineeringとこれから',
+        speaker: '@kazeburo',
+        videoUrl: 'https://www.youtube.com/embed/uscW_w8J7Y8&t=4732s',
+        documentUrl: 'https://speakerdeck.com/kazeburo/platform-engineering-in-iaas',
+      },
+      {
+        event: 'Platform Engineering Meetup #2',
+        title: 'Platform Team と 社内政治 〜 出でよ、Platform Champion 〜',
+        speaker: '@kenojiri',
+        videoUrl: 'https://www.youtube.com/embed/uscW_w8J7Y8&t=6108s',
+        documentUrl: '',
+      },
+      {
+        event: 'Platform Engineering Meetup #1',
+        title: 'Platform Engineeringへの招待 - Platform Engineeringって何？ 何故今注目なの？',
+        speaker: '草間一人 @jacopen',
+        videoUrl: 'https://www.youtube.com/embed/oYk_c_2hW7U?start=258',
+        documentUrl: 'https://speakerdeck.com/jacopen/platform-engineeringhenozhao-dai',
+      },
+      {
+        event: 'Platform Engineering Meetup #1',
+        title: 'Kubernetes as a Service の利用者を支える機能',
+        speaker: '青山真也 @amsy810',
+        videoUrl: 'https://www.youtube.com/embed/oYk_c_2hW7U?start=2085',
+        documentUrl: 'https://speakerdeck.com/masayaaoyama/pfem01-amsy810-k8s',
+      },
+      {
+        event: 'Platform Engineering Meetup #1',
+        title: 'Backstageで始める新たな開発者体験',
+        speaker: 'Shunsuke Yoshikawa',
+        videoUrl: 'https://www.youtube.com/embed/oYk_c_2hW7U?start=4064',
+        documentUrl: 'https://www.docswell.com/s/ussvgr/Z8GY72-2023-03-09-pfem-backstage',
+      },
+      {
+        event: 'Platform Engineering Meetup #1',
+        title: 'Platform Engineeringについて語ろう',
+        speaker: '草間一人 @jacopen',
+        videoUrl: 'https://www.youtube.com/embed/oYk_c_2hW7U?start=5370',
+        documentUrl: '',
+      }
+    ]}
+  />
+  
+  <CallToAction title={'お問い合わせ'} callToAction={{text: 'Contact us', href: '/form'}} />
+
+</Layout>
