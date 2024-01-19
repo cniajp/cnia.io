@@ -5,10 +5,8 @@ import { defineConfig } from 'astro/config';
 
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
-import image from '@astrojs/image';
 import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
-import compress from 'astro-compress';
 import { readingTimeRemarkPlugin } from './src/utils/frontmatter.mjs';
 
 import { SITE } from './src/config.mjs';
@@ -36,9 +34,6 @@ export default defineConfig({
       },
     }),
     sitemap(),
-    image({
-      serviceEntryPoint: '@astrojs/image/sharp',
-    }),
     mdx(),
 
     ...whenExternalScripts(() =>
@@ -46,18 +41,6 @@ export default defineConfig({
         config: { forward: ['dataLayer.push'] },
       })
     ),
-
-    compress({
-      css: true,
-      html: {
-        removeAttributeQuotes: false,
-      },
-      img: false,
-      js: true,
-      svg: false,
-
-      logger: 1,
-    }),
   ],
 
   vite: {
