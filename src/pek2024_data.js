@@ -1,22 +1,30 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import { getPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
     {
-      text: 'About',
-      href: '/#about',
+      text: 'Home',
+      href: '/pek2024',
     },
     {
-      text: 'Activity',
-      href: '/#activity',
+      text: 'TimeTable',
+      href: '/pek2024/timetable',
     },
     {
-      text: 'Blog',
-      href: '/blog',
+      text: 'Sponsors',
+      href: '/pek2024/sponsors',
     },
     {
-      text: 'PFEM',
-      href: '/pfem',
+      text: 'FAQ',
+      href: '/pek2024/faq',
+    },
+    {
+      text: 'Staff',
+      href: '/pek2024/staff',
+    },
+    {
+      text: 'Policies',
+      href: '/pek2024/policies',
     },
   ],
   socialLinks: [
@@ -25,6 +33,7 @@ export const headerData = {
 };
 
 export const footerData = {
+  links: [],
   secondaryLinks: [
     { text: 'プライバシーポリシー', href: getPermalink('/privacy') },
     { text: 'お問い合わせ', href: getPermalink('/form') },

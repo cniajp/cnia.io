@@ -1,15 +1,21 @@
 ---
 import '~/assets/styles/pek2024/base.css';
+import BasicScripts from '~/components/common/BasicScripts.astro';
 
+import { SITE } from '~/config.mjs';
+
+const { language = 'en', textDirection = 'ltr' } = SITE;
 ---
 
 <!DOCTYPE html>
-<html>
+<html lang={language} dir={textDirection}>
   <head>
+    <meta charset="UTF-8" />
     <title>pek2024</title>
   </head>
 
   <body>
     <slot />
+    <BasicScripts />
   </body>
 </html>

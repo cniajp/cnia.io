@@ -1,7 +1,25 @@
 ---
 import Layout from '~/layouts/pek2024/PageLayout.astro';
 
+import Concept from '~/components/pek2024/Concept.astro';
+import Hero from '~/components/pek2024/Hero.astro';
 ---
+
 <Layout>
-Hello, World!
+  <Hero />
+
+  <Concept
+    highlight="Concept"
+    title="コンセプトをここに入力"
+    image={{
+      src: import('~/assets/images/pek2024/pek2024_trademark.png'),
+      alt: 'PEK2024 Logo',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">後ほど変更</h3>
+      <p>Platform Engineering Kaigi 2024は、日本におけるPlatform Engineeringの普及を目的とした技術カンファレンスです。</p>
+      <p>多彩なPlatform Engineeringに関するセッションや交流を通して、ZZZのきっかけを提供します。</p>
+    </Fragment>
+  </Concept>
 </Layout>
