@@ -1,0 +1,62 @@
+---
+export interface FAQItem {
+  title: string;
+  description: string;
+}
+
+export interface FAQProps {
+  highlight: string;
+  title: string;
+  classes?: Record<string, string>;
+  items: FAQItem[];
+}
+
+const { highlight, title, items } = Astro.props as FAQProps;
+---
+
+<section class="bg-themeColor-purple dark:bg-slate-800 py-10 md:py-14 text-white">
+  <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
+    {
+      (title || highlight) && (
+        <div class="mb-10 md:mx-auto text-center md:mb-12 max-w-3xl">
+          {highlight && (
+            <p class="text-base text-primary dark:text-blue-200 font-semibold tracking-wide uppercase">{highlight}</p>
+          )}
+          {title && (
+            <h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4">{title}</h2>
+          )}
+        </div>
+      )
+    }
+  </div>
+  <div class="max-w-4xl mx-auto">
+    {items.map((item) => (
+      <div class="faq-item mb-4 border-2 overflow-hidden font-bold">
+        <button class="faq-question flex justify-between items-center w-full py-3 px-4" aria-expanded="false">
+          <span>{item.title}</span>
+          <span class="expand-icon">+</span>
+        </button>
+        <div class="faq-answer hidden px-4 py-3 border-t-2 bg-purple-100 text-black font-medium">
+          <p>{item.description}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.faq-question').forEach((button) => {
+      (button as HTMLElement).addEventListener('click', () => {
+        const answer = button.nextElementSibling;
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+
+        button.setAttribute('aria-expanded', String(!expanded));
+        answer?.classList.toggle('hidden');
+        
+        const icon = button.querySelector('.expand-icon');
+        icon!.textContent = expanded ? '+' : '-';
+      });
+    });
+  });
+</script>
