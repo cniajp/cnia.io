@@ -1,0 +1,36 @@
+---
+import { Picture } from 'astro:assets';
+import { sponsorsData, rankGridSettings } from '~/pek2024_data';
+
+// グリッドクラスを生成
+function generateGridClass(rank) {
+  const settings = rankGridSettings[rank];
+  return `grid grid-cols-${settings.default} md:grid-cols-${settings.md} gap-4`;
+}
+---
+
+<section class="py-16 md:py-20">
+  <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
+    <div class="mb-10 md:mx-auto text-center md:mb-12 max-w-3xl">
+      <p class="text-base text-primary dark:text-blue-200 font-semibold tracking-wide uppercase"></p>
+      <h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4">Sponsors</h2>
+      <p class="max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400"></p>
+    </div>
+  </div>
+  <div class="mx-auto max-w-7xl p-4 md:px-8 font-medium">
+    {Object.entries(sponsorsData).map(([rank, sponsors]) => (
+      <div class="my-8">
+        <h2 class="text-2xl font-bold mb-4">{rank}</h2>
+        <div class={generateGridClass(rank)}>
+          {sponsors.map(({ name, src, href }) => (
+            <a href={href} class="block">
+              <div class="p-4 border rounded-lg shadow-lg flex items-center justify-center">
+                <Picture src={src} alt={name} loading="lazy" />
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
