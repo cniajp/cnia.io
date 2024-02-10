@@ -5,6 +5,8 @@ import Concept from '~/components/pek2024/Concept.astro';
 import Hero from '~/components/pek2024/Hero.astro';
 import Sponsors from '~/components/pek2024/Sponsors.astro';
 import FAQs from '~/components/pek2024/FAQs.astro';
+import Information from '~/components/pek2024/Information.astro';
+
 ---
 
 <Layout>
@@ -27,10 +29,23 @@ import FAQs from '~/components/pek2024/FAQs.astro';
   
   <Sponsors />
 
+  <Information
+  highlight="Information"
+  title="開催情報詳細"
+  items={{
+    name: 'Platform Engineering Kaigi 2024',
+    theme: '後ほど変更',
+    target: 'Platform Engineeringに興味のある全ての方',
+    date: '2024/7/9(Tue.) hh:mm-hh:mm',
+    location: 'TBD',
+    cost: '無料',
+    sponsor: "クラウドネイティブイノベーターズ協会",
+  }}
+  />
+
   <FAQs
     highlight="FAQs"
     title="よくある質問"
-    classes={{ container: 'max-w-6xl' }}
     items={[
       {
         title: '参加にあたり費用は発生しますか？',
@@ -49,4 +64,5 @@ import FAQs from '~/components/pek2024/FAQs.astro';
       },
     ]}
   />
+
 </Layout>

@@ -1,0 +1,42 @@
+---
+export interface InformationProps {
+  highlight: string;
+  title: string;
+  items: {
+    name: string;
+    theme: string;
+    target: string;
+    date: string;
+    location: string;
+    cost: string;
+    sponsor: string;
+  };
+}
+
+const { highlight, title, items } = Astro.props as InformationProps;
+---
+
+<section class="bg-themeColor-orange dark:bg-slate-800 py-10 md:py-14 text-white">
+  <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
+    {(title || highlight) && (
+      <div class="mb-10 md:mx-auto text-center md:mb-12 max-w-3xl">
+        {highlight && (
+          <p class="text-base text-primary dark:text-blue-200 font-semibold tracking-wide uppercase">{highlight}</p>
+        )}
+        {title && (
+          <h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4">{title}</h2>
+        )}
+      </div>
+    )}
+
+    <div class="text-2xl space-y-2 border-t-2">
+      <div class="border-b-2 py-2"><strong>イベント名:</strong> {items.name}</div>
+      <div class="border-b-2 py-2"><strong>テーマ:</strong> {items.theme}</div>
+      <div class="border-b-2 py-2"><strong>対象:</strong> {items.target}</div>
+      <div class="border-b-2 py-2"><strong>日時:</strong> {items.date}</div>
+      <div class="border-b-2 py-2"><strong>場所:</strong> {items.location}</div>
+      <div class="border-b-2 py-2"><strong>参加費:</strong> {items.cost}</div>
+      <div class="border-b-2 py-2"><strong>主催:</strong> {items.sponsor}</div>
+    </div>
+  </div>
+</section>
