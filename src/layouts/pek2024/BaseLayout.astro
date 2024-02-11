@@ -8,14 +8,15 @@ const { language = 'en', textDirection = 'ltr' } = SITE;
 ---
 
 <!DOCTYPE html>
-<html lang={language} dir={textDirection}>
+<html lang={language} dir={textDirection} class="2xl:text-[20px]">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>pek2024</title>
     <link rel="icon" href="/pek2024_trademark.ico" type="image/x-icon">
   </head>
 
-  <body>
+  <body class="antialiased text-page bg-light dark:text-slate-300 tracking-tight dark:bg-dark">
     <slot />
     <BasicScripts />
   </body>
