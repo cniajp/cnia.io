@@ -12,7 +12,7 @@ const CONFIG = {
     'クラウドネイティブ技術の発展・推進を支援するための一般社団法人です。',
   defaultImage: defaultImage,
 
-  defaultTheme: 'system', // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+  defaultTheme: 'light:only', // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
 
   language: 'ja',
   textDirection: 'ltr',
