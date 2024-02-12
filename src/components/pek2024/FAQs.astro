@@ -15,18 +15,10 @@ const { highlight, title, items } = Astro.props as FAQProps;
 
 <section class="bg-white dark:bg-slate-800 py-10 md:py-14">
   <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
-    {
-      (title || highlight) && (
-        <div class="mb-10 md:mx-auto text-center md:mb-12 max-w-3xl">
-          {highlight && (
-            <p class="text-base text-primary dark:text-blue-200 font-semibold tracking-wide uppercase">{highlight}</p>
-          )}
-          {title && (
-            <h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4">{title}</h2>
-          )}
-        </div>
-      )
-    }
+    <div class="mb-10 md:mx-auto text-center md:mb-12 max-w-3xl">
+      <p class="text-base text-primary dark:text-blue-200 font-semibold tracking-wide uppercase">{highlight}</p>
+      <h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4">{title}</h2>
+    </div>
   </div>
   <div class="max-w-4xl mx-auto px-4">
     {items.map((item) => (
