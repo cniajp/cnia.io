@@ -6,11 +6,27 @@ import Hero from '~/components/pek2024/Hero.astro';
 import Sponsors from '~/components/pek2024/Sponsors.astro';
 import FAQs from '~/components/pek2024/FAQs.astro';
 import Information from '~/components/pek2024/Information.astro';
+import Update from '~/components/pek2024/Update.astro';
 
 ---
 
 <Layout>
   <Hero />
+
+  <Update
+    highlight="News"
+    title="お知らせ"
+    items={[
+      {
+        date: "2024/02/dd",
+        text: "スポンサーの募集を開始しました",
+      },
+      {
+        date: "2024/02/dd",
+        text: "Platform Engineering Kaigi 2024のページを公開しました",
+      },
+    ]}
+  />
 
   <Concept
     highlight="Concept"
