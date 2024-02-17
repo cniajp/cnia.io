@@ -2,37 +2,45 @@
 import { Picture } from 'astro:assets';
 import { Icon } from 'astro-icon';
 
-import backgroundImage from '~/assets/images/pek2024/pek2024_trademark.png';
+import Starfield from '~/components/pek2024/Starfield.astro';
+
+import trademark from '~/assets/images/pek2024/pek2024_trademark.svg';
+import logoLiteral from '~/assets/images/pek2024/pek2024_literal.svg';
 ---
 
 <div class="hero min-h-screen flex flex-col justify-between">
   <section class="flex justify-center items-center flex-1">
+    <Starfield />
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div>
         <div class="relative">
-          <Picture
-            src={backgroundImage}
-            class="mx-auto rounded-md w-full"
+          <div class="flex items-center justify-center">
+            <Picture
+            src={trademark}
+            class="mx-auto rounded-md rotate-image"
             widths={[400, 400]}
             sizes="(max-width: 400px) 100vw, 400px"
-            alt="Background Image"
-            class="mx-auto rounded-md opacity-30"
-            style="transform: translateY(-20px);"
-          />
-          <div class="absolute top-0 left-0 w-full h-full flex justify-center items-center">
+            alt="Trademark"
+            />
+            <Picture
+            src={logoLiteral}
+            class="mx-auto rounded-md px-4"
+            widths={[400, 400]}
+            sizes="(max-width: 400px) 100vw, 400px"
+            alt="Loog Literal"
+            />
+          </div>
+          <div class="w-full h-full flex justify-center items-center mt-8">
             <div class="text-center">
-              <h1 class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 md:whitespace-nowrap">
-                Platform Engineering Kaigi 2024
-              </h1>
               <h2
-                class="md:text-left md:text-4xl text-3xl font-bold leading-tighter tracking-tighter mb-4 md:whitespace-nowrap"
+                class="md:text-3xl text-xl font-bold leading-tighter tracking-tighter mb-4 md:whitespace-nowrap"
               >
-                July 9th, 2024
+                2024.7.9 Tue 10:00 - 18:00 / 懇親会 18:20 - 20:00
               </h2>
               <div class="mx-auto">
                 <div class="flex justify-center md:justify-start">
                   <Icon name='tabler:map-pin' class="w-8 h-8 mr-2 md:text-left" />
-                  <p class="md:text-left text-xl md:text-2xl font-medium">
+                  <p class="text-xl md:text-2xl font-medium">
                     Place: docomo OPEN LAB ODAIBA
                   </p>
                 </div>
@@ -44,3 +52,18 @@ import backgroundImage from '~/assets/images/pek2024/pek2024_trademark.png';
     </div>
   </section>
 </div>
+
+<style>
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .rotate-image {
+    animation: rotate 30s linear infinite;
+  }
+</style>

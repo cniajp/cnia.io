@@ -1,5 +1,6 @@
 ---
 import '~/assets/styles/pek2024/base.css';
+import CustomStyles from '~/components/CustomStyles.astro';
 import BasicScripts from '~/components/common/BasicScripts.astro';
 
 import { SITE } from '~/config.mjs';
@@ -12,6 +13,7 @@ const { language = 'en', textDirection = 'ltr' } = SITE;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <CustomStyles />
     <title>pek2024</title>
     <link rel="icon" href="/pek2024_trademark.ico" type="image/x-icon">
   </head>

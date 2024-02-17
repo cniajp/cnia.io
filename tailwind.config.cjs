@@ -9,10 +9,10 @@ module.exports = {
         secondary: 'var(--aw-color-secondary)',
         accent: 'var(--aw-color-accent)',
         themeColor: {
-          blue: '#006FB8',
-          purple: '#5F5F9D',
-          orange: '#ED951D',
-          yellow: '#F4BD00',
+          blue: 'var(--aw-themeColor-blue)',
+          purple: 'var(--aw-themeColor-purple)',
+          orange: 'var(--aw-themeColor-orange)',
+          yellow: 'var(--aw-themeColor-yellow)',
         },
       },
       fontFamily: {
