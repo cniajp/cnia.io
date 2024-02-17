@@ -28,6 +28,7 @@ import Update from '~/components/pek2024/Update.astro';
     ]}
   />
 
+  <a id="about"></a>
   <Concept
     highlight="Concept"
     title="コンセプトをここに入力"
@@ -39,21 +40,22 @@ import Update from '~/components/pek2024/Update.astro';
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">後ほど変更</h3>
       <p>Platform Engineering Kaigi 2024は、日本におけるPlatform Engineeringの普及を目的とした技術カンファレンスです。</p>
-      <p>多彩なPlatform Engineeringに関するセッションや交流を通して、ZZZのきっかけを提供します。</p>
     </Fragment>
   </Concept>
   
-  <Sponsors />
+  <a id="sponsors"></a>
+  <Sponsors isRecPeriod />
 
+  <a id="info"></a>
   <Information
   highlight="Information"
   title="開催情報詳細"
   items={{
     name: 'Platform Engineering Kaigi 2024',
     theme: '後ほど変更',
-    target: 'Platform Engineeringに興味のある全ての方',
-    date: '2024/7/9(Tue.) hh:mm-hh:mm',
-    location: 'TBD',
+    target: 'プラットフォームエンジニア、SRE、インフラエンジニア、アプリケーション開発者 ',
+    date: '2024/7/9(Tue.) 10:00-18:00 / 懇親会 18:20-20:00',
+    location: 'docomo OPEN LAB ODAIBA',
     cost: '会場(有料)/オンライン(無料)',
     sponsor: "クラウドネイティブイノベーターズ協会",
   }}
@@ -66,12 +68,7 @@ import Update from '~/components/pek2024/Update.astro';
       {
         title: '参加にあたり費用は発生しますか？',
         description:
-          "XXX",
-      },
-      {
-        title: 'イベントの参加方法を教えてください',
-        description:
-          'YYY',
+          "オフライン会場参加には参加費が発生しますが、オンライン参加は無料です。",
       },
       {
         title: '後日アーカイブ動画の公開などはありますか？',

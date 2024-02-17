@@ -2,6 +2,14 @@
 import { Picture } from 'astro:assets';
 import { sponsorsData, rankGridSettings } from '~/pek2024_data';
 
+export interface Props {
+  isRecPeriod?: boolean;
+}
+
+const {
+  isRecPeriod= false,
+} = Astro.props;
+
 // グリッドクラスを生成
 function generateGridClass(rank) {
   const settings = rankGridSettings[rank];
@@ -18,19 +26,25 @@ function generateGridClass(rank) {
     </div>
   </div>
   <div class="mx-auto max-w-7xl p-4 md:px-8 font-medium">
-    {Object.entries(sponsorsData).map(([rank, sponsors]) => (
-      <div class="my-8">
-        <h2 class="text-2xl font-bold mb-4">{rank}</h2>
-        <div class={generateGridClass(rank)}>
-          {sponsors.map(({ name, src, href }) => (
-            <a href={href} class="block">
-              <div class="p-4 border rounded-lg shadow-lg flex items-center justify-center">
-                <Picture src={src} alt={name} loading="lazy" />
-              </div>
-            </a>
-          ))}
-        </div>
+    {isRecPeriod ? (
+      <div class="container mx-auto max-w-xl lg:max-w-2xl">
+        <p>スポンサー募集中です！</p>
       </div>
-    ))}
+    ) : (
+      Object.entries(sponsorsData).map(([rank, sponsors]) => (
+        <div class="my-8">
+          <h2 class="text-2xl font-bold mb-4">{rank}</h2>
+          <div class={generateGridClass(rank)}>
+            {sponsors.map(({ name, src, href }) => (
+              <a href={href} class="block">
+                <div class="p-4 border rounded-lg shadow-lg flex items-center justify-center">
+                  <Picture src={src} alt={name} loading="lazy" />
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))
+    )}
   </div>
 </section>
