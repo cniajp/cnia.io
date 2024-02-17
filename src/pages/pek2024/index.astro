@@ -1,7 +1,84 @@
 ---
 import Layout from '~/layouts/pek2024/PageLayout.astro';
 
+import Concept from '~/components/pek2024/Concept.astro';
+import Hero from '~/components/pek2024/Hero.astro';
+import Sponsors from '~/components/pek2024/Sponsors.astro';
+import FAQs from '~/components/pek2024/FAQs.astro';
+import Information from '~/components/pek2024/Information.astro';
+import Update from '~/components/pek2024/Update.astro';
+
 ---
+
 <Layout>
-Hello, World!
+  <Hero />
+
+  <Update
+    highlight="News"
+    title="お知らせ"
+    items={[
+      {
+        date: "2024/02/dd",
+        text: "スポンサーの募集を開始しました",
+      },
+      {
+        date: "2024/02/dd",
+        text: "Platform Engineering Kaigi 2024のページを公開しました",
+      },
+    ]}
+  />
+
+  <Concept
+    highlight="Concept"
+    title="コンセプトをここに入力"
+    image={{
+      src: import('~/assets/images/pek2024/pek2024_trademark.png'),
+      alt: 'PEK2024 Logo',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">後ほど変更</h3>
+      <p>Platform Engineering Kaigi 2024は、日本におけるPlatform Engineeringの普及を目的とした技術カンファレンスです。</p>
+      <p>多彩なPlatform Engineeringに関するセッションや交流を通して、ZZZのきっかけを提供します。</p>
+    </Fragment>
+  </Concept>
+  
+  <Sponsors />
+
+  <Information
+  highlight="Information"
+  title="開催情報詳細"
+  items={{
+    name: 'Platform Engineering Kaigi 2024',
+    theme: '後ほど変更',
+    target: 'Platform Engineeringに興味のある全ての方',
+    date: '2024/7/9(Tue.) hh:mm-hh:mm',
+    location: 'TBD',
+    cost: '会場(有料)/オンライン(無料)',
+    sponsor: "クラウドネイティブイノベーターズ協会",
+  }}
+  />
+
+  <FAQs
+    highlight="FAQs"
+    title="よくある質問"
+    items={[
+      {
+        title: '参加にあたり費用は発生しますか？',
+        description:
+          "XXX",
+      },
+      {
+        title: 'イベントの参加方法を教えてください',
+        description:
+          'YYY',
+      },
+      {
+        title: '後日アーカイブ動画の公開などはありますか？',
+        description:
+          '一部公開不可のセッションを除き、全てのセッションをアーカイブ動画として公開予定です。公開日程については後日お知らせいたします。',
+      },
+    ]}
+  />
+
 </Layout>

@@ -1,0 +1,30 @@
+---
+export interface UpdateItem {
+  date: string;
+  text: string;
+}
+
+export interface UpdatesProps {
+  highlight: string;
+  title: string;
+  items: UpdateItem[];
+}
+
+const { highlight, title, items } = Astro.props as UpdatesProps;
+---
+
+<section class="bg-slate-100 py-10 md:py-14">
+  <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
+    <div class="mb-10 md:mx-auto text-center md:mb-12 max-w-3xl">
+      <p class="text-base text-primary dark:text-blue-200 font-semibold tracking-wide uppercase">{highlight}</p>
+      <h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4">{title}</h2>
+    </div>
+    <div class="space-y-1 px-4">
+      {items.map((update) => (
+        <div class="update-item">
+          <p class="text-lg font-medium"><span class="font-bold mr-6">{update.date}</span>{update.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

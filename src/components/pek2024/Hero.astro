@@ -1,0 +1,46 @@
+---
+import { Picture } from 'astro:assets';
+import { Icon } from 'astro-icon';
+
+import backgroundImage from '~/assets/images/pek2024/pek2024_trademark.png';
+---
+
+<div class="hero min-h-screen flex flex-col justify-between">
+  <section class="flex justify-center items-center flex-1">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div>
+        <div class="relative">
+          <Picture
+            src={backgroundImage}
+            class="mx-auto rounded-md w-full"
+            widths={[400, 400]}
+            sizes="(max-width: 400px) 100vw, 400px"
+            alt="Background Image"
+            class="mx-auto rounded-md opacity-30"
+            style="transform: translateY(-20px);"
+          />
+          <div class="absolute top-0 left-0 w-full h-full flex justify-center items-center">
+            <div class="text-center">
+              <h1 class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 md:whitespace-nowrap">
+                Platform Engineering Kaigi 2024
+              </h1>
+              <h2
+                class="md:text-left md:text-4xl text-3xl font-bold leading-tighter tracking-tighter mb-4 md:whitespace-nowrap"
+              >
+                July 9th, 2024
+              </h2>
+              <div class="mx-auto">
+                <div class="flex justify-center md:justify-start">
+                  <Icon name='tabler:map-pin' class="w-8 h-8 mr-2 md:text-left" />
+                  <p class="md:text-left text-xl md:text-2xl font-medium">
+                    Place: TBD
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

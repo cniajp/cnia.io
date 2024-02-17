@@ -1,0 +1,81 @@
+---
+import { Icon } from 'astro-icon';
+import { Picture } from 'astro:assets';
+
+interface Item {
+  title: string;
+  description?: string;
+  icon?: string;
+}
+
+export interface Props {
+  highlight: string;
+  title: string;
+  subtitle?: string;
+  items?: Item[];
+  image: string | any;
+  isReversed?: boolean;
+}
+
+const { highlight, title, subtitle, items, image, isReversed = false } = Astro.props;
+---
+
+<section
+  class:list={[ 'bg-themeColor-blue dark:bg-slate-800 py-16 md:py-20 text-white']}
+>
+  <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
+    <div class="mb-10 md:mx-auto text-center md:mb-12 max-w-3xl">
+      <p class="text-base text-primary dark:text-blue-200 font-semibold tracking-wide uppercase">{highlight}</p>
+      <h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading">{title}</h2>
+      <p class="max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400">{subtitle}</p>
+    </div>
+  </div>
+  <div class="mx-auto max-w-7xl p-4 md:px-8 font-medium">
+    <div class={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16`}>
+      <div class="md:basis-1/2 self-center">
+        <slot name="content" />
+
+        {
+          items && (
+            <div class="space-y-8">
+              {items.map(({ title: title2, description, icon }) => (
+                <div class="flex">
+                  <div class="flex-shrink-0">
+                    <div class="flex h-7 w-7 items-center justify-center rounded-full bg-primary text-gray-50">
+                      <Icon name={icon ? icon : 'tabler:check'} class="w-5 h-5" />
+                    </div>
+                  </div>
+                  <div class="ml-4">
+                    {title2 && <h3 class="text-lg font-medium leading-6 dark:text-white">{title2}</h3>}
+                    {description && <p class="mt-2 text-muted dark:text-slate-400" set:html={description} />}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )
+        }
+      </div>
+      <div aria-hidden="true" class="mt-10 md:mt-0 md:basis-1/2">
+        {
+          image && (
+            <div class="relative m-auto max-w-4xl">
+              {typeof image === 'string' ? (
+                <Fragment set:html={image} />
+              ) : (
+                <Picture
+                  class="mx-auto w-full rounded-lg bg-white shadow-lg"
+                  width={500}
+                  height={500}
+                  widths={[400, 768]}
+                  sizes="(max-width: 768px) 100vw, 432px"
+                  aspectRatio="500:500"
+                  {...image}
+                />
+              )}
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</section>
