@@ -1,4 +1,5 @@
 ---
+import Icon from 'astro-icon';
 import { Picture } from 'astro:assets';
 import { sponsorsData, rankGridSettings } from '~/pek2024_data';
 
@@ -6,9 +7,7 @@ export interface Props {
   isRecPeriod?: boolean;
 }
 
-const {
-  isRecPeriod= false,
-} = Astro.props;
+const { isRecPeriod = false } = Astro.props;
 
 // グリッドクラスを生成
 function generateGridClass(rank) {
@@ -26,25 +25,39 @@ function generateGridClass(rank) {
     </div>
   </div>
   <div class="mx-auto max-w-7xl p-4 md:px-8 font-medium">
-    {isRecPeriod ? (
-      <div class="container mx-auto max-w-xl lg:max-w-2xl">
-        <p>スポンサー募集中です！</p>
-      </div>
-    ) : (
-      Object.entries(sponsorsData).map(([rank, sponsors]) => (
-        <div class="my-8">
-          <h2 class="text-2xl font-bold mb-4">{rank}</h2>
-          <div class={generateGridClass(rank)}>
-            {sponsors.map(({ name, src, href }) => (
-              <a href={href} class="block">
-                <div class="p-4 border rounded-lg shadow-lg flex items-center justify-center">
-                  <Picture src={src} alt={name} loading="lazy" />
-                </div>
-              </a>
-            ))}
+    {
+      isRecPeriod ? (
+        <div class="container mx-auto max-w-xl lg:max-w-2xl">
+          <p>現在 Platform Engineering Kaigi 2024 を応援していただける企業スポンサー様を募集しております。</p>
+          <br />
+          <p>企業スポンサー様として参加いただき貴社をPRしませんか？</p>
+          <p>お申込みいただいた企業スポンサー様には、スポンサーランクに応じた特典をご用意しております。</p>
+          <br />
+          <p>詳細は以下のスポンサー様向け資料をご覧ください。</p>
+          <br />
+          <div class="sponsor-documents items-center justify-center">
+            <a href="xxx" target="_blank" class="flex items-center">
+              <Icon name="tabler:book-2" class="w-4 h-4 mr-2 md:text-left" />
+              <p class="mb-0">スポンサー様向け資料</p>
+            </a>
           </div>
         </div>
-      ))
-    )}
+      ) : (
+        Object.entries(sponsorsData).map(([rank, sponsors]) => (
+          <div class="my-8">
+            <h2 class="text-2xl font-bold mb-4">{rank}</h2>
+            <div class={generateGridClass(rank)}>
+              {sponsors.map(({ name, src, href }) => (
+                <a href={href} class="block">
+                  <div class="p-4 border rounded-lg shadow-lg flex items-center justify-center">
+                    <Picture src={src} alt={name} loading="lazy" />
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))
+      )
+    }
   </div>
 </section>
