@@ -2,7 +2,7 @@
 import Layout from '~/layouts/pek2024/BaseLayout.astro';
 
 import Header from '~/components/pek2024/Header.astro';
-import Footer from '~/components/widgets/Footer.astro';
+import Footer from '~/components/pek2024/Footer.astro';
 
 import { headerData, footerData } from '~/pek2024_data';
 ---
@@ -14,5 +14,5 @@ import { headerData, footerData } from '~/pek2024_data';
   <main>
     <slot />
   </main>
-  <Footer {...footerData} >
+  <Footer {...footerData} />
 </Layout>

@@ -1,21 +1,22 @@
 import { getPermalink } from './utils/permalinks';
+const today = new Date();
 
 export const headerData = {
   links: [
     {
-      text: 'Home',
+      text: 'HOME',
       href: '/pek2024',
     },
     {
-      text: 'About',
+      text: 'ABOUT',
       href: '/pek2024#about',
     },
     {
-      text: 'Sponsors',
+      text: 'SPONSORS',
       href: '/pek2024#sponsors',
     },
     {
-      text: 'Information',
+      text: 'INFORMATION',
       href: '/pek2024#info',
     },
     // {
@@ -35,8 +36,8 @@ export const headerData = {
     //   href: '/pek2024/staff',
     // },
     {
-      text: 'Policies',
-      href: '/pek2024/policies',
+      text: 'CODE OF CONDUCT',
+      href: '/pek2024/codeOfConduct',
     },
   ],
   socialLinks: [
@@ -45,15 +46,23 @@ export const headerData = {
 };
 
 export const footerData = {
-  links: [],
-  secondaryLinks: [
-    { text: 'プライバシーポリシー', href: getPermalink('/privacy') },
-    { text: 'お問い合わせ', href: getPermalink('/form') },
+  title: 'Platform Engineering Kaigi 2024',
+  titleLink: getPermalink('/pek2024'),
+  links: [
+    {
+      title: 'Quick Links',
+      links: [
+        { text: 'HOME', href: getPermalink('/pek2024') },
+        { text: 'ABOUT', href: getPermalink('/pek2024#about') },
+        { text: 'SPONSORS', href: getPermalink('/pek2024#sponsors') },
+        { text: 'INFORMATION', href: getPermalink('/pek2024#info') },
+        { text: 'CODE OF CONDUCT', href: getPermalink('/pek2024/codeOfConduct') },
+      ],
+    },
   ],
+  secondaryLinks: [],
   socialLinks: [],
-  footNote: `
-    Copyright &copy; 一般社団法人クラウドネイティブイノベーターズ協会
-  `,
+  footNote: ` © ${today.getFullYear()} Platform Engineering Kaigi Team / All rights reserved.`,
 };
 
 // スポンサーデータ
