@@ -7,7 +7,6 @@ import Sponsors from '~/components/pek2024/Sponsors.astro';
 import FAQs from '~/components/pek2024/FAQs.astro';
 import Information from '~/components/pek2024/Information.astro';
 import Update from '~/components/pek2024/Update.astro';
-
 ---
 
 <Layout>
@@ -18,12 +17,12 @@ import Update from '~/components/pek2024/Update.astro';
     title="お知らせ"
     items={[
       {
-        date: "2024/02/dd",
-        text: "スポンサーの募集を開始しました",
+        date: '2024/02/dd',
+        text: 'スポンサーの募集を開始しました',
       },
       {
-        date: "2024/02/dd",
-        text: "Platform Engineering Kaigi 2024のページを公開しました",
+        date: '2024/02/dd',
+        text: 'Platform Engineering Kaigi 2024のページを公開しました',
       },
     ]}
   />
@@ -39,26 +38,28 @@ import Update from '~/components/pek2024/Update.astro';
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">後ほど変更</h3>
-      <p>Platform Engineering Kaigi 2024は、日本におけるPlatform Engineeringの普及を目的とした技術カンファレンスです。</p>
+      <p>
+        Platform Engineering Kaigi 2024は、日本におけるPlatform Engineeringの普及を目的とした技術カンファレンスです。
+      </p>
     </Fragment>
   </Concept>
-  
+
   <a id="sponsors"></a>
   <Sponsors isRecPeriod />
 
   <a id="info"></a>
   <Information
-  highlight="Information"
-  title="開催情報詳細"
-  items={{
-    name: 'Platform Engineering Kaigi 2024',
-    theme: '後ほど変更',
-    target: 'プラットフォームエンジニア、SRE、インフラエンジニア、アプリケーション開発者 ',
-    date: '2024/7/9(Tue.) 10:00-18:00 / 懇親会 18:20-20:00',
-    location: 'docomo OPEN LAB ODAIBA',
-    cost: '会場(有料)/オンライン(無料)',
-    sponsor: "クラウドネイティブイノベーターズ協会",
-  }}
+    highlight="Information"
+    title="開催情報詳細"
+    items={{
+      name: 'Platform Engineering Kaigi 2024',
+      theme: '後ほど変更',
+      target: 'プラットフォームエンジニア、SRE、インフラエンジニア、アプリケーション開発者 ',
+      date: '2024/7/9(Tue.) 10:00-18:00 / 懇親会 18:20-20:00',
+      location: 'docomo OPEN LAB ODAIBA',
+      cost: '会場(有料)/オンライン(無料)',
+      sponsor: 'クラウドネイティブイノベーターズ協会',
+    }}
   />
 
   <FAQs
@@ -67,8 +68,7 @@ import Update from '~/components/pek2024/Update.astro';
     items={[
       {
         title: '参加にあたり費用は発生しますか？',
-        description:
-          "オフライン会場参加には参加費が発生しますが、オンライン参加は無料です。",
+        description: 'オフライン会場参加には参加費が発生しますが、オンライン参加は無料です。',
       },
       {
         title: '後日アーカイブ動画の公開などはありますか？',
@@ -77,5 +77,4 @@ import Update from '~/components/pek2024/Update.astro';
       },
     ]}
   />
-
 </Layout>

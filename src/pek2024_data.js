@@ -59,29 +59,29 @@ export const footerData = {
 // スポンサーデータ
 export const sponsorsData = {
   Diamond: [
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_holizontal.png'), href: 'https://www.cnia.io/' },
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_holizontal.png'), href: 'https://www.cnia.io/' },
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
   ],
   Platinum: [
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_holizontal.png'), href: 'https://www.cnia.io/' },
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_holizontal.png'), href: 'https://www.cnia.io/' },
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
   ],
   Gold: [
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_holizontal.png'), href: 'https://www.cnia.io/' },
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_holizontal.png'), href: 'https://www.cnia.io/' },
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_holizontal.png'), href: 'https://www.cnia.io/' },
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
   ],
   Silver: [
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_holizontal.png'), href: 'https://www.cnia.io/' },
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_holizontal.png'), href: 'https://www.cnia.io/' },
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_holizontal.png'), href: 'https://www.cnia.io/' },
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_holizontal.png'), href: 'https://www.cnia.io/' },
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_holizontal.png'), href: 'https://www.cnia.io/' },
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_holizontal.png'), href: 'https://www.cnia.io/' },
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
   ],
   Bronze: [
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_holizontal.png'), href: 'https://www.cnia.io/' },
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_holizontal.png'), href: 'https://www.cnia.io/' },
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
   ],
 };
 
