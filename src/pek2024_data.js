@@ -67,10 +67,6 @@ export const footerData = {
 
 // スポンサーデータ
 export const sponsorsData = {
-  Diamond: [
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
-  ],
   Platinum: [
     { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
     { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
@@ -92,13 +88,17 @@ export const sponsorsData = {
     { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
     { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
   ],
+  Lunch: [
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
+  ],
 };
 
 // スポンサーランクごとのグリッド設定
 export const rankGridSettings = {
-  Diamond: { default: '1', md: '2' },
   Platinum: { default: '2', md: '3' },
-  Gold: { default: '3', md: '4' },
-  Silver: { default: '4', md: '5' },
-  Bronze: { default: '5', md: '6' },
+  Gold: { default: '2', md: '3' },
+  Solver: { default: '3', md: '4' },
+  Bronze: { default: '4', md: '5' },
+  Lunch: { default: '5', md: '6' },
 };
