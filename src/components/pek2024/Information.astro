@@ -17,20 +17,58 @@ const { highlight, title, items } = Astro.props as InformationProps;
 ---
 
 <section class="bg-themeColor-orange dark:bg-slate-800 py-10 md:py-14 text-white">
-  <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
-    <div class="mb-10 md:mx-auto text-center md:mb-12 max-w-3xl">
-      <p class="text-base text-primary dark:text-blue-200 font-semibold tracking-wide uppercase">{highlight}</p>
-      <h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4">{title}</h2>
+  <div class="max-w-xl mx-auto lg:max-w-2xl">
+    <div class="mb-10 text-center md:mb-12 max-w-3xl mx-auto">
+      <p class="text-base dark:text-blue-200 font-semibold tracking-wide uppercase">{highlight}</p>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight mb-4">{title}</h2>
     </div>
 
-    <div class="text-2xl space-y-2 px-4">
-      <div class="border-b-2 border-t-2 py-2"><strong>イベント名:</strong> {items.name}</div>
-      <div class="border-b-2 py-2"><strong>テーマ:</strong> {items.theme}</div>
-      <div class="border-b-2 py-2"><strong>対象:</strong> {items.target}</div>
-      <div class="border-b-2 py-2"><strong>日時:</strong> {items.date}</div>
-      <div class="border-b-2 py-2"><strong>場所:</strong> {items.location}</div>
-      <div class="border-b-2 py-2"><strong>参加費:</strong> {items.cost}</div>
-      <div class="border-b-2 py-2"><strong>主催:</strong> {items.sponsor}</div>
+    <div class="px-4 text-center md:text-left">
+      <div class="text-2xl">
+        <strong>{items.name}</strong>
+      </div>
+      <div class="text-xl py-2">
+        <strong>テーマ</strong>
+        <br/>
+        <div class="text-base font-medium">
+          {items.theme}
+        </div>
+      </div>
+      <div class="text-xl py-2">
+        <strong>想定参加者</strong>
+        <br/>
+        <div class="text-base font-medium">
+          {items.target}
+        </div>
+      </div>
+      <div class="text-xl py-2">
+        <strong>日時</strong>
+        <br/>
+        <div class="text-base font-medium">
+          {items.date}
+        </div>
+      </div>
+      <div class="text-xl py-2">
+        <strong>場所</strong>
+        <br/>
+        <div class="text-base font-medium">
+          {items.location}
+        </div>
+      </div>
+      <div class="text-xl py-2">
+        <strong>参加費</strong>
+        <br/>
+        <div class="text-base font-medium">
+          {items.cost}
+        </div>
+      </div>
+      <div class="text-xl py-2">
+        <strong>主催</strong>
+        <br/>
+        <div class="text-base font-medium">
+          {items.sponsor}
+        </div>
+      </div>
     </div>
   </div>
 </section>

@@ -16,7 +16,7 @@ const { highlight, title, items } = Astro.props as FAQProps;
 <section class="bg-white dark:bg-slate-800 py-10 md:py-14">
   <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
     <div class="mb-10 md:mx-auto text-center md:mb-12 max-w-3xl">
-      <p class="text-base text-primary dark:text-blue-200 font-semibold tracking-wide uppercase">{highlight}</p>
+      <p class="text-base dark:text-blue-200 font-semibold tracking-wide uppercase">{highlight}</p>
       <h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4">{title}</h2>
     </div>
   </div>
@@ -27,7 +27,7 @@ const { highlight, title, items } = Astro.props as FAQProps;
           <span>{item.title}</span>
           <span class="expand-icon">+</span>
         </button>
-        <div class="faq-answer hidden px-4 py-3 border-t-2 bg-blue-50 text-black font-medium">
+        <div class="faq-answer hidden px-4 py-3 border-t-2 bg-blue-50 text-black font-medium text-sm">
           <p>{item.description}</p>
         </div>
       </div>
@@ -38,16 +38,29 @@ const { highlight, title, items } = Astro.props as FAQProps;
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.faq-question').forEach((button) => {
-      (button as HTMLElement).addEventListener('click', () => {
+      button.addEventListener('click', () => {
         const answer = button.nextElementSibling;
         const expanded = button.getAttribute('aria-expanded') === 'true';
-
+        const icon = button.querySelector('.expand-icon');
+  
+        // aria-expanded属性をトグル
         button.setAttribute('aria-expanded', String(!expanded));
         answer?.classList.toggle('hidden');
         
-        const icon = button.querySelector('.expand-icon');
+        // アイコンのテキストを切り替え
         icon!.textContent = expanded ? '+' : '-';
+        // .rotatedクラスをトグルして回転エフェクトを適用
+        icon?.classList.toggle('rotated');
       });
     });
   });
 </script>
+
+<style>
+  .expand-icon {
+    transition: transform 0.5s ease;
+  }
+  .expand-icon.rotated {
+    transform: rotate(180deg);
+  }
+</style>

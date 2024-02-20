@@ -4,10 +4,9 @@ import Layout from '~/layouts/pek2024/PageLayout.astro';
 import Concept from '~/components/pek2024/Concept.astro';
 import Hero from '~/components/pek2024/Hero.astro';
 import Sponsors from '~/components/pek2024/Sponsors.astro';
-import FAQs from '~/components/pek2024/FAQs.astro';
+import FAQ from '~/components/pek2024/FAQ.astro';
 import Information from '~/components/pek2024/Information.astro';
 import Update from '~/components/pek2024/Update.astro';
-
 ---
 
 <Layout>
@@ -18,60 +17,80 @@ import Update from '~/components/pek2024/Update.astro';
     title="お知らせ"
     items={[
       {
-        date: "2024/02/dd",
-        text: "スポンサーの募集を開始しました",
+        date: '2024/02/21',
+        text: 'スポンサー募集要項を公開しました',
       },
       {
-        date: "2024/02/dd",
-        text: "Platform Engineering Kaigi 2024のページを公開しました",
+        date: '2024/02/21',
+        text: 'Platform Engineering Kaigi 2024のページを公開しました',
       },
     ]}
   />
 
+  <a id="about"></a>
   <Concept
     highlight="Concept"
-    title="コンセプトをここに入力"
+    title="日本初 Platform Engineeringの祭典"
     image={{
       src: import('~/assets/images/pek2024/pek2024_trademark.png'),
       alt: 'PEK2024 Logo',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">後ほど変更</h3>
-      <p>Platform Engineering Kaigi 2024は、日本におけるPlatform Engineeringの普及を目的とした技術カンファレンスです。</p>
-      <p>多彩なPlatform Engineeringに関するセッションや交流を通して、ZZZのきっかけを提供します。</p>
+      <p>
+        Platform Engineering Kaigiは、現在注目を浴びているPlatform
+        Engineeringをテーマにしたテクノロジーカンファレンスです。
+      </p>
+      <br />
+      <p>
+        コンテナをはじめとしたクラウドネイティブ技術の発展やDevOpsの浸透、さまざまな便利なツールの登場により、アプリケーション開発の現場は大きく変わりました。その一方で、開発者一人が扱わなくてはいけない技術の高度化、複雑化により認知負荷が年々高まっていると言われています。認知負荷の高まりは生産性の低下に繋がるおそれがあり、せっかく導入した新技術がスポイルされかねません。
+      </p>
+      <br />
+      <p>
+        その解決策として期待されているのがPlatform Engineeringです。Team
+        topologiesに基づいた適切なチーム分け、そして認知負荷を減らすことを目的とした共通プラットフォームを構築することによって、技術のコントロールを取り戻し、組織のスケーラビリティと生産性を両立することができます。
+      </p>
+      <br />
+      <p>
+        本イベントは、そんなPlatform
+        Engineeringの世界に深く潜り込むための絶好の機会です。最新のトレンド、実践的な知見、そしてこの分野のトップランナーたちとの交流を通じて、テクノロジーの未来を切り拓いていきましょう。
+      </p>
     </Fragment>
   </Concept>
-  
-  <Sponsors />
 
+  <a id="sponsors"></a>
+  <Sponsors isRecPeriod />
+
+  <a id="info"></a>
   <Information
-  highlight="Information"
-  title="開催情報詳細"
-  items={{
-    name: 'Platform Engineering Kaigi 2024',
-    theme: '後ほど変更',
-    target: 'Platform Engineeringに興味のある全ての方',
-    date: '2024/7/9(Tue.) hh:mm-hh:mm',
-    location: 'TBD',
-    cost: '会場(有料)/オンライン(無料)',
-    sponsor: "クラウドネイティブイノベーターズ協会",
-  }}
+    highlight="Information"
+    title="開催情報詳細"
+    items={{
+      name: 'Platform Engineering Kaigi 2024',
+      theme: '日本初 Platform Engineeringの祭典',
+      target: 'プラットフォームエンジニア、SRE、インフラエンジニア、アプリケーション開発者 ',
+      date: '2024/7/9(Tue.) 10:00-18:00 / 懇親会 18:20-20:00',
+      location: 'docomo R&D OPENLAB ODAIBA',
+      cost: '会場(有料)/オンライン(無料)',
+      sponsor: '一般社団法人クラウドネイティブイノベーターズ協会',
+    }}
   />
 
-  <FAQs
-    highlight="FAQs"
+  <FAQ
+    highlight="FAQ"
     title="よくある質問"
     items={[
       {
-        title: '参加にあたり費用は発生しますか？',
-        description:
-          "XXX",
+        title: 'プロポーザル募集(CFP)はいつから始まりますか？',
+        description: '3月中旬を予定しています。',
       },
       {
-        title: 'イベントの参加方法を教えてください',
-        description:
-          'YYY',
+        title: '一般参加申込みはいつから始まりますか？',
+        description: '5月頃を予定しています。',
+      },
+      {
+        title: '参加にあたり費用は発生しますか？',
+        description: 'オフライン会場参加には参加費が発生しますが、オンライン参加は無料です。',
       },
       {
         title: '後日アーカイブ動画の公開などはありますか？',
@@ -80,5 +99,4 @@ import Update from '~/components/pek2024/Update.astro';
       },
     ]}
   />
-
 </Layout>

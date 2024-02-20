@@ -1,30 +1,43 @@
 import { getPermalink } from './utils/permalinks';
+const today = new Date();
 
 export const headerData = {
   links: [
     {
-      text: 'Home',
+      text: 'HOME',
       href: '/pek2024',
     },
     {
-      text: 'Sessions',
-      href: '/pek2024/sessions',
+      text: 'ABOUT',
+      href: '/pek2024#about',
     },
     {
-      text: 'TimeTable',
-      href: '/pek2024/timetable',
+      text: 'SPONSORS',
+      href: '/pek2024#sponsors',
     },
     {
-      text: 'JobBoard',
-      href: '/pek2024/jobboard',
+      text: 'INFORMATION',
+      href: '/pek2024#info',
     },
+    // {
+    //   text: 'Sessions',
+    //   href: '/pek2024/sessions',
+    // },
+    // {
+    //   text: 'TimeTable',
+    //   href: '/pek2024/timetable',
+    // },
+    // {
+    //   text: 'JobBoard',
+    //   href: '/pek2024/jobboard',
+    // },
+    // {
+    //   text: 'Staff',
+    //   href: '/pek2024/staff',
+    // },
     {
-      text: 'Staff',
-      href: '/pek2024/staff',
-    },
-    {
-      text: 'Policies',
-      href: '/pek2024/policies',
+      text: 'CODE OF CONDUCT',
+      href: '/pek2024/codeOfConduct',
     },
   ],
   socialLinks: [
@@ -33,51 +46,59 @@ export const headerData = {
 };
 
 export const footerData = {
-  links: [],
-  secondaryLinks: [
-    { text: 'プライバシーポリシー', href: getPermalink('/privacy') },
-    { text: 'お問い合わせ', href: getPermalink('/form') },
+  title: 'Platform Engineering Kaigi 2024',
+  titleLink: getPermalink('/pek2024'),
+  links: [
+    {
+      title: 'Quick Links',
+      links: [
+        { text: 'HOME', href: getPermalink('/pek2024') },
+        { text: 'ABOUT', href: getPermalink('/pek2024#about') },
+        { text: 'SPONSORS', href: getPermalink('/pek2024#sponsors') },
+        { text: 'INFORMATION', href: getPermalink('/pek2024#info') },
+        { text: 'CODE OF CONDUCT', href: getPermalink('/pek2024/codeOfConduct') },
+      ],
+    },
   ],
+  secondaryLinks: [{ text: 'CONTACT', href: 'https://forms.gle/NZ3d3r4wCBytBmWt9' }],
   socialLinks: [],
-  footNote: `
-    Copyright &copy; 一般社団法人クラウドネイティブイノベーターズ協会
-  `,
+  footNote: ` © ${today.getFullYear()} Platform Engineering Kaigi Team / All rights reserved.`,
 };
 
 // スポンサーデータ
 export const sponsorsData = {
-  Diamond: [
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_holizontal.png'), href: 'https://www.cnia.io/' },
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_holizontal.png'), href: 'https://www.cnia.io/' },
-  ],
   Platinum: [
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_holizontal.png'), href: 'https://www.cnia.io/' },
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_holizontal.png'), href: 'https://www.cnia.io/' },
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
   ],
   Gold: [
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_holizontal.png'), href: 'https://www.cnia.io/' },
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_holizontal.png'), href: 'https://www.cnia.io/' },
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_holizontal.png'), href: 'https://www.cnia.io/' },
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
   ],
   Silver: [
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_holizontal.png'), href: 'https://www.cnia.io/' },
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_holizontal.png'), href: 'https://www.cnia.io/' },
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_holizontal.png'), href: 'https://www.cnia.io/' },
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_holizontal.png'), href: 'https://www.cnia.io/' },
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_holizontal.png'), href: 'https://www.cnia.io/' },
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_holizontal.png'), href: 'https://www.cnia.io/' },
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
   ],
   Bronze: [
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_holizontal.png'), href: 'https://www.cnia.io/' },
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_holizontal.png'), href: 'https://www.cnia.io/' },
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
+  ],
+  Lunch: [
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
+    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
   ],
 };
 
 // スポンサーランクごとのグリッド設定
 export const rankGridSettings = {
-  Diamond: { default: '1', md: '1' },
-  Platinum: { default: '1', md: '2' },
-  Gold: { default: '2', md: '2' },
-  Silver: { default: '2', md: '4' },
-  Bronze: { default: '3', md: '4' },
+  Platinum: { default: '2', md: '3' },
+  Gold: { default: '2', md: '3' },
+  Solver: { default: '3', md: '4' },
+  Bronze: { default: '4', md: '5' },
+  Lunch: { default: '5', md: '6' },
 };
