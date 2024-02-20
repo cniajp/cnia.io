@@ -60,7 +60,7 @@ export const footerData = {
       ],
     },
   ],
-  secondaryLinks: [],
+  secondaryLinks: [{ text: 'CONTACT', href: 'https://forms.gle/NZ3d3r4wCBytBmWt9' }],
   socialLinks: [],
   footNote: ` © ${today.getFullYear()} Platform Engineering Kaigi Team / All rights reserved.`,
 };
