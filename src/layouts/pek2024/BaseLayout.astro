@@ -13,9 +13,17 @@ const { language = 'en', textDirection = 'ltr' } = SITE;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta property="og:title" content="pek2024" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Platform Engineering Kaigi 2024" />
+    <meta property="og:image" content="~/assets/images/pek2024/pek2024_ogp.png" />
+    <meta property="og:url" content={Astro.request.url} />
+    <meta name="twitter:card" content="summary_large_image" />
+
     <CustomStyles />
     <title>pek2024</title>
-    <link rel="icon" href="/pek2024_trademark.ico" type="image/x-icon">
+    <link rel="icon" href="/pek2024_trademark.ico" type="image/x-icon" />
   </head>
 
   <body class="antialiased text-page bg-light dark:text-slate-300 tracking-tight dark:bg-dark">
