@@ -6,7 +6,7 @@ import Features from '~/components/widgets/Features.astro';
 import Sessions from '~/components/widgets/Sessions.astro';
 import FullContent from '~/components/widgets/FullContent.astro';
 import Features2 from '~/components/widgets/Features2.astro';
-import { Picture } from "astro:assets";
+import { Picture } from 'astro:assets';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Upcoming from '~/components/widgets/Upcoming.astro';
 
@@ -18,15 +18,14 @@ const meta = {
 ---
 
 <Layout {meta}>
-
   <Hero>
     <Fragment slot="subtitle">
       <Picture
         src={import('~/assets/images/logo_on_white@4x.png')}
-        alt=''
-        sizes='400'
+        alt=""
+        sizes="400"
         widths={[2000]}
-        position='center'
+        position="center"
       />
     </Fragment>
   </Hero>
@@ -49,13 +48,12 @@ const meta = {
           description:
             '上手くいった事例だけでなく、失敗から学ぶことも重要です。なぜ上手くいかなかったかを共有してもらい、次にどう生かしていくかを学びます。',
           icon: 'tabler:info-circle',
-        }
+        },
       ],
       [
         {
           title: '先人に学ぶ',
-          description:
-            '素晴らしいプラットフォームを作り上げている先人から、生きた知識を学びます。',
+          description: '素晴らしいプラットフォームを作り上げている先人から、生きた知識を学びます。',
           icon: 'tabler:user',
         },
         {
@@ -63,29 +61,23 @@ const meta = {
           description:
             'Platform Engineeringを支える技術を学びましょう。日々生まれる技術やツールを上手く取り入れることで、良いチーム作りの一助になるでしょう。',
           icon: 'tabler:wand',
-        }
+        },
       ],
     ]}
   />
 
   <Upcoming
-  title="開催予定"
-  highlight="Upcoming"
-  items={[
-    {
-      event: 'Platform Engineering Meetup #4',
-      date: '2023/08/02',
-      place: '福岡',
-      connpassUrl: 'https://platformengineering.connpass.com/event/290689/',
-    },
-    {
-      event: 'Platform Engineering Meetup #5',
-      date: '2023/10/05',
-      place: '東京',
-    },
-  ]}
-/>
-
+    title="開催予定"
+    highlight="Upcoming"
+    items={[
+      {
+        event: 'Platform Engineering Meetup #8',
+        date: '2024/04/19',
+        place: '大阪',
+        connpassUrl: 'https://platformengineering.connpass.com/event/310994/',
+      },
+    ]}
+  />
 
   <a id="sessions"></a>
   <Sessions
@@ -150,42 +142,58 @@ const meta = {
       },
     ]}
   />
-  <FullContent 
-    title={'メディア掲載事例'}
-    highlight='Media'
-  >
+  <FullContent title={'メディア掲載事例'} highlight="Media">
     <Fragment slot="content">
       <ul>
-        <li class="my-2"><a class="underline" href="https://atmarkit.itmedia.co.jp/ait/articles/2304/11/news005.html">@IT - 「Platform Engineering」は何を解決するのか？　誰が何をするものなのか？</a></li>
-        <li class="my-2"><a class="underline" href="https://www.publickey1.jp/blog/23/platform_engineeringplatform_engineering_meetup_1.html">Publickey - 「Platform Engineeringへの招待」、開発者の生産性を高めるプラットフォームを作り、運営していくための考え方とは（前編）</a></li>
-        <li class="my-2"><a class="underline" href="https://www.publickey1.jp/blog/23/platform_engineeringplatform_engineering_meetup_1_1.html">Publickey - 「Platform Engineeringへの招待」、開発者の生産性を高めるプラットフォームを作り、運営していくための考え方とは（後編）</a></li>
+        <li class="my-2">
+          <a class="underline" href="https://atmarkit.itmedia.co.jp/ait/articles/2304/11/news005.html"
+            >@IT - 「Platform Engineering」は何を解決するのか？　誰が何をするものなのか？</a
+          >
+        </li>
+        <li class="my-2">
+          <a
+            class="underline"
+            href="https://www.publickey1.jp/blog/23/platform_engineeringplatform_engineering_meetup_1.html"
+            >Publickey - 「Platform
+            Engineeringへの招待」、開発者の生産性を高めるプラットフォームを作り、運営していくための考え方とは（前編）</a
+          >
+        </li>
+        <li class="my-2">
+          <a
+            class="underline"
+            href="https://www.publickey1.jp/blog/23/platform_engineeringplatform_engineering_meetup_1_1.html"
+            >Publickey - 「Platform
+            Engineeringへの招待」、開発者の生産性を高めるプラットフォームを作り、運営していくための考え方とは（後編）</a
+          >
+        </li>
       </ul>
     </Fragment>
   </FullContent>
 
-  <Features2 
+  <Features2
     title={'スポンサー'}
-    highlight='Sponsors'
+    highlight="Sponsors"
     subtitle={'イベントを支援してくださるスポンサー様を募集しています'}
     items={[
       {
         title: '会場スポンサー',
         icon: 'tabler:home-2',
-        description: 'イベントの開催会場をご提供いただくスポンサープランです。<br/>スポンサーセッション枠のご提供およびロゴの掲載を行います。'
+        description:
+          'イベントの開催会場をご提供いただくスポンサープランです。<br/>スポンサーセッション枠のご提供およびロゴの掲載を行います。',
       },
       {
         title: 'フードスポンサー',
         icon: 'tabler:tools-kitchen-2',
-        description: 'イベント終了後の懇親会で食事をご提供いただくプランです。<br/>イベント内でのLT枠のご提供およびロゴの掲載を行います。'
+        description:
+          'イベント終了後の懇親会で食事をご提供いただくプランです。<br/>イベント内でのLT枠のご提供およびロゴの掲載を行います。',
       },
       {
         title: '通年スポンサー',
         icon: 'tabler:gift',
-        description: 'Platform Engineering Meetupを通年で支えていただくプランです。<br/>サイトへのロゴの掲載、スポンサー期間中の全アーカイブへのロゴ掲載、特別コラボレーションのセッションなどを行います。'
-      }
+        description:
+          'Platform Engineering Meetupを通年で支えていただくプランです。<br/>サイトへのロゴの掲載、スポンサー期間中の全アーカイブへのロゴ掲載、特別コラボレーションのセッションなどを行います。',
+      },
     ]}
-  >
-  </Features2>
-  <CallToAction title={'お問い合わせ'} callToAction={{text: 'Contact us', href: '/form'}} />
-
+  />
+  <CallToAction title={'お問い合わせ'} callToAction={{ text: 'Contact us', href: '/form' }} />
 </Layout>
