@@ -18,6 +18,10 @@ export const headerData = {
       text: 'PFEM',
       href: '/pfem',
     },
+    {
+      text: 'PEK2024',
+      href: '/pek2024',
+    },
   ],
   socialLinks: [
     // { ariaLabel: 'Twitter', icon: 'tabler:brand-twitter', href: '#' },
