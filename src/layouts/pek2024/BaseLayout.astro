@@ -6,6 +6,8 @@ import BasicScripts from '~/components/common/BasicScripts.astro';
 import { SITE } from '~/config.mjs';
 
 const { language = 'en', textDirection = 'ltr' } = SITE;
+const canonicalURL = new URL(Astro.url.pathname, 'https://www.cnia.io');
+const ogpImageURL = new URL('/pek2024_ogp.png', canonicalURL);
 ---
 
 <!DOCTYPE html>
@@ -17,12 +19,12 @@ const { language = 'en', textDirection = 'ltr' } = SITE;
     <meta property="og:title" content="pek2024" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content="Platform Engineering Kaigi 2024" />
-    <meta property="og:image" content="~/assets/images/pek2024/pek2024_ogp.png" />
+    <meta property="og:image" content={ogpImageURL} />
     <meta property="og:url" content={Astro.request.url} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="pek2024" />
     <meta name="twitter:description" content="Platform Engineering Kaigi 2024" />
-    <meta name="twitter:image" content="~/assets/images/pek2024/pek2024_ogp.png" />
+    <meta name="twitter:image" content={ogpImageURL} />
 
     <CustomStyles />
     <title>pek2024</title>
