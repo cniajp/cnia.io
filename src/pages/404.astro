@@ -1,23 +1,26 @@
 ---
+import { Picture } from 'astro:assets';
 import Layout from '~/layouts/CNIA/BaseLayout.astro';
-import { getHomePermalink } from '~/utils/permalinks';
+import { getHomePermalink, getPermalink } from '~/utils/permalinks';
 
 const title = `Error 404`;
+const imageSrc = import('~/assets/images/CNIA-404.png');
 ---
 
 <Layout meta={{ title }}>
   <section class="flex items-center h-full p-16">
     <div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
-      <div class="max-w-md text-center">
-        <h2 class="mb-8 font-bold text-9xl">
-          <span class="sr-only">Error</span>
-          <span class="text-primary">404</span>
-        </h2>
-        <p class="text-3xl font-semibold md:text-3xl">Sorry, we couldn't find this page.</p>
-        <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">
-          But dont worry, you can find plenty of other things on our homepage.
-        </p>
-        <a rel="noopener noreferrer" href={getHomePermalink()} class="btn ml-4">Back to homepage</a>
+      <div class="max-w-md text-center flex flex-col items-center space-y-4">
+        <Picture src={imageSrc} width={800} height={600} alt="PEK2024 logo" widths={[2000]} />
+        <div>
+          <h3 class="text-primary mt-2 mb-4 text-xl">PAGE NOT FOUND</h3>
+          <p class="text-2xl font-semibold md:text-2xl">お探しのページが見つかりませんでした。</p>
+          <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">
+            URLが変更、削除されたか、一時的に利用できない状態になっている可能性があります。
+          </p>
+          <a rel="noopener noreferrer" href={getHomePermalink()} class="btn ml-4 mb-2 rounded-md">Back to CNIA</a>
+          <a rel="noopener noreferrer" href={getPermalink('/pek2024')} class="btn ml-4 rounded-md">Back to PEK2024</a>
+        </div>
       </div>
     </div>
   </section>
