@@ -1,4 +1,4 @@
-import defaultImage from './assets/images/logo_horizontal.png';
+import defaultImage from '/cnia_ogp.png';
 
 const CONFIG = {
   name: '一般社団法人クラウドネイティブイノベーターズ協会',
@@ -8,8 +8,7 @@ const CONFIG = {
   trailingSlash: false,
 
   title: '一般社団法人クラウドネイティブイノベーターズ協会',
-  description:
-    'クラウドネイティブ技術の発展・推進を支援するための一般社団法人です。',
+  description: 'クラウドネイティブ技術の発展・推進を支援するための一般社団法人です。',
   defaultImage: defaultImage,
 
   defaultTheme: 'light:only', // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
