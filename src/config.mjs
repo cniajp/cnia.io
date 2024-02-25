@@ -1,4 +1,4 @@
-import defaultImage from '/cnia_ogp.png';
+import defaultImage from '../public/cnia_ogp.png';
 
 const CONFIG = {
   name: '一般社団法人クラウドネイティブイノベーターズ協会',
