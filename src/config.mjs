@@ -3,7 +3,7 @@ import defaultImage from '../public/cnia_ogp.png';
 const CONFIG = {
   name: '一般社団法人クラウドネイティブイノベーターズ協会',
 
-  origin: 'https://cnia.io',
+  origin: 'https://www.cnia.io',
   basePathname: '/',
   trailingSlash: false,
 
