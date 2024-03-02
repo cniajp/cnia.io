@@ -24,8 +24,8 @@ const CONFIG = {
     timeZone: 'JST',
   }),
 
-  googleAnalyticsId: false, // or "G-XXXXXXXXXX",
-  googleSiteVerificationId: 'orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M',
+  googleAnalyticsId: 'G-7YM9MHRMVM', // or false
+  googleSiteVerificationId: 'foBATuG3bM4VH87zge4cdjnrJDjf2qOz-A0v4hGsQVg',
 
   blog: {
     disabled: false,
