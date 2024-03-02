@@ -13,6 +13,7 @@ import TeamMemberList from '~/components/pek2024/TeamMemberList.astro';
 <Layout>
   <Hero />
 
+  <a id="update"></a>
   <Update
     highlight="News"
     title="お知らせ"
@@ -34,7 +35,7 @@ import TeamMemberList from '~/components/pek2024/TeamMemberList.astro';
     title="日本初 Platform Engineeringの祭典"
     image={{
       src: import('~/assets/images/pek2024/pek2024_trademark.png'),
-      alt: 'PEK2024 Logo',
+      alt: 'Platform Engineering Kaigi 2024 Logo',
     }}
   >
     <Fragment slot="content">
@@ -79,6 +80,7 @@ import TeamMemberList from '~/components/pek2024/TeamMemberList.astro';
   />
   <TeamMemberList/>
 
+  <a id="faq"></a>
   <FAQ
     highlight="FAQ"
     title="よくある質問"
