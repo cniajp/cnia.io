@@ -30,3 +30,15 @@ if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: 
     </div>
   </div>
 </a>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // リンクを新しいタブで開く
+    const links = document.querySelectorAll('a');
+    links.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.open(link.href, '_blank');
+      });
+    });
+  });
+</script>
