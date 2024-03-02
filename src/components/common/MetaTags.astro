@@ -1,12 +1,10 @@
 ---
 import { AstroSeo } from '@astrolib/seo';
 import { GoogleAnalytics } from '@astrolib/analytics';
-import { getImage } from "astro:assets";
 
 import { SITE } from '~/config.mjs';
-import { MetaSEO } from '~/types';
+import { type MetaSEO } from '~/types';
 import { getCanonical, getAsset } from '~/utils/permalinks';
-import { getRelativeUrlByFilePath } from '~/utils/directories';
 
 import CustomStyles from '~/components/CustomStyles.astro';
 import SplitbeeAnalytics from './SplitbeeAnalytics.astro';
@@ -15,23 +13,15 @@ export interface Props extends MetaSEO {
   dontUseTitleTemplate?: boolean;
 }
 
-const defaultImage = SITE.defaultImage
-  ? (
-      await getImage({
-        src: SITE.defaultImage,
-        alt: 'Default image',
-        width: 1200,
-        height: 628,
-      })
-    ).src
-  : '';
+const canonicalURL = new URL(Astro.url.pathname, 'https://www.cnia.io');
+const ogpImageURL = new URL('/cnia_ogp.png', canonicalURL);
 
 const {
   title = SITE.name,
   description = '',
-  image: _image = defaultImage,
+  image: _image = ogpImageURL.toString(),
 
-  canonical = getCanonical(String(Astro.url.pathname)),
+  canonical = getCanonical(String(canonicalURL)),
   noindex = false,
   nofollow = false,
 
@@ -40,14 +30,6 @@ const {
 
   dontUseTitleTemplate = false,
 } = Astro.props;
-
-const image =
-  typeof _image === 'string'
-    ? new URL(_image, Astro.site)
-    : _image && typeof _image['src'] !== 'undefined'
-    ? // @ts-ignore
-      new URL(getRelativeUrlByFilePath(_image.src), Astro.site)
-    : null;
 ---
 
 <meta charset="UTF-8" />
@@ -65,20 +47,17 @@ const image =
     title: ogTitle,
     description: description,
     type: ogType,
-    images: image
-      ? [
-          {
-            url: image.toString(),
-            alt: ogTitle,
-          },
-        ]
-      : undefined,
-    // site_name: 'SiteName',
+    images: [
+      {
+        url: _image,
+        alt: ogTitle,
+      },
+    ],
   }}
   twitter={{
     // handle: '@handle',
     // site: '@site',
-    cardType: image ? 'summary_large_image' : undefined,
+    cardType: 'summary_large_image',
   }}
 />
 
