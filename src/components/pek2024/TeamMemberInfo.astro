@@ -1,21 +1,25 @@
 ---
 import { Image } from 'astro:assets';
-import ishikawaPro from '~/assets/images/pek2024/staff_icons/ishikawa-pro.jpg';
+import type { ImageMetadata } from 'astro';
+// import ishikawaPro from '~/assets/images/pek2024/staff_icons/ishikawa-pro.jpg';
+
 export interface Props {
   name: string
   url: string
+  imagePath: string
 }
 
-const {name, url} = Astro.props;
+const {name, url, imagePath} = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/pek2024/teamMembers/*.{jpeg,jpg,png,gif}')
+if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "/src/assets/images/pek2024/teamMemberes/*.{jpeg,jpg,png,gif}"`);
 ---
 
-<!-- スタッフの画像と名前を表示し、画像をクリックするとpropsで渡されたurlに遷移する -->
-<a href="#" class="p-1 md:p-2 max-w-sm">
+<a href={url} class="p-1 md:p-2 max-w-sm">
   <div class="flex rounded-lg h-full bg-slate-200 hover:bg-slate-300 p-1 md:p-2 flex-col">
     <div class="flex justify-center">
       <Image
-        src={ishikawaPro}
-        alt="画像の説明。"
+        src={images[imagePath]()}
+        alt={`${name}のアイコン`}
         style={{ borderRadius: '50%' }}
         width={200}
         height={200}
