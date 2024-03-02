@@ -8,6 +8,7 @@ import FAQ from '~/components/pek2024/FAQ.astro';
 import Information from '~/components/pek2024/Information.astro';
 import Update from '~/components/pek2024/Update.astro';
 import TeamMemberList from '~/components/pek2024/TeamMemberList.astro';
+import Cfp from '~/components/pek2024/Cfp.astro';
 ---
 
 <Layout>
@@ -19,6 +20,10 @@ import TeamMemberList from '~/components/pek2024/TeamMemberList.astro';
     title="お知らせ"
     items={[
       {
+        date: '2024/03/22',
+        text: 'CFPを開始しました',
+      },
+      {
         date: '2024/02/21',
         text: 'スポンサー募集要項を公開しました',
       },
@@ -28,6 +33,9 @@ import TeamMemberList from '~/components/pek2024/TeamMemberList.astro';
       },
     ]}
   />
+
+  <a id="cfp"></a>
+  <Cfp highlight="Call For Proposal" title="PEK2024で登壇しませんか？" />
 
   <a id="about"></a>
   <Concept
@@ -78,7 +86,7 @@ import TeamMemberList from '~/components/pek2024/TeamMemberList.astro';
       sponsor: '一般社団法人クラウドネイティブイノベーターズ協会',
     }}
   />
-  <TeamMemberList/>
+  <TeamMemberList />
 
   <a id="faq"></a>
   <FAQ

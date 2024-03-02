@@ -30,6 +30,44 @@
   .btn-primary {
     @apply font-semibold bg-primary text-white border-primary hover:bg-blue-900 hover:border-blue-900 hover:text-white dark:text-white dark:bg-primary dark:border-primary dark:hover:border-blue-900 dark:hover:bg-blue-900;
   }
+
+  .btn.btn-flat {
+    overflow: hidden;
+    padding: 1rem 6rem;
+    color: #fff;
+    border-radius: 0;
+    background: var(--aw-themeColor-blue);
+    position: relative;
+    z-index: 1;
+  }
+
+  .btn.btn-flat span {
+    position: relative;
+  }
+
+  .btn.btn-flat:before {
+    position: absolute;
+    top: 0;
+    left: 30px;
+    width: 150%;
+    height: 500%;
+    content: '';
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-transform: translateX(-85%) translateY(-70%) rotate(135deg);
+    transform: translateX(-85%) translateY(-70%) rotate(135deg);
+    background: var(--aw-themeColor-yellow);
+    z-index: -1;
+  }
+
+  .btn.btn-flat:hover:before {
+    -webkit-transform: translateX(-15%) translateY(-25%) rotate(135deg);
+    transform: translateX(-15%) translateY(-25%) rotate(135deg);
+  }
+
+  .btn.btn-flat:hover {
+    color: #000;
+  }
 }
 
 #header.scroll {

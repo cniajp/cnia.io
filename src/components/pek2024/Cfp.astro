@@ -1,0 +1,37 @@
+---
+export interface Props {
+  highlight: string;
+  title: string;
+  subtitle?: string;
+}
+
+const { highlight, title, subtitle } = Astro.props;
+---
+
+<section class="py-16 md:py-20">
+  <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
+    <div class="mb-10 md:mx-auto text-center md:mb-12 max-w-3xl">
+      <p class="text-base dark:text-blue-200 font-semibold tracking-wide uppercase">{highlight}</p>
+      <h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading">{title}</h2>
+      <p class="max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400">{subtitle}</p>
+    </div>
+  </div>
+  <div class="mx-auto max-w-7xl p-4 md:px-8 font-medium">
+    <div class="container mx-auto max-w-xl lg:max-w-2xl">
+      <p>Platform Engineering Kaigi 2024 を盛り上げるトークの募集を開始しました！</p>
+      <br />
+      <p>
+        Platform Engineering Kaigiは、現在注目を浴びているPlatform
+        Engineeringをテーマにしたテクノロジーカンファレンスです。
+      </p>
+      <br />
+      <p>Platform Engineeringに関連する技術や事例、ノウハウなどを共有していただける方の応募をお待ちしています！</p>
+      <br />
+      <p>募集要項の詳細確認・応募は以下のボタンからお願いします。</p>
+      <div class="flex flex-col md:flex-row items-center justify-center pt-8">
+        <a rel="noopener noreferrer" href="" class="btn btn-flat ml-4 mb-2 rounded-md">募集要項</a>
+        <a rel="noopener noreferrer" href="" class="btn btn-flat ml-4 mb-2 rounded-md">CFP応募</a>
+      </div>
+    </div>
+  </div>
+</section>
