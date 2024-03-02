@@ -2,10 +2,11 @@
 import '~/assets/styles/pek2024/base.css';
 import CustomStyles from '~/components/CustomStyles.astro';
 import BasicScripts from '~/components/common/BasicScripts.astro';
+import { GoogleAnalytics } from '@astrolib/analytics';
 
 import { SITE } from '~/config.mjs';
 
-const { language = 'en', textDirection = 'ltr' } = SITE;
+const { language = 'en', textDirection = 'ltr', googleAnalyticsId, googleSiteVerificationId } = SITE;
 const canonicalURL = new URL(Astro.url.pathname, 'https://www.cnia.io');
 const ogpImageURL = new URL('/pek2024_ogp.png', canonicalURL);
 ---
@@ -25,6 +26,8 @@ const ogpImageURL = new URL('/pek2024_ogp.png', canonicalURL);
     <meta name="twitter:title" content="pek2024" />
     <meta name="twitter:description" content="Platform Engineering Kaigi 2024" />
     <meta name="twitter:image" content={ogpImageURL} />
+    <meta name="google-site-verification" content={googleSiteVerificationId} />
+    {<GoogleAnalytics id={String(googleAnalyticsId)} partytown={true} />}
 
     <CustomStyles />
     <title>pek2024</title>
