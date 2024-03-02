@@ -1,0 +1,28 @@
+---
+import { Image } from 'astro:assets';
+import ishikawaPro from '~/assets/images/pek2024/staff_icons/ishikawa-pro.jpg';
+export interface Props {
+  name: string
+  url: string
+}
+
+const {name, url} = Astro.props;
+---
+
+<!-- スタッフの画像と名前を表示し、画像をクリックするとpropsで渡されたurlに遷移する -->
+<a href="#" class="p-1 md:p-2 max-w-sm">
+  <div class="flex rounded-lg h-full bg-slate-200 hover:bg-slate-300 p-1 md:p-2 flex-col">
+    <div class="flex justify-center">
+      <Image
+        src={ishikawaPro}
+        alt="画像の説明。"
+        style={{ borderRadius: '50%' }}
+        width={200}
+        height={200}
+      />
+    </div>
+    <div class="hidden sm:block md:text-xs break-words font-bold m-2 text-slate-800 text-center ">
+      <p>{name}</p>
+    </div>
+  </div>
+</a>
