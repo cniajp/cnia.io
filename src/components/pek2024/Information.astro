@@ -18,64 +18,52 @@ const { highlight, title, items } = Astro.props as InformationProps;
 ---
 
 <section class="bg-themeColor-orange dark:bg-slate-800 py-10 md:py-14 text-white">
-  <div class="max-w-xl mx-auto lg:max-w-2xl">
+  <div class="max-w-xl mx-auto lg:max-w-4xl">
     <div class="mb-10 text-center md:mb-12 max-w-3xl mx-auto">
       <p class="text-base dark:text-blue-200 font-semibold tracking-wide uppercase">{highlight}</p>
       <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight mb-4">{title}</h2>
     </div>
 
-    <div class="px-4 text-center md:text-left">
-      <div class="text-2xl">
-        <strong>{items.name}</strong>
-      </div>
-      <div class="text-xl py-2">
-        <strong>テーマ</strong>
-        <br />
-        <div class="text-base font-medium">
-          {items.theme}
+    <div class="flex flex-col md:flex-row md:space-x-8">
+      <div class="md:flex-1 px-4 text-center md:text-left">
+        <div class="text-2xl mb-2">
+          <strong>{items.name}</strong>
+        </div>
+        <div class="text-xl py-2">
+          <strong>テーマ</strong><br />
+          <div class="text-base font-medium">{items.theme}</div>
+        </div>
+        <div class="text-xl py-2">
+          <strong>想定参加者</strong><br />
+          <div class="text-base font-medium">{items.target}</div>
+        </div>
+        <div class="text-xl py-2">
+          <strong>日時</strong><br />
+          <div class="text-base font-medium">{items.date}</div>
+        </div>
+        <div class="text-xl py-2">
+          <strong>場所</strong><br />
+          <div class="text-base font-medium">{items.location}</div>
+        </div>
+        <div class="text-xl py-2">
+          <strong>参加費</strong><br />
+          <div class="text-base font-medium">{items.cost}</div>
+        </div>
+        <div class="text-xl py-2">
+          <strong>ハッシュタグ</strong><br />
+          <div class="text-base font-medium">{items.hashtag}</div>
+        </div>
+        <div class="text-xl py-2">
+          <strong>主催</strong><br />
+          <div class="text-base font-medium">{items.sponsor}</div>
         </div>
       </div>
-      <div class="text-xl py-2">
-        <strong>想定参加者</strong>
-        <br />
-        <div class="text-base font-medium">
-          {items.target}
-        </div>
-      </div>
-      <div class="text-xl py-2">
-        <strong>日時</strong>
-        <br />
-        <div class="text-base font-medium">
-          {items.date}
-        </div>
-      </div>
-      <div class="text-xl py-2">
-        <strong>場所</strong>
-        <br />
-        <div class="text-base font-medium">
-          {items.location}
-        </div>
-      </div>
-      <div class="text-xl py-2">
-        <strong>参加費</strong>
-        <br />
-        <div class="text-base font-medium">
-          {items.cost}
-        </div>
-      </div>
-      <div class="text-xl py-2">
-        <strong>ハッシュタグ</strong>
-        <br />
-        <div class="text-base font-medium">
-          {items.hashtag}
-        </div>
-      </div>
-      <div class="text-xl py-2">
-        <strong>主催</strong>
-        <br />
-        <div class="text-base font-medium">
-          {items.sponsor}
-        </div>
+
+      <div class="md:flex-1 px-4 pt-4">
+        <a class="twitter-timeline" data-height="600" href="https://twitter.com/cnia_pfem?ref_src=twsrc%5Etfw"
+          >Tweets by CNIA</a
+        >
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
     </div>
   </div>
