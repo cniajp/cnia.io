@@ -12,17 +12,24 @@ import { sessionStatus } from '../../pek2024_data';
   <div class="bg-gray-100 py-8 px-2">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
       {
-        sessionsList
-          .filter((proposal) => proposal.status === sessionStatus)
-          .map((proposal) => (
-            <SessionInfo
-              title={proposal.title}
-              talkDifficulty={proposal.talkDifficulty}
-              talkCategory={proposal.talkCategory}
-              speakers={proposal.speakers}
-              imagePath={proposal.speakers[0].imagePath}
-            />
-          ))
+        sessionsList.filter((session) => session.status === sessionStatus).length > 0 ? (
+          sessionsList
+            .filter((session) => session.status === sessionStatus)
+            .map((session) => (
+              <SessionInfo
+                id={session.id}
+                title={session.title}
+                talkDifficulty={session.talkDifficulty}
+                talkCategory={session.talkCategory}
+                speakers={session.speakers}
+                imagePath={session.speakers[0].imagePath}
+              />
+            ))
+        ) : (
+          <div class="px-4 py-5 flex-auto">
+            <h6 class="text-xl font-semibold">近日公開！</h6>
+          </div>
+        )
       }
     </div>
   </div>

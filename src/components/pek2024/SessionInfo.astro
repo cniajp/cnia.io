@@ -13,6 +13,7 @@ interface Speaker {
 }
 
 export interface Props {
+  id: number;
   title: string;
   talkDifficulty: string;
   talkCategory: string;
@@ -20,7 +21,7 @@ export interface Props {
   imagePath: string;
 }
 
-const { title, talkDifficulty, talkCategory, speakers, imagePath } = Astro.props;
+const { id, title, talkDifficulty, talkCategory, speakers, imagePath } = Astro.props;
 
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/pek2024/**/*.{jpeg,jpg,png,gif}');
 const relativeImagePath = `/src/assets/images/pek2024/speakers/${imagePath}`;
@@ -37,7 +38,7 @@ if (images[relativeImagePath]) {
   );
 }
 
-const categoryColors = {
+export const categoryColors = {
   Tech: 'bg-themeColor-blue',
   Blueprints: 'bg-themeColor-orange',
   Stories: 'bg-themeColor-yellow',
@@ -46,30 +47,36 @@ const categoryColors = {
 };
 ---
 
-<div class="card h-full flex flex-col justify-between bg-white rounded-lg p-2">
-  <div>
-    <h3 class="text-md font-bold">{title}</h3>
-  </div>
-  <div class="flex items-center mb-auto">
-    <p style="font-size: 14px" class="px-1.5 py-0.5 rounded bg-teal-500 text-white">{talkDifficulty}</p>
-    <p
-      style="font-size: 14px"
-      class={`px-1.5 py-0.5 ml-2 rounded text-white ${categoryColors[talkCategory] || 'bg-gray-400'}`}
+<a href={`/pek2024/sessions/${id}`} class="block text-black no-underline">
+  <div class="card h-full flex flex-col justify-between bg-white rounded-lg p-2 relative group">
+    <div
+      class="absolute inset-0 bg-gray-50 opacity-0 group-hover:opacity-55 transition-opacity duration-200 rounded-lg"
     >
-      {talkCategory}
-    </p>
-  </div>
-  <div class="flex items-center mt-2">
-    <Image
-      src={imageModule.default}
-      alt={`${speakers[0].name}のアイコン`}
-      style={{ borderRadius: '50%' }}
-      width={50}
-      height={50}
-    />
-    <div class="ml-2">
-      <p class="text-sm font-bold">{speakers[0].name}</p>
-      <p style="font-size: 14px">{speakers[0].company}</p>
+    </div>
+    <div>
+      <h3 class="text-md font-bold">{title}</h3>
+    </div>
+    <div class="flex items-center mb-auto">
+      <p style="font-size: 14px" class="px-1.5 py-0.5 rounded bg-teal-500 text-white">{talkDifficulty}</p>
+      <p
+        style="font-size: 14px"
+        class={`px-1.5 py-0.5 ml-2 rounded text-white ${categoryColors[talkCategory] || 'bg-gray-400'}`}
+      >
+        {talkCategory}
+      </p>
+    </div>
+    <div class="flex items-center mt-2">
+      <Image
+        src={imageModule.default}
+        alt={`${speakers[0].name}のアイコン`}
+        style={{ borderRadius: '50%' }}
+        width={50}
+        height={50}
+      />
+      <div class="ml-2">
+        <p class="text-sm font-bold">{speakers[0].name}</p>
+        <p style="font-size: 14px">{speakers[0].company}</p>
+      </div>
     </div>
   </div>
-</div>
+</a>

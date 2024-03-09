@@ -61,6 +61,13 @@ export const footerData = {
         { text: 'CODE OF CONDUCT', href: getPermalink('/pek2024/codeOfConduct') },
       ],
     },
+    {
+      title: 'Sessions',
+      links: [
+        { text: 'SESSIONS', href: getPermalink('/pek2024/sessions') },
+        // { text: 'TIME TABLE', href: getPermalink('/pek2024/timeTable') },
+      ],
+    },
   ],
   secondaryLinks: [{ text: 'CONTACT', href: 'https://forms.gle/NZ3d3r4wCBytBmWt9' }],
   socialLinks: [],
