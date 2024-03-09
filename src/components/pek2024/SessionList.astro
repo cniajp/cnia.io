@@ -1,0 +1,29 @@
+---
+import { sessionsList } from '../../data/pek2024';
+import SessionInfo from './SessionInfo.astro';
+import { sessionStatus } from '../../pek2024_data';
+---
+
+<section class="py-10 md:py-14">
+  <div class="mb-10 text-center max-w-3xl mx-auto">
+    <p class="text-base text-gray-600 font-semibold tracking-wide uppercase">Proposals</p>
+    <h2 class="text-4xl md:text-5xl font-bold leading-tight tracking-tight">プロポーザル一覧</h2>
+  </div>
+  <div class="bg-gray-100 py-8 px-2">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+      {
+        sessionsList
+          .filter((proposal) => proposal.status === sessionStatus)
+          .map((proposal) => (
+            <SessionInfo
+              title={proposal.title}
+              talkDifficulty={proposal.talkDifficulty}
+              talkCategory={proposal.talkCategory}
+              speakers={proposal.speakers}
+              imagePath={proposal.speakers[0].imagePath}
+            />
+          ))
+      }
+    </div>
+  </div>
+</section>

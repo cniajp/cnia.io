@@ -1,0 +1,75 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Speaker {
+  name: string;
+  imagePath: string;
+  company: string;
+  jobTitle: string;
+  profile: string;
+  githubId: string;
+  twitterId: string;
+}
+
+export interface Props {
+  title: string;
+  talkDifficulty: string;
+  talkCategory: string;
+  speakers: Speaker[];
+  imagePath: string;
+}
+
+const { title, talkDifficulty, talkCategory, speakers, imagePath } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/pek2024/**/*.{jpeg,jpg,png,gif}');
+const relativeImagePath = `/src/assets/images/pek2024/speakers/${imagePath}`;
+const defaultImagePath = '/src/assets/images/pek2024/pek2024_trademark.png';
+
+let imageModule;
+if (images[relativeImagePath]) {
+  imageModule = await images[relativeImagePath]();
+} else if (images[defaultImagePath]) {
+  imageModule = await images[defaultImagePath]();
+} else {
+  throw new Error(
+    `Neither "${relativeImagePath}" nor "${defaultImagePath}" exist in glob: "/src/assets/images/pek2024/**/*.{jpeg,jpg,png,gif}"`
+  );
+}
+
+const categoryColors = {
+  Tech: 'bg-themeColor-blue',
+  Blueprints: 'bg-themeColor-orange',
+  Stories: 'bg-themeColor-yellow',
+  Culture: 'bg-themeColor-purple',
+  Impact: 'bg-red-400',
+};
+---
+
+<div class="card h-full flex flex-col justify-between bg-white rounded-lg p-2">
+  <div>
+    <h3 class="text-md font-bold">{title}</h3>
+  </div>
+  <div class="flex items-center mb-auto">
+    <p style="font-size: 14px" class="px-1.5 py-0.5 rounded bg-teal-500 text-white">{talkDifficulty}</p>
+    <p
+      style="font-size: 14px"
+      class={`px-1.5 py-0.5 ml-2 rounded text-white ${categoryColors[talkCategory] || 'bg-gray-400'}`}
+    >
+      {talkCategory}
+    </p>
+  </div>
+  <div class="flex items-center mt-2">
+    <Image
+      src={imageModule.default}
+      alt={`${speakers[0].name}のアイコン`}
+      style={{ borderRadius: '50%' }}
+      width={50}
+      height={50}
+    />
+    <div class="ml-2">
+      <p class="text-sm font-bold">{speakers[0].name}</p>
+      <p style="font-size: 14px">{speakers[0].company}</p>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,8 @@
 import { getPermalink } from './utils/permalinks';
 const today = new Date();
 
+export const sessionStatus = 'proposal';
+
 export const headerData = {
   links: [
     {
@@ -19,10 +21,10 @@ export const headerData = {
       text: 'INFORMATION',
       href: '/pek2024#info',
     },
-    // {
-    //   text: 'Sessions',
-    //   href: '/pek2024/sessions',
-    // },
+    {
+      text: 'SESSIONS',
+      href: '/pek2024/sessions',
+    },
     // {
     //   text: 'TimeTable',
     //   href: '/pek2024/timetable',
