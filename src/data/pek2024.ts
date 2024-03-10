@@ -18,6 +18,6 @@ export const sessionsList = [
         twitterId: 'Twitter Id',
       },
     ],
-    status: 'sample',
+    status: 'sample', // pek2024_data.js の sessionStatus と同じ値の時にSession一覧に表示される
   },
 ];
