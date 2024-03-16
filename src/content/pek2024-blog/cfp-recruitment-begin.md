@@ -5,7 +5,7 @@ description: |
   Platform Engineering Kaigai 2024のCfP募集を開始しました。  
 category: PressRelease
 # ogpにも利用するため、publicディレクトリからのパスを指定
-image: /pek2024_ogp.png
+image: /pek2024/blog/pek2024_ogp.png
 tags:
   - PEK2024
   - backstage

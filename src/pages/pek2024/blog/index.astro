@@ -25,7 +25,7 @@ const getUrl = (slug: string) => `/pek2024/blog/${slug}`;
       </div> 
     </div>
     <div class="grid gap-8 lg:grid-cols-2 md:grid-cols-2 mb-8">
-      {[...allPosts, ...allPosts, ...allPosts].map((post) => (
+      {allPosts.map((post) => (
         <article class="mx-4 p-6 bg-white rounded-lg border border-gray-200 shadow-md">
           <div class="flex justify-between items-center mb-5 text-gray-500">
             <span class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded">
