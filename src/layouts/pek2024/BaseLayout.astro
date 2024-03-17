@@ -2,13 +2,22 @@
 import '~/assets/styles/pek2024/base.css';
 import CustomStyles from '~/components/CustomStyles.astro';
 import BasicScripts from '~/components/common/BasicScripts.astro';
+import type { PEK2024MetaSEO } from '~/types';
 import { GoogleAnalytics } from '@astrolib/analytics';
+import { AstroSeo } from '@astrolib/seo';
 
 import { SITE } from '~/config.mjs';
 
+export interface Props {
+  meta?: PEK2024MetaSEO
+}
+
 const { language = 'en', textDirection = 'ltr', googleAnalyticsId, googleSiteVerificationId } = SITE;
+const { meta } = Astro.props;
+const { title, description, imagePath, useTitleTemplate = true } = meta || {};
 const canonicalURL = new URL(Astro.url.pathname, 'https://www.cnia.io');
-const ogpImageURL = new URL('/pek2024_ogp.png', canonicalURL);
+const path = imagePath ? imagePath : '/pek2024_ogp.png';
+const ogpImageURL = new URL(path, canonicalURL);
 ---
 
 <!DOCTYPE html>
@@ -16,21 +25,34 @@ const ogpImageURL = new URL('/pek2024_ogp.png', canonicalURL);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <AstroSeo
+      title={title ? title : 'Platform Engineering Kaigi 2024'}
+      titleTemplate={useTitleTemplate ? '%s | Platform Engineering Kaigi 2024' : undefined}
+      description={description ? description : 'Platform Engineering Kaigi 2024'}
+      canonical={canonicalURL.href}
+      openGraph={{
+        url: canonicalURL.href,
+        title: title ? title : 'Platform Engineering Kaigi 2024',
+        description: description ? description : 'Platform Engineering Kaigi 2024',
+        site_name: 'Platform Engineering Kaigi 2024',
+        images: [
+          {
+            url: ogpImageURL.href,
+            alt: title ? title : 'Platform Engineering Kaigi 2024',
+          },
+        ],
+      }}
+      twitter={{
+        handle: '@cnia_pfem',
+        site: '@cnia_pfem',
+        cardType: 'summary_large_image',
+      }}
+    />
 
-    <meta property="og:title" content="Platform Engineering Kaigi 2024 " />
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content="Platform Engineering Kaigi 2024" />
-    <meta property="og:image" content={ogpImageURL} />
-    <meta property="og:url" content={Astro.request.url} />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Platform Engineering Kaigi 2024 " />
-    <meta name="twitter:description" content="Platform Engineering Kaigi 2024" />
-    <meta name="twitter:image" content={ogpImageURL} />
     <meta name="google-site-verification" content={googleSiteVerificationId} />
     {<GoogleAnalytics id={String(googleAnalyticsId)} partytown={true} />}
 
     <CustomStyles />
-    <title>Platform Engineering Kaigi 2024</title>
     <link rel="icon" href="/pek2024_trademark.ico" type="image/x-icon" />
   </head>
 

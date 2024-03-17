@@ -13,7 +13,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/
 if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "/src/assets/images/pek2024/teamMemberes/*.{jpeg,jpg,png,gif}"`);
 ---
 
-<a href={url} class="p-1 md:p-2 max-w-sm">
+<a href={url} class="team-member-card p-1 md:p-2 max-w-sm">
   <div class="flex rounded-lg h-full bg-slate-200 hover:bg-slate-300 p-1 md:p-2 flex-col">
     <div class="flex justify-center">
       <Image
@@ -31,9 +31,10 @@ if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: 
 </a>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // リンクを新しいタブで開く
-    const links = document.querySelectorAll('a');
+    // team-member-cardクラスのリンクをクリックしたときに新しいタブで開く
+    const links: NodeListOf<HTMLAnchorElement> = document.querySelectorAll('a');
     links.forEach(link => {
+      if (!link.classList.contains('team-member-card')) return;
       link.addEventListener('click', (e) => {
         e.preventDefault();
         window.open(link.href, '_blank');
