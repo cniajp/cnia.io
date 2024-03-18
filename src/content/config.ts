@@ -27,7 +27,6 @@ const pek2024Blog = defineCollection({
     canonical: z.string().url().optional(),
 
     publishDate: z.date().or(z.string()),
-    draft: z.boolean().optional(),
 
     category: z.string().optional(),
     tags: z.array(z.string()).optional(),
