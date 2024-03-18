@@ -10,7 +10,7 @@ export const sessionsList = [
     speakers: [
       {
         name: 'Name',
-        imagePath: 'imapePathName.{jpeg,jpg,png,gif}',
+        imagePath: 'imagePathName.{jpeg,jpg,png,gif}',
         company: 'Company Name',
         jobTitle: 'Job Title',
         profile: '登壇者プロフィール',
