@@ -1,50 +1,37 @@
 ---
 import { Image } from 'astro:assets';
-import type { ImageMetadata } from 'astro';
+import { fetchTags } from '../../utils/fetchTags.ts';
 
+export interface Tag {
+  text: string;
+  backgroundColor: string | undefined;
+}
 interface Speaker {
   name: string;
-  imagePath: string;
-  company: string;
-  jobTitle: string;
-  profile: string;
-  githubId: string;
-  twitterId: string;
+  kana?: string;
+  twitter?: string;
+  avatar_url?: string;
 }
-
 export interface Props {
-  id: number;
+  id: string;
+  url: string;
   title: string;
-  talkDifficulty: string;
-  talkCategory: string;
-  speakers: Speaker[];
-  imagePath: string;
+  abstract: string;
+  speaker: Speaker;
 }
 
-const { id, title, talkDifficulty, talkCategory, speakers, imagePath } = Astro.props;
+const { id, url, title, abstract, speaker } = Astro.props;
 
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/pek2024/**/*.{jpeg,jpg,png,gif}');
-const relativeImagePath = `/src/assets/images/pek2024/speakers/${imagePath}`;
-const defaultImagePath = '/src/assets/images/pek2024/pek2024_trademark.png';
+const avatarUrl = speaker.avatar_url;
+const relativeImagePath = avatarUrl?.startsWith('https://')
+  ? avatarUrl
+  : `/src/assets/images/pek2024/pek2024_trademark.png`;
 
-let imageModule;
-if (images[relativeImagePath]) {
-  imageModule = await images[relativeImagePath]();
-} else if (images[defaultImagePath]) {
-  imageModule = await images[defaultImagePath]();
-} else {
-  throw new Error(
-    `Neither "${relativeImagePath}" nor "${defaultImagePath}" exist in glob: "/src/assets/images/pek2024/**/*.{jpeg,jpg,png,gif}"`
-  );
+let tags: Tag[] = [];
+async function loadTags() {
+  return await fetchTags(url);
 }
-
-export const categoryColors = {
-  Tech: 'bg-themeColor-blue',
-  Blueprints: 'bg-themeColor-orange',
-  Stories: 'bg-themeColor-yellow',
-  Culture: 'bg-themeColor-purple',
-  Impact: 'bg-red-400',
-};
+tags = await loadTags();
 ---
 
 <a href={`/pek2024/sessions/${id}`} class="block text-black no-underline">
@@ -56,27 +43,37 @@ export const categoryColors = {
     <div>
       <h3 class="text-md font-bold">{title}</h3>
     </div>
-    <div class="flex items-center mb-auto">
-      <p style="font-size: 14px" class="px-1.5 py-0.5 rounded bg-teal-500 text-white">{talkDifficulty}</p>
-      <p
-        style="font-size: 14px"
-        class={`px-1.5 py-0.5 ml-2 rounded text-white ${categoryColors[talkCategory] || 'bg-gray-400'}`}
-      >
-        {talkCategory}
-      </p>
+    <div class="flex flex-wrap items-center mt-1">
+      {
+        tags.map((tag) => {
+          // 全角と半角のカッコとその中身を除去
+          const processedText = tag.text.replace(/\s*[(（].*?[)）]\s*/g, '').trim();
+          return (
+            <p
+              class="px-1.5 py-0.5 mr-2 mb-2 rounded"
+              style={`font-size: 14px; background-color: ${tag.backgroundColor}; color: #ffffff;`}
+            >
+              {processedText}
+            </p>
+          );
+        })
+      }
     </div>
     <div class="flex items-center mt-2">
       <Image
-        src={imageModule.default}
-        alt={`${speakers[0].name}のアイコン`}
+        src={relativeImagePath}
+        alt={`${speaker.name}のアイコン`}
         style={{ borderRadius: '50%' }}
         width={50}
         height={50}
       />
       <div class="ml-2">
-        <p class="text-sm font-bold">{speakers[0].name}</p>
-        <p style="font-size: 14px">{speakers[0].company}</p>
+        <p class="text-sm font-bold">{speaker.name}</p>
       </div>
+    </div>
+    <div class="mt-2 text-sm">
+      <!--  100文字以上の場合は100文字まで表示し、それ以降は...とする -->
+      {abstract.length > 100 ? `${abstract.substring(0, 100)}...` : abstract}
     </div>
   </div>
 </a>
