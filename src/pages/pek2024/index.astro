@@ -8,6 +8,52 @@ import FAQ from '~/components/pek2024/FAQ.astro';
 import Information from '~/components/pek2024/Information.astro';
 import Update from '~/components/pek2024/Update.astro';
 import TeamMemberList from '~/components/pek2024/TeamMemberList.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('pek2024-blog', ({ data }) => {
+  return data.draft !== true;
+});
+// 日付の降順でソート
+allPosts.sort((a, b) => {
+  return new Date(b.data.publishDate) < new Date(a.data.publishDate) ? 1 : -1;
+});
+const blogPosts = allPosts.map((post) => {
+  const date = new Date(post.data.publishDate).toLocaleDateString('ja-JP', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  });
+  const link = `/pek2024/blog/${post.slug}`
+  return {
+    date: date,
+    text: post.data.title,
+    internalLink: link,
+  };
+});
+const news = [
+  {
+    date: '2024/03/11',
+    text: 'ブロンズスポンサーの追加募集を開始しました',
+    link: 'https://pfem.notion.site/Platform-Engineering-Kaigi-d7d26e7452e14f7cbe9145510438e119?pvs=4',
+  },
+  {
+    date: '2024/03/04',
+    text: 'スポンサー募集受付を終了しました',
+  },
+  {
+    date: '2024/03/04',
+    text: 'スポンサー募集を開始しました',
+    link: 'https://pfem.notion.site/Platform-Engineering-Kaigi-d7d26e7452e14f7cbe9145510438e119?pvs=4',
+  },
+  {
+    date: '2024/02/21',
+    text: 'スポンサー募集要項を公開しました',
+  },
+  {
+    date: '2024/02/21',
+    text: 'Platform Engineering Kaigi 2024のページを公開しました',
+  },
+]
 ---
 
 <Layout>
@@ -17,31 +63,17 @@ import TeamMemberList from '~/components/pek2024/TeamMemberList.astro';
   <Update
     highlight="News"
     title="お知らせ"
-    items={[
-      {
-        date: '2024/03/11',
-        text: 'ブロンズスポンサーの追加募集を開始しました',
-        link: 'https://pfem.notion.site/Platform-Engineering-Kaigi-d7d26e7452e14f7cbe9145510438e119?pvs=4',
-      },
-      {
-        date: '2024/03/04',
-        text: 'スポンサー募集受付を終了しました',
-      },
-      {
-        date: '2024/03/04',
-        text: 'スポンサー募集を開始しました',
-        link: 'https://pfem.notion.site/Platform-Engineering-Kaigi-d7d26e7452e14f7cbe9145510438e119?pvs=4',
-      },
-      {
-        date: '2024/02/21',
-        text: 'スポンサー募集要項を公開しました',
-      },
-      {
-        date: '2024/02/21',
-        text: 'Platform Engineering Kaigi 2024のページを公開しました',
-      },
-    ]}
+    items={news}
   />
+  {
+    blogPosts.length > 0 && (
+      <Update
+        highlight="Blog"
+        title="ブログ"
+        items={blogPosts.slice(0, 5)}
+      />
+    )
+  }
 
   <a id="about"></a>
   <Concept

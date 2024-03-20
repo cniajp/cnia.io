@@ -1,0 +1,92 @@
+---
+import Layout from '~/layouts/pek2024/PageLayout.astro';
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import defaultThumbnail from '~/assets/images/pek2024/pek2024_horizontal.png';
+
+const allPosts = await getCollection('pek2024-blog', ({ data }) => {
+  return data.draft !== true;
+});
+const teamMemberImages = import.meta.glob<{ default: ImageMetadata }>('~/assets/images/pek2024/teamMembers/*.{jpeg,jpg,png,gif}')
+allPosts.forEach((post) => {
+  if (!post.data.author?.icon) return;
+  if (!teamMemberImages[post.data.author.icon]) throw new Error(`"${post.data.author.icon}" does not exist in glob: "/src/assets/images/pek2024/teamMembers/*.{jpeg,jpg,png,gif}"`);
+});
+const getUrl = (slug: string) => `/pek2024/blog/${slug}`;
+---
+<Layout meta={{
+  title: 'PEK2024 Blog',
+  description: 'Platform Engineering Kaigi 2024に関する情報を発信しています。',
+}}>
+  <section class="bg-white">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:px-6">
+      <div class="mx-auto max-w-screen-sm text-center mb-8">
+        <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900">PEK2024 Blog</h2>
+        <p class="font-light text-gray-500 sm:text-xl">Platform Engineering Kaigi 2024に関する情報を発信しています。</p>
+      </div> 
+    </div>
+    {
+      allPosts.length === 0 && (
+        <div class="text-center">
+          <p class="text-gray-500">これから情報を発信していきます。</p>
+        </div>
+      )
+    }
+    <div class="grid gap-8 lg:grid-cols-2 md:grid-cols-2 mb-8">
+      {allPosts.map((post) => (
+        <article class="mx-4 p-6 bg-white rounded-lg border border-gray-200 shadow-md">
+          <div class="flex justify-between items-center mb-5 text-gray-500">
+            <span class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded">
+                {post.data.category}
+            </span>
+            <span class="text-sm">{
+              new Date(post.data.publishDate).toLocaleDateString('ja-JP', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })
+            }</span>
+          </div>
+          <a href={getUrl(post.slug)} class="flex items-center justify-center">
+            <Image
+              src={
+                post.data.image
+                  ? post.data.image
+                  : defaultThumbnail
+              }
+              class="object-contain h-600 w-314 rounded-lg"
+              alt={post.data.description || ''}
+              width={600}
+              height={314}
+            />
+          </a>
+          <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-600"><a href={getUrl(post.slug)}>{post.data.title}</a></h2>
+          <p class="mb-5 font-light text-gray-500">{post.data.description.slice(0, 100) + '...'}</p>
+          <div class="flex justify-between items-center">
+              {post.data.author && (
+                <div class="flex items-center space-x-4">
+                    {post.data.author.icon && (
+                      <Image
+                        class="w-7 h-7 rounded-full"
+                        src={teamMemberImages[post.data.author.icon]()}
+                        alt={`${post.data.author.namme}のアイコン`}
+                        width={70}
+                        height={70}
+                      />
+                    )}
+                    <span class="font-medium">
+                        {post.data.author.name}
+                    </span>
+                </div>
+              )}
+              <a href={getUrl(post.slug)} class="inline-flex items-center font-medium text-primary-600 hover:underline">
+                  Read more
+                  <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+              </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</Layout>
