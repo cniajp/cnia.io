@@ -4,7 +4,9 @@ import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 
 export async function getStaticPaths() {
-  const blogEntries = await getCollection('pek2024-blog');
+  const blogEntries = await getCollection('pek2024-blog', ({ data }) => {
+    return data.draft !== true;
+  });
   return blogEntries.map(post => ({
     params: { blog: post.slug }, props: { post },
   }));

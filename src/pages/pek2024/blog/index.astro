@@ -5,7 +5,9 @@ import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import defaultThumbnail from '~/assets/images/pek2024/pek2024_horizontal.png';
 
-const allPosts = await getCollection("pek2024-blog");
+const allPosts = await getCollection('pek2024-blog', ({ data }) => {
+  return data.draft !== true;
+});
 const teamMemberImages = import.meta.glob<{ default: ImageMetadata }>('~/assets/images/pek2024/teamMembers/*.{jpeg,jpg,png,gif}')
 allPosts.forEach((post) => {
   if (!post.data.author?.icon) return;
@@ -24,6 +26,13 @@ const getUrl = (slug: string) => `/pek2024/blog/${slug}`;
         <p class="font-light text-gray-500 sm:text-xl">Platform Engineering Kaigi 2024に関する情報を発信しています。</p>
       </div> 
     </div>
+    {
+      allPosts.length === 0 && (
+        <div class="text-center">
+          <p class="text-gray-500">これから情報を発信していきます。</p>
+        </div>
+      )
+    }
     <div class="grid gap-8 lg:grid-cols-2 md:grid-cols-2 mb-8">
       {allPosts.map((post) => (
         <article class="mx-4 p-6 bg-white rounded-lg border border-gray-200 shadow-md">

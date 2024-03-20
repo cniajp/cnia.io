@@ -34,6 +34,7 @@ const pek2024Blog = defineCollection({
       name: z.string(),
       icon: z.string().optional(),
     }).optional(),
+    draft: z.boolean().optional(),
   }),
 });
 

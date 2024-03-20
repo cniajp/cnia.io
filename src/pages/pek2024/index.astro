@@ -10,7 +10,9 @@ import Update from '~/components/pek2024/Update.astro';
 import TeamMemberList from '~/components/pek2024/TeamMemberList.astro';
 import { getCollection } from 'astro:content';
 
-const allPosts = await getCollection("pek2024-blog");
+const allPosts = await getCollection('pek2024-blog', ({ data }) => {
+  return data.draft !== true;
+});
 // 日付の降順でソート
 allPosts.sort((a, b) => {
   return new Date(b.data.publishDate) < new Date(a.data.publishDate) ? 1 : -1;
@@ -63,12 +65,15 @@ const news = [
     title="お知らせ"
     items={news}
   />
-  <!-- 最新の５件だけ表示 -->
-  <Update
-    highlight="Blog"
-    title="ブログ"
-    items={blogPosts.slice(0, 5)}
-  />
+  {
+    blogPosts.length > 0 && (
+      <Update
+        highlight="Blog"
+        title="ブログ"
+        items={blogPosts.slice(0, 5)}
+      />
+    )
+  }
 
   <a id="about"></a>
   <Concept
