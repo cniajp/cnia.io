@@ -14,7 +14,7 @@ tags:
 author:
   name: ishikawa-pro
   icon: /src/assets/images/pek2024/teamMembers/ishikawa-pro.jpg
-canonical: https://www.cnia.io/establishment-of-cnia
+canonical: https://www.cnia.io/sample-post
 draft: true
 ---
 
