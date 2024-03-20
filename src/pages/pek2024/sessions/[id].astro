@@ -7,19 +7,15 @@ import { type Tag } from '../../../components/pek2024/SessionInfo.astro';
 import SocialShare from '../../../components/common/SocialShare.astro';
 import { fetchTags } from '../../../utils/fetchTags';
 
-const sessionsList = sessionsData.proposals;
-
 export async function getStaticPaths() {
-  const sessionsData = await import('../../../data/pek2024.json');
   const sessionsList = sessionsData.proposals;
-
   return sessionsList.map((session) => ({
     params: { id: session.uuid.toString() },
+    props: { session }, 
   }));
 }
-const { id } = Astro.params;
 
-const session = sessionsList.find((session) => session.uuid === String(id));
+const { session } = Astro.props;
 const sessionExists = session !== undefined;
 
 const avatarUrl = session?.speaker.avatar_url;
