@@ -13,8 +13,9 @@ export async function fetchTags(url: string) {
       .map((i, el) => {
         const text = $(el).text().trim(); // タグのテキスト
         const backgroundColor = $(el).css('background-color'); // CSSから背景色を取得
+        const color = $(el).css('color'); // CSSから文字色を取得
 
-        return { text, backgroundColor };
+        return { text, backgroundColor, color };
       })
       .get(); // Cheerioオブジェクトを通常の配列に変換
 

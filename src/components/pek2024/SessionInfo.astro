@@ -5,6 +5,7 @@ import { fetchTags } from '../../utils/fetchTags.ts';
 export interface Tag {
   text: string;
   backgroundColor: string | undefined;
+  color: string | undefined;
 }
 interface Speaker {
   name: string;
@@ -56,7 +57,7 @@ const affiliation = affiliationMatch ? affiliationMatch[1] : '';
           return (
             <p
               class="px-1.5 py-0.5 mr-2 mb-2 rounded"
-              style={`font-size: 14px; background-color: ${tag.backgroundColor}; color: #ffffff;`}
+              style={`font-size: 14px; background-color: ${tag.backgroundColor}; color: ${tag.color};`}
             >
               {processedText}
             </p>
