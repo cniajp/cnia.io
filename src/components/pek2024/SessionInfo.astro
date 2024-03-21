@@ -32,6 +32,11 @@ async function loadTags() {
   return await fetchTags(url);
 }
 tags = await loadTags();
+
+// 会社名/所属団体名を取得
+const affiliationRegex = /■会社名\/所属団体名 - Company\/Organizations□\s(.*?)(\s■|$)/g;
+const affiliationMatch = speaker.kana ? affiliationRegex.exec(speaker.kana) : null;
+const affiliation = affiliationMatch ? affiliationMatch[1] : '';
 ---
 
 <a href={`/pek2024/sessions/${id}`} class="block text-black no-underline">
@@ -69,6 +74,7 @@ tags = await loadTags();
       />
       <div class="ml-2">
         <p class="text-sm font-bold">{speaker.name}</p>
+        <p class="text-xs">{affiliation}</p>
       </div>
     </div>
     <div class="mt-2 text-sm">

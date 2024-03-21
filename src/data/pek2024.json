@@ -1,3 +1,21 @@
 {
-  "proposals": []
+  "proposals": [
+    {
+      "uuid": "b7e42312-d4c3-49d8-a82d-c2874b3ba82d",
+      "url": "https://fortee.jp/platform-engineering-kaigi-2024/proposal/b7e42312-d4c3-49d8-a82d-c2874b3ba82d",
+      "title": "Platform Engineering入門",
+      "abstract": "Platform Engineering入門をお話しします。",
+      "accepted": false,
+      "speaker": {
+        "name": "test user",
+        "kana": "■お名前の呼び方（カナ） - Supplemental information on name pronunciation□ テストユーザー ■会社名/所属団体名 - Company/Organizations□ 株式会社Platform Engineering  ■役職 - Job Title□ CEO  ■プロフィール (200文字以内) - Biography (Less than 400 letters)□ Platform Engineeringを普及中。 ",
+        "twitter": "zawa_zawa0210",
+        "avatar_url": "https://fortee.jp/files/platform-engineering-kaigi-2024/speaker/00279b6e-32f7-4813-872b-4670dcd676bb.jpg"
+      },
+      "created": "2024-03-17T09:09:26+09:00",
+      "feedback": {
+        "open": false
+      }
+    }
+  ]
 }

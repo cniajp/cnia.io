@@ -11,7 +11,7 @@ export async function getStaticPaths() {
   const sessionsList = sessionsData.proposals;
   return sessionsList.map((session) => ({
     params: { id: session.uuid.toString() },
-    props: { session }, 
+    props: { session },
   }));
 }
 
@@ -30,6 +30,19 @@ async function loadTags() {
   return await fetchTags(url);
 }
 tags = await loadTags();
+
+// 会社名/所属団体名
+const affiliationRegex = /■会社名\/所属団体名 - Company\/Organizations□\s(.*?)(\s■|$)/g;
+const affiliationMatch = session?.speaker.kana ? affiliationRegex.exec(session.speaker.kana) : null;
+const affiliation = affiliationMatch ? affiliationMatch[1] : '';
+// 役職
+const jobTitleRegex = /■役職 - Job Title□\s(.*?)(\s■|$)/g;
+const jobTitleMatch = session?.speaker.kana ? jobTitleRegex.exec(session.speaker.kana) : null;
+const jobTitle = jobTitleMatch ? jobTitleMatch[1] : '';
+// プロフィール
+const biographyRegex = /■プロフィール \(200文字以内\) - Biography \(Less than 400 letters\)□\s(.*?)(\s■|$)/g;
+const biographyMatch = session?.speaker.kana ? biographyRegex.exec(session.speaker.kana) : null;
+const biography = biographyMatch ? biographyMatch[1] : '';
 ---
 
 <Layout>
@@ -53,47 +66,6 @@ tags = await loadTags();
                   </p>
                 );
               })}
-            </div>
-
-            <div class="bg-gray-100 rounded-lg mt-2">
-              <div class="p-2">
-                <div class="flex items-center">
-                  <Image
-                    src={relativeImagePath}
-                    alt={`${session.speaker.name}のアイコン`}
-                    style={{ borderRadius: '50%' }}
-                    width={40}
-                    height={40}
-                  />
-
-                  <div class="ml-2">
-                    <div class="flex items-center">
-                      <h3 class="text-lg font-bold mr-2">{session.speaker.name}</h3>
-                      {session.speaker.twitter && (
-                        <a
-                          href={`https://twitter.com/${session.speaker.twitter}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <div class="flex items-center ml-2">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              class="w-4 h-4 text-gray-500 hover:text-black"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                fill="currentColor"
-                                d="M18.205 2.25h3.308l-7.227 8.26l8.502 11.24H16.13l-5.214-6.817L4.95 21.75H1.64l7.73-8.835L1.215 2.25H8.04l4.713 6.231zm-1.161 17.52h1.833L7.045 4.126H5.078z"
-                              />
-                            </svg>
-                            <span class="ml-1">{session.speaker.twitter}</span>
-                          </div>
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
 
             {'videoUrl' in session && session.videoUrl && (
@@ -132,6 +104,51 @@ tags = await loadTags();
             <div class="mt-4">
               <p class="text-lg font-bold mb-2">Abstract</p>
               <p class="text-md whitespace-pre-line">{session.abstract}</p>
+            </div>
+
+            <div class="bg-gray-100 rounded-lg mt-6">
+              <div class="p-4">
+                <div class="flex items-center">
+                  <Image
+                    src={relativeImagePath}
+                    alt={`${session.speaker.name}のアイコン`}
+                    style={{ borderRadius: '50%' }}
+                    width={80}
+                    height={80}
+                  />
+
+                  <div class="ml-2">
+                    <div class="flex items-center">
+                      <h3 class="text-lg font-bold mr-2">{session.speaker.name}</h3>
+                      {session.speaker.twitter && (
+                        <a
+                          href={`https://twitter.com/${session.speaker.twitter}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <div class="flex items-center ml-2">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="w-4 h-4 text-gray-500 hover:text-black"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                fill="currentColor"
+                                d="M18.205 2.25h3.308l-7.227 8.26l8.502 11.24H16.13l-5.214-6.817L4.95 21.75H1.64l7.73-8.835L1.215 2.25H8.04l4.713 6.231zm-1.161 17.52h1.833L7.045 4.126H5.078z"
+                              />
+                            </svg>
+                            <span class="ml-1">{session.speaker.twitter}</span>
+                          </div>
+                        </a>
+                      )}
+                    </div>
+                    <p class="text-xs">{affiliation}</p>
+                    <p class="text-xs">{jobTitle}</p>
+                  </div>
+                </div>
+
+                <p class="mt-2 text-sm">{biography}</p>
+              </div>
             </div>
 
             <SocialShare
