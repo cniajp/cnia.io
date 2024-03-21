@@ -3,6 +3,11 @@ import SessionList from '../../../components/pek2024/SessionList.astro';
 import Layout from '../../../layouts/pek2024/PageLayout.astro';
 ---
 
-<Layout>
+<Layout
+  meta={{
+    title: 'PEK2024 - セッション一覧',
+    description: 'Platform Engineering Kaigi 2024 セッション一覧です。',
+  }}
+>
   <SessionList />
 </Layout>

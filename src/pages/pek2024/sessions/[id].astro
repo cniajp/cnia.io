@@ -45,7 +45,12 @@ const biographyMatch = session?.speaker.kana ? biographyRegex.exec(session.speak
 const biography = biographyMatch ? biographyMatch[1] : '';
 ---
 
-<Layout>
+<Layout
+  meta={{
+    title: sessionExists ? session.title : 'セッションが見つかりませんでした',
+    description: sessionExists ? session.abstract : 'セッションの概要が見つかりませんでした',
+  }}
+>
   <main>
     {
       sessionExists && (

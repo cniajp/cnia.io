@@ -2,7 +2,12 @@
 import Layout from '../../../layouts/pek2024/PageLayout.astro';
 ---
 
-<Layout>
+<Layout
+  meta={{
+    title: 'PEK2024 CFP応募要項',
+    description: 'Platform Engineering Kaigi 2024 の CFP応募要項です',
+  }}
+>
   <div class="py-16 md:py-20 mx-4">
     <div class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-12 text-center max-w-3xl mx-auto">
       <h1>Platform Engineering Kaigi 2024へようこそ！</h1>
@@ -173,7 +178,9 @@ import Layout from '../../../layouts/pek2024/PageLayout.astro';
       </div>
       <div class="max-w-3xl mx-auto">
         <p>
-          CFPに関するお問い合わせは <a href="https://link.cnia.io/pek2024-cfp-inquiry-form" class="underline-link">フォーム</a> よりお願いいたします
+          CFPに関するお問い合わせは <a href="https://link.cnia.io/pek2024-cfp-inquiry-form" class="underline-link"
+            >フォーム</a
+          > よりお願いいたします
         </p>
       </div>
     </div>
