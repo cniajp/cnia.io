@@ -5,6 +5,7 @@ export interface UpdateItem {
   date: string;
   text: string;
   link?: string;
+  internalLink?: string;
 }
 
 export interface UpdatesProps {
@@ -28,13 +29,20 @@ const { highlight, title, items } = Astro.props as UpdatesProps;
           <div class="update-item">
             <p class="text-lg font-medium flex items-center">
               <span class="font-bold mr-6">{update.date}</span>
-              {update.link ? (
+              {update.link && (
                 <a href={update.link} target="_blank" rel="noopener noreferrer" class="flex items-center">
                   {update.text}
                   <Icon name="tabler:external-link" class="w-4 h-4 ml-2" />
                 </a>
-              ) : (
-                update.text
+              )}
+              {update.internalLink && (
+                <a href={update.internalLink} class="flex items-center">
+                  {update.text}
+                  <Icon name="tabler:link" class="w-4 h-4 ml-2" />
+                </a>
+              )}
+              {!update.link && !update.internalLink && (
+                <span>{update.text}</span>
               )}
             </p>
           </div>

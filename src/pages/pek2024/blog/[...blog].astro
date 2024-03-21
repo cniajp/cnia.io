@@ -1,0 +1,78 @@
+---
+import Layout from '~/layouts/pek2024/PageLayout.astro';
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('pek2024-blog', ({ data }) => {
+    return data.draft !== true;
+  });
+  return blogEntries.map(post => ({
+    params: { blog: post.slug }, props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+const teamMemberImages = import.meta.glob<{ default: ImageMetadata }>('~/assets/images/pek2024/teamMembers/*.{jpeg,jpg,png,gif}')
+if (post.data.author?.icon && !teamMemberImages[post.data.author.icon]) {
+  throw new Error(`Author image "${post.data.author.icon}" not found in ~/assets/images/pek2024/teamMembers/`)
+}
+---
+
+<Layout meta={{
+  title: post.data.title,
+  description: post.data.description,
+  imagePath: post.data.image
+}}>
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
+    <h1 class="font-bold font-heading text-4xl md:text-5xl leading-tighter tracking-tighter">{post.data.title}</h1>
+    <div class="my-4">
+      <div class="flex flex-col md:flex-row">
+        <div>
+          <p class="text-sm text-gray-500">
+            公開日: {new Date(post.data.publishDate).toLocaleDateString()}
+          </p>
+          {post.data.author && (
+            <p class="text-sm text-gray-500">
+              著者: {post.data.author.name}
+            </p>
+          )}
+        </div>
+        <div class="grow" />
+        <div class="flex flex-wrap items-center">
+          {post.data.category && (
+            <span class="px-2 py-1 mt-2 text-sm font-bold text-white bg-primary rounded-md">{post.data.category}</span>
+          )}
+          {post.data.tags && post.data.tags.map((tag, i) => {
+            const tagColor = ['bg-themeColor-purple', 'bg-themeColor-orange', 'bg-themeColor-yellow'][i % 3];
+            const classValue = `px-2 py-1 ml-2 mt-2 text-sm font-bold text-white rounded-md ${tagColor}`;
+            return (
+              <span class={classValue}>{tag}</span>
+            )
+          })}
+        </div>
+      </div>
+    </div>
+    <div
+      class="mx-auto prose prose-lg md:text-base max-w-4xl  prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-blue-600 prose-img:rounded-md prose-img:shadow-lg mt-8"
+    >
+      {
+        post.data.image ? (
+          <Image
+            src={post.data.image}
+            class="max-w-full lg:max-w-6xl mx-auto mb-6 sm:rounded-md"
+            alt={post.data.description || ''}
+            width={900}
+            height={506}
+          />
+        ) : (
+          <div class="max-w-3xl mx-auto px-4 sm:px-6">
+            <div class="border-t" />
+          </div>
+        )
+      }
+      <Content />
+    </div>
+  </section>
+</Layout>
