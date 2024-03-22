@@ -16,7 +16,7 @@
     "@astrojs/mdx": "^2.0.0",
     "@astrojs/partytown": "^2.0.0",
     "@astrojs/rss": "^4.0.0",
-    "@astrojs/sitemap": "^1.2.1",
+    "@astrojs/sitemap": "^3.0.0",
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource/inter": "^4.5.15",
     "@tailwindcss/typography": "^0.5.9",
