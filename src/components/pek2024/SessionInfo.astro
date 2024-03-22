@@ -1,0 +1,86 @@
+---
+import { Image } from 'astro:assets';
+import { fetchTags } from '../../utils/fetchTags.ts';
+
+export interface Tag {
+  text: string;
+  backgroundColor: string | undefined;
+  color: string | undefined;
+}
+interface Speaker {
+  name: string;
+  kana?: string;
+  twitter?: string;
+  avatar_url?: string;
+}
+export interface Props {
+  id: string;
+  url: string;
+  title: string;
+  abstract: string;
+  speaker: Speaker;
+}
+
+const { id, url, title, abstract, speaker } = Astro.props;
+
+const avatarUrl = speaker.avatar_url;
+const relativeImagePath = avatarUrl?.startsWith('https://')
+  ? avatarUrl
+  : `/src/assets/images/pek2024/pek2024_trademark.png`;
+
+let tags: Tag[] = [];
+async function loadTags() {
+  return await fetchTags(url);
+}
+tags = await loadTags();
+
+// 会社名/所属団体名を取得
+const affiliationRegex = /■会社名\/所属団体名 - Company\/Organizations□\s(.*?)(\s■|$)/g;
+const affiliationMatch = speaker.kana ? affiliationRegex.exec(speaker.kana) : null;
+const affiliation = affiliationMatch ? affiliationMatch[1] : '';
+---
+
+<a href={`/pek2024/sessions/${id}`} class="block text-black no-underline">
+  <div class="card h-full flex flex-col justify-between bg-white rounded-lg p-2 relative group">
+    <div
+      class="absolute inset-0 bg-gray-50 opacity-0 group-hover:opacity-55 transition-opacity duration-200 rounded-lg"
+    >
+    </div>
+    <div>
+      <h3 class="text-md font-bold">{title}</h3>
+    </div>
+    <div class="flex flex-wrap items-center mt-1">
+      {
+        tags.map((tag) => {
+          // 全角と半角のカッコとその中身を除去
+          const processedText = tag.text.replace(/\s*[(（].*?[)）]\s*/g, '').trim();
+          return (
+            <p
+              class="px-1.5 py-0.5 mr-2 mb-2 rounded"
+              style={`font-size: 14px; background-color: ${tag.backgroundColor}; color: ${tag.color};`}
+            >
+              {processedText}
+            </p>
+          );
+        })
+      }
+    </div>
+    <div class="flex items-center mt-2">
+      <Image
+        src={relativeImagePath}
+        alt={`${speaker.name}のアイコン`}
+        style={{ borderRadius: '50%' }}
+        width={50}
+        height={50}
+      />
+      <div class="ml-2">
+        <p class="text-sm font-bold">{speaker.name}</p>
+        <p class="text-xs">{affiliation}</p>
+      </div>
+    </div>
+    <div class="mt-2 text-sm">
+      <!--  100文字以上の場合は100文字まで表示し、それ以降は...とする -->
+      {abstract.length > 100 ? `${abstract.substring(0, 100)}...` : abstract}
+    </div>
+  </div>
+</a>

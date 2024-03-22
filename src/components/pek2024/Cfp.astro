@@ -1,0 +1,79 @@
+---
+export interface Props {
+  highlight: string;
+  title: string;
+  subtitle?: string;
+}
+
+const { highlight, title, subtitle } = Astro.props;
+---
+
+<section class="py-16 md:py-20">
+  <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
+    <div class="mb-10 md:mx-auto text-center md:mb-12 max-w-3xl">
+      <p class="text-base dark:text-blue-200 font-semibold tracking-wide uppercase">{highlight}</p>
+      <h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading">{title}</h2>
+      <p class="max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400">{subtitle}</p>
+    </div>
+  </div>
+  <div class="mx-auto max-w-7xl p-4 md:px-8 font-medium">
+    <div class="container mx-auto max-w-xl lg:max-w-2xl">
+      <p>Platform Engineering Kaigi 2024 を盛り上げるトークの募集を開始しました！</p>
+      <br />
+      <p>
+        Platform Engineering Kaigiは、現在注目を浴びているPlatform
+        Engineeringをテーマにしたテクノロジーカンファレンスです。
+      </p>
+      <br />
+      <p>Platform Engineeringに関連する技術や事例、ノウハウなどを共有していただける方の応募をお待ちしています！</p>
+      <br />
+      <p>募集要項の詳細確認・応募は以下のボタンからお願いします。</p>
+      <div class="flex flex-col items-center justify-center pt-8">
+        <a rel="noopener noreferrer" href="/pek2024/sessions/guidance" class="btn btn-flat ml-4 mb-2 rounded-md">エントリー</a>
+        <a rel="noopener noreferrer" href="/pek2024/sessions" class="btn btn-flat ml-4 mb-2 rounded-md text-sm"
+          >プロポーザル一覧</a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .btn.btn-flat {
+    overflow: hidden;
+    padding: 1rem 6rem;
+    color: #fff;
+    border-radius: 0;
+    background: var(--aw-themeColor-blue);
+    position: relative;
+    z-index: 1;
+  }
+
+  .btn.btn-flat span {
+    position: relative;
+  }
+
+  .btn.btn-flat:before {
+    position: absolute;
+    top: 0;
+    left: 30px;
+    width: 150%;
+    height: 500%;
+    content: '';
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-transform: translateX(-85%) translateY(-70%) rotate(135deg);
+    transform: translateX(-85%) translateY(-70%) rotate(135deg);
+    background: var(--aw-themeColor-yellow);
+    z-index: -1;
+  }
+
+  .btn.btn-flat:hover:before {
+    -webkit-transform: translateX(-15%) translateY(-25%) rotate(135deg);
+    transform: translateX(-15%) translateY(-25%) rotate(135deg);
+  }
+
+  .btn.btn-flat:hover {
+    color: #000;
+  }
+</style>

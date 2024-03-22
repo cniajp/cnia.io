@@ -1,6 +1,8 @@
 import { getPermalink } from './utils/permalinks';
 const today = new Date();
 
+export const sessionStatus = 'proposal';
+
 export const headerData = {
   links: [
     {
@@ -20,13 +22,13 @@ export const headerData = {
       href: '/pek2024#info',
     },
     {
+      text: 'SESSIONS',
+      href: '/pek2024/sessions',
+    },
+    {
       text: 'BLOG',
       href: '/pek2024/blog',
     },
-    // {
-    //   text: 'Sessions',
-    //   href: '/pek2024/sessions',
-    // },
     // {
     //   text: 'TimeTable',
     //   href: '/pek2024/timetable',
@@ -61,6 +63,13 @@ export const footerData = {
         { text: 'SPONSORS', href: getPermalink('/pek2024#sponsors') },
         { text: 'INFORMATION', href: getPermalink('/pek2024#info') },
         { text: 'CODE OF CONDUCT', href: getPermalink('/pek2024/codeOfConduct') },
+      ],
+    },
+    {
+      title: 'Sessions',
+      links: [
+        { text: 'SESSIONS', href: getPermalink('/pek2024/sessions') },
+        // { text: 'TIME TABLE', href: getPermalink('/pek2024/timeTable') },
       ],
     },
   ],

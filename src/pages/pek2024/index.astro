@@ -8,6 +8,8 @@ import FAQ from '~/components/pek2024/FAQ.astro';
 import Information from '~/components/pek2024/Information.astro';
 import Update from '~/components/pek2024/Update.astro';
 import TeamMemberList from '~/components/pek2024/TeamMemberList.astro';
+import Cfp from '~/components/pek2024/Cfp.astro';
+
 import { getCollection } from 'astro:content';
 
 const allPosts = await getCollection('pek2024-blog', ({ data }) => {
@@ -23,7 +25,7 @@ const blogPosts = allPosts.map((post) => {
     month: '2-digit',
     day: '2-digit',
   });
-  const link = `/pek2024/blog/${post.slug}`
+  const link = `/pek2024/blog/${post.slug}`;
   return {
     date: date,
     text: post.data.title,
@@ -31,6 +33,11 @@ const blogPosts = allPosts.map((post) => {
   };
 });
 const news = [
+  {
+    date: '2024/03/22',
+    text: 'CFPを開始しました',
+    link: 'https://www.cnia.io/pek2024/sessions/guidance',
+  },
   {
     date: '2024/03/11',
     text: 'ブロンズスポンサーの追加募集を開始しました',
@@ -53,27 +60,18 @@ const news = [
     date: '2024/02/21',
     text: 'Platform Engineering Kaigi 2024のページを公開しました',
   },
-]
+];
 ---
 
 <Layout>
   <Hero />
 
   <a id="update"></a>
-  <Update
-    highlight="News"
-    title="お知らせ"
-    items={news}
-  />
-  {
-    blogPosts.length > 0 && (
-      <Update
-        highlight="Blog"
-        title="ブログ"
-        items={blogPosts.slice(0, 5)}
-      />
-    )
-  }
+  <Update highlight="News" title="お知らせ" items={news} />
+  {blogPosts.length > 0 && <Update highlight="Blog" title="ブログ" items={blogPosts.slice(0, 5)} />}
+
+  <a id="cfp"></a>
+  <Cfp highlight="Call For Proposal" title="PEK2024で登壇しませんか？" />
 
   <a id="about"></a>
   <Concept
