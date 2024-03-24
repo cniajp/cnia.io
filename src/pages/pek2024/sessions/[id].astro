@@ -32,17 +32,17 @@ async function loadTags() {
 tags = await loadTags();
 
 // 会社名/所属団体名
-const affiliationRegex = /■会社名\/所属団体名 - Company\/Organizations□\s(.*?)(\s■|$)/g;
+const affiliationRegex = /■会社名\/所属団体名 - Company\/Organizations□\s*(.*?)(\s*■|$)/g;
 const affiliationMatch = session?.speaker.kana ? affiliationRegex.exec(session.speaker.kana) : null;
-const affiliation = affiliationMatch ? affiliationMatch[1] : '';
+const affiliation = affiliationMatch ? affiliationMatch[1].trim() : '';
 // 役職
-const jobTitleRegex = /■役職 - Job Title□\s(.*?)(\s■|$)/g;
+const jobTitleRegex = /■役職 - Job Title□\s*(.*?)(\s*■|$)/g;
 const jobTitleMatch = session?.speaker.kana ? jobTitleRegex.exec(session.speaker.kana) : null;
-const jobTitle = jobTitleMatch ? jobTitleMatch[1] : '';
+const jobTitle = jobTitleMatch ? jobTitleMatch[1].trim() : '';
 // プロフィール
-const biographyRegex = /■プロフィール \(200文字以内\) - Biography \(Less than 400 letters\)□\s(.*?)(\s■|$)/g;
+const biographyRegex = /■プロフィール \(200文字以内\) - Biography \(Less than 400 letters\)□\s*(.*?)(\s*■|$)/g;
 const biographyMatch = session?.speaker.kana ? biographyRegex.exec(session.speaker.kana) : null;
-const biography = biographyMatch ? biographyMatch[1] : '';
+const biography = biographyMatch ? biographyMatch[1].trim() : '';
 ---
 
 <Layout
