@@ -1,3 +1,19 @@
 {
-  "proposals": []
+  "proposals": [
+    {
+      "uuid": "31f1df6b-c98a-4bef-8c6b-fd0bf839bc7e",
+      "url": "https://fortee.jp/platform-engineering-kaigi-2024/proposal/31f1df6b-c98a-4bef-8c6b-fd0bf839bc7e",
+      "title": "Platform Engineering とSREの門",
+      "abstract": "Platform Engineering とSREは、ITシステムの運用と開発において重要な役割を担っていますが、両者の違いについて十分に理解されていないことがあります。本セッションでは、Platform Engineering とSREの主な目的、業務範囲、方法論の違いを明らかにし、組織内での効果的な協働のためのフレームワーク構築について議論します。役割の明確化とスキルセットに基づく人材育成の重要性を強調し、システムの信頼性と開発者の生産性の同時向上によるビジネス価値の迅速な提供を目指すための示唆を提供します。さらに、両者の役割の進化と将来の展望についても考察し、組織がSREとプラットフォームエンジニアリングを戦略的に活用するための指針を探ります。",
+      "accepted": false,
+      "speaker": {
+        "name": "nwiizo",
+        "kana": "■お名前の呼び方（カナ） - Supplemental information on name pronunciation□ ヌウィゾウ ■会社名/所属団体名 - Company/Organizations□  株式会社スリーシェイク■役職 - Job Title□  ソフトウェアエンジニア■プロフィール (200文字以内) - Biography (Less than 400 letters)□ インフラエンジニアとしてホスティングサービスの開発、運用を経て、現在は株式会社スリーシェイクにてソフトウェア",
+        "twitter": "nwiizo",
+        "avatar_url": "https://fortee.jp/files/platform-engineering-kaigi-2024/speaker/713aa163-f982-4f8f-82ee-2041753b5c7c.jpg"
+      },
+      "created": "2024-03-23T14:00:16+09:00",
+      "feedback": { "open": false }
+    }
+  ]
 }

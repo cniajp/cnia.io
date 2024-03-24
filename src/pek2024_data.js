@@ -62,6 +62,7 @@ export const footerData = {
         { text: 'ABOUT', href: getPermalink('/pek2024#about') },
         { text: 'SPONSORS', href: getPermalink('/pek2024#sponsors') },
         { text: 'INFORMATION', href: getPermalink('/pek2024#info') },
+        { text: 'BLOG', href: getPermalink('/pek2024/blog') },
         { text: 'CODE OF CONDUCT', href: getPermalink('/pek2024/codeOfConduct') },
       ],
     },

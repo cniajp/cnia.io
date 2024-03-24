@@ -35,9 +35,9 @@ async function loadTags() {
 tags = await loadTags();
 
 // 会社名/所属団体名を取得
-const affiliationRegex = /■会社名\/所属団体名 - Company\/Organizations□\s(.*?)(\s■|$)/g;
+const affiliationRegex = /■会社名\/所属団体名 - Company\/Organizations□\s*(.*?)(\s*■|$)/g;
 const affiliationMatch = speaker.kana ? affiliationRegex.exec(speaker.kana) : null;
-const affiliation = affiliationMatch ? affiliationMatch[1] : '';
+const affiliation = affiliationMatch ? affiliationMatch[1].trim() : '';
 ---
 
 <a href={`/pek2024/sessions/${id}`} class="block text-black no-underline">
