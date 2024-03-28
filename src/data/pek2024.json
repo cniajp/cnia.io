@@ -4,15 +4,30 @@
       "uuid": "31f1df6b-c98a-4bef-8c6b-fd0bf839bc7e",
       "url": "https://fortee.jp/platform-engineering-kaigi-2024/proposal/31f1df6b-c98a-4bef-8c6b-fd0bf839bc7e",
       "title": "Platform Engineering とSREの門",
-      "abstract": "Platform Engineering とSREは、ITシステムの運用と開発において重要な役割を担っていますが、両者の違いについて十分に理解されていないことがあります。本セッションでは、Platform Engineering とSREの主な目的、業務範囲、方法論の違いを明らかにし、組織内での効果的な協働のためのフレームワーク構築について議論します。役割の明確化とスキルセットに基づく人材育成の重要性を強調し、システムの信頼性と開発者の生産性の同時向上によるビジネス価値の迅速な提供を目指すための示唆を提供します。さらに、両者の役割の進化と将来の展望についても考察し、組織がSREとプラットフォームエンジニアリングを戦略的に活用するための指針を探ります。",
+      "abstract": "■スピーカープロフィール (200文字以内) - Biography (Less than 400 letters)□\r\nインフラエンジニアとしてホスティングサービスの開発、運用を経て、現在は株式会社スリーシェイクにてソフトウェア\r\n\r\n■ トーク概要 (400文字以内) - Abstract (Less than 800 letters)□\r\nPlatform Engineering とSREは、ITシステムの運用と開発において重要な役割を担っていますが、両者の違いについて十分に理解されていないことがあります。本セッションでは、Platform Engineering とSREの主な目的、業務範囲、方法論の違いを明らかにし、組織内での効果的な協働のためのフレームワーク構築について議論します。役割の明確化とスキルセットに基づく人材育成の重要性を強調し、システムの信頼性と開発者の生産性の同時向上によるビジネス価値の迅速な提供を目指すための示唆を提供します。さらに、両者の役割の進化と将来の展望についても考察し、組織がSREとプラットフォームエンジニアリングを戦略的に活用するための指針を探ります。",
       "accepted": false,
       "speaker": {
         "name": "nwiizo",
-        "kana": "■お名前の呼び方（カナ） - Supplemental information on name pronunciation□ ヌウィゾウ ■会社名/所属団体名 - Company/Organizations□  株式会社スリーシェイク■役職 - Job Title□  ソフトウェアエンジニア■プロフィール (200文字以内) - Biography (Less than 400 letters)□ インフラエンジニアとしてホスティングサービスの開発、運用を経て、現在は株式会社スリーシェイクにてソフトウェア",
+        "kana": "■お名前の呼び方（カナ） - Supplemental information on name pronunciation□ ヌウィゾウ ■会社名/所属団体名 - Company/Organizations□  株式会社スリーシェイク■役職 - Job Title□  ソフトウェアエンジニア",
         "twitter": "nwiizo",
         "avatar_url": "https://fortee.jp/files/platform-engineering-kaigi-2024/speaker/713aa163-f982-4f8f-82ee-2041753b5c7c.jpg"
       },
       "created": "2024-03-23T14:00:16+09:00",
+      "feedback": { "open": false }
+    },
+    {
+      "uuid": "99fbaea9-785d-455a-8f63-79d82fc381c7",
+      "url": "https://fortee.jp/platform-engineering-kaigi-2024/proposal/99fbaea9-785d-455a-8f63-79d82fc381c7",
+      "title": "クラウドネイティブ時代の先駆者: オープンテクノロジーを駆使したプラットフォームエンジニアリング",
+      "abstract": "■スピーカープロフィール (200文字以内) - Biography (Less than 400 letters)□\r\n技術基盤チーム所属、SREを主戦場としています。OpenStack、AWSで動作するKubernetesエンジンを開発・運用し、特にオブザーバビリティとモニタリングの自動化に貢献。\r\n\r\n■ トーク概要 (400文字以内) - Abstract (Less than 800 letters)□\r\n本セッションでは、開発者が単にプラットフォームを利用することで、高度なオブザーバビリティとモニタリング機能を手に入れる方法を紹介します。OpenTelemetryを軸にGrafana、Loki、Sentryを利用できる当社独自のプラットフォームは、オブザーバビリティと効率性を大幅に向上させます。これにより、開発者はコードの挙動を瞬時に理解し、問題を迅速に解決。プラットフォームエンジニアリングによる自社開発チームの生産性向上と問題解決スピードの加速を実現します。\r\n",
+      "accepted": false,
+      "speaker": {
+        "name": "P山",
+        "kana": "■お名前の呼び方（カナ） - Supplemental information on name pronunciation□ ピーヤマ　■会社名/所属団体名 - Company/Organizations□ GMOペパボ株式会社 ■役職 - Job Title□ なし",
+        "twitter": "pyama86",
+        "avatar_url": "https://fortee.jp/files/platform-engineering-kaigi-2024/speaker/37695623-7acb-48e0-9854-3efc4ab9d684.jpg"
+      },
+      "created": "2024-03-28T20:05:56+09:00",
       "feedback": { "open": false }
     }
   ]

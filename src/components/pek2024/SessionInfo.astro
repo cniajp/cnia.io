@@ -38,6 +38,10 @@ tags = await loadTags();
 const affiliationRegex = /■会社名\/所属団体名 - Company\/Organizations□\s*(.*?)(\s*■|$)/g;
 const affiliationMatch = speaker.kana ? affiliationRegex.exec(speaker.kana) : null;
 const affiliation = affiliationMatch ? affiliationMatch[1].trim() : '';
+// トーク概要を取得
+const abstractRegex = /■ トーク概要 \(400文字以内\) - Abstract \(Less than 800 letters\)□\s*(.*?)(\s*■|$)/s;
+const abstractMatch = abstract ? abstractRegex.exec(abstract) : null;
+const talkAbstract = abstractMatch ? abstractMatch[1].trim() : '';
 ---
 
 <a href={`/pek2024/sessions/${id}`} class="block text-black no-underline">
@@ -80,7 +84,7 @@ const affiliation = affiliationMatch ? affiliationMatch[1].trim() : '';
     </div>
     <div class="mt-2 text-sm">
       <!--  100文字以上の場合は100文字まで表示し、それ以降は...とする -->
-      {abstract.length > 100 ? `${abstract.substring(0, 100)}...` : abstract}
+      {talkAbstract.length > 100 ? `${talkAbstract.substring(0, 100)}...` : talkAbstract}
     </div>
   </div>
 </a>
