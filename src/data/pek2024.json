@@ -19,11 +19,11 @@
       "uuid": "99fbaea9-785d-455a-8f63-79d82fc381c7",
       "url": "https://fortee.jp/platform-engineering-kaigi-2024/proposal/99fbaea9-785d-455a-8f63-79d82fc381c7",
       "title": "クラウドネイティブ時代の先駆者: オープンテクノロジーを駆使したプラットフォームエンジニアリング",
-      "abstract": "■スピーカープロフィール (200文字以内) - Biography (Less than 400 letters)□\r\n技術基盤チーム所属、SREを主戦場としています。OpenStack、AWSで動作するKubernetesエンジンを開発・運用し、特にオブザーバビリティとモニタリングの自動化に貢献。\r\n\r\n■ トーク概要 (400文字以内) - Abstract (Less than 800 letters)□\r\n本セッションでは、開発者が単にプラットフォームを利用することで、高度なオブザーバビリティとモニタリング機能を手に入れる方法を紹介します。OpenTelemetryを軸にGrafana、Loki、Sentryを利用できる当社独自のプラットフォームは、オブザーバビリティと効率性を大幅に向上させます。これにより、開発者はコードの挙動を瞬時に理解し、問題を迅速に解決。プラットフォームエンジニアリングによる自社開発チームの生産性向上と問題解決スピードの加速を実現します。\r\n",
+      "abstract": "■スピーカープロフィール (200文字以内) - Biography (Less than 400 letters)□\r\n技術基盤チーム所属、SREを主戦場としています。OpenStack、AWSで動作するKubernetesエンジンを開発・運用し、特にオブザーバビリティとモニタリングの自動化に貢献。\r\n\r\n■ トーク概要 (400文字以内) - Abstract (Less than 800 letters)□\r\n本セッションでは、開発者が単にプラットフォームを利用することで、高度なオブザーバビリティとモニタリング機能を手に入れる方法を紹介します。OpenTelemetryを軸にGrafana、Loki、Sentryを利用できる当社独自のプラットフォームは、オブザーバビリティと効率性を大幅に向上させます。これにより、開発者はコードの挙動を瞬時に理解し、問題を迅速に解決。プラットフォームエンジニアリングによる自社開発チームの生産性向上と問題解決スピードの加速を実現します。",
       "accepted": false,
       "speaker": {
         "name": "P山",
-        "kana": "■お名前の呼び方（カナ） - Supplemental information on name pronunciation□ ピーヤマ　■会社名/所属団体名 - Company/Organizations□ GMOペパボ株式会社 ■役職 - Job Title□ なし",
+        "kana": "■お名前の呼び方（カナ） - Supplemental information on name pronunciation□ ピーヤマ ■会社名/所属団体名 - Company/Organizations□ GMOペパボ株式会社　■役職 - Job Title□ なし",
         "twitter": "pyama86",
         "avatar_url": "https://fortee.jp/files/platform-engineering-kaigi-2024/speaker/37695623-7acb-48e0-9854-3efc4ab9d684.jpg"
       },
