@@ -1,6 +1,21 @@
 {
   "proposals": [
     {
+      "uuid": "b7e42312-d4c3-49d8-a82d-c2874b3ba82d",
+      "url": "https://fortee.jp/platform-engineering-kaigi-2024/proposal/b7e42312-d4c3-49d8-a82d-c2874b3ba82d",
+      "title": "Platform Engineering入門",
+      "abstract": "■トーク概要- Talk Abstract□ \r\nPlatform Engineering入門をお話しします。\r\n\r\n■プロフィール (200文字以内) - Biography (Less than 400 letters)□ \r\nPlatform Engineeringを普及中。 \r\n",
+      "accepted": false,
+      "speaker": {
+        "name": "test user",
+        "kana": "■お名前の呼び方（カナ） - Supplemental information on name pronunciation□ テストユーザー ■会社名/所属団体名 - Company/Organizations□ 株式会社Platform Engineering  ■役職 - Job Title□ CEO  ■プロフィール (200文字以内) - Biography (Less than 400 letters)□ Platform Engineeringを普及中。 ",
+        "twitter": "zawa_zawa0210",
+        "avatar_url": "https://fortee.jp/files/platform-engineering-kaigi-2024/speaker/00279b6e-32f7-4813-872b-4670dcd676bb.jpg"
+      },
+      "created": "2024-03-17T09:09:26+09:00",
+      "feedback": { "open": false }
+    },
+    {
       "uuid": "31f1df6b-c98a-4bef-8c6b-fd0bf839bc7e",
       "url": "https://fortee.jp/platform-engineering-kaigi-2024/proposal/31f1df6b-c98a-4bef-8c6b-fd0bf839bc7e",
       "title": "Platform Engineering とSREの門",
@@ -28,6 +43,21 @@
         "avatar_url": "https://fortee.jp/files/platform-engineering-kaigi-2024/speaker/37695623-7acb-48e0-9854-3efc4ab9d684.jpg"
       },
       "created": "2024-03-28T20:05:56+09:00",
+      "feedback": { "open": false }
+    },
+    {
+      "uuid": "589ee063-86cd-429f-bd61-93e7b591afa6",
+      "url": "https://fortee.jp/platform-engineering-kaigi-2024/proposal/589ee063-86cd-429f-bd61-93e7b591afa6",
+      "title": "自宅鯖学生が夢見る DevOps OSS 開発への挑戦",
+      "abstract": "■スピーカープロフィール (200文字以内) - Biography (Less than 400 letters)□\r\n[個人]\r\n名古屋工学院専門学校 3年生/株式会社Forgersインターン/学生エンジニア団体 MatsuribaTech立ち上げ\r\n[AuraCD Dev]\r\n大学生/専門 のエンジニア学生で構成される開発チームです。\r\n- Open Hack U 2024 TOKYO 出場\r\n\r\n■ トーク概要 (400文字以内) - Abstract (Less than 800 letters)□\r\n我々はCI/CD基盤の構築を簡素化し、中小規模プロジェクトにもDevOpsの展開を可能にするプラットフォーム、AuraCDを開発している学生チームです。\r\nAuraCDはGitHub上でのPullReuquestに対するプレビュー環境の自動デプロイや、簡素化されたマルチステージパイプラインを提供します。\r\nこれにより、専任のプラットフォームチームを持たない開発環境でも、SaaS等と同様の高機能なCI/CD環境を利用できます。",
+      "accepted": false,
+      "speaker": {
+        "name": "Yuma-Satake",
+        "kana": "Yuma-Satake",
+        "twitter": "yuma_satake22",
+        "avatar_url": "https://fortee.jp/files/platform-engineering-kaigi-2024/speaker/51a5b527-cee2-4fa7-9a9a-ba9d6bf48e04.jpg"
+      },
+      "created": "2024-03-30T01:54:02+09:00",
       "feedback": { "open": false }
     }
   ]
