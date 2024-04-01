@@ -15,6 +15,8 @@ export interface UpdatesProps {
 }
 
 const { highlight, title, items } = Astro.props as UpdatesProps;
+const visibleItems = items.slice(0, 5);
+const hiddenItems = items.length > 5 ? items.slice(5) : [];
 ---
 
 <section class="bg-slate-100 py-10 md:py-14">
@@ -25,7 +27,7 @@ const { highlight, title, items } = Astro.props as UpdatesProps;
     </div>
     <div class="space-y-1 px-4">
       {
-        items.map((update) => (
+        visibleItems.map((update) => (
           <div class="update-item">
             <p class="text-lg font-medium flex items-center">
               <span class="font-bold mr-6">{update.date}</span>
@@ -41,13 +43,61 @@ const { highlight, title, items } = Astro.props as UpdatesProps;
                   <Icon name="tabler:link" class="w-4 h-4 ml-2" />
                 </a>
               )}
-              {!update.link && !update.internalLink && (
-                <span>{update.text}</span>
-              )}
+              {!update.link && !update.internalLink && <span>{update.text}</span>}
             </p>
           </div>
         ))
       }
+      {
+        hiddenItems.length > 0 && (
+          <div>
+            <div id="hiddenItems" class="hidden">
+              {hiddenItems.map((update) => (
+                <div class="update-item">
+                  <p class="text-lg font-medium flex items-center">
+                    <span class="font-bold mr-6">{update.date}</span>
+                    {update.link && (
+                      <a href={update.link} target="_blank" rel="noopener noreferrer" class="flex items-center">
+                        {update.text}
+                        <Icon name="tabler:external-link" class="w-4 h-4 ml-2" />
+                      </a>
+                    )}
+                    {update.internalLink && (
+                      <a href={update.internalLink} class="flex items-center">
+                        {update.text}
+                        <Icon name="tabler:link" class="w-4 h-4 ml-2" />
+                      </a>
+                    )}
+                    {!update.link && !update.internalLink && <span>{update.text}</span>}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div id="toggleButton" class="py-2 px-8 font-semibold text-right cursor-pointer">
+              Show all news
+            </div>
+          </div>
+        )
+      }
     </div>
   </div>
 </section>
+
+<script>
+  const toggleButton = document.getElementById('toggleButton');
+  const hiddenItems = document.getElementById('hiddenItems');
+
+  if (toggleButton !== null && hiddenItems !== null) {
+    toggleButton.addEventListener('click', () => {
+      if (hiddenItems.classList.contains('hidden')) {
+        hiddenItems.classList.remove('hidden');
+        hiddenItems.classList.add('block');
+        toggleButton.innerText = 'Close';
+      } else {
+        hiddenItems.classList.remove('block');
+        hiddenItems.classList.add('hidden');
+        toggleButton.innerText = 'Show all news';
+      }
+    });
+  }
+</script>
