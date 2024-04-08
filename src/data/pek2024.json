@@ -8,7 +8,7 @@
       "accepted": false,
       "speaker": {
         "name": "test user",
-        "kana": "■お名前の呼び方（カナ） - Supplemental information on name pronunciation□ テストユーザー ■会社名/所属団体名 - Company/Organizations□ 株式会社Platform Engineering  ■役職 - Job Title□ CEO  ■プロフィール (200文字以内) - Biography (Less than 400 letters)□ Platform Engineeringを普及中。 ",
+        "kana": "■お名前の呼び方（カナ） - Supplemental information on name pronunciation□ テストユーザー ■会社名/所属団体名 - Company/Organizations□ 株式会社Platform Engineering  ■役職 - Job Title□ CEO ",
         "twitter": "zawa_zawa0210",
         "avatar_url": "https://fortee.jp/files/platform-engineering-kaigi-2024/speaker/00279b6e-32f7-4813-872b-4670dcd676bb.jpg"
       },
@@ -58,6 +58,19 @@
         "avatar_url": "https://fortee.jp/files/platform-engineering-kaigi-2024/speaker/51a5b527-cee2-4fa7-9a9a-ba9d6bf48e04.jpg"
       },
       "created": "2024-03-30T01:54:02+09:00",
+      "feedback": { "open": false }
+    },
+    {
+      "uuid": "d9e1960c-0b17-4c8d-a5c5-7ca3e3351e93",
+      "url": "https://fortee.jp/platform-engineering-kaigi-2024/proposal/d9e1960c-0b17-4c8d-a5c5-7ca3e3351e93",
+      "title": "リクルートのデータ施策を支えるプラットフォームにおける、チームトポロジーの実践",
+      "abstract": "■スピーカープロフィール (200文字以内) - Biography (Less than 400 letters)□\r\n2020年にリクルートに中途入社。 リクルートの複数の事業領域のデータ施策を支えるプラットフォーム群(Sugar, Crois, Knile等)の連携・統合案件を担当。\r\n現在は、Crois, Knileを担当するデータプロダクトエンジニアリンググループのマネージャーを務めている。\r\n\r\n■ トーク概要 (400文字以内) - Abstract (Less than 800 letters)□\r\nリクルートは数年前まで分社化の体制をとっており、各会社独自でプラットフォームを開発してきました。\r\n会社統合後は、プラットフォームとそれに紐付くチームが、統合後のリクルートにより適した形で進化する事が求められています。\r\n本トークでは、私が担当するCrois, Knileを例に、チームトポロジーのプラクティスを実践することでどのようにプラットフォームを進化させてきたのかについてお話しします。",
+      "accepted": false,
+      "speaker": {
+        "name": "大澤　恭平",
+        "kana": "■お名前の呼び方（カナ） - Supplemental information on name pronunciation□ オオサワ　キョウヘイ  ■会社名/所属団体名 - Company/Organizations□ 株式会社リクルート  ■役職 - Job Title□ エンジニアリングマネージャ"
+      },
+      "created": "2024-04-06T22:26:00+09:00",
       "feedback": { "open": false }
     }
   ]
