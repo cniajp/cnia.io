@@ -24,9 +24,7 @@ export interface Props {
 const { id, url, title, abstract, speaker } = Astro.props;
 
 const avatarUrl = speaker.avatar_url;
-const relativeImagePath = avatarUrl?.startsWith('https://')
-  ? avatarUrl
-  : `/src/assets/images/pek2024/pek2024_trademark.png`;
+const relativeImagePath = avatarUrl?.startsWith('https://') ? avatarUrl : `/pek2024_trademark.png`;
 
 let tags: Tag[] = [];
 async function loadTags() {
