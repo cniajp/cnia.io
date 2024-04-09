@@ -72,6 +72,21 @@
       },
       "created": "2024-04-06T22:26:00+09:00",
       "feedback": { "open": false }
+    },
+    {
+      "uuid": "3d8d7bb0-44a6-4f76-b153-633181c26a83",
+      "url": "https://fortee.jp/platform-engineering-kaigi-2024/proposal/3d8d7bb0-44a6-4f76-b153-633181c26a83",
+      "title": "Radiusの生まれと仕組みで考える プラットフォームエンジニアリングの現在地",
+      "abstract": "■スピーカープロフィール (200文字以内) - Biography (Less than 400 letters)□\r\n日本マイクロソフト株式会社 シニアクラウドソリューションアーキテクト\r\n\r\n■ トーク概要 (400文字以内) - Abstract (Less than 800 letters)□\r\nITにおけるRadiusとは、認証と記録のプロトコルだけではありません。マイクロソフトが2023年の秋に公開した、OSSのプロビジョニングツールでもあります。Radiusは、マイクロソフトの支援する顧客がプラットフォームエンジニアリングを進める中で、その課題を解決すべく生まれました。開発者ポータルの肥大化やツールの多さによる認知負荷の増大など、課題をRadiusはどう解決しようとしているのでしょうか。その生まれと仕組みの解説を通じて、プラットフォームエンジニアリングの現在地を考えてみましょう。",
+      "accepted": false,
+      "speaker": {
+        "name": "真壁 徹",
+        "kana": "■お名前の呼び方（カナ） - Supplemental information on name pronunciation□ マカベ トオル  ■会社名/所属団体名 - Company/Organizations□ 日本マイクロソフト株式会社  ■役職 - Job Title□ シニアクラウドソリューションアーキテクト  ■プロフィール (200文字以内) - Biography (Less than 400 letters)□ 大和総研 -> 日本HP -> 現職。アプリケーションとプラットフォームを緩",
+        "twitter": "tmak_tw",
+        "avatar_url": "https://fortee.jp/files/platform-engineering-kaigi-2024/speaker/fc5ffe3f-552a-444b-bf4b-0073ce121605.jpg"
+      },
+      "created": "2024-04-09T14:50:52+09:00",
+      "feedback": { "open": false }
     }
   ]
 }
