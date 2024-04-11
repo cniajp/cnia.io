@@ -25,7 +25,7 @@ const posts = await findLatestPosts({ count });
 
 <section class="px-4 py-16 mx-auto max-w-7xl lg:py-20">
   <div class="flex flex-col lg:justify-between lg:flex-row mb-8">
-    <div class="md:max-w-sm">
+    <div class="">
       {
         title && (
           <h2
@@ -34,6 +34,9 @@ const posts = await findLatestPosts({ count });
           />
         )
       }
+
+      <Grid posts={posts} />
+
       {
         allPostsText && allPostsLink && (
           <a
@@ -48,6 +51,4 @@ const posts = await findLatestPosts({ count });
 
     {information && <p class="text-muted dark:text-slate-400 lg:text-sm lg:max-w-md" set:html={information} />}
   </div>
-
-  <Grid posts={posts} />
 </section>
