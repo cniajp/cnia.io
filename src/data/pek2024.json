@@ -87,6 +87,21 @@
       },
       "created": "2024-04-09T14:50:52+09:00",
       "feedback": { "open": false }
+    },
+    {
+      "uuid": "9388f4fc-6ba0-4a47-a79e-0d878670426d",
+      "url": "https://fortee.jp/platform-engineering-kaigi-2024/proposal/9388f4fc-6ba0-4a47-a79e-0d878670426d",
+      "title": "検索基盤からPlatform Engineeringを考えてみる",
+      "abstract": "■スピーカープロフィール (200文字以内) - Biography (Less than 400 letters)□\r\n株式会社10Xで検索エンジニアをしています。検索基盤の開発運用、検索機能開発・改善などをしています。\r\n\r\n■ トーク概要 (400文字以内) - Abstract (Less than 800 letters)□\r\n多くの会社では検索基盤専属チームはなく、検索エンジニアやバックエンドエンジニア、SREが検索基盤を開発運用していると思います。私も検索エンジニアとして検索基盤を開発運用しています。検索エンジニアの役割はバックエンド開発からデータパイプライン構築、検索基盤開発など多岐にわたり、Platform Engineeringを専門としているわけではありません。そんな私が検索基盤を題材にPlatform Engineeringはなんなのか、どのように実践している/できるのかを紹介します。",
+      "accepted": false,
+      "speaker": {
+        "name": "kotaroooo0",
+        "kana": "■お名前の呼び方（カナ） - Supplemental information on name pronunciation□ コタロー   ■会社名/所属団体名 - Company/Organizations□ 株式会社10X ■役職 - Job Title□ SWE",
+        "twitter": "kotaroooo0",
+        "avatar_url": "https://fortee.jp/files/platform-engineering-kaigi-2024/speaker/5dd7c836-c77f-4486-ab65-2a6567718778.jpg"
+      },
+      "created": "2024-04-14T21:17:50+09:00",
+      "feedback": { "open": false }
     }
   ]
 }
