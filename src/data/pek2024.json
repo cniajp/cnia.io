@@ -4,7 +4,7 @@
       "uuid": "b7e42312-d4c3-49d8-a82d-c2874b3ba82d",
       "url": "https://fortee.jp/platform-engineering-kaigi-2024/proposal/b7e42312-d4c3-49d8-a82d-c2874b3ba82d",
       "title": "Platform Engineering入門",
-      "abstract": "■トーク概要- Talk Abstract□ \r\nPlatform Engineering入門をお話しします。\r\n\r\n■プロフィール (200文字以内) - Biography (Less than 400 letters)□ \r\nPlatform Engineeringを普及中。 \r\n",
+      "abstract": "■トーク概要- Talk Abstract□ \r\nPlatform Engineering入門をお話しします。\r\n\r\n■プロフィール (200文字以内) - Biography (Less than 400 letters)□ \r\n\\Platform Engineeringを普及中。 \r\n",
       "accepted": false,
       "speaker": {
         "name": "test user",
@@ -101,6 +101,36 @@
         "avatar_url": "https://fortee.jp/files/platform-engineering-kaigi-2024/speaker/5dd7c836-c77f-4486-ab65-2a6567718778.jpg"
       },
       "created": "2024-04-14T21:17:50+09:00",
+      "feedback": { "open": false }
+    },
+    {
+      "uuid": "477c3f0d-b3b9-454e-aff7-f6e68276f36c",
+      "url": "https://fortee.jp/platform-engineering-kaigi-2024/proposal/477c3f0d-b3b9-454e-aff7-f6e68276f36c",
+      "title": "受託開発の現場から考えるPlatform Engineering：直近1年間の挑戦と成果",
+      "abstract": "■スピーカープロフィール (200文字以内) - Biography (Less than 400 letters)□\r\nクラスメソッド株式会社製造ビジネステクノロジー部アーキテクトチーム所属\r\nPlatform Engineeringの概念を取り入れ、所属部署での知識や技術の効率的な伝達を模索中。\r\nJAWS-UG CDK支部の運営/2023 Japan AWS Top Engineer/AWS Community Builder(Dev Tools)\r\n\r\n■ トーク概要 (400文字以内) - Abstract (Less than 800 letters)□\r\n本発表では、弊社で直近1年間に行ったPlatform Engineeringの取り組みと課題をご紹介します。\r\nクラスメソッドの受託開発では大半の案件が順調に進む中、一部で困難が生じる場合もありました。ヒアリングを行った結果、ノウハウ共有の不足が明らかになりました。これを解決するため、Platform Engineeringの考えをベースとしたチームを組成しました。チームではAWS CDKを使用したIaCによるLambda/ECS on Fargate構成及びCICDのサンプル実装を行っています。また、サンプルにはよく起きる疑問を解決するためのノウハウも組み込み提供しています。\r\n構築したPlatformは現在複数のチームで導入や改善が進んでいます。今回の登壇では、構築から1年間の歩みや苦労について技術的な面だけでなく進め方なども含めて赤裸々にお伝えします。",
+      "accepted": false,
+      "speaker": {
+        "name": "佐藤 智樹",
+        "kana": "■お名前の呼び方（カナ） - Supplemental information on name pronunciation□ サトウトモキ ■会社名/所属団体名 - Company/Organizations□ クラスメソッド株式会社 ■役職 - Job Title□ マネージャー",
+        "twitter": "tmk2154",
+        "avatar_url": "https://fortee.jp/files/platform-engineering-kaigi-2024/speaker/840b8305-9566-456c-a6a1-cd1a298151d8.jpg"
+      },
+      "created": "2024-04-15T10:35:21+09:00",
+      "feedback": { "open": false }
+    },
+    {
+      "uuid": "d034e935-ff4d-4acc-966b-07bceb3150bd",
+      "url": "https://fortee.jp/platform-engineering-kaigi-2024/proposal/d034e935-ff4d-4acc-966b-07bceb3150bd",
+      "title": "企業のアジリティとガバナンスの効率化する、DBRE Platforms のこれまでとこれから",
+      "abstract": "■スピーカープロフィール (200文字以内) - Biography (Less than 400 letters)□\r\nKINTO テクノロジーズ DBRE エンジニア\r\n2022年2月、KINTO テクノロジーズに入社、DBREチームを立ち上げ会社横断でクラウドを適切に活用し、No Ops, More Code の世界観を DB のオペレーションに適用するための活動を実践しています。\r\n\r\n■ トーク概要 (400文字以内) - Abstract (Less than 800 letters)□\r\nKINTO テクノロジーズはトヨタ関連グループ会社の一つです。順調に成長してきた弊社では企業のフェーズと共に守らなければならないガイドラインが整理され、より厳しいものとなりました。\r\nガバナンスを守るためにアジリティを捨てる、アジリティを高くするためにガバナンスを諦める、ということをせずに、どのようにしたらアジリティとガバナンスを両立できるか、を考えさまざまな Platform を展開してきました。\r\n本セッションでは DBRE が提供しているさまざまな Platform に対して、何故それをやるのか、何を実現したのか、どうやって開発、提供したのかを余すことなく伝えさせていただきます。",
+      "accepted": false,
+      "speaker": {
+        "name": "_awache",
+        "kana": "DBRE エンジニア。会社横断でクラウドを適切に活用し、No Ops, More Code の世界観を DB のオペレーションに適用するための活動を実践している。",
+        "twitter": "_awache",
+        "avatar_url": "https://fortee.jp/files/platform-engineering-kaigi-2024/speaker/402c4bd6-da4b-4f74-b4df-75f7eac64f09.jpg"
+      },
+      "created": "2024-04-15T15:20:48+09:00",
       "feedback": { "open": false }
     }
   ]
