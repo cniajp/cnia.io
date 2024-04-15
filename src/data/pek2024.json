@@ -119,6 +119,21 @@
       "feedback": { "open": false }
     },
     {
+      "uuid": "d9ba44c2-90e0-4078-85f3-a3d1622cfa38",
+      "url": "https://fortee.jp/platform-engineering-kaigi-2024/proposal/d9ba44c2-90e0-4078-85f3-a3d1622cfa38",
+      "title": "新プロダクトリリースと同時実現するプラットフォームエンジニアリングとその課題、工夫、伸びしろ",
+      "abstract": "■スピーカープロフィール (200文字以内) - Biography (Less than 400 letters)□\r\n2023年4月から株式会社LegalOn TechnologiesでPlatform Engineerに取り組んでいます。Go、クラウドネイティブ、サーバーレス、分散システムなどが好きで、働きながら本を書いたり大学院で学んだりしています。\r\n■ トーク概要 (400文字以内) - Abstract (Less than 800 letters)□\r\nプラットフォームエンジニアリングに取り組み始めた弊社LegalOn Technologiesにおいて、新規50マイクロサービス同時立ち上げ時に取り組んだGitHub ActionsやArgo CDを利用したCI/CDプラットフォーム構築についてお話します。\r\nプロダクトラインナップやサービス提供地域の拡大を通して顧客提供価値の増大を目指す弊社では、複数のチームが同時多発的に開発体験高くサービスを立ち上げる必要がありました。そこで、ソフトウェア開発のライフサイクル全体をカバーするツールチェーンやワークフローが継続的に改善され、開発者自身がセルフサービスできる状態を目指すプラットフォームエンジニアリングが不可欠と考えました。これまでと異なる開発スタイルや技術スタックでの新プロダクトの立ち上げと同時にプラットフォームエンジニアリングに着手する際の課題、工夫、伸びしろを添えてお届けします。",
+      "accepted": false,
+      "speaker": {
+        "name": "toshi0607",
+        "kana": "■お名前の呼び方（カナ） - Supplemental information on name pronunciation□ トシ ■会社名/所属団体名 - Company/Organizations□ 株式会社LegalOn Technologies ■役職 - Job Title□ Platform Engineer",
+        "twitter": "toshi0607",
+        "avatar_url": "https://fortee.jp/files/platform-engineering-kaigi-2024/speaker/87c8aac4-00d8-44e0-93df-d9b6aaca0bfa.jpg"
+      },
+      "created": "2024-04-15T12:12:34+09:00",
+      "feedback": { "open": false }
+    },
+    {
       "uuid": "d034e935-ff4d-4acc-966b-07bceb3150bd",
       "url": "https://fortee.jp/platform-engineering-kaigi-2024/proposal/d034e935-ff4d-4acc-966b-07bceb3150bd",
       "title": "企業のアジリティとガバナンスの効率化する、DBRE Platforms のこれまでとこれから",
