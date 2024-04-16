@@ -1,8 +1,9 @@
 ---
-import sessionsData from '../../data/pek2024.json';
 import SessionInfo from './SessionInfo.astro';
+import axios from 'axios';
 
-const sessionsList = sessionsData.proposals;
+const { data } = await axios.get('https://fortee.jp/platform-engineering-kaigi-2024/api/proposals');
+const sessionsList = data.proposals;
 ---
 
 <section class="py-10 md:py-14">
