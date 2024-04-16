@@ -147,6 +147,21 @@
       },
       "created": "2024-04-15T15:20:48+09:00",
       "feedback": { "open": false }
+    },
+    {
+      "uuid": "d6ef43b3-e1a2-465d-9b71-3ba19c43f1f7",
+      "url": "https://fortee.jp/platform-engineering-kaigi-2024/proposal/d6ef43b3-e1a2-465d-9b71-3ba19c43f1f7",
+      "title": "Our Journey from In-House CD System to Open Source",
+      "abstract": "■スピーカープロフィール (200文字以内) - Biography (Less than 400 letters)□\r\n株式会社サイバーエージェント Developer Productivity室 Software Engineer\r\n2022年度新卒入社し、ABEMAにてバックエンドエンジニアとして内部データの改善、マイグレーションなどを経験。\r\nその後全社の開発生産性向上を目的とした組織、Developer Productivity室にjoin。現在は継続的デリバリーツールPipeCDのメンテナとして開発に携わる。\r\n\r\n■ トーク概要 (400文字以内) - Abstract (Less than 800 letters)□\r\nサイバーエージェントで開発され、現在Cloud Native Computing Foundation(CNCF) Sandboxプロジェクトとして成長する継続的デリバリー(CD)ツールのPipeCDを社内インフラストラクチャとして開発し、オープンソースとしてリリースするという挑戦的な道のりを共有します。なぜ組織内でCDプラットフォームを導入しようと思ったのか、実際にどんな取り組みを行ってきたのかを掘り下げていきます。具体的には、社内SaaSとしての提供、社内サポートの充実、そしてオープンソースソフトウェアとしての公開といった、PipeCDが現在に至るまでを共有します。その過程で実施した独自の戦略とイノベーションにも焦点を当てます。この講演を通して、同様の取り組みを検討している人々に貴重な洞察を提供するとともに、我々の経験や教訓を共有することでエコシステムを豊かにするのにも役立ちます。",
+      "accepted": false,
+      "speaker": {
+        "name": "Fujikane Yoshiki",
+        "kana": "■お名前の呼び方（カナ） - Supplemental information on name pronunciation□ フジカネヨシキ ■会社名/所属団体名 - Company/Organizations□ 株式会社サイバーエージェント/Developer Productivity室 ■役職 - Job Title□ Software Engineer",
+        "twitter": "ffjlabo",
+        "avatar_url": "https://fortee.jp/files/platform-engineering-kaigi-2024/speaker/56214327-9cfd-488e-bfb0-a3db62a1b928.jpg"
+      },
+      "created": "2024-04-16T17:03:07+09:00",
+      "feedback": { "open": false }
     }
   ]
 }
