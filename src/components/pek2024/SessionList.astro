@@ -3,7 +3,9 @@ import SessionInfo from './SessionInfo.astro';
 import axios from 'axios';
 import { type PEK2024ProposalList } from '../../types';
 
-const { data } = await axios.get<PEK2024ProposalList>('https://fortee.jp/platform-engineering-kaigi-2024/api/proposals');
+const { data } = await axios.get<PEK2024ProposalList>(
+  'https://fortee.jp/platform-engineering-kaigi-2024/api/proposals'
+);
 const sessionsList = data.proposals;
 ---
 
@@ -17,7 +19,7 @@ const sessionsList = data.proposals;
       {
         sessionsList.length > 0 ? (
           sessionsList
-            .filter((session) => session.speaker.name !== 'test user')
+            .filter((session) => session.speaker.name !== 'test user' && session.speaker.twitter !== 'tak_kammy')
             .map((session) => (
               <SessionInfo
                 id={session.uuid}
