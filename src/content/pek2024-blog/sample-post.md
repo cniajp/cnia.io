@@ -43,7 +43,7 @@ draft: false
 
 <!-- 画像 -->
 
-![PEK2024ロゴ](/public/pek2024/blog/sample-post/pek2024_logo.png)
+![PEK2024ロゴ](../../../public/pek2024/blog/sample-post/pek2024_logo.png)
 
 <!-- リンク -->
 
