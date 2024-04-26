@@ -15,7 +15,7 @@ author:
   name: ishikawa-pro
   icon: /src/assets/images/pek2024/teamMembers/ishikawa-pro.jpg
 canonical: https://www.cnia.io/pek2024/blog/sample-post/sample-post
-draft: true
+draft: false
 ---
 <!-- 見出し -->
 # 見出し1
