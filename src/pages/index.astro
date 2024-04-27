@@ -6,6 +6,7 @@ import Features from '~/components/widgets/Features.astro';
 import Content from '~/components/widgets/Content.astro';
 import LatestPosts from '~/components/blog/LatestPosts.astro';
 import Hero3 from '~/components/widgets/Hero3.astro';
+import About from '~/components/widgets/About.astro';
 
 const meta = {
   title: SITE.title,
@@ -125,7 +126,7 @@ const meta = {
   </Content>
 
   <a id="about"></a>
-  <Content highlight="About" title="団体情報">
+  <About highlight="About" title="団体情報">
     <Fragment slot="content">
       <table class="border-separate table-auto text-sm">
         <tr>
@@ -174,5 +175,5 @@ const meta = {
         </tr>
       </table>
     </Fragment>
-  </Content>
+  </About>
 </Layout>
