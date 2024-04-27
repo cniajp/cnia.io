@@ -2,10 +2,10 @@
 import { SITE } from '~/config.mjs';
 import Layout from '~/layouts/CNIA/PageLayout.astro';
 
-import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Content from '~/components/widgets/Content.astro';
 import LatestPosts from '~/components/blog/LatestPosts.astro';
+import Hero3 from '~/components/widgets/Hero3.astro';
 
 const meta = {
   title: SITE.title,
@@ -17,19 +17,12 @@ const meta = {
 <Layout {meta}>
   <!-- Hero Widget ******************* -->
 
-  <Hero>
-    <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        <span class="font-semibold">一般社団法人クラウドネイティブイノベーターズ協会</span
-        >は、日本におけるクラウドネイティブ技術の普及を推進するため、人材育成の支援と交流の場を提供するための団体です。
-      </span>
-    </Fragment>
-  </Hero>
+  <Hero3 />
 
   <!-- Blog Widget ******************* -->
   <LatestPosts title="Blog" postIds={['establishment-of-cnia.md']} />
 
-  <a id="pfem"></a>
+  <a id="activity"></a>
   <Content
     highlight="Community event"
     title="Platform Engineering Meetup"
@@ -82,7 +75,6 @@ const meta = {
     </Fragment>
 
     <!-- Features Widget *************** -->
-    <a id="activity"></a>
     <Features
       highlight="Activity"
       title="活動一覧"
@@ -130,57 +122,57 @@ const meta = {
         ],
       ]}
     />
+  </Content>
 
-    <a id="about"></a>
-    <Content highlight="About" title="団体情報">
-      <Fragment slot="content">
-        <table class="border-separate table-auto text-sm">
-          <tr>
-            <th class="w-20">名称</th>
-            <td>一般社団法人クラウドネイティブイノベーターズ協会</td>
-          </tr>
-          <tr>
-            <th>目的</th>
-            <td>日本におけるクラウドネイティブ技術の普及を推進するため、人材育成の支援と交流の場を提供する</td>
-          </tr>
-          <tr>
-            <th>事業内容</th>
-            <td>
-              (1) ミートアップ/カンファレンス開催<br />
-              (2) コミュニティ支援<br />
-              (3) セミナー<br />
-              (4) クラウドネイティブ技術導入のサポート及びコンサルティング<br />
-              (5) 書籍出版支援<br />
-              (6) OSSの企画・開発・メンテナンス<br />
-              (7) 前各号に掲げるほか、当法人の目的を達成するために必要な一切の事業
-            </td>
-          </tr>
-          <tr>
-            <th>設立</th>
-            <td>2023(令和5)年6月2日 [決算期 : 5月]</td>
-          </tr>
-          <tr>
-            <th rowspan="3">役員</th>
-            <td>
-              <b>代表理事</b> 草間 一人<br />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <b>理事</b> 青山 真也<br />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <b>理事</b> 北澤 祥太 <br />
-            </td>
-          </tr>
-          <tr>
-            <th>所在地</th>
-            <td>東京都中央区銀座1丁⽬12番4号N&amp;E BLD.6F</td>
-          </tr>
-        </table>
-      </Fragment>
-    </Content>
+  <a id="about"></a>
+  <Content highlight="About" title="団体情報">
+    <Fragment slot="content">
+      <table class="border-separate table-auto text-sm">
+        <tr>
+          <th class="w-20">名称</th>
+          <td>一般社団法人クラウドネイティブイノベーターズ協会</td>
+        </tr>
+        <tr>
+          <th>目的</th>
+          <td>日本におけるクラウドネイティブ技術の普及を推進するため、人材育成の支援と交流の場を提供する</td>
+        </tr>
+        <tr>
+          <th>事業内容</th>
+          <td>
+            (1) ミートアップ/カンファレンス開催<br />
+            (2) コミュニティ支援<br />
+            (3) セミナー<br />
+            (4) クラウドネイティブ技術導入のサポート及びコンサルティング<br />
+            (5) 書籍出版支援<br />
+            (6) OSSの企画・開発・メンテナンス<br />
+            (7) 前各号に掲げるほか、当法人の目的を達成するために必要な一切の事業
+          </td>
+        </tr>
+        <tr>
+          <th>設立</th>
+          <td>2023(令和5)年6月2日 [決算期 : 5月]</td>
+        </tr>
+        <tr>
+          <th rowspan="3">役員</th>
+          <td>
+            <b>代表理事</b> 草間 一人<br />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>理事</b> 青山 真也<br />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>理事</b> 北澤 祥太 <br />
+          </td>
+        </tr>
+        <tr>
+          <th>所在地</th>
+          <td>東京都中央区銀座1丁⽬12番4号N&amp;E BLD.6F</td>
+        </tr>
+      </table>
+    </Fragment>
   </Content>
 </Layout>
