@@ -24,7 +24,7 @@ export const headerData = {
         },
         {
           text: '過去セッション一覧',
-          href: '/pfem/past_events',
+          href: '/pfem/sessions',
         },
       ],
     },

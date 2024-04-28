@@ -3,18 +3,23 @@ import Layout from '~/layouts/CNIA/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
-import Sessions from '~/components/widgets/Sessions.astro';
 import FullContent from '~/components/widgets/FullContent.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import { Picture } from 'astro:assets';
+import { getCollection } from 'astro:content';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Upcoming from '~/components/widgets/Upcoming.astro';
+import SessionCard from '~/components/pfem/SessionCard.astro';
+
 
 const meta = {
   title: 'Platform Engineering Meetup',
   description: 'Platform Engineeringについて考え方を学び、事例を共有していく勉強会',
   dontUseTitleTemplate: true,
 };
+const sessions = await getCollection('pfem-session', ({ data }) => {
+  return data.draft !== true;
+});
 ---
 
 <Layout {meta}>
@@ -25,7 +30,6 @@ const meta = {
         alt=""
         sizes="400"
         widths={[2000]}
-        position="center"
       />
     </Fragment>
   </Hero>
@@ -79,69 +83,34 @@ const meta = {
     ]}
   />
 
-  <a id="sessions"></a>
-  <Sessions
-    title="過去のセッション"
-    highlight="Sessions"
-    items={[
+  <div class="inset-0 p-6 mx-auto space-y-6 sm:space-y-12 bg-blue-50">
+      <div class="mb-8 md:mx-auto text-center max-w-3xl">
+      <p class="text-base text-primary dark:text-blue-200 font-semibold tracking-wide uppercase">
+        sessions
+      </p>
+      <h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
+        過去のセッション
+      </h2>
+    </div>
+    <div class="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {
-        event: 'Platform Engineering Meetup #3',
-        title: 'CNCFが考えるPlatform ー Platforms White Paperについて',
-        speaker: '@jacopen',
-        videoUrl: 'https://www.youtube.com/embed/CwDaS0E3FTo&t=798s',
-        documentUrl: 'https://speakerdeck.com/jacopen/cncfgakao-eruplatform-platforms-white-papernituite',
-      },
-      {
-        event: 'Platform Engineering Meetup #3',
-        title: 'PlatformCon 2023 Recap',
-        speaker: 'APC亀崎さん',
-        videoUrl: 'https://www.youtube.com/embed/CwDaS0E3FTo&t=2430s',
-        documentUrl: '',
-      },
-      {
-        event: 'Platform Engineering Meetup #3',
-        title: 'PlatformCon 2023 Recap',
-        speaker: '@tanayan',
-        videoUrl: 'https://www.youtube.com/embed/CwDaS0E3FTo&t=4634s',
-        documentUrl: 'https://www.docswell.com/s/tananyan29/ZJL8QQ-2023-06-30-204644',
-      },
-      {
-        event: 'Platform Engineering Meetup #3',
-        title: 'スポンサーセッション - 株式会社スタメン',
-        speaker: '株式会社スタメン',
-        videoUrl: 'https://www.youtube.com/embed/CwDaS0E3FTo&t=6158s',
-        documentUrl: '',
-      },
-      {
-        event: 'Platform Engineering Meetup #2',
-        title: 'Platform Engineering at Mercari',
-        speaker: '@deeeet',
-        videoUrl: 'https://www.youtube.com/embed/uscW_w8J7Y8&t=502s',
-        documentUrl: 'https://speakerdeck.com/tcnksm/platform-engineering-at-mercari',
-      },
-      {
-        event: 'Platform Engineering Meetup #2',
-        title: 'AI 開発への未来へ備えよ！Platform Engineering と GitHub を使った開発',
-        speaker: 'Yuki Hattori@yuhattor',
-        videoUrl: 'https://www.youtube.com/embed/uscW_w8J7Y8&t=2090s',
-        documentUrl: 'https://speakerdeck.com/yuhattor/platform-engineering-and-innersource',
-      },
-      {
-        event: 'Platform Engineering Meetup #2',
-        title: 'IaaSにおけるPlatform Engineeringとこれから',
-        speaker: '@kazeburo',
-        videoUrl: 'https://www.youtube.com/embed/uscW_w8J7Y8&t=4732s',
-        documentUrl: 'https://speakerdeck.com/kazeburo/platform-engineering-in-iaas',
-      },
-      {
-        event: 'Platform Engineering Meetup #2',
-        title: 'Platform Team と 社内政治 〜 出でよ、Platform Champion 〜',
-        speaker: '@kenojiri',
-        videoUrl: 'https://www.youtube.com/embed/uscW_w8J7Y8&t=6108s',
-        documentUrl: '',
-      },
-    ]}
-  />
+        sessions.map((session) => (
+          <SessionCard session={{
+            title: session.data.title,
+            description: undefined,
+            eventName: session.data.event.name,
+            eventDate: session.data.event.date,
+            category: undefined,
+            tags: undefined,
+            image: session.data.image,
+            path: `/pfem/sessions/${session.slug}`,
+            name: session.data.speakerInfo.name,
+            company: session.data.speakerInfo.company,
+          }}/>
+        ))
+      }
+    </div>
+  </div>
   <FullContent title={'メディア掲載事例'} highlight="Media">
     <Fragment slot="content">
       <ul>
