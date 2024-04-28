@@ -50,6 +50,6 @@ const { session } = Astro.props;
         {session.company}
       </p>
     </div>
-    {session.description && (<p>{session.description}</p>)}
+    {session.description && (<p>{session.description.slice(0, 140)}</p>)}
   </div>
 </a>
