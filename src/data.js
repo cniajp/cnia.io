@@ -17,6 +17,16 @@ export const headerData = {
     {
       text: 'PFEM',
       href: '/pfem',
+      links: [
+        {
+          text: 'PFEMトップ',
+          href: '/pfem',
+        },
+        {
+          text: '過去セッション一覧',
+          href: '/pfem/past_events',
+        },
+      ],
     },
     {
       text: 'PEK2024',
