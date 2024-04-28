@@ -6,9 +6,12 @@ import SessionCard from '~/components/pfem/SessionCard.astro'
 const allSessionss = await getCollection('pfem-session', ({ data }) => {
     return data.draft !== true;
 });
-const getUrl = (slug: string) => `/pfem/sessions/${slug}`;
 ---
-<Layout >
+<Layout meta={{
+  title: 'PFEM Sessions',
+  description: 'Platform Engineering Meetup の過去セッションのYouTube, スライド, 文字起こしをまとめています。',
+}}
+>
   <section class="text-gray-800">
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:px-6">
       <div class="mx-auto max-w-screen-sm text-center mb-8">

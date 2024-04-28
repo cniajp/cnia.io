@@ -32,7 +32,11 @@ const relatedSessions = (
   )
 ).flat();
 ---
-<Layout > 
+<Layout meta={{
+  title: session.data.title,
+  description: session.data.description,
+  image: session.data.image,
+}}> 
   <div class="flex justify-center">
     <iframe
       class="rounded-lg mx-auto max-w-xs md:max-w-3xl"
