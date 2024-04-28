@@ -1,0 +1,120 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '~/layouts/CNIA/PageLayout.astro';
+import SessionCard from '~/components/pfem/SessionCard.astro';
+
+export async function getStaticPaths() {
+  const sessions = await getCollection('pfem-session', ({ data }) => {
+    return data.draft !== true;
+  });
+  return sessions.map(session => ({
+    params: { session: session.slug }, props: { session },
+  }));
+}
+
+const { session } = Astro.props;
+const { speakerdeck } = session.data;
+const { Content } = await session.render();
+const relatedSessions = (
+  await Promise.all(
+    (session.data.relatedSessions ?? [])
+      .map(async relatedSession => {
+        return await getCollection('pfem-session', ({ data, slug }) => {
+          if (data.draft === true) {
+            return false;
+          }
+          if (data.relatedSessions === undefined || data.relatedSessions.length === 0) {
+            return false;
+          }
+          return slug === relatedSession.slug;
+        });
+      })
+  )
+).flat();
+---
+<Layout > 
+  <div class="flex justify-center">
+    <iframe
+      class="rounded-lg mx-auto max-w-xs md:max-w-3xl"
+      width="100%"
+      height="auto"
+      src={session.data.youtubeEmbedUrl}
+      title="YouTube video player"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      style={{aspectRatio: "560 / 315"}}
+      allowfullscreen>
+    </iframe>
+  </div>
+  <article class="mx-auto max-w-xs sm:max-w-lg md:max-w-lg xl:max-w-3xl mb-4">
+    <div class="">
+      <span class="text-xs text-slate-100 font-semibold bg-primary rounded px-2 py-1 mr-1 mb-1">
+        {session.data.category}
+      </span>
+      <h1 class="text-4xl font-bold">
+        {session.data.title}
+      </h1>
+      <div class="flex flex-wrap mt-2">
+        {session.data.tags.map((tag) => (
+          <span class="text-xs text-slate-100 font-medium bg-secondary rounded-full px-2 py-1 mr-1 mb-1">{tag}</span>
+        ))}
+      </div>
+      <p class="text-sm text-slate-500">
+        {session.data.event.date} {session.data.event.name}
+      </p>
+      <div class="my-4">
+        <p class="text-sm font-semibold text-slate-800">
+          {session.data.speakerInfo.name}
+        </p>
+        <p class="text-sm text-slate-500">
+          {session.data.speakerInfo.company}
+        </p>
+      </div>
+    </div>
+    <!-- speackerdeck があれば表示-->
+    <div class="flex justify-center">
+    {speakerdeck && (
+        <iframe 
+          class="speakerdeck-iframe mx-auto max-w-xs md:max-w-3xl"
+          src={speakerdeck.url}
+          title={speakerdeck.title}
+          allowfullscreen="true"
+          style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; aspect-ratio: 560 / 315;"
+          data-ratio="1.7777777777777777">
+        </iframe>
+    )}
+    </div>
+    {
+      session.body && (
+        <article class="mx-auto prose prose-lg md:text-base max-w-4xl prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-blue-600 prose-img:rounded-md prose-img:shadow-lg mt-8 bg-slate-50 rounded-xl py-2 px-4">
+          <h3>Transcript</h3>
+          <Content />
+        </article>
+      )
+    }
+    </div>
+  </article>
+  {relatedSessions.length > 0 && relatedSessions.map(session => (
+    <div class="p-4 mt-4 bg-secondary-10">
+      <div class="flex">
+        <h3 class="text-sm font-bold text-slate-100 bg-secondary p-2 rounded">関連記事</h3>
+      </div>
+      <div class="grid justify-center grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 p-4">
+        <SessionCard
+          session={{
+            title: session.data.title,
+            description: undefined,
+            eventName: session.data.event.name,
+            eventDate: session.data.event.date,
+            category: undefined,
+            tags: undefined,
+            image: session.data.image,
+            path: `/pfem/sessions/${session.slug}`,
+            name: session.data.speakerInfo.name,
+            company: session.data.speakerInfo.company,
+          }}
+        />
+      </div>
+    </div>
+  ))}
+</Layout>
