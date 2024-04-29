@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 }
 
 const { session } = Astro.props;
-const { speakerdeck } = session.data;
+const { speakerdeck, docswell } = session.data;
 const { Content } = await session.render();
 const relatedSessions = (
   await Promise.all(
@@ -77,16 +77,28 @@ const relatedSessions = (
     </div>
     <!-- speackerdeck があれば表示-->
     <div class="flex justify-center">
-    {speakerdeck && (
-        <iframe 
-          class="speakerdeck-iframe mx-auto max-w-xs md:max-w-3xl"
-          src={speakerdeck.url}
-          title={speakerdeck.title}
+      {speakerdeck && (
+          <iframe 
+            class="speakerdeck-iframe mx-auto max-w-xs md:max-w-3xl"
+            src={speakerdeck.url}
+            title={speakerdeck.title}
+            allowfullscreen="true"
+            style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; aspect-ratio: 560 / 315;"
+            data-ratio="1.7777777777777777">
+          </iframe>
+      )}
+      <!-- docswell があれば表示-->
+      {docswell && (
+        <iframe
+          src={docswell.url}
           allowfullscreen="true"
-          style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; aspect-ratio: 560 / 315;"
-          data-ratio="1.7777777777777777">
+          class="docswell-iframe"
+          width="100%"
+          height="auto"
+          style="border: 1px solid #ccc; display: block; margin: 0px auto; padding: 0px; aspect-ratio: 620/349;"
+        >
         </iframe>
-    )}
+      )}
     </div>
     {
       session.body && (
@@ -96,29 +108,30 @@ const relatedSessions = (
         </article>
       )
     }
-    </div>
   </article>
-  {relatedSessions.length > 0 && relatedSessions.map(session => (
+  {relatedSessions.length > 0 && (
     <div class="p-4 mt-4 bg-secondary-10">
       <div class="flex">
         <h3 class="text-sm font-bold text-slate-100 bg-secondary p-2 rounded">関連セッション</h3>
       </div>
       <div class="grid justify-center grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 p-4">
-        <SessionCard
-          session={{
-            title: session.data.title,
-            description: undefined,
-            eventName: session.data.event.name,
-            eventDate: session.data.event.date,
-            category: undefined,
-            tags: undefined,
-            image: session.data.image,
-            path: `/pfem/sessions/${session.slug}`,
-            name: session.data.speakerInfo.name,
-            company: session.data.speakerInfo.company,
-          }}
-        />
+        {relatedSessions.map(session => (
+          <SessionCard
+            session={{
+              title: session.data.title,
+              description: undefined,
+              eventName: session.data.event.name,
+              eventDate: session.data.event.date,
+              category: undefined,
+              tags: undefined,
+              image: session.data.image,
+              path: `/pfem/sessions/${session.slug}`,
+              name: session.data.speakerInfo.name,
+              company: session.data.speakerInfo.company,
+            }}
+          />
+        ))}
       </div>
-    </div>
-  ))}
+    </div> 
+    )}
 </Layout>
