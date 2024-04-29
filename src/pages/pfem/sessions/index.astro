@@ -1,0 +1,41 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '~/layouts/CNIA/PageLayout.astro';
+import SessionCard from '~/components/pfem/SessionCard.astro'
+
+const allSessionss = await getCollection('pfem-session', ({ data }) => {
+    return data.draft !== true;
+});
+---
+<Layout meta={{
+  title: 'Session一覧 | Platform Engineering Meetup',
+  description: 'Platform Engineering Meetup の過去セッションのYouTube, スライド, 文字起こしをまとめています。',
+}}
+>
+  <section class="text-gray-800">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:px-6">
+      <div class="mx-auto max-w-screen-sm text-center mb-8">
+        <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900">Sessions</h2>
+        <p class="font-light text-gray-500 sm:text-xl">Platform Engineering Meetup の過去セッションのYouTube, スライド, 文字起こしをまとめています。</p>
+      </div> 
+    </div>
+    <div class="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
+      <div class="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {allSessionss.map((session) => (
+          <SessionCard session={{
+            title: session.data.title,
+            eventName: session.data.event.name,
+            eventDate: session.data.event.date,
+            category: session.data.category,
+            tags: session.data.tags,
+            description: session.data.description,
+            image: session.data.image,
+            path: `/pfem/sessions/${session.slug}`,
+            name: session.data.speakerInfo.name,
+            company: session.data.speakerInfo.company,
+          }}/>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
