@@ -77,18 +77,18 @@ const relatedSessions = (
     </div>
     <!-- speackerdeck があれば表示-->
     <div class="flex justify-center">
-    {speakerdeck && (
-        <iframe 
-          class="speakerdeck-iframe mx-auto max-w-xs md:max-w-3xl"
-          src={speakerdeck.url}
-          title={speakerdeck.title}
-          allowfullscreen="true"
-          style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; aspect-ratio: 560 / 315;"
-          data-ratio="1.7777777777777777">
-        </iframe>
-    )}
-    {
-      docswell && (
+      {speakerdeck && (
+          <iframe 
+            class="speakerdeck-iframe mx-auto max-w-xs md:max-w-3xl"
+            src={speakerdeck.url}
+            title={speakerdeck.title}
+            allowfullscreen="true"
+            style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; aspect-ratio: 560 / 315;"
+            data-ratio="1.7777777777777777">
+          </iframe>
+      )}
+      <!-- docswell があれば表示-->
+      {docswell && (
         <iframe
           src={docswell.url}
           allowfullscreen="true"
@@ -108,7 +108,6 @@ const relatedSessions = (
         </article>
       )
     }
-    </div>
   </article>
   {relatedSessions.length > 0 && (
     <div class="p-4 mt-4 bg-secondary-10">
