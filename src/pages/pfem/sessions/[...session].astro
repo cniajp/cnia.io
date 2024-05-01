@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 }
 
 const { session } = Astro.props;
-const { speakerdeck, docswell } = session.data;
+const { speakerdeck, docswell, link } = session.data;
 const { Content } = await session.render();
 const relatedSessions = (
   await Promise.all(
@@ -100,6 +100,15 @@ const relatedSessions = (
         </iframe>
       )}
     </div>
+    <!-- その他 Link -->
+    {link && (
+      <div class="flex">
+        <span class="text-slate-600 mr-2">
+          資料:
+        </span>
+        <a href={link.url} class="text-blue-600" target="_blank">{link.title}</a>
+      </div>
+    )}
     {
       session.body && (
         <article class="mx-auto prose prose-lg md:text-base max-w-4xl prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-blue-600 prose-img:rounded-md prose-img:shadow-lg mt-8 bg-slate-50 rounded-xl py-2 px-4">
