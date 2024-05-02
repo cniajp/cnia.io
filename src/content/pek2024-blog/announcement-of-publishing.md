@@ -8,7 +8,7 @@ author:
   name: Kasai Kou
   icon: /src/assets/images/pek2024/teamMembers/kasaikou.jpg
 canonical: https://www.cnia.io/pek2024/blog/announcement-of-publishing
-draft: true
+draft: false
 ---
 
 # Platform Engineering 本を頒布します
