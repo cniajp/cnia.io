@@ -1,6 +1,7 @@
 ---
 title: Real World Platform Engineering! 技書博・技術書典にて Platform Engineering 本を頒布します
 category: Publishing
+publishDate: 2024-05-02T01:48:12Z
 tags:
   - お知らせ
 image: /pek2024/blog/announcement-of-publishing/ogp.jpg
