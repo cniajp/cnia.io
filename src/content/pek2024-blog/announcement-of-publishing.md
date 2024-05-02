@@ -13,7 +13,13 @@ draft: true
 
 # Platform Engineering 本を頒布します
 
+Platform Engineering Kaigi 2024 の開催に合わせて、Platform Engineering 本を頒布します。
 
+本のタイトルはその名も **「Real World Platform Engineering: 現場の知恵とノウハウ」** です！
+
+本では、有志で執筆者を募ってそれぞれが直面した Platform Engineering の課題と、その解決法に対する考え方や実践例などを語って頂きます！
+
+![Real World Platform Engineering: 現場の知恵とノウハウ](../../../public/pek2024/blog/announcement-of-publishing/bookcover.png)
 
 ## 各章の紹介（まえがきより）
 
@@ -31,3 +37,12 @@ namayasai (Yamana Tomohiro) さんが執筆した **「ドキュメントから�
 
 jacopen さんが執筆した **「プラットフォームの社内ブランディング~名前つけるのもロゴ作るのもプラットフォームチームの仕事です~」** では、 Platform Engineering の一環として開発したツールをチームや組織に浸透させていくためのブランディング手法について説明していただきます。
 
+## 頒布詳細
+
+本は技書博 10 (い-04) および技術書典 16 (き15) で物理本・電子本で頒布したいと思います。
+
+- 物理本: 1000 円
+- 電子本: 1000 円
+- 物理・電子本: 1500 円
+
+よろしくおねがいいたします。
