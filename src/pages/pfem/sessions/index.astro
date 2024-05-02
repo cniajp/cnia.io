@@ -6,6 +6,20 @@ import SessionCard from '~/components/pfem/SessionCard.astro'
 const allSessionss = await getCollection('pfem-session', ({ data }) => {
     return data.draft !== true;
 });
+// event.date と slug でソート
+const sortedSessions = allSessionss.sort((a, b) => {
+  if (a.data.event.date < b.data.event.date) {
+    return 1;
+  } else if (a.data.event.date > b.data.event.date) {
+    return -1;
+  } else {
+    if (a.slug > b.slug) {
+      return 1;
+    } else {
+      return -1;
+    }
+  }
+});
 ---
 <Layout meta={{
   title: 'Session一覧 | Platform Engineering Meetup',
@@ -21,7 +35,7 @@ const allSessionss = await getCollection('pfem-session', ({ data }) => {
     </div>
     <div class="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
       <div class="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {allSessionss.map((session) => (
+        {sortedSessions.map((session) => (
           <SessionCard session={{
             title: session.data.title,
             eventName: session.data.event.name,
