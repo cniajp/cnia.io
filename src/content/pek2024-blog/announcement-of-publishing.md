@@ -20,7 +20,11 @@ Platform Engineering Kaigi 2024 の開催に合わせて、Platform Engineering 
 
 本のタイトルはその名も **「Real World Platform Engineering: 現場の知恵とノウハウ」** です！
 
-本では、有志で執筆者を募ってそれぞれが直面した Platform Engineering の課題と、その解決法に対する考え方や実践例などを語って頂きます！
+本書はさまざまなバックグラウンドをもつ有志により執筆されており、各人が直面した Platform Engineering の課題とその解決法に対する考え方や実践例などがまとめられています。
+
+日本国内において Platform Engineering が注目され始めたのは 2023 年。
+Platform Engineeringで扱われる問題の多くは昔からあるものといえど、体系化された解決策をベストプラクティスとして語るにはまだまだ情報が不足しています。
+本書がPlatform Engineering を学んでいくうえでの情報収集の一助となれば幸いです。
 
 ![Real World Platform Engineering: 現場の知恵とノウハウ](../../../public/pek2024/blog/announcement-of-publishing/bookcover.png)
 
