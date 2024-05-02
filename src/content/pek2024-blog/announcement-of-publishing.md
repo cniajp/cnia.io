@@ -1,5 +1,7 @@
 ---
 title: Real World Platform Engineering! 技書博・技術書典にて Platform Engineering 本を頒布します
+description: |
+  Platform Engineering Kaigi 2024 の開催に合わせて、「Real World Platform Engineering: 現場の知恵とノウハウ」という Platform Engineering 本を頒布します。
 category: Publishing
 publishDate: 2024-05-02T01:48:12Z
 tags:
