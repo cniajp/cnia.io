@@ -7,7 +7,7 @@ image: /pek2024/blog/announcement-of-publishing/ogp.jpg
 author:
   name: Kasai Kou
   icon: /src/assets/images/pek2024/teamMembers/kasaikou.jpg
-canonical: https://www.cnia.io/pek2024/blog/announcement-of-publishing
+canonical: https://www.cnia.io/pek2024/blog/announcement-of-publishing/announcement-of-publishing
 draft: false
 ---
 
