@@ -51,7 +51,7 @@ jacopen さんが執筆した **「プラットフォームの社内ブランデ
 ### 頒布場所
 
 - 05/12（日）11:00～16:00 技書博（大田区産業プラザ PiO、[い-04: Platform Engineering Meetup](https://gishohaku.dev/gishohaku10/circles/3jp5ZGwPkamRuQkDhzpp)）
-- 05/25（土）～ 06/09（日）技術書典16オンラインマーケット（[き15: Platform Engineering Kaigi](https://techbookfest.org/organization/rLp266hZSJ5FePtR3K8tXV)
+- 05/25（土）～ 06/09（日）技術書典16オンラインマーケット（[き15: Platform Engineering Kaigi](https://techbookfest.org/organization/rLp266hZSJ5FePtR3K8tXV))
 - 05/26（日）11:00～17:00 技術書典16（池袋サンシャインシティ、き15: Platform Engineering Kaigi）
 
 ### 価格
