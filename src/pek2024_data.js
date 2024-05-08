@@ -74,6 +74,7 @@ export const footerData = {
       title: 'Sessions',
       links: [
         { text: 'SESSIONS', href: getPermalink('/pek2024/sessions') },
+        { text: 'SPEAKERS', href: getPermalink('/pek2024/speakers') },
         // { text: 'TIME TABLE', href: getPermalink('/pek2024/timeTable') },
       ],
     },
