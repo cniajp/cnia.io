@@ -19,12 +19,7 @@ const sessionsList = data.proposals;
       {
         sessionsList.length > 0 ? (
           sessionsList
-            .filter(
-              (session) =>
-                session.speaker.name !== 'test user' &&
-                session.speaker.twitter !== 'tak_kammy' &&
-                session.uuid !== '0c1e6602-fdda-41db-a5d9-b977ea1ecd17'
-            )
+            .filter((session) => session.accepted === true)
             .map((session) => <SpeakerInfo id={session.uuid} abstract={session.abstract} speaker={session.speaker} />)
         ) : (
           <div class="px-4 py-5 flex-auto">
