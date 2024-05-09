@@ -12,17 +12,14 @@ const sessionsList = data.proposals;
 <section class="py-10 md:py-14">
   <div class="mb-10 text-center max-w-3xl mx-auto">
     <p class="text-base text-gray-600 font-semibold tracking-wide uppercase">Proposals</p>
-    <h2 class="text-4xl md:text-5xl font-bold leading-tight tracking-tight">プロポーザル一覧</h2>
+    <h2 class="text-4xl md:text-5xl font-bold leading-tight tracking-tight">セッション一覧</h2>
   </div>
   <div class="bg-gray-100 py-8 px-2">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
       {
         sessionsList.length > 0 ? (
           sessionsList
-            .filter(
-              (session) =>
-                session.speaker.name !== 'test user' && session.uuid !== '0c1e6602-fdda-41db-a5d9-b977ea1ecd17'
-            )
+            .filter((session) => session.accepted === true)
             .map((session) => (
               <SessionInfo
                 id={session.uuid}
