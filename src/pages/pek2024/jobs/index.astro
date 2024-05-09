@@ -10,41 +10,18 @@ const [platinumData, goldData, sliverData, blonzeData, lunchData] = await Promis
   getCollection('pek2024-job-boards', (board) => board.data.rank === "bronze"),
   getCollection('pek2024-job-boards', (board) => board.data.rank === "lunch"),
 ])
-const platinumContents = await Promise.all(platinumData.map(async job => {
+const getContent = async (job) => {
   const { Content } = await job.render();
   return {
     data: job.data,
     Content,
   }
-}));
-const goldContents = await Promise.all(goldData.map(async job => {
-  const { Content } = await job.render();
-  return {
-    data: job.data,
-    Content,
-  }
-}));
-const silverContents = await Promise.all(sliverData.map(async job => {
-  const { Content } = await job.render();
-  return {
-    data: job.data,
-    Content,
-  }
-}));
-const blonzeContents = await Promise.all(blonzeData.map(async job => {
-  const { Content } = await job.render();
-  return {
-    data: job.data,
-    Content,
-  }
-}));
-const lunchContents = await Promise.all(lunchData.map(async job => {
-  const { Content } = await job.render();
-  return {
-    data: job.data,
-    Content,
-  }
-}));
+};
+const platinumContents = await Promise.all(platinumData.map(getContent));
+const goldContents = await Promise.all(goldData.map(getContent));
+const silverContents = await Promise.all(sliverData.map(getContent));
+const blonzeContents = await Promise.all(blonzeData.map(getContent));
+const lunchContents = await Promise.all(lunchData.map(getContent));
 ---
 <Layout meta={{
   title: 'PEK2024 ジョブボード',
