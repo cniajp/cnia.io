@@ -11,6 +11,7 @@ import TeamMemberList from '~/components/pek2024/TeamMemberList.astro';
 import Cfp from '~/components/pek2024/Cfp.astro';
 
 import { getCollection } from 'astro:content';
+import Note from '~/components/pek2024/Note.astro';
 
 const allPosts = await getCollection('pek2024-blog', ({ data }) => {
   return data.draft !== true;
@@ -76,6 +77,8 @@ const news = [
   <a id="update"></a>
   <Update highlight="News" title="お知らせ" items={news} />
   {blogPosts.length > 0 && <Update highlight="Blog" title="ブログ" items={blogPosts.slice(0, 5)} />}
+
+  <Note highlight="Special Event" title="共催企画" />
 
   <a id="cfp"></a>
   <Cfp highlight="Call For Proposal" title="プロポーザル" />
