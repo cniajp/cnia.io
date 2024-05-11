@@ -9,6 +9,7 @@ import Information from '~/components/pek2024/Information.astro';
 import Update from '~/components/pek2024/Update.astro';
 import TeamMemberList from '~/components/pek2024/TeamMemberList.astro';
 import Cfp from '~/components/pek2024/Cfp.astro';
+import Collaboration from '~/components/pek2024/Collaboration.astro';
 
 import { getCollection } from 'astro:content';
 import Note from '~/components/pek2024/Note.astro';
@@ -157,5 +158,7 @@ const news = [
           '一部公開不可のセッションを除き、全てのセッションをアーカイブ動画として公開予定です。公開日程については後日お知らせいたします。',
       },
     ]}
+  />
+  <Collaboration
   />
 </Layout>
