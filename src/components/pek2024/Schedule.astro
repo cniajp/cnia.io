@@ -1,0 +1,250 @@
+---
+import ScheduleCard from '~/components/pek2024/ScheduleCard.astro';
+import { type PEK2024Proposal, type PEK2024ProposalList } from '~/types';
+import { getAffiliation } from '~/utils/pek2024/fortee';
+import axios from 'axios';
+
+type SessionTime = "60min" | "30min";
+
+type Schedule = {
+  title?: string;
+  speakers?: string[];
+  affiliation?: string;
+  sessionId?: string;
+  sponsor: boolean;
+  duration: SessionTime;
+  session?: PEK2024Proposal;
+};
+
+type ScheduleList = {
+  [time: string]: {
+    trackA: Schedule | undefined;
+    trackB: Schedule | undefined;
+  };
+};
+
+const scheduleList: ScheduleList = {
+  '10:10 - 10:30': {
+    trackA: {
+      title: 'Opening',
+      speakers: [],
+      duration: '30min',
+      sponsor: false,
+    },
+    trackB: undefined,
+  },
+  '10:20 - 11:20': {
+    trackA: {
+      title: 'TBA',
+      speakers: ['Manuel Pais'],
+      duration: '60min',
+      sponsor: false,
+    },
+    trackB: undefined
+  },
+  '11:20 - 11:50': {
+    trackA: {
+      // メルカリ
+      sessionId: '768e0788-00cc-4055-88d2-27e32730b035',
+      duration: '30min',
+      sponsor: true,
+    },
+    trackB: undefined
+  },
+  '12:00 - 13:00': {
+    // datadog
+    trackA: {
+      sessionId: 'b5d81229-939f-433c-b36b-abfdde2a8a61',
+      duration: '60min',
+      sponsor: true,
+    },
+    trackB: undefined
+  },
+  '13:00 - 13:30': {
+    trackA: {
+      // エーピーコミュニケーションズ
+      sessionId: '0e094f82-fecd-4926-8aab-a57587b52e81',
+      duration: '30min',
+      sponsor: true,
+    },
+    trackB: {
+      // レバテック
+      sessionId: 'd90be158-5b22-4c2b-9ecc-b159f3834170',
+      duration: '30min',
+      sponsor: true,
+    },
+  },
+  '13:45 - 14:15': {
+    trackA: {
+      // 明日から始める持続可能なドキュメンテーション戦略: Documentation as a Product
+      sessionId: '3898f453-6192-45ed-89c5-9dbf13a91105',
+      duration: '30min',
+      sponsor: false,
+    },
+    trackB: {
+      // Platform Engineering とSREの門
+      sessionId: '31f1df6b-c98a-4bef-8c6b-fd0bf839bc7e',
+      duration: '30min',
+      sponsor: false,
+    },
+  },
+  '14:30 - 15:00': {
+    trackA: {
+      // タイミー
+      sessionId: 'f0daa558-21b5-4f00-a956-f191b65971c2',
+      duration: '30min',
+      sponsor: true,
+    },
+    trackB: {
+      // プレイド
+      sessionId: 'eaeeab94-9927-417a-992e-59f635221f83',
+      duration: '30min',
+      sponsor: true,
+    },
+  },
+  '15:15 - 15:45': {
+    trackA: {
+      // プラットフォームエンジニアリングの功罪
+      sessionId: '89133451-1afe-479e-a4d5-1dc32efb32ba',
+      duration: '30min',
+      sponsor: false,
+    },
+    trackB: {
+      // セキュリティとコンプライアンスを保ちつつ生産性の高い開発を実現するためのプラットフォーム
+      sessionId: '2a367e04-9c4a-4784-a659-f3bbcbf12998',
+      duration: '30min',
+      sponsor: false,
+    },
+  },
+  '16:00 - 16:30': {
+    trackA: {
+      // サイバーエージェント
+      sessionId: '307e8bbd-9a46-4b9a-a848-48657d3b64a0',
+      duration: '30min',
+      sponsor: true,
+    },
+    trackB: {
+      // AWS
+      sessionId: '63794c23-ed6a-4a0c-bcd3-0706b934d78b',
+      duration: '30min',
+      sponsor: true,
+    },
+  },
+  '16:45 - 17:15': {
+    trackA: {
+      // マルチクラスタの認知負荷に立ち向かう！Ubieのプラットフォームエンジニアリング
+      sessionId: '53c4528a-ffbf-4d83-8b92-68652f11a774',
+      duration: '30min',
+      sponsor: false,
+    },
+    trackB: {
+      // 大規模エンタープライズの全員参加が可能な内部開発者ポータルの野望
+      sessionId: '342bb6b7-33c0-48ef-9476-4a87529c2a37',
+      duration: '30min',
+      sponsor: false,
+    },
+  },
+  '17:30 - 18:00': {
+    trackA: {
+      // ビットキー
+      sessionId: 'e8640973-187a-47ca-98a6-5bfc7cd4e561',
+      duration: '30min',
+      sponsor: true,
+    },
+    trackB: {
+      // Google Cloud
+      sessionId: 'eedb9b5a-ef54-4fee-bea9-eeed6e98160d',
+      duration: '30min',
+      sponsor: true,
+    },
+  },
+};
+
+// fortee からセッション情報を取得
+const { data: {proposals} } = await axios.get<PEK2024ProposalList>('https://fortee.jp/platform-engineering-kaigi-2024/api/proposals');
+const acceptedProposals = proposals.filter(proposal => proposal.accepted);
+const proposalsMap = acceptedProposals.reduce((acc, proposal) => {
+  acc[proposal.uuid] = proposal;
+  return acc;
+}, {} as Record<string, PEK2024Proposal>);
+
+// セッション情報をスケジュール情報にマージ
+Object.values(scheduleList).forEach((schedules) => {
+  const { trackA, trackB } = schedules;
+  if (trackA && trackA.sessionId) {
+    trackA.session = proposalsMap[trackA.sessionId];
+    trackA.affiliation = getAffiliation(trackA.session);
+  }
+  if (trackB && trackB.sessionId) {
+    trackB.session = proposalsMap[trackB.sessionId];
+    trackB.affiliation = getAffiliation(trackB.session);
+  }
+});
+
+---
+<section class="bg-slate-100 py-10 md:py-14">
+  <div class="mb-10 text-center max-w-3xl mx-auto">
+    <p class="text-base text-gray-600 font-semibold tracking-wide uppercase">Schedule</p>
+    <h2 class="text-4xl md:text-5xl font-bold leading-tight tracking-tight">スケジュール</h2>
+  </div>
+  <div class="container mx-auto">
+
+    <div class="grid grid-cols-1 md:grid-cols-5 m-4 max-w-6xl">
+      <div class="hidden md:block col-span-1 rounded-md bg-themeColor-yellow m-1">
+          <p class="text-lg font-normal text-white text-center">
+            時間
+          </p>
+      </div>
+      <div class="hidden md:block col-span-2 rounded-md bg-themeColor-purple m-1">
+        <p class="text-lg font-semibold text-white text-center">
+          Track A
+        </p>
+      </div>
+      <div class="hidden md:block col-span-2 rounded-md bg-themeColor-orange m-1">
+        <p class="text-lg font-semibold text-white text-center">
+          Track B
+        </p>
+      </div>
+
+      {
+        Object.entries(scheduleList).map(([time, schedules]) => {
+          const { trackA, trackB } = schedules
+          return <>
+            <div class="col-span-1 bg-slate-300 m-1 bg-themeColor-blue rounded-md flex">
+              <div class="flex-1 flex md:items-center md:justify-center">
+                <p class="text-lg font-normal text-slate-100 text-left md:text-center px-2">
+                  {time}
+                </p>
+              </div>
+            </div>
+            {trackA !== undefined ? (
+              <div class="col-span-2 m-1 p-2 border-4 border-themeColor-purple rounded-md bg-slate-100" style={{ height: trackA.duration === '60min' ? "250px" : "150px"}}>
+                <ScheduleCard
+                  title={trackA.title}
+                  speakers={trackA.session ? [trackA.session.speaker.name] : trackA.speakers}
+                  affiliation={trackA.affiliation}
+                  sponsor={trackA.sponsor}
+                  session={trackA.session}
+                  trackType={'Track A'}
+                ></ScheduleCard>
+              </div>
+            ) : (<div class="hidden md:block col-span-2 m-1 rounded-md bg-slate-400"></div>)}
+            {trackB !== undefined ? (
+              <div class="col-span-2 m-1 p-2 border-4 border-themeColor-orange rounded-md bg-slate-100" style={{ height: trackB.duration === '60min' ? "200px" : "150px"}}>
+                <ScheduleCard
+                  title={trackB.title}
+                  speakers={trackB.session ? [trackB.session.speaker.name] : trackB.speakers}
+                  affiliation={trackB.affiliation}
+                  session={trackB.session}
+                  sponsor={trackB.sponsor}
+                  trackType={'Track B'}
+                ></ScheduleCard>
+              </div>
+            ) : (<div class="hidden md:block col-span-2 m-1 rounded-md bg-slate-400"></div>)
+            }
+          </>
+        })
+      }
+    </div>
+  </div>
+</section>
