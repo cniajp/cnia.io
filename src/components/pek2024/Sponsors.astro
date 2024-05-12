@@ -1,6 +1,7 @@
 ---
 import { Picture } from 'astro:assets';
 import { getCollection } from 'astro:content';
+import type { ImageMetadata } from 'astro';
 
 export interface Props {
   isRecPeriod?: boolean;
@@ -30,7 +31,6 @@ const [
   lunchSponsors,
 ] = results.map((result) => {
   return result.map((sponsor) => {
-    console.log(sponsor.data);
     return {
       src: sponsor.data.image,
       name: sponsor.data.name,
