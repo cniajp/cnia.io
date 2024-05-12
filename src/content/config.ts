@@ -38,7 +38,14 @@ const pek2024Blog = defineCollection({
   }),
 });
 
+const pek2024JobBoads = defineCollection({
+  schema: z.object({
+    image: z.string(),
+  }),
+});
+
 export const collections = {
   post: post,
-  pek2024Blog: pek2024Blog
+  pek2024Blog: pek2024Blog,
+  pek2024JobBoads: pek2024JobBoads,
 };
