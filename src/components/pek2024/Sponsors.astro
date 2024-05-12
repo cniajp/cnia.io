@@ -34,7 +34,7 @@ const [
     return {
       src: sponsor.data.image,
       name: sponsor.data.name,
-      href: '#'
+      href: sponsor.data.href,
     };
   });
 });
@@ -69,7 +69,7 @@ const [
           <div class='grid grid-cols-2 md:grid-cols-3 gap-4'>
             {platinumSponsors.map((sponsor) => {
               return <div class="p-2 md:p-4 border rounded-lg shadow-lg flex items-center justify-center h-48">
-                <a href={sponsor.href} class="block">
+                <a href={sponsor.href} target="_blank">
                   <Picture 
                     src={images[sponsor.src]()}
                     alt={sponsor.name}
@@ -86,7 +86,7 @@ const [
           <div class='grid grid-cols-2 md:grid-cols-4 gap-4'>
             {goldSponsors.map((sponsor) => {
               return <div class="p-2 md:p-4 border rounded-lg shadow-lg flex items-center justify-center h-24 md:h-36">
-                <a href={sponsor.href} class="block">
+                <a href={sponsor.href} target="_blank">
                   <Picture 
                     src={images[sponsor.src]()}
                     alt={sponsor.name}
@@ -103,7 +103,7 @@ const [
           <div class='grid grid-cols-3 md:grid-cols-4 gap-4'>
             {silverSponsors.map((sponsor) => {
               return <div class="p-2 md:p-4 border rounded-lg shadow-lg flex items-center justify-center md-h-24">
-                <a href={sponsor.href} class="block">
+                <a href={sponsor.href} target="_blank">
                   <Picture 
                     src={images[sponsor.src]()}
                     alt={sponsor.name}
@@ -120,7 +120,7 @@ const [
           <div class='grid grid-cols-3 md:grid-cols-5 gap-4'>
             {bronzeSponsors.map((sponsor) => {
               return <div class="p-2 md:p-4 border rounded-lg shadow-lg flex items-center justify-center md:h-24">
-                <a href={sponsor.href} class="block">
+                <a href={sponsor.href} target="_blank">
                   <Picture 
                     src={images[sponsor.src]()}
                     alt={sponsor.name}
@@ -137,12 +137,12 @@ const [
           <div class='grid grid-cols-3 md:grid-cols-5 gap-4'>
             {lunchSponsors.map((sponsor) => {
               return <div class="p-2 md:p-4 border rounded-lg shadow-lg flex items-center justify-center">
-                <a href={sponsor.href} class="block">
+                <a href={sponsor.href} target="_blank">
                   <Picture 
                     src={images[sponsor.src]()}
                     alt={sponsor.name}
                     loading="lazy"
-                    class="p-2"
+                    class="p-2 object-contain"
                   />
                 </a>
               </div>
