@@ -1,6 +1,6 @@
 ---
 import { Picture } from 'astro:assets';
-import { sponsorsData, rankGridSettings } from '~/pek2024_data';
+import { sponsorsData } from '~/pek2024_data';
 
 export interface Props {
   isRecPeriod?: boolean;
@@ -8,11 +8,11 @@ export interface Props {
 
 const { isRecPeriod = false } = Astro.props;
 
-// グリッドクラスを生成
-function generateGridClass(rank) {
-  const settings = rankGridSettings[rank];
-  return `grid grid-cols-${settings.default} md:grid-cols-${settings.md} gap-4`;
-}
+const platinumSponsors = sponsorsData['Platinum'];
+const goldSponsors = sponsorsData['Gold'];
+const silverSponsors = sponsorsData['Silver'];
+const bronzeSponsors = sponsorsData['Bronze'];  
+const lunchSponsors = sponsorsData['Lunch'];
 ---
 
 <section class="py-16 md:py-20">
@@ -39,20 +39,66 @@ function generateGridClass(rank) {
           <p>掲載まで今しばらくお待ちいただけますようお願い申し上げます。</p>
         </div>
       ) : (
-        Object.entries(sponsorsData).map(([rank, sponsors]) => (
-          <div class="my-8">
-            <h2 class="text-2xl font-bold mb-4">{rank}</h2>
-            <div class={generateGridClass(rank)}>
-              {sponsors.map(({ name, src, href }) => (
-                <a href={href} class="block">
-                  <div class="p-4 border rounded-lg shadow-lg flex items-center justify-center">
-                    <Picture src={src} alt={name} loading="lazy" />
-                  </div>
+        <div class="my-8">
+          <h2 class='px-2 text-2xl font-bold mb-4 underline decoration-[#b2b19f]'>Platinum</h2>
+          <div class='grid grid-cols-2 md:grid-cols-3 gap-4'>
+            {platinumSponsors.map((sponsor) => {
+              return <div class="p-2 md:p-4 border rounded-lg shadow-lg flex items-center justify-center">
+                <a href={sponsor.href} class="block">
+                  <Picture src={sponsor.src} alt={sponsor.name} loading="lazy" />
                 </a>
-              ))}
-            </div>
+              </div>
+            })}
           </div>
-        ))
+        </div>
+        <div class="my-8">
+          <h2 class='px-2 text-2xl font-bold mb-4 underline decoration-amber-300'>Gold</h2>
+          <div class='grid grid-cols-3 md:grid-cols-4 gap-4'>
+            {goldSponsors.map((sponsor) => {
+              return <div class="p-2 md:p-4 border rounded-lg shadow-lg flex items-center justify-center">
+                <a href={sponsor.href} class="block">
+                  <Picture src={sponsor.src} alt={sponsor.name} loading="lazy" />
+                </a>
+              </div>
+            })}
+          </div>
+        </div>
+        <div class="my-8">
+          <h2 class='px-2 text-2xl font-bold mb-4 underline decoration-stone-200'>Silver</h2>
+          <div class='grid grid-cols-4 md:grid-cols-5 gap-4'>
+            {silverSponsors.map((sponsor) => {
+              return <div class="p-2 md:p-4 border rounded-lg shadow-lg flex items-center justify-center">
+                <a href={sponsor.href} class="block">
+                  <Picture src={sponsor.src} alt={sponsor.name} loading="lazy" />
+                </a>
+              </div>
+            })}
+          </div>
+        </div>
+        <div class="my-8">
+          <h2 class='px-2 text-2xl font-bold mb-4 underline decoration-yellow-600'>Bronze</h2>
+          <div class='grid grid-cols-4 md:grid-cols-6 gap-4'>
+            {bronzeSponsors.map((sponsor) => {
+              return <div class="p-2 md:p-4 border rounded-lg shadow-lg flex items-center justify-center">
+                <a href={sponsor.href} class="block">
+                  <Picture src={sponsor.src} alt={sponsor.name} loading="lazy" />
+                </a>
+              </div>
+            })}
+          </div>
+        </div>
+        <div class="my-8">
+          <h2 class='px-2 text-2xl font-bold mb-4 underline decoration-lime-300'>Lunch</h2>
+          <div class='grid grid-cols-4 md:grid-cols-6 gap-4'>
+            {lunchSponsors.map((sponsor) => {
+              return <div class="p-2 md:p-4 border rounded-lg shadow-lg flex items-center justify-center">
+                <a href={sponsor.href} class="block">
+                  <Picture src={sponsor.src} alt={sponsor.name} loading="lazy" />
+                </a>
+              </div>
+            })}
+          </div>
+        </div>
       )
     }
   </div>
