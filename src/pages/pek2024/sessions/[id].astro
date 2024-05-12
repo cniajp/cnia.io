@@ -17,10 +17,12 @@ import { type PEK2024ProposalList } from '../../../types';
 export async function getStaticPaths() {
   const { data } = await axios.get<PEK2024ProposalList>('https://fortee.jp/platform-engineering-kaigi-2024/api/proposals');
   const sessionsList = data.proposals;
-  return sessionsList.map((session) => ({
-    params: { id: session.uuid.toString() },
-    props: { session },
-  }));
+  return sessionsList
+    .filter((session) => session.accepted === true)
+    .map((session) => ({
+      params: { id: session.uuid.toString() },
+      props: { session },
+    }));
 }
 
 const { session } = Astro.props;
