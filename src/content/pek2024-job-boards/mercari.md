@@ -1,6 +1,8 @@
 ---
+name: 株式会社メルカリ
 rank: platinum
 image: /src/assets/images/pek2024/sponsor/logo/mercari.png
+href: https://about.mercari.com/
 ---
 「あらゆる価値を循環させ、あらゆる人の可能性を広げる」メルカリはこのミッションのもと、フリマアプリ「メルカリ」やスマホ決済「メルペイ」などのサービス開発に全力で取り組んでいます！  
 ・エンジニア向け情報: https://engineering.mercari.com/  

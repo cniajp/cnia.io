@@ -1,6 +1,8 @@
 ---
+name: サイバーエージェント
 rank: platinum
 image: /src/assets/images/pek2024/sponsor/logo/CyberAgent.png
+href: https://www.cyberagent.co.jp/
 ---
 メディア事業、広告事業、ゲーム事業と多様な事業を展開するサイバーエージェントでは、各事業において、開発者の生産性‧開発者体験の向上に努めています。  
 

@@ -1,6 +1,8 @@
 ---
+name: 株式会社ログラス
 rank: silver
 image: /src/assets/images/pek2024/sponsor/logo/loglass.png
+href: https://www.loglass.jp/
 ---
 株式会社ログラスは「良い景気を作ろう。」をミッションに掲げ、企業経営の意思決定に革命を起こすソリューションを提供しています。  
 

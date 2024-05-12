@@ -1,6 +1,8 @@
 ---
+name: アマゾンウェブサービスジャパン合同会社
 rank: gold
 image: /src/assets/images/pek2024/sponsor/logo/AWS.png
+href: https://aws.amazon.com/jp/
 ---
 https://amazon.jobs/jp/jobs/2469250/aws
 
