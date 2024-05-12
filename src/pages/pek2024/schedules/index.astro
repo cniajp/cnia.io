@@ -161,6 +161,7 @@ const scheduleList: ScheduleList = {
   },
 };
 
+// fortee からセッション情報を取得
 const { data: {proposals} } = await axios.get<PEK2024ProposalList>('https://fortee.jp/platform-engineering-kaigi-2024/api/proposals');
 const acceptedProposals = proposals.filter(proposal => proposal.accepted);
 const proposalsMap = acceptedProposals.reduce((acc, proposal) => {
@@ -168,6 +169,7 @@ const proposalsMap = acceptedProposals.reduce((acc, proposal) => {
   return acc;
 }, {} as Record<string, PEK2024Proposal>);
 
+// セッション情報をスケジュール情報にマージ
 Object.values(scheduleList).forEach((schedules) => {
   const { trackA, trackB } = schedules;
   if (trackA && trackA.sessionId) {

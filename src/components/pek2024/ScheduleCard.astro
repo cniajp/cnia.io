@@ -12,36 +12,36 @@ export interface Props {
   trackType: TrackType;
 };
 
-const track = Astro.props;
+const schedule = Astro.props;
 ---
 <>
   <div class="flex">
     <p class="text-sm font-semibold text-slate-100 bg-themeColor-purple rounded-md px-2">
-      {track.trackType}
+      {schedule.trackType}
     </p>
-    {track.sponsor && (
+    {schedule.sponsor && (
       <p class="text-sm font-semibold text-slate-100 bg-themeColor-yellow rounded-md px-2 ml-2">
         Sponsor
       </p>
     )}
   </div>
   <p class="text-base font-bold text-gray-900">
-    {track.session ? (
-      <a class="hover:underline" href={`/pek2024/sessions/${track.session.uuid}`}>
-        {track.session?.title}
+    {schedule.session ? (
+      <a class="hover:underline" href={`/pek2024/sessions/${schedule.session.uuid}`}>
+        {schedule.session?.title}
       </a>
     ) : (
-      track.title
+      schedule.title
     )}
   </p>
   <p class="text-sm text-gray-500">
-    {track.affiliation}
+    {schedule.affiliation}
   </p>
   <p class="text-sm font-semibold text-gray-500">
-    {track.session ? (
-      track.session?.speaker.name
+    {schedule.session ? (
+      schedule.session?.speaker.name
     ) : (
-      track.speakers?.join(', ')
+      schedule.speakers?.join(', ')
     )}
   </p>
 <>
