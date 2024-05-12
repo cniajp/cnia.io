@@ -1,0 +1,35 @@
+---
+import srenext from '~/assets/images/pek2024/collaboration/srenext2024.svg';
+import cnds2024 from '~/assets/images/pek2024/collaboration/cnds2024.png';
+import codt2024 from '~/assets/images/pek2024/collaboration/codt2024.jpg';
+import { Picture } from 'astro:assets';
+
+---
+<section class="bg-white dark:bg-slate-800 py-10 md:py-14">
+  <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
+    <div class="mb-10 md:mx-auto text-center md:mb-12 max-w-3xl">
+      <p class="text-base dark:text-blue-200 font-semibold tracking-wide uppercase">Collaboration</p>
+      <h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4">協力イベント</h2>
+    </div>
+  </div>
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="grid gap-8 md:grid-cols-1 lg:grid-cols-3">
+      <div class="mx-auto">
+        <a href="https://sre-next.dev/2024/" target="_blank">
+          <Picture src={srenext} alt="SRE NEXT 2024" height="100" />
+        </a>
+      </div>
+      <div class="mx-auto">
+        <a href="https://event.cloudnativedays.jp/cnds2024/" target="_blank">
+          <Picture src={cnds2024} alt="CloudNative Days Summer 2024" height="100" />
+        </a>
+      </div>
+      <div class="mx-auto">
+        <a href="https://cloudopsdays.com/" target="_blank">
+          <Picture src={codt2024} alt="Cloud Operator Days Tokyo 2024" height="100" />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
