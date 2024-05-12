@@ -14,7 +14,7 @@ const getContent = async (job) => {
 
 // rank毎にコンテンツを取得
 const result = await Promise.all(
-  ranks.map(rank => getCollection('pek2024-job-boards', (board) => board.data.rank === rank))
+  ranks.map(rank => getCollection('pek2024-job-boards', (board) => board.data.rank === rank && board.body !== ""))
 );
 // それぞれのコンテンツを render して含める
 const [
