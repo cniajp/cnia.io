@@ -16,9 +16,16 @@ const schedule = Astro.props;
 ---
 <>
   <div class="flex">
-    <p class="text-sm font-semibold text-slate-100 bg-themeColor-purple rounded-md px-2">
-      {schedule.trackType}
-    </p>
+    {schedule.trackType === "Track A" ? (
+      <p class="text-sm font-semibold text-slate-100 bg-themeColor-purple rounded-md px-2">
+        {schedule.trackType}
+      </p>
+    ) : (
+      <p class="text-sm font-semibold text-slate-100 bg-themeColor-orange rounded-md px-2">
+        {schedule.trackType}
+      </p>
+    )
+    }
     {schedule.sponsor && (
       <p class="text-sm font-semibold text-slate-100 bg-themeColor-yellow rounded-md px-2 ml-2">
         Sponsor
