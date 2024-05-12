@@ -26,8 +26,12 @@ export const headerData = {
       href: '/pek2024#info',
     },
     {
-      text: 'SESSIONS',
-      href: '/pek2024/sessions',
+      text: 'SCHEDULE',
+      href: '/pek2024/schedules',
+    },
+    {
+      text: 'SPEAKERS',
+      href: '/pek2024/speakers',
     },
     {
       text: 'BLOG',
@@ -74,6 +78,7 @@ export const footerData = {
       title: 'Sessions',
       links: [
         { text: 'SESSIONS', href: getPermalink('/pek2024/sessions') },
+        { text: 'SPEAKERS', href: getPermalink('/pek2024/speakers') },
         // { text: 'TIME TABLE', href: getPermalink('/pek2024/timeTable') },
       ],
     },
