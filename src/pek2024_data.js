@@ -14,6 +14,14 @@ export const headerData = {
       href: '/pek2024#about',
     },
     {
+      text: 'SCHEDULE',
+      href: '/pek2024/schedules',
+    },
+    {
+      text: 'SPEAKERS',
+      href: '/pek2024/speakers',
+    },
+    {
       text: 'SPONSORS',
       href: '/pek2024#sponsors',
     },
@@ -24,14 +32,6 @@ export const headerData = {
     {
       text: 'INFORMATION',
       href: '/pek2024#info',
-    },
-    {
-      text: 'SCHEDULE',
-      href: '/pek2024/schedules',
-    },
-    {
-      text: 'SPEAKERS',
-      href: '/pek2024/speakers',
     },
     {
       text: 'BLOG',
