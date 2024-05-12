@@ -22,8 +22,8 @@ export const headerData = {
       href: '/pek2024#info',
     },
     {
-      text: 'SESSIONS',
-      href: '/pek2024/sessions',
+      text: 'SCHEDULE',
+      href: '/pek2024/schedules',
     },
     {
       text: 'BLOG',
