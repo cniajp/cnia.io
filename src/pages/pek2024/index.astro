@@ -10,6 +10,7 @@ import Update from '~/components/pek2024/Update.astro';
 import TeamMemberList from '~/components/pek2024/TeamMemberList.astro';
 import Cfp from '~/components/pek2024/Cfp.astro';
 import Collaboration from '~/components/pek2024/Collaboration.astro';
+import Schedule from '~/components/pek2024/Schedule.astro';
 
 import { getCollection } from 'astro:content';
 import Note from '~/components/pek2024/Note.astro';
@@ -81,9 +82,6 @@ const news = [
 
   <Note highlight="Special Event" title="共催企画" />
 
-  <a id="cfp"></a>
-  <Cfp highlight="Call For Proposal" title="プロポーザル" />
-
   <a id="about"></a>
   <Concept
     highlight="Concept"
@@ -114,6 +112,9 @@ const news = [
       </p>
     </Fragment>
   </Concept>
+
+  <a id="schedule"></a>
+  <Schedule />
 
   <a id="sponsors"></a>
   <Sponsors isRecPeriod={true} />
