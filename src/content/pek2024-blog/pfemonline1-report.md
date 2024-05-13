@@ -1,9 +1,9 @@
 ---
 title: Platform Engineering Meetup Online#1 開催レポート
 description: |
-  3/22(金)に開催した Platform Engineering Meetup Online#1 のレポートです。
+  2024/03/22(金)に開催した Platform Engineering Meetup Online#1 のレポートです。
 category: report
-publishDate: 2024-05-15T10:00:00Z
+publishDate: 2024-05-12T10:00:00Z
 tags:
   - PFEM
 image: /pek2024/blog/pfemonline1-report/ogp.png
@@ -18,7 +18,7 @@ draft: false
 
 ## はじめに
 
-3/22(金)に開催した [Platform Engineering Meetup Online#1](https://platformengineering.connpass.com/event/311665/) の参加レポートをお送りします。  
+2024/03/22(金)に開催した [Platform Engineering Meetup Online#1](https://platformengineering.connpass.com/event/311665/) の開催レポートをお送りします。  
 通常のPlatform Engineering Meetupは現地＋オンライン配信のハイブリッド形式で開催していますが、本編のスピンオフ的な位置づけのイベントとしてオンラインのみのMeetupとして始めました。
 
 YouTubeでアーカイブ配信も行っておりますので、まだご覧になっていない方はぜひご覧ください。
@@ -74,6 +74,6 @@ AWSのリソース作成に特化したプラグイン・テンプレートを�
 初の試みであるオンライン限定Meetupでしたが、SNSやYouTubeのコメントを見ると皆様に楽しんでいただけたようで、私たち運営メンバーもとても嬉しく思います。  
 今後もハイブリッド形式のMeetupと並行し、オンラインMeeupも継続して開催していく予定です。
 
-7/9(火)にはPlatform Engineering Kaigi 2024を開催予定ですので、そちらもぜひご参加ください！
+7/9(火)にはPlatform Engineering Kaigi 2024を開催します。こちらもぜひご参加ください！
 
 https://www.cnia.io/pek2024/
