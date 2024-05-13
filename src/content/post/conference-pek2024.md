@@ -32,6 +32,7 @@ canonical: https://www.cnia.io/conference-pek2024
 
 ## キーノートスピーカー
 - Manuel Pais氏 (書籍 Team Topologies 共著者)
+
 Manuel Pais is co-author of Team Topologies: organizing business and technology teams for fast flow. Recognized by TechBeacon as a DevOps thought leader, Manuel is an independent IT organizational consultant and trainer, focused on team interactions, delivery practices and accelerating flow. Manuel is also a LinkedIn instructor on Continuous Delivery.
 
 - 中島大一 氏(株式会社メルカリ)
@@ -45,24 +46,26 @@ Manuel Pais is co-author of Team Topologies: organizing business and technology 
 - 大規模エンタープライズの全員参加が可能な内部開発者ポータルの野望
 
 ## 開催概要
-名称： Platform Engineering Kaigi 2024
-テーマ: DevOpsの荒波を乗りこえる、エンジニアの羅針盤
-想定参加者: プラットフォームエンジニア、SRE、インフラエンジニア、アプリケーション開発者
-日時：2024年7月9日（火）10:00～18:00
-イベント形式： ハイブリッド開催(現地会場+オンライン)
-現地会場: docomo R&D OPENLAB ODAIBA
-参加費: 現地参加: 3,000円  オンライン参加: 無料
+- 名称： Platform Engineering Kaigi 2024
+- テーマ: DevOpsの荒波を乗りこえる、エンジニアの羅針盤
+- 想定参加者: プラットフォームエンジニア、SRE、インフラエンジニア、アプリケーション開発者
+- 日時：2024年7月9日（火）10:00～18:00
+- イベント形式： ハイブリッド開催(現地会場+オンライン)
+- 現地会場: docomo R&D OPENLAB ODAIBA
+- 参加費: 現地参加: 3,000円  オンライン参加: 無料
 
 参加方法：以下ウェブサイトより、事前の参加登録が必要
 https://www.cnia.io/pek2024
 
 ## 併催セミナー概要
-日時: 2024年7月10日（水）、7月11日（木）
-講師: Manuel Pais氏
+- 日時: 2024年7月10日（水）、7月11日（木）
+- 講師: Manuel Pais氏
+
 トレーニング内容:
 
 - 7/10 Team Topologies Masterclass
 - 7/11 Growing internal platforms as engines for fast flow
+
 会場: TKP新橋カンファレンスセンター
 [https://www.cnia.io/pek2024/tp-seminar](https://www.cnia.io/pek2024/TBD)
 
