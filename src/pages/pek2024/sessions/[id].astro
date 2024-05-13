@@ -51,7 +51,7 @@ const talkAbstract = getTalkAbstract(session);
 <Layout
   meta={{
     title: sessionExists ? session.title : 'セッションが見つかりませんでした',
-    description: sessionExists ? session.abstract : 'セッションの概要が見つかりませんでした',
+    description: sessionExists ? talkAbstract : 'セッションの概要が見つかりませんでした',
   }}
 >
   <main>
