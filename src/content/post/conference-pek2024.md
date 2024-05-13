@@ -67,7 +67,7 @@ https://www.cnia.io/pek2024
 - 7/11 Growing internal platforms as engines for fast flow
 
 会場: TKP新橋カンファレンスセンター
-[https://www.cnia.io/pek2024/tp-seminar](https://www.cnia.io/pek2024/TBD)
+[https://www.cnia.io/pek2024/tp-seminar](https://www.cnia.io/pek2024/tp-seminar)
 
 ## 主催・運営
 - 一般社団法人クラウドネイティブイノベーターズ協会
