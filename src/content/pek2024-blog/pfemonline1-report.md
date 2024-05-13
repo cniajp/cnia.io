@@ -3,7 +3,7 @@ title: Platform Engineering Meetup Online#1 開催レポート
 description: |
   2024/03/22(金)に開催した Platform Engineering Meetup Online#1 のレポートです。
 category: report
-publishDate: 2024-05-12T10:00:00Z
+publishDate: 2024-05-15T10:00:00Z
 tags:
   - PFEM
 image: /pek2024/blog/pfemonline1-report/ogp.png
