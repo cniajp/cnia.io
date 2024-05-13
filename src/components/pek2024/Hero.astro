@@ -44,6 +44,14 @@ import logoLiteral from '~/assets/images/pek2024/pek2024_literal.svg';
               <div class="mx-auto">
                 <p class="flex justify-center text-base md:text-base font-medium">HASHTAG: <strong>#PEK2024</strong></p>
               </div>
+              <div class="flex flex-col items-center justify-center mt-8">
+                <a
+                  rel="noopener noreferrer"
+                  href="https://link.cnia.io/pek2024-tickets-website"
+                  target="_blank"
+                  class="btn btn-flat ml-4 mb-2 rounded-md text-sm">参加申し込み</a
+                >
+              </div>
             </div>
           </div>
         </div>
@@ -64,5 +72,45 @@ import logoLiteral from '~/assets/images/pek2024/pek2024_literal.svg';
 
   .rotate-image {
     animation: rotate 30s linear infinite;
+  }
+
+  .btn.btn-flat {
+    overflow: hidden;
+    padding: 1.5rem 5rem; /* Increase padding */
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.2rem; /* Increase font size */
+    border-radius: 0;
+    background: var(--aw-themeColor-blue);
+    position: relative;
+    z-index: 1;
+  }
+  .btn.btn-flat span {
+    position: relative;
+  }
+
+  .btn.btn-flat:before {
+    position: absolute;
+    top: 0;
+    left: 5px;
+    width: 150%;
+    height: 500%;
+    content: '';
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-transform: translateX(-85%) translateY(-70%) rotate(135deg);
+    transform: translateX(-85%) translateY(-70%) rotate(135deg);
+    background: var(--aw-themeColor-yellow);
+    z-index: -1;
+  }
+
+  .btn.btn-flat:hover:before {
+    -webkit-transform: translateX(-5%) translateY(-25%) rotate(135deg);
+    transform: translateX(-5%) translateY(-25%) rotate(135deg);
+  }
+
+  .btn.btn-flat:hover {
+    color: #000;
+    font-weight: 700;
   }
 </style>
