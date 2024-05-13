@@ -6,7 +6,7 @@ category: report
 publishDate: 2024-05-14T10:00:00Z
 tags:
   - PFEM
-image: /pek2024/blog/pfem8-report/ogp.png
+image: /pek2024/blog/pfem8-report/ogp.jpg
 author:
   name: ふるや
   icon: /src/assets/images/pek2024/teamMembers/saramune.jpg
