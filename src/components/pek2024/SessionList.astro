@@ -6,7 +6,7 @@ import { type PEK2024ProposalList } from '../../types';
 const { data } = await axios.get<PEK2024ProposalList>(
   'https://fortee.jp/platform-engineering-kaigi-2024/api/proposals'
 );
-const sessionsList = data.proposals;
+const sessionsList = data.proposals.filter((proposal) => proposal.accepted);
 ---
 
 <section class="py-10 md:py-14">
