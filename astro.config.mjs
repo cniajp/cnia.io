@@ -35,7 +35,10 @@ export default defineConfig({
         applyBaseStyles: false,
       },
     }),
-    sitemap(),
+    sitemap({
+      // pek2024 は別ディレクトリに出力するため除外
+      filter: (page) => !page.startsWith(SITE.origin + '/pek2024')
+    }),
     subDirSitemap({outputDir: "pek2024", basePath: "pek2024"}),
     mdx(),
 

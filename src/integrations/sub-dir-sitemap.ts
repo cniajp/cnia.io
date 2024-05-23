@@ -23,7 +23,6 @@ export const subDirSitemap = (options: {outputDir: string, basePath: string}): A
             return;
           }
           if (basePath !== undefined && pathname.startsWith(basePath)) {
-            console.log(pathname)
             sms.write(hostname + pathname);
           }
         });
