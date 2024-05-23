@@ -15,14 +15,14 @@ export const subDirSitemap = (options: {outputDir: string, basePath: string}): A
         });
         const excludeSlugs = ["404"];
         const destinationDir = fileURLToPath(dir);
-        const outputFileName =  outputDir ? outputDir + "/sitemap.xml" : "sitemap.xml";
+        const outputFileName =  outputDir + "/sitemap.xml";
 
         pages.forEach(({ pathname }) => {
           const slug = pathname.slice(0, -1);
           if (excludeSlugs.includes(slug)) {
             return;
           }
-          if (basePath !== undefined && pathname.startsWith(basePath)) {
+          if (pathname.startsWith(basePath)) {
             sms.write(hostname + pathname);
           }
         });
