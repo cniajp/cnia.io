@@ -9,6 +9,7 @@ import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import { readingTimeRemarkPlugin } from './src/utils/frontmatter.mjs';
 import icon from "astro-icon";
+import {subDirSitemap} from "./src/integrations/sub-dir-sitemap";
 
 import { SITE } from './src/config.mjs';
 
@@ -34,7 +35,11 @@ export default defineConfig({
         applyBaseStyles: false,
       },
     }),
-    sitemap(),
+    sitemap({
+      // pek2024 は別ディレクトリに出力するため除外
+      filter: (page) => !page.startsWith(SITE.origin + '/pek2024')
+    }),
+    subDirSitemap({outputDir: "pek2024", basePath: "pek2024"}),
     mdx(),
 
     ...whenExternalScripts(() =>
