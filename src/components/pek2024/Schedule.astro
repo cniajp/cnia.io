@@ -4,7 +4,7 @@ import { type PEK2024Proposal, type PEK2024ProposalList } from '~/types';
 import { getAffiliation } from '~/utils/pek2024/fortee';
 import axios from 'axios';
 
-type SessionTime = "60min" | "30min";
+type SessionTime = '60min' | '30min';
 
 type Schedule = {
   title?: string;
@@ -35,12 +35,11 @@ const scheduleList: ScheduleList = {
   },
   '10:20 - 11:20': {
     trackA: {
-      title: 'TBA',
-      speakers: ['Manuel Pais'],
+      sessionId: 'b425872b-4a02-49ab-858a-3fffeebe866d',
       duration: '60min',
       sponsor: false,
     },
-    trackB: undefined
+    trackB: undefined,
   },
   '11:20 - 11:50': {
     trackA: {
@@ -49,7 +48,7 @@ const scheduleList: ScheduleList = {
       duration: '30min',
       sponsor: true,
     },
-    trackB: undefined
+    trackB: undefined,
   },
   '12:15 - 12:45': {
     // datadog
@@ -58,7 +57,7 @@ const scheduleList: ScheduleList = {
       duration: '30min',
       sponsor: true,
     },
-    trackB: undefined
+    trackB: undefined,
   },
   '13:00 - 13:30': {
     trackA: {
@@ -164,12 +163,17 @@ const scheduleList: ScheduleList = {
 };
 
 // fortee からセッション情報を取得
-const { data: {proposals} } = await axios.get<PEK2024ProposalList>('https://fortee.jp/platform-engineering-kaigi-2024/api/proposals');
-const acceptedProposals = proposals.filter(proposal => proposal.accepted);
-const proposalsMap = acceptedProposals.reduce((acc, proposal) => {
-  acc[proposal.uuid] = proposal;
-  return acc;
-}, {} as Record<string, PEK2024Proposal>);
+const {
+  data: { proposals },
+} = await axios.get<PEK2024ProposalList>('https://fortee.jp/platform-engineering-kaigi-2024/api/proposals');
+const acceptedProposals = proposals.filter((proposal) => proposal.accepted);
+const proposalsMap = acceptedProposals.reduce(
+  (acc, proposal) => {
+    acc[proposal.uuid] = proposal;
+    return acc;
+  },
+  {} as Record<string, PEK2024Proposal>
+);
 
 // セッション情報をスケジュール情報にマージ
 Object.values(scheduleList).forEach((schedules) => {
@@ -183,69 +187,71 @@ Object.values(scheduleList).forEach((schedules) => {
     trackB.affiliation = getAffiliation(trackB.session);
   }
 });
-
 ---
+
 <section class="bg-slate-100 py-10 md:py-14">
   <div class="mb-10 text-center max-w-3xl mx-auto">
     <p class="text-base text-gray-600 font-semibold tracking-wide uppercase">Schedule</p>
     <h2 class="text-4xl md:text-5xl font-bold leading-tight tracking-tight">スケジュール</h2>
   </div>
   <div class="container mx-auto">
-
     <div class="grid grid-cols-1 md:grid-cols-5 m-4 max-w-6xl">
       <div class="hidden md:block col-span-1 rounded-md bg-themeColor-yellow m-1">
-          <p class="text-lg font-normal text-white text-center">
-            時間
-          </p>
+        <p class="text-lg font-normal text-white text-center">時間</p>
       </div>
       <div class="hidden md:block col-span-2 rounded-md bg-themeColor-purple m-1">
-        <p class="text-lg font-semibold text-white text-center">
-          Track A
-        </p>
+        <p class="text-lg font-semibold text-white text-center">Track A</p>
       </div>
       <div class="hidden md:block col-span-2 rounded-md bg-themeColor-orange m-1">
-        <p class="text-lg font-semibold text-white text-center">
-          Track B
-        </p>
+        <p class="text-lg font-semibold text-white text-center">Track B</p>
       </div>
 
       {
         Object.entries(scheduleList).map(([time, schedules]) => {
-          const { trackA, trackB } = schedules
-          return <>
-            <div class="col-span-1 bg-slate-300 m-1 bg-themeColor-blue rounded-md flex">
-              <div class="flex-1 flex md:items-center md:justify-center">
-                <p class="text-lg font-normal text-slate-100 text-left md:text-center px-2">
-                  {time}
-                </p>
+          const { trackA, trackB } = schedules;
+          return (
+            <>
+              <div class="col-span-1 bg-slate-300 m-1 bg-themeColor-blue rounded-md flex">
+                <div class="flex-1 flex md:items-center md:justify-center">
+                  <p class="text-lg font-normal text-slate-100 text-left md:text-center px-2">{time}</p>
+                </div>
               </div>
-            </div>
-            {trackA !== undefined ? (
-              <div class="col-span-2 m-1 p-2 border-4 border-themeColor-purple rounded-md bg-slate-100" style={{ height: trackA.duration === '60min' ? "250px" : "150px"}}>
-                <ScheduleCard
-                  title={trackA.title}
-                  speakers={trackA.session ? [trackA.session.speaker.name] : trackA.speakers}
-                  affiliation={trackA.affiliation}
-                  sponsor={trackA.sponsor}
-                  session={trackA.session}
-                  trackType={'Track A'}
-                ></ScheduleCard>
-              </div>
-            ) : (<div class="hidden md:block col-span-2 m-1 rounded-md bg-slate-400"></div>)}
-            {trackB !== undefined ? (
-              <div class="col-span-2 m-1 p-2 border-4 border-themeColor-orange rounded-md bg-slate-100" style={{ height: trackB.duration === '60min' ? "200px" : "150px"}}>
-                <ScheduleCard
-                  title={trackB.title}
-                  speakers={trackB.session ? [trackB.session.speaker.name] : trackB.speakers}
-                  affiliation={trackB.affiliation}
-                  session={trackB.session}
-                  sponsor={trackB.sponsor}
-                  trackType={'Track B'}
-                ></ScheduleCard>
-              </div>
-            ) : (<div class="hidden md:block col-span-2 m-1 rounded-md bg-slate-400"></div>)
-            }
-          </>
+              {trackA !== undefined ? (
+                <div
+                  class="col-span-2 m-1 p-2 border-4 border-themeColor-purple rounded-md bg-slate-100"
+                  style={{ height: trackA.duration === '60min' ? '250px' : '150px' }}
+                >
+                  <ScheduleCard
+                    title={trackA.title}
+                    speakers={trackA.session ? [trackA.session.speaker.name] : trackA.speakers}
+                    affiliation={trackA.affiliation}
+                    sponsor={trackA.sponsor}
+                    session={trackA.session}
+                    trackType={'Track A'}
+                  />
+                </div>
+              ) : (
+                <div class="hidden md:block col-span-2 m-1 rounded-md bg-slate-400" />
+              )}
+              {trackB !== undefined ? (
+                <div
+                  class="col-span-2 m-1 p-2 border-4 border-themeColor-orange rounded-md bg-slate-100"
+                  style={{ height: trackB.duration === '60min' ? '200px' : '150px' }}
+                >
+                  <ScheduleCard
+                    title={trackB.title}
+                    speakers={trackB.session ? [trackB.session.speaker.name] : trackB.speakers}
+                    affiliation={trackB.affiliation}
+                    session={trackB.session}
+                    sponsor={trackB.sponsor}
+                    trackType={'Track B'}
+                  />
+                </div>
+              ) : (
+                <div class="hidden md:block col-span-2 m-1 rounded-md bg-slate-400" />
+              )}
+            </>
+          );
         })
       }
     </div>
