@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/pek2024/PageLayout.astro';
+import { Icon } from 'astro-icon/components';
 ---
 
 <Layout
@@ -10,31 +11,110 @@ import Layout from '../../layouts/pek2024/PageLayout.astro';
 >
   <div class="py-16 md:py-20 mx-4">
     <div class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-12 text-center max-w-3xl mx-auto">
-      <h1>【共催】日本初 TeamTopologies著者による特別有料トレーニングを開催します</h1>
+      <h1>【共催】日本初 Team Topologies著者による特別有料トレーニングを開催【7月10日・11日】</h1>
     </div>
 
     <div class="max-w-3xl mx-auto">
       <p>
-        Platform Engineeringでは、Team Topologiesに代表される実践的な組織設計の知見に基づいた適切なチーム分け、
-        そして認知負荷を減らすことを目的とした共通プラットフォームを構築することによって、
-        技術のコントロールを取り戻し、組織のスケーラビリティと生産性を両立できます。
+        世界的に著名なDevOpsコンサルタントであり『Team Topologies』の共著者であるManuel
+        Pais氏を講師に迎え、2日間の特別なトレーニングを開催します。
+      </p>
+      <p>
+        本トレーニングでは、DevOpsの概念をさらに発展させ、開発者が最大限のパフォーマンスを発揮できるような組織体制を構築するTeam
+        Topologiesの概念を座学・ワークショップ両面で学ぶことが出来ます。
       </p>
       <br />
       <p>
-        本トレーニングではTeam Topologiesの共著者であるManuel
-        Pais氏から直接、ソフトウェアデリバリーのための最新の組織設計について学ぶことができます。
+        Team TopologiesはPlatform Engineeringの実現に向けて必要不可欠な事項です。Platform
+        Engineeringの導入により、複雑化が進むソフトウェア・アーキテクチャに対応し、ソフトウェアデリバリーをより高速に実行出来るチームを構築することが可能です。
       </p>
+      <p>是非この機会にPlatform Engineeringを実現すべく、Team Topologiesの概念をマスターしてください。</p>
+
+      <div class="text-xl md:text-2xl font-bold leading-tighter tracking-tighter mt-8 text-center max-w-3xl mx-auto">
+        <h2>こんな方に特におすすめ</h2>
+        <div class="mt-1 mx-auto h-1 w-12 mb-4 bg-themeColor-blue"></div>
+      </div>
+
+      <p>
+        本トレーニングはPlatform
+        Engineeringを推進したい、もしくはソフトウェアデリバリーの為の現代的な組織設計を学びたい方を対象としています。
+        組織変革に関わるマネージャークラスだけでなく、メンバークラスの方も参加していただける内容です。
+      </p>
+      <p>具体的には以下の方々が対象となります。</p>
+      <ul class="list-disc ml-8 mt-2">
+        <li>CTO</li>
+        <li>アーキテクト</li>
+        <li>テックリード</li>
+        <li>インフラチームリーダー</li>
+        <li>インフラチームメンバー</li>
+      </ul>
+
+      <div
+        class="text-xl md:text-2xl font-bold leading-tighter tracking-tighter mt-4 mb-2 text-center max-w-3xl mx-auto"
+      >
+        <h2>トレーニング内容</h2>
+        <div class="mt-1 mx-auto h-1 w-12 mb-4 bg-themeColor-blue"></div>
+      </div>
+
+      <div class="text-md md:text-lg font-bold leading-tighter tracking-tighter mb-2 max-w-3xl mx-auto">
+        <h3>Day1: Team Topologies Masterclass</h3>
+      </div>
+      <p>
+        1日目はTeam Topologies書籍の内容を著者Minuel Pais氏本人より講義いただき、ポイントを押さえて解説いただきます。
+      </p>
+      <p>講義内で重点を置いて説明される事項は以下です。</p>
+      <ul class="list-disc ml-8 mt-2">
+        <li>コンウェイの法則がソフトウェアアーキテクチャと品質に課す制約と、それを戦略的な利点に変える方法</li>
+        <li>組織設計において、最新の流行に流されるのではなく、チームを最優先にするアプローチの意味と利点</li>
+        <li>
+          エンドツーエンドの所有権を持つクロスファンクショナルな製品またはサービスチームに期待される能力と、最大チームサイズとのバランスの取り方
+        </li>
+        <li>
+          ストリームアラインド、イネーブリング、プラットフォーム、複雑なサブシステムといったチームトポロジーを選び、高速で安全なソフトウェアデリバリーを加速・維持する方法
+        </li>
+        <li>チーム間のコミュニケーションパターンを簡素化し、各チームの目的、責任、期待される行動を明確にする方法</li>
+        <li>
+          技術の採用や顧客からのフィードバックなどの内外の刺激に応じて、チーム構造と相互作用を継続的に進化させる方法
+        </li>
+      </ul>
+
+      <div class="text-md md:text-lg font-bold leading-tighter tracking-tighter mb-2 max-w-3xl mx-auto mt-2">
+        <h3>Day2: Growing internal platforms as engines for fast</h3>
+      </div>
+      <p>
+        2日目は持続可能な成長のために、ケーススタディ、パターン、およびアンチパターンを通じて内部プラットフォームをより深く理解する為のワークショップを行います。
+      </p>
+      <p>講義内で重点を置いて取り扱う事項は以下です。</p>
+      <ul class="list-disc ml-8 mt-2">
+        <li>
+          プラットフォームの文脈で価値提案、採用ライフサイクルモデル、最小実行可能プラットフォーム、認知負荷評価などのシンプルな製品開発技術を学び、適用する方法
+        </li>
+        <li>
+          サービス採用、ユーザー満足度、エンゲージメント、信頼性などの関連するプラットフォームメトリクスをいつどのように採用するか
+        </li>
+        <li>Adidas、Airbnb、Spotifyなどの企業がこのアプローチをどのように成功裏に採用したか</li>
+      </ul>
+
       <br />
-      <p>トレーニング内容</p>
-      <ul class="list-disc ml-8">
-        <li>Day1: Team Topologies Masterclass</li>
-        <ul class="list-disc ml-6">
-          <li>書籍【Team Topologies】の内容を著者Minuel Pais氏本人より講義いただきます</li>
-        </ul>
-        <li>Day2: Growing internal platforms as engines for fast</li>
-        <ul class="list-disc ml-6">
-          <li>Day1で学んだ内容をワークショップ形式でケーススタディを実施します</li>
-        </ul>
+      <p>トレーニング内容の詳細については以下をご参照ください。</p>
+      <ul class="list-disc ml-8 mt-2">
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+          class="flex items-center"
+          href="https://drive.google.com/file/d/1RHFqagM1f05aE-7c_GkdFuc5oKN6xQR6/view?usp=sharing"
+          ><li>Overview - Training - Team Topologies Masterclass</li>
+          <Icon name="tabler:external-link" class="w-4 h-4 ml-2" /></a
+        >
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+          href="https://drive.google.com/file/d/1ThKPSOER5XqrmeXhkBKDN-DWAoDrKser/view?usp=sharing"
+          ><li class="flex items-center">
+            Overview - Training - Growing internal platforms as engines for fast flow
+            <Icon name="tabler:external-link" class="w-4 h-4 ml-2" />
+          </li></a
+        >
       </ul>
     </div>
 
@@ -49,11 +129,12 @@ import Layout from '../../layouts/pek2024/PageLayout.astro';
 
     <div class="max-w-3xl mx-auto">
       <div
-        class="text-2xl md:text-3xl font-bold leading-tighter tracking-tighter mt-12 mb-2 text-center max-w-3xl mx-auto"
+        class="text-xl md:text-2xl font-bold leading-tighter tracking-tighter mt-12 mb-2 text-center max-w-3xl mx-auto"
       >
         <h2>講師紹介</h2>
         <div class="mt-1 mx-auto h-1 w-12 mb-4 bg-themeColor-blue"></div>
       </div>
+
       <div class="max-w-3xl mx-auto flex flex-col items-center md:flex-row md:items-center justify-center">
         <div class="w-1/4">
           <img src="/pek2024/tpTraining/ManuelPais.png" alt="Instructor's image" class="rounded w-full h-auto" />
@@ -80,19 +161,19 @@ import Layout from '../../layouts/pek2024/PageLayout.astro';
       </div>
     </div>
 
-    <div class="max-w-3xl
-              mx-auto">
+    <div class="max-w-3xl mx-auto">
       <div
-        class="text-2xl md:text-3xl font-bold leading-tighter tracking-tighter mt-12 mb-2 text-center max-w-3xl mx-auto"
+        class="text-xl md:text-2xl font-bold leading-tighter tracking-tighter mt-12 mb-2 text-center max-w-3xl mx-auto"
       >
         <h2>開催概要</h2>
         <div class="mt-1 mx-auto h-1 w-12 mb-4 bg-themeColor-blue"></div>
       </div>
+
       <div class="max-w-3xl mx-auto">
-        <ul class="list-disc ml-8">
+        <ul class="list-disc ml-8 mt-2">
           <li>日時: 2024年7月10日(水) 10:00 - 18:00、7月11日(木) 10:00-17:00 (昼休み含む)</li>
           <li>会場: TKP新橋カンファレンスセンター</li>
-          <li>参加費: 440,000円（税込）</li>
+          <li>参加費: 定価 440,000円（税込）</li>
           <li>主催: 株式会社エーピーコミュニケーションズ</li>
         </ul>
       </div>
@@ -100,16 +181,22 @@ import Layout from '../../layouts/pek2024/PageLayout.astro';
 
     <div class="max-w-3xl mx-auto">
       <div
-        class="text-2xl md:text-3xl font-bold leading-tighter tracking-tighter mt-12 mb-2 text-center max-w-3xl mx-auto"
+        class="text-xl md:text-2xl font-bold leading-tighter tracking-tighter mt-12 mb-2 text-center max-w-3xl mx-auto"
       >
-        <h2>その他留意事項</h2>
+        <h2>参加についての割引情報</h2>
         <div class="mt-1 mx-auto h-1 w-12 mb-4 bg-themeColor-blue"></div>
       </div>
+
+      <p>本トレーニングの受講に際して、下記に該当する方に関しては割引がございます。</p>
       <div class="max-w-3xl mx-auto">
-        <ul class="list-disc ml-8">
-          <li>トレーニングは両日参加必須ではなく、1日のみの参加も可能です</li>
+        <ul class="list-disc ml-8 mt-2">
+          <li>早割</li>
           <ul class="list-disc ml-6">
-            <li>1日のみ参加の場合も費用は2日間参加と同様です</li>
+            <li>6月7日までのお申込みで440,000円/人から330,000円/人(税込)となります</li>
+          </ul>
+          <li>団体割</li>
+          <ul class="list-disc ml-6">
+            <li>2名以上のお申込みで、330,000円/人(税込)となります(1人目から330,000円)</li>
           </ul>
         </ul>
       </div>
@@ -117,11 +204,54 @@ import Layout from '../../layouts/pek2024/PageLayout.astro';
 
     <div class="max-w-3xl mx-auto">
       <div
-        class="text-2xl md:text-3xl font-bold leading-tighter tracking-tighter mt-12 mb-2 text-center max-w-3xl mx-auto"
+        class="text-xl md:text-2xl font-bold leading-tighter tracking-tighter mt-12 mb-2 text-center max-w-3xl mx-auto"
+      >
+        <h2>お申込みからトレーニング費用のお支払いまでの流れ</h2>
+        <div class="mt-1 mx-auto h-1 w-12 mb-4 bg-themeColor-blue"></div>
+      </div>
+      <p>本トレーニングの受講に際して、お申込みからトレーニング費用のご請求までの流れは以下です。</p>
+      <div class="max-w-3xl mx-auto">
+        <ul class="list-disc ml-8 mt-2">
+          <li>「お申し込みはこちら」よりトレーニング受講のお申し込み</li>
+          <li>主催者より見積書を送付</li>
+          <li>7月10日、11日トレーニングへご参加</li>
+          <li>主催者より請求書を送付</li>
+          <li>8月末までに主催者指定の口座へお振込</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="max-w-3xl mx-auto">
+      <div
+        class="text-xl md:text-2xl font-bold leading-tighter tracking-tighter mt-12 mb-2 text-center max-w-3xl mx-auto"
+      >
+        <h2>その他留意事項</h2>
+        <div class="mt-1 mx-auto h-1 w-12 mb-4 bg-themeColor-blue"></div>
+      </div>
+
+      <div class="max-w-3xl mx-auto">
+        <ul class="list-disc ml-8 mt-2">
+          <li>
+            トレーニングは両日参加必須ではなく、1日のみの参加も可能です(※1日のみ参加の場合も費用は2日間参加と同様です)
+          </li>
+          <li>トレーニング当日は、筆記用具とノートパソコンをご持参ください</li>
+          <li>昼食は各自でご用意いただくか、会場周辺の飲食店をご利用ください</li>
+          <li>Day2終了後に懇親会を実施します。懇親会を通じて、Manuel Pais氏との交流を深めることが出来ます</li>
+          <li>トレーニング終了後、修了証明書が発行されます</li>
+          <li>本トレーニングの領収書は振込明細をもって替えるため、発行されません</li>
+          <li>事前にManuel Pais氏の著書「Team Topologies」を一読しておくことが推奨されます</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="max-w-3xl mx-auto">
+      <div
+        class="text-xl md:text-2xl font-bold leading-tighter tracking-tighter mt-12 mb-2 text-center max-w-3xl mx-auto"
       >
         <h2>お問い合わせ</h2>
         <div class="mt-1 mx-auto h-1 w-12 mb-4 bg-themeColor-blue"></div>
       </div>
+
       <div class="max-w-3xl mx-auto">
         <p>
           本トレーニングに関するお問い合わせは <a
