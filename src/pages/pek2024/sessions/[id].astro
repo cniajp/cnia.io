@@ -6,16 +6,13 @@ import Layout from '../../../layouts/pek2024/PageLayout.astro';
 import { type Tag } from '../../../components/pek2024/SessionInfo.astro';
 import SocialShare from '../../../components/common/SocialShare.astro';
 import { fetchTags } from '../../../utils/fetchTags';
-import { 
-  getAffiliation,
-  getJobTitle,
-  getSpeakerProfile,
-  getTalkAbstract
-} from '../../../utils/pek2024/fortee';
+import { getAffiliation, getJobTitle, getSpeakerProfile, getTalkAbstract } from '../../../utils/pek2024/fortee';
 import { type PEK2024ProposalList } from '../../../types';
 
 export async function getStaticPaths() {
-  const { data } = await axios.get<PEK2024ProposalList>('https://fortee.jp/platform-engineering-kaigi-2024/api/proposals');
+  const { data } = await axios.get<PEK2024ProposalList>(
+    'https://fortee.jp/platform-engineering-kaigi-2024/api/proposals'
+  );
   const sessionsList = data.proposals;
   return sessionsList
     .filter((session) => session.accepted === true)
@@ -130,12 +127,8 @@ const talkAbstract = getTalkAbstract(session);
                   <div class="ml-2">
                     <div class="flex items-center">
                       <h3 class="text-lg font-bold mr-2">{session.speaker.name}</h3>
-                      {session.speaker.twitter && (
-                        <a
-                          href={`https://twitter.com/${session.speaker.twitter}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
+                      {session.speaker.name === 'Manuel Pais' ? (
+                        <a href="https://www.linkedin.com/in/manuelpais/" target="_blank" rel="noopener noreferrer">
                           <div class="flex items-center ml-2">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -144,12 +137,34 @@ const talkAbstract = getTalkAbstract(session);
                             >
                               <path
                                 fill="currentColor"
-                                d="M18.205 2.25h3.308l-7.227 8.26l8.502 11.24H16.13l-5.214-6.817L4.95 21.75H1.64l7.73-8.835L1.215 2.25H8.04l4.713 6.231zm-1.161 17.52h1.833L7.045 4.126H5.078z"
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037c-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85c3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065a2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
                               />
                             </svg>
-                            <span class="ml-1">{session.speaker.twitter}</span>
+                            <span class="ml-1">manuelpais</span>
                           </div>
                         </a>
+                      ) : (
+                        session.speaker.twitter && (
+                          <a
+                            href={`https://twitter.com/${session.speaker.twitter}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <div class="flex items-center ml-2">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="w-4 h-4 text-gray-500 hover:text-black"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  fill="currentColor"
+                                  d="M18.205 2.25h3.308l-7.227 8.26l8.502 11.24H16.13l-5.214-6.817L4.95 21.75H1.64l7.73-8.835L1.215 2.25H8.04l4.713 6.231zm-1.161 17.52h1.833L7.045 4.126H5.078z"
+                                />
+                              </svg>
+                              <span class="ml-1">{session.speaker.twitter}</span>
+                            </div>
+                          </a>
+                        )
                       )}
                     </div>
                     <p class="text-xs">{affiliation}</p>
