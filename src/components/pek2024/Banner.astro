@@ -11,10 +11,15 @@ const { imagePath, path, altText } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/pek2024/banner/*.{jpeg,jpg,png,gif}')
 if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "/src/assets/images/pek2024/banner/*.{jpeg,jpg,png,gif}"`);
 ---
-  <a href={path} class="m-2 shadow-lg">
-    <Image
-      src={images[imagePath]()}
-      alt={altText || ''}
-      width={300}
-    />
-  </a>
+<a
+  href={path}
+  class="m-2 shadow-lg"
+  target="_blank"
+>
+  <Image
+    src={images[imagePath]()}
+    alt={altText || ''}
+    width={600}
+    
+  />
+</a>
