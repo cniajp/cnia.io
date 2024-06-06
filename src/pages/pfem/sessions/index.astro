@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '~/layouts/CNIA/PageLayout.astro';
 import SessionCard from '~/components/pfem/SessionCard.astro'
+import TeamTopologiesSeminarBanner from '~/components/pek2024/TeamTopologiesSeminarBanner.astro';
 
 const allSessionss = await getCollection('pfem-session', ({ data }) => {
     return data.draft !== true;
@@ -27,6 +28,9 @@ const sortedSessions = allSessionss.sort((a, b) => {
 }}
 >
   <section class="text-gray-800">
+    <div class="flex flex-col items-center">
+      <TeamTopologiesSeminarBanner/>
+    </div>
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:px-6">
       <div class="mx-auto max-w-screen-sm text-center mb-8">
         <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900">Sessions</h2>

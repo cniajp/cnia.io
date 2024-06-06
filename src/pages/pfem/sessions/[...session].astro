@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '~/layouts/CNIA/PageLayout.astro';
 import SessionCard from '~/components/pfem/SessionCard.astro';
+import TeamTopologiesSeminarBanner from '~/components/pek2024/TeamTopologiesSeminarBanner.astro';
 
 export async function getStaticPaths() {
   const sessions = await getCollection('pfem-session', ({ data }) => {
@@ -37,6 +38,9 @@ const relatedSessions = (
   description: session.data.description,
   image: session.data.image,
 }}> 
+  <div class="flex flex-col items-center">
+    <TeamTopologiesSeminarBanner/>
+  </div>
   <div class="flex justify-center">
     <iframe
       class="rounded-lg mx-auto max-w-xs md:max-w-3xl"

@@ -8,6 +8,7 @@ import SocialShare from '../../../components/common/SocialShare.astro';
 import { fetchTags } from '../../../utils/fetchTags';
 import { getAffiliation, getJobTitle, getSpeakerProfile, getTalkAbstract } from '../../../utils/pek2024/fortee';
 import { type PEK2024ProposalList } from '../../../types';
+import TeamTopologiesSeminarBanner from '~/components/pek2024/TeamTopologiesSeminarBanner.astro';
 
 export async function getStaticPaths() {
   const { data } = await axios.get<PEK2024ProposalList>(
@@ -58,6 +59,9 @@ const talkAbstract = getTalkAbstract(session);
       sessionExists && (
         <div>
           <div class="mt-14 mb-10 text-left max-w-3xl mx-auto px-4">
+            <div class="flex flex-col items-center mb-4">
+              <TeamTopologiesSeminarBanner/>
+            </div>
             <h2 class="text-2xl md:text-3xl font-bold leading-tight tracking-tight">{session.title}</h2>
 
             <div class="flex flex-wrap items-center mt-2">

@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/pek2024/PageLayout.astro';
 import Schedule from '~/components/pek2024/Schedule.astro';
+import TeamTopologiesSeminarBanner from '~/components/pek2024/TeamTopologiesSeminarBanner.astro';
 
 ---
 <Layout
@@ -9,6 +10,9 @@ import Schedule from '~/components/pek2024/Schedule.astro';
     description: 'Platform Engineering Kaigi 2024 のタイムテーブルです。',
   }}
 >
+  <div class="flex flex-col items-center pt-4 bg-slate-100">
+    <TeamTopologiesSeminarBanner/>
+  </div>
   <Schedule />
 </Layout>
 
