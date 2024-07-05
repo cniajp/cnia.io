@@ -2,7 +2,7 @@
 title: Platform Engineering Kaigi 2024 会場への入館・受付方法
 description: |
   Platform Engineering Kaigi 2024 の会場への入館・受付の方法や事前にご準備いただきたいことをまとめています。
-publishDate: 2023-07-01T09:00:00Z
+publishDate: 2024-07-01T09:00:00Z
 category: Reception
 # ogpにも利用するため、publicディレクトリからのパスを指定
 tags:
