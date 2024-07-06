@@ -3,8 +3,8 @@ import { useState } from "react";
 type Track = 'Track A' | 'Track B';
 // TODO: url を実際のものに変更
 const YOUTUBE_URLS: Record<Track, string> = {
-  'Track A': 'https://www.youtube.com/embed/SNffM5YJ8t8?si=mMTrdIOMZJCMh3wl',
-  'Track B': 'https://www.youtube.com/embed/93f7oRkDvJQ?si=HYs3ulAkD2Uy9pl8'
+  'Track A': 'https://www.youtube.com/embed/SNffM5YJ8t8?si=GFyQSfL630gxocA5&autoplay=1&mute=1',
+  'Track B': 'https://www.youtube.com/embed/93f7oRkDvJQ?si=1ZtgfY5nYo9X5xd6&autoplay=1&mute=1'
 }
 
 export const LivePlayer = () => {
@@ -29,7 +29,7 @@ export const LivePlayer = () => {
           
         </button>
       </div>
-      <div className="w-full md:w-1/2">
+      <div className="w-full md:w-3/4">
         <iframe
           src={YOUTUBE_URLS[track]}
           title="YouTube video player"
