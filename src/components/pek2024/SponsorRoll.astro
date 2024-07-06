@@ -24,6 +24,7 @@ const sponsorsByRank = results.reduce((acc, result, index) => {
   acc[ranks[index]] = result.map((sponsor) => ({
     src: sponsor.data.image,
     name: sponsor.data.name,
+    href: sponsor.data.href,
   }));
   return acc;
 }, {});
@@ -33,19 +34,24 @@ const sponsorsByRank = results.reduce((acc, result, index) => {
   <div class="w-full max-w-6xl mx-auto px-4">
     <div id="sponsorCarousel" class="relative overflow-hidden bg-white">
       {
-        Object.entries(sponsorsByRank).map(([, sponsors]) => (
-          <div class="sponsor-rank-slide absolute top-0 left-0 w-full opacity-0 transition-opacity duration-500">
+        Object.entries(sponsorsByRank).map(([rank, sponsors]) => (
+          <div
+            id={`sponsor-rank-${rank}`}
+            class="sponsor-rank-slide absolute top-0 left-0 w-full opacity-0 transition-opacity duration-500"
+          >
             <div class="flex flex-wrap justify-center items-center">
               {(sponsors as any).map((sponsor) => (
                 <div class="mx-4 my-6 flex items-center justify-center" style="width: 120px; height: 48px;">
-                  <Picture
-                    src={images[sponsor.src]()}
-                    alt={sponsor.name}
-                    widths={[120, 240]}
-                    sizes="120px"
-                    style="max-width: 100%; max-height: 100%; width: auto; height: auto;"
-                    class="object-contain"
-                  />
+                  <a href={sponsor.href} target="_blank" rel="noopener noreferrer" class="sponsor-link">
+                    <Picture
+                      src={images[sponsor.src]()}
+                      alt={sponsor.name}
+                      widths={[120, 240]}
+                      sizes="120px"
+                      style="max-width: 100%; max-height: 100%; width: auto; height: auto;"
+                      class="object-contain"
+                    />
+                  </a>
                 </div>
               ))}
             </div>
@@ -73,14 +79,17 @@ const sponsorsByRank = results.reduce((acc, result, index) => {
 
     function showNextSponsors() {
       slides[currentSlide].classList.replace('opacity-100', 'opacity-0');
+      (slides[currentSlide] as HTMLElement).style.zIndex = '0';
       currentSlide = (currentSlide + 1) % slides.length;
       slides[currentSlide].classList.replace('opacity-0', 'opacity-100');
+      (slides[currentSlide] as HTMLElement).style.zIndex = '1';
       adjustCarouselHeight();
     }
 
     // 初期表示と高さ調整
     adjustCarouselHeight();
     slides[currentSlide].classList.add('opacity-100');
+    (slides[currentSlide] as HTMLElement).style.zIndex = '1';
 
     // 1分ごとに切り替え
     setInterval(showNextSponsors, 60000);
@@ -96,5 +105,6 @@ const sponsorsByRank = results.reduce((acc, result, index) => {
 <style>
   .sponsor-rank-slide {
     transition: opacity 0.5s ease-in-out;
+    z-index: 0;
   }
 </style>
