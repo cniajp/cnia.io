@@ -5,7 +5,7 @@ description: |
 category: food
 publishDate: 2024-07-06T15:00:00Z
 tags:
-  - PFEM
+  - PEK2024
 image: /pek2024/blog/pek2024_ogp.png
 author:
   name: dshina
