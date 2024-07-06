@@ -13,9 +13,20 @@ import SponsorRoll from '../../../components/pek2024/SponsorRoll.astro';
 >
   <div class="flex flex-col items-center bg-slate-100">
     <LivePlayer client:load />
+    <div class="mt-2 flex flex-col items-center">
+      <p class="text-base md:text-lg font-bold">
+        XにPostして盛り上げよう!
+      </p>
+      <div class="flex flex-row gap-4 mt-2">
+        <a href="https://twitter.com/intent/tweet?button_hashtag=PEK2024_A&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-text="#PEK2024" data-show-count="false">Tweet #PEK2024_A</a>
+        <a href="https://twitter.com/intent/tweet?button_hashtag=PEK2024_B&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-text="#PEK2024" data-show-count="false">Tweet #PEK2024_B</a>
+      </div>
+    </div>
     <SponsorRoll />
     <div class="w-full">
       <Schedule />
     </div>
   </div>
 </Layout>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
