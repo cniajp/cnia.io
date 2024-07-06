@@ -1,0 +1,110 @@
+---
+import { Picture } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import type { ImageMetadata } from 'astro';
+
+const ranks = ['platinum', 'gold', 'silver', 'bronze', 'lunch'];
+const results = await Promise.all(
+  ranks.map((rank) => getCollection('pek2024-job-boards', (board) => board.data.rank === rank))
+);
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/images/pek2024/sponsor/logo/*.{jpeg,jpg,png,gif}'
+);
+results.forEach((result) => {
+  result.forEach((sponsor) => {
+    if (!images[sponsor.data.image])
+      throw new Error(
+        `"${sponsor.data.image}" does not exist in glob: "/src/assets/images/pek2024/teamMemberes/*.{jpeg,jpg,png,gif}"`
+      );
+  });
+});
+
+const sponsorsByRank = results.reduce((acc, result, index) => {
+  acc[ranks[index]] = result.map((sponsor) => ({
+    src: sponsor.data.image,
+    name: sponsor.data.name,
+    href: sponsor.data.href,
+  }));
+  return acc;
+}, {});
+---
+
+<section class="py-8 md:py-12 w-full">
+  <div class="w-full max-w-6xl mx-auto px-4">
+    <div id="sponsorCarousel" class="relative overflow-hidden bg-white">
+      {
+        Object.entries(sponsorsByRank).map(([rank, sponsors]) => (
+          <div
+            id={`sponsor-rank-${rank}`}
+            class="sponsor-rank-slide absolute top-0 left-0 w-full opacity-0 transition-opacity duration-500"
+          >
+            <div class="flex flex-wrap justify-center items-center">
+              {(sponsors as any).map((sponsor) => (
+                <div class="mx-4 my-6 flex items-center justify-center" style="width: 120px; height: 48px;">
+                  <a href={sponsor.href} target="_blank" rel="noopener noreferrer" class="sponsor-link">
+                    <Picture
+                      src={images[sponsor.src]()}
+                      alt={sponsor.name}
+                      widths={[120, 240]}
+                      sizes="120px"
+                      style="max-width: 100%; max-height: 100%; width: auto; height: auto;"
+                      class="object-contain"
+                    />
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  function rotateSponsors() {
+    const slides = document.querySelectorAll('.sponsor-rank-slide');
+    let currentSlide = 0;
+
+    function adjustCarouselHeight() {
+      const carousel = document.getElementById('sponsorCarousel');
+      if (carousel && carousel instanceof HTMLElement) {
+        const currentSlideElement = slides[currentSlide];
+        if (currentSlideElement instanceof HTMLElement) {
+          carousel.style.height = `${currentSlideElement.offsetHeight}px`;
+        }
+      }
+    }
+
+    function showNextSponsors() {
+      slides[currentSlide].classList.replace('opacity-100', 'opacity-0');
+      (slides[currentSlide] as HTMLElement).style.zIndex = '0';
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.replace('opacity-0', 'opacity-100');
+      (slides[currentSlide] as HTMLElement).style.zIndex = '1';
+      adjustCarouselHeight();
+    }
+
+    // 初期表示と高さ調整
+    adjustCarouselHeight();
+    slides[currentSlide].classList.add('opacity-100');
+    (slides[currentSlide] as HTMLElement).style.zIndex = '1';
+
+    // 1分ごとに切り替え
+    setInterval(showNextSponsors, 60000);
+
+    // ウィンドウサイズが変更されたときに高さを再調整
+    window.addEventListener('resize', adjustCarouselHeight);
+  }
+
+  // DOMが読み込まれた後に実行
+  document.addEventListener('DOMContentLoaded', rotateSponsors);
+</script>
+
+<style>
+  .sponsor-rank-slide {
+    transition: opacity 0.5s ease-in-out;
+    z-index: 0;
+  }
+</style>
