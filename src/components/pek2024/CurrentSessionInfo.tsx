@@ -32,9 +32,8 @@ export const CurrentSessionInfo = (
   const debugData: ForteeTimeTableTalk[] = [];
   // デバッグ用のデータを生成
   if (debug) {
-    // 現在の時間から 20 秒後にセッションが始まるようにする
     // セッション時間10秒, 休憩時間10秒のインターバルでタイムテーブルを書き換える
-    let count = 1;
+    let count = 0;
     for (let i = 0; i < timeTable.length; i++) {
       const item = timeTable[i];
       if (item.type === 'talk' && item.track.name === 'Track A') {
@@ -47,7 +46,7 @@ export const CurrentSessionInfo = (
       }
     }
     // 実際のタイムテーブルと同じように、Track B は後半から始まるようにする
-    count = 4;
+    count = 3;
     for (let i = 0; i < timeTable.length; i++) {
       const item = timeTable[i];
       if (item.type === 'talk' && item.track.name === 'Track B') {
@@ -96,7 +95,7 @@ export const CurrentSessionInfo = (
     // 1分おきに現在の時間を取得して、それに応じて表示を変更する
     const intervalId = setInterval(() => {
       getCurrentSession();
-    }, debug ? 1000 : 60000);
+    }, 5000);
     return () => clearInterval(intervalId);
   }, [track]);
   const session = currentSession || nextSession;
