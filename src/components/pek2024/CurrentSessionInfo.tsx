@@ -32,6 +32,8 @@ export const CurrentSessionInfo = (
   const debugData: ForteeTimeTableTalk[] = [];
   // デバッグ用のデータを生成
   if (debug) {
+    // 現在の時間から 20 秒後にセッションが始まるようにする
+    // セッション時間10秒, 休憩時間10秒のインターバルでタイムテーブルを書き換える
     let count = 1;
     for (let i = 0; i < timeTable.length; i++) {
       const item = timeTable[i];
