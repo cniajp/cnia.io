@@ -180,11 +180,11 @@ Object.values(scheduleList).forEach((schedules) => {
   const { trackA, trackB } = schedules;
   if (trackA && trackA.sessionId) {
     trackA.session = proposalsMap[trackA.sessionId];
-    trackA.affiliation = getAffiliation(trackA.session);
+    trackA.affiliation = getAffiliation(trackA.session.speaker.kana);
   }
   if (trackB && trackB.sessionId) {
     trackB.session = proposalsMap[trackB.sessionId];
-    trackB.affiliation = getAffiliation(trackB.session);
+    trackB.affiliation = getAffiliation(trackB.session.speaker.kana);
   }
 });
 ---

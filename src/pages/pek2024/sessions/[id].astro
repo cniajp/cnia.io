@@ -38,14 +38,14 @@ async function loadTags() {
 tags = await loadTags();
 
 // 会社名/所属団体名
-const affiliation = getAffiliation(session);
+const affiliation = getAffiliation(session.speaker.kana);
 // 役職
-const jobTitle = getJobTitle(session);
+const jobTitle = getJobTitle(session.speaker.kana);
 
 // スピーカープロフィール
-const speakerProfile = getSpeakerProfile(session);
+const speakerProfile = getSpeakerProfile(session.abstract);
 // トーク概要
-const talkAbstract = getTalkAbstract(session);
+const talkAbstract = getTalkAbstract(session.abstract);
 ---
 
 <Layout

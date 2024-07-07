@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { CurrentSessionInfo } from "./CurrentSessionInfo";
+import type { ForteeTimeTableTalk } from "~/types"
+
 
 type Track = 'Track A' | 'Track B';
 // TODO: url を実際のものに変更
@@ -7,7 +10,13 @@ const YOUTUBE_URLS: Record<Track, string> = {
   'Track B': 'https://www.youtube.com/embed/93f7oRkDvJQ?si=1ZtgfY5nYo9X5xd6&autoplay=1&mute=1'
 }
 
-export const LivePlayer = () => {
+export const LivePlayer = (
+  {
+    timeTable
+  }: {
+    timeTable: ForteeTimeTableTalk[]
+  }
+) => {
   const [
     track,
     setTrack,
@@ -26,7 +35,6 @@ export const LivePlayer = () => {
           onClick={() => setTrack('Track B')}
         >
           <p className="text-lg font-semibold text-white text-center">Track B</p>
-          
         </button>
       </div>
       <div className="w-full md:w-3/4">
@@ -39,6 +47,13 @@ export const LivePlayer = () => {
           className="aspect-video w-full h-auto"
         >
         </iframe>
+      </div>
+      <div className="w-full md:w-3/4 mt-4" slot="actions">
+        <CurrentSessionInfo
+          timeTable={timeTable}
+          track={track}
+          debug={true}
+        />
       </div>
     </div>
 };
