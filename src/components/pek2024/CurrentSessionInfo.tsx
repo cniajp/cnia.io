@@ -18,6 +18,9 @@ export const CurrentSessionInfo = (
     setIsExpanded
   ] = useState<boolean>(false);
   const [
+    debugTime
+  ] = useState<Date>(new Date());
+  const [
     currentSession,
     setCurrentSession,
   ] = useState<ForteeTimeTableTalk | undefined>(undefined);
@@ -35,7 +38,7 @@ export const CurrentSessionInfo = (
       if (item.type === 'talk' && item.track.name === 'Track A') {
         debugData.push({
           ...item,
-          starts_at: new Date(Date.now() + 20 * 1000 * count).toISOString(),
+          starts_at: new Date(debugTime.getTime() + 20 * 1000 * count).toISOString(),
           length_min: 1 / 6,
         });
         count++;
@@ -48,7 +51,7 @@ export const CurrentSessionInfo = (
       if (item.type === 'talk' && item.track.name === 'Track B') {
         debugData.push({
           ...item,
-          starts_at: new Date(Date.now() + 20 * 1000 * count).toISOString(),
+          starts_at: new Date(debugTime.getTime() + 20 * 1000 * count).toISOString(),
           length_min: 1 / 6,
         });
         count++;
