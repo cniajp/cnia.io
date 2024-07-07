@@ -18,10 +18,6 @@ export const CurrentSessionInfo = (
     setIsExpanded
   ] = useState<boolean>(false);
   const [
-    sessionStarted,
-    setSessionStarted
-  ] = useState<boolean>(false);
-  const [
     currentSession,
     setCurrentSession,
   ] = useState<ForteeTimeTableTalk | undefined>(undefined);
@@ -29,6 +25,36 @@ export const CurrentSessionInfo = (
     nextSession,
     setNextSession,
   ] = useState<ForteeTimeTableTalk | undefined>(undefined);
+
+  const debugData: ForteeTimeTableTalk[] = [];
+  // デバッグ用のデータを生成
+  if (debug) {
+    let count = 1;
+    for (let i = 0; i < timeTable.length; i++) {
+      const item = timeTable[i];
+      if (item.type === 'talk' && item.track.name === 'Track A') {
+        debugData.push({
+          ...item,
+          starts_at: new Date(Date.now() + 20 * 1000 * count).toISOString(),
+          length_min: 1 / 6,
+        });
+        count++;
+      }
+    }
+    // 実際のタイムテーブルと同じように、Track B は後半から始まるようにする
+    count = 4;
+    for (let i = 0; i < timeTable.length; i++) {
+      const item = timeTable[i];
+      if (item.type === 'talk' && item.track.name === 'Track B') {
+        debugData.push({
+          ...item,
+          starts_at: new Date(Date.now() + 20 * 1000 * count).toISOString(),
+          length_min: 1 / 6,
+        });
+        count++;
+      }
+    }
+  }
 
   // hh:mm 形式にフォーマットする関数
   const formatTime = (date: Date): string => {
@@ -40,7 +66,7 @@ export const CurrentSessionInfo = (
   useEffect(() => {
     const getCurrentSession = () => {
       const now = new Date();
-      const currentSession = timeTable.find((session) => {
+      const currentSession = (debug ? debugData : timeTable).find((session) => {
         const startTime = new Date(session.starts_at);
         // starts_at から length_min 分後の時間を取得する
         const endTime = new Date(startTime.getTime() + session.length_min * 60 * 1000);
@@ -51,7 +77,7 @@ export const CurrentSessionInfo = (
         setCurrentSession(currentSession);
         setNextSession(undefined);
       } else {
-        const nextSession = timeTable.find((session) => {
+        const nextSession = (debug ? debugData : timeTable).find((session) => {
           const startTime = new Date(session.starts_at);
           // 現在の時間より後で、トラックが一致するセッションを取得する
           // 時系列順にソートされているので、最初に見つかったセッションが次のセッション
@@ -62,10 +88,6 @@ export const CurrentSessionInfo = (
       }
     };
     getCurrentSession();
-    // セッションが開始しているかどうかを判定する
-    if (timeTable.some((session) => new Date(session.starts_at) < new Date())) {
-      setSessionStarted(true);
-    }
     // 1分おきに現在の時間を取得して、それに応じて表示を変更する
     const intervalId = setInterval(() => {
       getCurrentSession();

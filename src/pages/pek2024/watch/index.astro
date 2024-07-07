@@ -10,37 +10,7 @@ const { data } = await axios.get<ForteeTimeTableResponse>(
   'https://fortee.jp/platform-engineering-kaigi-2024/api/timetable'
 );
 
-
-// ローカルでデバッグする場合は以下のコードを使う
-// debug 用に、現在時刻からセッション時間10秒, 休憩10秒のインターバルでタイムテーブルを書き換える
-const debugData: ForteeTimeTable[] = [];
-let count = 1;
-for (let i = 0; i < data.timetable.length; i++) {
-  const item = data.timetable[i];
-  if (item.type === 'talk' && item.track.name === 'Track A') {
-    debugData.push({
-      ...item,
-      starts_at: new Date(Date.now() + 20 * 1000 * count).toISOString(),
-      length_min: 1 / 6,
-    });
-    count++;
-  }
-}
-count = 4;
-for (let i = 0; i < data.timetable.length; i++) {
-  const item = data.timetable[i];
-  if (item.type === 'talk' && item.track.name === 'Track B') {
-    debugData.push({
-      ...item,
-      starts_at: new Date(Date.now() + 20 * 1000 * count).toISOString(),
-      length_min: 1 / 6,
-    });
-    count++;
-  }
-}
-const timeTable = debugData.filter((item): item is ForteeTimeTableTalk => item.type === 'talk');
-
-// const timeTable = data.timetable.filter((item): item is ForteeTimeTableTalk => item.type === 'talk');
+const timeTable = data.timetable.filter((item): item is ForteeTimeTableTalk => item.type === 'talk');
 ---
 
 <Layout
