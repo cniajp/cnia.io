@@ -71,24 +71,24 @@ export const CurrentSessionInfo = (
   useEffect(() => {
     const getCurrentSession = () => {
       const now = new Date();
-      const currentSession = (debug ? debugData : timeTable).find((session) => {
+      const _currentSession = (debug ? debugData : timeTable).find((session) => {
         const startTime = new Date(session.starts_at);
         // starts_at から length_min 分後の時間を取得する
         const endTime = new Date(startTime.getTime() + session.length_min * 60 * 1000);
         // 現在の時間がセッションの開始時間から終了時間の間にあるかつ、トラックが一致するか
         return startTime <= now && now <= endTime && session.track.name === track;
       });
-      if (currentSession !== undefined) {
-        setCurrentSession(currentSession);
+      if (_currentSession !== undefined) {
+        setCurrentSession(_currentSession);
         setNextSession(undefined);
       } else {
-        const nextSession = (debug ? debugData : timeTable).find((session) => {
+        const _nextSession = (debug ? debugData : timeTable).find((session) => {
           const startTime = new Date(session.starts_at);
           // 現在の時間より後で、トラックが一致するセッションを取得する
           // 時系列順にソートされているので、最初に見つかったセッションが次のセッション
           return startTime > now && session.track.name === track;
         });
-        setNextSession(nextSession);
+        setNextSession(_nextSession);
         setCurrentSession(undefined);
       }
     };
