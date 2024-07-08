@@ -3,6 +3,14 @@ import Layout from '../../../layouts/pek2024/PageLayout.astro';
 import Schedule from '../../../components/pek2024/Schedule.astro';
 import { LivePlayer } from '../../../components/pek2024/LivePlayer';
 import SponsorRoll from '../../../components/pek2024/SponsorRoll.astro';
+import type { ForteeTimeTableResponse ,ForteeTimeTableTalk, ForteeTimeTable } from '~/types';
+import axios from 'axios';
+
+const { data } = await axios.get<ForteeTimeTableResponse>(
+  'https://fortee.jp/platform-engineering-kaigi-2024/api/timetable'
+);
+
+const timeTable = data.timetable.filter((item): item is ForteeTimeTableTalk => item.type === 'talk');
 ---
 
 <Layout
@@ -12,7 +20,7 @@ import SponsorRoll from '../../../components/pek2024/SponsorRoll.astro';
   }}
 >
   <div class="flex flex-col items-center bg-slate-100">
-    <LivePlayer client:load />
+    <LivePlayer client:load timeTable={timeTable} />
     <div class="mt-2 flex flex-col items-center">
       <p class="text-base md:text-lg font-bold">
         XにPostして盛り上げよう!
