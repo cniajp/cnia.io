@@ -61,6 +61,58 @@ export interface PEK2024Proposal {
   };
 }
 
+export interface ForteeTag {
+  name: string;
+  color_text: string;
+  color_background: string;
+}
+
+export type ForteeTimeTableTalk = {
+  type: 'talk';
+  uuid: string;
+  url: string;
+  title: string;
+  abstract: string;
+  accepted: boolean;
+  track: {
+    name: string;
+    sort: number;
+  };
+  speaker: {
+    name: string;
+    kana: string;
+    twitter: string;
+    avatar_url: string;
+  };
+  feedback: {
+    open: boolean;
+  };
+  tags: ForteeTag[];
+  starts_at: string;
+  length_min: number;
+  fav: boolean;
+  fav_count: number;
+};
+
+export type ForteeTimeTableTimeSlot = {
+  type: 'timeslot';
+  uuid: string;
+  title: string;
+  abstract: string | null;
+  track: {
+    name: string;
+    sort: number;
+  };
+  starts_at: string;
+  length_min: number;
+};
+
+export type ForteeTimeTable = ForteeTimeTableTalk | ForteeTimeTableTimeSlot;
+
+export interface ForteeTimeTableResponse {
+  timetable: ForteeTimeTable[];
+}
+
 export interface PEK2024ProposalList {
   proposals: PEK2024Proposal[];
 }
