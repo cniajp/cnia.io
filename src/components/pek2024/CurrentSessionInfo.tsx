@@ -92,7 +92,7 @@ export const CurrentSessionInfo = (
       }
     };
     getCurrentSession();
-    // 1分おきに現在の時間を取得して、それに応じて表示を変更する
+    // 5秒おきに現在の時間を取得して、それに応じて表示を変更する
     const intervalId = setInterval(() => {
       getCurrentSession();
     }, 5000);

@@ -15,7 +15,7 @@ const OPENING_TIME = {
   end_time: '2024-07-09T10:20:00+09:00',
 }
 const EVENT_END_TIME = '2024-07-09T18:00:00+09:00';
-const DEBUG = true;
+const DEBUG = false;
 
 export const LivePlayer = (
   {
