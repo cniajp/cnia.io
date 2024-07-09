@@ -6,8 +6,8 @@ import type { ForteeTimeTableTalk } from "~/types"
 type Track = 'Track A' | 'Track B';
 // TODO: url を実際のものに変更
 const YOUTUBE_URLS: Record<Track, string> = {
-  'Track A': 'https://www.youtube.com/embed/SNffM5YJ8t8?si=GFyQSfL630gxocA5&autoplay=1&mute=1',
-  'Track B': 'https://www.youtube.com/embed/93f7oRkDvJQ?si=1ZtgfY5nYo9X5xd6&autoplay=1&mute=1'
+  'Track A': 'https://www.youtube.com/embed/53tNbf8Us78?si=5NFRLNaQk207yymx&autoplay=1&mute=1',
+  'Track B': 'https://www.youtube.com/embed/Hsob6TGTAPo?si=OuEuLS9NTyNmBxCm&autoplay=1&mute=1'
 }
 
 const OPENING_TIME = {
