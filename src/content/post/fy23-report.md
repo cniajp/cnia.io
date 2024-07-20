@@ -4,6 +4,7 @@ title: 事業報告書・決算報告書 第1期
 description: |
   一般社団法人クラウドネイティブイノベーターズ協会　第1期（2023年度）の事業報告書・決算報告書
 category: PressRelease
+image: ~/assets/images/blog/CNIA_16_9-100.jpg
 tags:
   - CNIA
 canonical: https://www.cnia.io/fy23-report
