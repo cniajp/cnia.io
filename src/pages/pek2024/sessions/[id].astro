@@ -9,6 +9,7 @@ import { fetchTags } from '../../../utils/fetchTags';
 import { getAffiliation, getJobTitle, getSpeakerProfile, getTalkAbstract } from '../../../utils/pek2024/fortee';
 import { type PEK2024ProposalList } from '../../../types';
 import TeamTopologiesSeminarBanner from '~/components/pek2024/TeamTopologiesSeminarBanner.astro';
+import { Icon } from 'astro-icon/components';
 
 export async function getStaticPaths() {
   const { data } = await axios.get<PEK2024ProposalList>(
@@ -100,10 +101,10 @@ const talkAbstract = getTalkAbstract(session.abstract);
                 <div class="flex-auto">
                   <a href={session.slide_url as string} target="_blank" rel="noopener noreferrer">
                     <button
-                      class="bg-themeColor-blue hover:bg-blue-500 text-white font-bold py-2 px-4 rounded"
-                      style="transition: all 0.3s ease;"
+                      class="bg-themeColor-orange hover:bg-themeColor-yellow text-white font-bold py-2 px-4 rounded inline-flex items-center"
                     >
                       スライドを見る
+                      <Icon name="tabler:external-link" class="w-4 h-4 ml-2" />
                     </button>
                   </a>
                 </div>
