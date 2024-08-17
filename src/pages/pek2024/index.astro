@@ -79,16 +79,6 @@ const news = [
   <Hero />
 
   <a id="update"></a>
-  <div class="py-10 bg-slate-100">
-    <div class="mb-10 md:mx-auto text-center md:mb-12 max-w-3xl">
-      <p class="text-base dark:text-blue-200 font-semibold tracking-wide uppercase">Staff Recruitment</p>
-      <h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4">当日スタッフ募集</h2>
-    </div>
-    <div class="flex flex-col items-center justify-center">
-      <p>応募を多数いただきましたので本募集は終了します。</p>
-      <p>ありがとうございました。</p>
-    </div>
-  </div>
 
   <Update highlight="News" title="お知らせ" items={news} />
   {blogPosts.length > 0 && <Update highlight="Blog" title="ブログ" items={blogPosts.slice(0, 5)} />}
