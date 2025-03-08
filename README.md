@@ -31,6 +31,35 @@ PEKは、CNIAが運営するPlatform Engineeringに関するカンファレン�
 *   [Astro](https://astro.build/)
 *   [Tailwind CSS](https://tailwindcss.com/)
 
+### ディレクトリ構成
+
+```
+.
+├── public/          # 静的ファイル (画像など)
+├── src/             # ソースコード
+│   ├── assets/      # アセットファイル (画像、スタイルシートなど)
+│   ├── components/  # Astroコンポーネント
+│   ├── content/     # コンテンツ (ブログ記事など)
+│   ├── layouts/     # レイアウト
+│   ├── pages/       # ページ
+│   ├── utils/       # ユーティリティ関数
+├── package.json     # パッケージ情報
+├── astro.config.mjs # Astroの設定ファイル
+└── ...
+```
+
+各ディレクトリの説明:
+
+*   `public/`: ウェブサイトで利用する静的なファイルを格納します。
+*   `src/`: ウェブサイトのソースコードを格納します。
+*   `src/assets/`: 画像やスタイルシートなどのアセットファイルを格納します。
+*   `src/components/`: Astroコンポーネントを格納します。
+*   `src/content/`: ブログ記事などのコンテンツを格納します。
+*   `src/layouts/`: ページのレイアウトを定義します。
+*   `src/pages/`: ページを定義します。
+*   `src/utils/`: ユーティリティ関数を格納します。
+*   `package.json`: プロジェクトの依存関係やスクリプトを定義します。
+*   `astro.config.mjs`: Astroの設定を記述します。
 
 ## ライセンス
 
