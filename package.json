@@ -1,7 +1,7 @@
 {
-  "name": "@onwidget/astrowind",
-  "description": "A template to make your website using Astro + Tailwind CSS.",
-  "version": "0.9.8",
+  "name": "cnia-website",
+  "description": "CNIA Website",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -13,7 +13,7 @@
     "lint:eslint": "eslint . --ext .js,.ts,.astro"
   },
   "devDependencies": {
-    "@astrojs/mdx": "^3.0.0",
+    "@astrojs/mdx": "^4.1.0",
     "@astrojs/partytown": "^2.0.0",
     "@astrojs/rss": "^4.0.0",
     "@astrojs/sitemap": "^3.0.0",
@@ -22,7 +22,7 @@
     "@tailwindcss/typography": "^0.5.9",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
-    "astro": "^4.2.1",
+    "astro": "^5.4.2",
     "astro-compress": "^2.2.8",
     "astro-icon": "^1.0.0",
     "eslint": "^8.37.0",
@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^3.5.0",
-    "@astrolib/analytics": "^0.5.0",
+    "@astrolib/analytics": "^0.6.1",
     "@astrolib/seo": "^1.0.0-beta.5",
     "@iconify-json/ri": "^1.1.20",
     "@iconify-json/tabler": "^1.1.109",
