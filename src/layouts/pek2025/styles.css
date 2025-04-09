@@ -4,74 +4,74 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --pek2025-background: 0 0% 100%;
+    --pek2025-foreground: 222.2 84% 4.9%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --pek2025-card: 0 0% 100%;
+    --pek2025-card-foreground: 222.2 84% 4.9%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --pek2025-popover: 0 0% 100%;
+    --pek2025-popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 203 100% 36%;
-    --primary-foreground: 210 40% 98%;
+    --pek2025-primary: 203 100% 36%;
+    --pek2025-primary-foreground: 210 40% 98%;
 
-    --secondary: 246 25% 49%;
-    --secondary-foreground: 210 40% 98%;
+    --pek2025-secondary: 246 25% 49%;
+    --pek2025-secondary-foreground: 210 40% 98%;
 
-    --accent: 36 100% 48%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --pek2025-accent: 36 100% 48%;
+    --pek2025-accent-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --pek2025-muted: 210 40% 96.1%;
+    --pek2025-muted-foreground: 215.4 16.3% 46.9%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --pek2025-destructive: 0 84.2% 60.2%;
+    --pek2025-destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 203 100% 36%;
+    --pek2025-border: 214.3 31.8% 91.4%;
+    --pek2025-input: 214.3 31.8% 91.4%;
+    --pek2025-ring: 203 100% 36%;
 
-    --radius: 0.5rem;
+    --pek2025-radius: 0.5rem;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --pek2025-background: 222.2 84% 4.9%;
+    --pek2025-foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --pek2025-card: 222.2 84% 4.9%;
+    --pek2025-card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --pek2025-popover: 222.2 84% 4.9%;
+    --pek2025-popover-foreground: 210 40% 98%;
 
-    --primary: 203 100% 36%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --pek2025-primary: 203 100% 36%;
+    --pek2025-primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 246 25% 49%;
-    --secondary-foreground: 210 40% 98%;
+    --pek2025-secondary: 246 25% 49%;
+    --pek2025-secondary-foreground: 210 40% 98%;
 
-    --accent: 36 100% 48%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --pek2025-accent: 36 100% 48%;
+    --pek2025-accent-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --pek2025-muted: 217.2 32.6% 17.5%;
+    --pek2025-muted-foreground: 215 20.2% 65.1%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --pek2025-destructive: 0 62.8% 30.6%;
+    --pek2025-destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 203 100% 36%;
+    --pek2025-border: 217.2 32.6% 17.5%;
+    --pek2025-input: 217.2 32.6% 17.5%;
+    --pek2025-ring: 203 100% 36%;
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
+  .pek2025-page * {
+    @apply border-pek2025-border;
   }
-  body {
-    @apply bg-background text-foreground;
+  .pek2025-page {
+    @apply bg-pek2025-background text-pek2025-foreground;
   }
 }
 
