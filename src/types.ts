@@ -38,7 +38,7 @@ export interface MetaSEO {
   ogType?: string;
 }
 
-export interface PEK2024MetaSEO extends AstroSeoProps {
+export interface PEKMetaSEO extends AstroSeoProps {
   imagePath?: string;
   useTitleTemplate?: boolean;
 };

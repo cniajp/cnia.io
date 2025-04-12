@@ -2,14 +2,14 @@
 import '~/assets/styles/pek2024/base.css';
 import CustomStyles from '~/components/CustomStyles.astro';
 import BasicScripts from '~/components/common/BasicScripts.astro';
-import type { PEK2024MetaSEO } from '~/types';
+import type { PEKMetaSEO } from '~/types';
 import { GoogleAnalytics } from '@astrolib/analytics';
 import { AstroSeo } from '@astrolib/seo';
 
 import { SITE } from '~/config.mjs';
 
 export interface Props {
-  meta?: PEK2024MetaSEO
+  meta?: PEKMetaSEO
 }
 
 const { language = 'en', textDirection = 'ltr', googleAnalyticsId, googleSiteVerificationId } = SITE;
