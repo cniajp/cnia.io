@@ -2,6 +2,7 @@
 import Layout from '../../layouts/pek2025/Layout.astro';
 import Header from '../../components/pek2025/Header.astro';
 import Footer from '../../components/pek2025/Footer.astro';
+import { Icon } from 'astro-icon/components';
 ---
 
 <Layout>
@@ -11,9 +12,6 @@ import Footer from '../../components/pek2025/Footer.astro';
     <main class="flex-grow container mx-auto px-4 py-12">
       <section class="flex flex-col md:flex-row items-center justify-center">
         <div class="space-y-6">
-          <div class="inline-block bg-pek2025-accent-100 text-pek2025-tertiary-600 px-3 py-1 rounded-full text-sm font-medium">
-            2025年開催予定
-          </div>
           <div class="flex flex-col md:flex-row items-center justify-between">
             <div class="flex justify-center items-center">
               <img
@@ -34,10 +32,10 @@ import Footer from '../../components/pek2025/Footer.astro';
               />
             </div>
           </div>
-          <p class="text-lg md:text-xl text-gray-700">
-            日本初のPlatform
-            Engineeringに特化したカンファレンス。最新のプラットフォームエンジニアリングの知見と実践を共有する場です。
-          </p>
+          <div class="text-center mt-8">
+            <h2 class="text-2xl md:text-4xl font-bold text-pek2025-primary-600 mb-2">2025年9月18日（木）</h2>
+            <p class="text-xl md:text-2xl text-gray-700 font-semibold">中野セントラルパークカンファレンスにて開催</p>
+          </div>
         </div>
       </section>
 
@@ -45,10 +43,9 @@ import Footer from '../../components/pek2025/Footer.astro';
 
       <section id="about" class="py-12 space-y-8">
         <div class="text-center space-y-4">
-          <h2 class="text-3xl md:text-4xl font-bold text-pek2025-primary-600">PEK2025について</h2>
+          <h2 class="text-3xl md:text-4xl font-bold text-pek2025-primary-600">Platform Engineering Kaigi について</h2>
           <p class="text-xl text-gray-700 max-w-3xl mx-auto">
-            Platform Engineering Kaigi
-            2025（PEK2025）は、プラットフォームエンジニアリングに関する知識と経験を共有するための日本初の専門カンファレンスです。
+            Platform Engineering Kaigiは、プラットフォームエンジニアリングに関する知識と経験を共有するための日本初の専門カンファレンスです。
           </p>
         </div>
 
@@ -63,7 +60,7 @@ import Footer from '../../components/pek2025/Footer.astro';
               </svg>
             </div>
             <h3 class="text-xl font-semibold text-pek2025-primary-700 mb-2">開催日程</h3>
-            <p class="text-gray-700">2025年春（詳細日程は近日公開）</p>
+            <p class="text-gray-700">2025年9月18日（木）</p>
           </div>
 
           <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
@@ -74,7 +71,12 @@ import Footer from '../../components/pek2025/Footer.astro';
               </svg>
             </div>
             <h3 class="text-xl font-semibold text-pek2025-primary-700 mb-2">開催場所</h3>
-            <p class="text-gray-700">東京都内（詳細会場は近日公開）</p>
+            <p class="text-gray-700">
+              <a href="https://www.nakano-centralpark.jp/conference/" target="_blank" rel="noopener noreferrer" class="text-pek2025-primary-600 underline inline-flex items-center">
+                中野セントラルパークカンファレンス
+                <Icon name="tabler:external-link" class="w-4 h-4 ml-2" />
+              </a>
+            </p>
           </div>
 
           <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
@@ -95,54 +97,7 @@ import Footer from '../../components/pek2025/Footer.astro';
               </svg>
             </div>
             <h3 class="text-xl font-semibold text-pek2025-primary-700 mb-2">参加対象</h3>
-            <p class="text-gray-700">プラットフォームエンジニア、DevOpsエンジニア、開発者、ITマネージャーなど</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="schedule" class="py-12 space-y-8">
-        <div class="text-center space-y-4">
-          <h2 class="text-3xl md:text-4xl font-bold text-pek2025-primary-600">今後のスケジュール</h2>
-          <p class="text-xl text-gray-700 max-w-3xl mx-auto">
-            PEK2025に向けた今後の予定をお知らせします。最新情報はメールでお届けします。
-          </p>
-        </div>
-
-        <div class="max-w-3xl mx-auto mt-8">
-          <div class="relative">
-            <div class="absolute left-4 md:left-1/2 h-full w-0.5 bg-pek2025-primary-200 transform md:-translate-x-1/2"></div>
-
-            <div class="relative z-10">
-              <div class="flex flex-col md:flex-row items-start md:items-center mb-12">
-                <div class="flex items-center md:w-1/2 md:justify-end md:pr-8">
-                  <div class="bg-pek2025-primary-600 text-white text-lg font-bold py-2 px-4 rounded-lg">2024年9月</div>
-                </div>
-                <div class="ml-10 md:ml-0 mt-4 md:mt-0 md:w-1/2 md:pl-8">
-                  <h3 class="text-xl font-semibold text-pek2025-primary-700">公式サイトオープン</h3>
-                  <p class="text-gray-700 mt-2">詳細情報と講演者募集の開始</p>
-                </div>
-              </div>
-
-              <div class="flex flex-col md:flex-row items-start md:items-center mb-12">
-                <div class="flex items-center md:w-1/2 md:justify-end md:pr-8">
-                  <div class="bg-pek2025-secondary-600 text-white text-lg font-bold py-2 px-4 rounded-lg">2024年12月</div>
-                </div>
-                <div class="ml-10 md:ml-0 mt-4 md:mt-0 md:w-1/2 md:pl-8">
-                  <h3 class="text-xl font-semibold text-pek2025-primary-700">講演者発表</h3>
-                  <p class="text-gray-700 mt-2">セッション内容と講演者の紹介</p>
-                </div>
-              </div>
-
-              <div class="flex flex-col md:flex-row items-start md:items-center">
-                <div class="flex items-center md:w-1/2 md:justify-end md:pr-8">
-                  <div class="bg-pek2025-tertiary-600 text-white text-lg font-bold py-2 px-4 rounded-lg">2025年1月</div>
-                </div>
-                <div class="ml-10 md:ml-0 mt-4 md:mt-0 md:w-1/2 md:pl-8">
-                  <h3 class="text-xl font-semibold text-pek2025-primary-700">チケット販売開始</h3>
-                  <p class="text-gray-700 mt-2">早期割引チケットの販売開始</p>
-                </div>
-              </div>
-            </div>
+            <p class="text-gray-700">プラットフォームエンジニア、SRE、インフラエンジニア、アプリケーション開発者および開発生産性向上に関心のあるCTO、CIOなど</p>
           </div>
         </div>
       </section>
