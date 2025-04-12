@@ -1,6 +1,9 @@
 ---
 import Layout from '~/layouts/pek2025/PageLayout.astro';
 import { Icon } from 'astro-icon/components';
+import { Image } from "astro:assets";
+import LogoTradeMark from "~/assets/images/pek_trademark.png";
+import LogoText from "~/assets/images/pek2025/logo_text.png";
 
 const meta = {
   title: "Platform Engineering Kaigi 2025 | PEK2025",
@@ -16,21 +19,23 @@ const meta = {
         <div class="space-y-6">
           <div class="flex flex-col md:flex-row items-center justify-between">
             <div class="flex justify-center items-center">
-              <img
-                src="/pek_trademark.png"
+              <Image
+                src={LogoTradeMark}
                 alt="Platform Engineering Kaigi 2025"
                 width="600"
                 height="600"
                 class="w-full max-w-lg h-auto"
+                loading="lazy"
               />
             </div>
             <div class="flex justify-center items-center">
-              <img
-                src="/pek2025/logo_text.png"
+              <Image
+                src={LogoText}
                 alt="PLATFORM ENGINEERING KAIGI 2025"
-                width="8000"
+                width="800"
                 height="400"
                 class="w-full max-w-2xl h-auto"
+                loading="lazy"
               />
             </div>
           </div>
