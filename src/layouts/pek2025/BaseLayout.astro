@@ -1,25 +1,31 @@
 ---
 import './styles.css';
+import CustomStyles from '~/components/CustomStyles.astro';
+import BasicScripts from '~/components/common/BasicScripts.astro';
+import { SITE } from '~/config.mjs';
 
-interface Props {
-  title?: string;
-  description?: string;
+export interface Props {
+  meta?: any;
 }
 
+const { language = 'ja', textDirection = 'ltr' } = SITE;
+const { meta } = Astro.props;
 const { 
-  title = "Platform Engineering Kaigi 2025 | PEK2025",
-  description = "日本初のPlatform Engineeringに特化したカンファレンス。最新のプラットフォームエンジニアリングの知見と実践を共有する場です。"
-} = Astro.props;
+  title = "Platform Engineering Kaigi 2025 | PEK2025", 
+  description = "PEK2025 は Platform Engineeringに特化したカンファレンス。最新のプラットフォームエンジニアリングの知見と実践を共有する場です。"
+} = meta || {};
 ---
 
 <!DOCTYPE html>
-<html lang="ja">
+<html lang={language} dir={textDirection} class="2xl:text-[20px]">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="generator" content="v0.dev" />
+    
+    <CustomStyles />
+    <link rel="icon" href="/pek2024_trademark.ico" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -36,7 +42,9 @@ const {
       }
     </style>
   </head>
-  <body class="font-sans">
+
+  <body class="font-sans pek2025-page bg-pek2025-primary-50">
     <slot />
+    <BasicScripts />
   </body>
 </html>

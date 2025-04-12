@@ -1,13 +1,15 @@
 ---
-import Layout from '../../layouts/pek2025/Layout.astro';
-import Header from '../../components/pek2025/Header.astro';
-import Footer from '../../components/pek2025/Footer.astro';
+import Layout from '~/layouts/pek2025/PageLayout.astro';
 import { Icon } from 'astro-icon/components';
+
+const meta = {
+  title: "Platform Engineering Kaigi 2025 | PEK2025",
+  description: "PEK2025 は Platform Engineeringに特化したカンファレンス。最新のプラットフォームエンジニアリングの知見と実践を共有する場です。"
+};
 ---
 
-<Layout>
+<Layout meta={meta}>
   <div class="pek2025-page flex flex-col min-h-screen bg-gradient-to-b from-pek2025-primary-50 to-white">
-    <Header />
 
     <main class="flex-grow container mx-auto px-4 py-12">
       <section class="flex flex-col md:flex-row items-center justify-center">
@@ -151,6 +153,5 @@ import { Icon } from 'astro-icon/components';
       </section>
     </main>
 
-    <Footer />
   </div>
 </Layout>
