@@ -27,7 +27,7 @@ const { session } = Astro.props;
 const sessionExists = session !== undefined;
 
 const avatarUrl = session?.speaker.avatar_url;
-const relativeImagePath = avatarUrl?.startsWith('https://') ? avatarUrl : `/pek2024_trademark.png`;
+const relativeImagePath = avatarUrl?.startsWith('https://') ? avatarUrl : `/pek_trademark.png`;
 
 const url = session?.url ?? '';
 
