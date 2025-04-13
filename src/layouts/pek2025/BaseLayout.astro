@@ -1,22 +1,21 @@
 ---
-import '~/assets/styles/pek2024/base.css';
+import './styles.css';
 import CustomStyles from '~/components/CustomStyles.astro';
 import BasicScripts from '~/components/common/BasicScripts.astro';
+import { SITE } from '~/config.mjs';
 import type { PEKMetaSEO } from '~/types';
 import { GoogleAnalytics } from '@astrolib/analytics';
 import { AstroSeo } from '@astrolib/seo';
-
-import { SITE } from '~/config.mjs';
 
 export interface Props {
   meta?: PEKMetaSEO
 }
 
-const { language = 'en', textDirection = 'ltr', googleAnalyticsId, googleSiteVerificationId } = SITE;
+const { language = 'ja', textDirection = 'ltr', googleAnalyticsId, googleSiteVerificationId } = SITE;
 const { meta } = Astro.props;
 const { title, description, imagePath, useTitleTemplate = true } = meta || {};
 const canonicalURL = new URL(Astro.url.pathname, 'https://www.cnia.io');
-const path = imagePath ? imagePath : '/pek2024_ogp.png';
+const path = imagePath ? imagePath : '/pek2025_ogp.png';
 const ogpImageURL = new URL(path, canonicalURL);
 ---
 
@@ -26,19 +25,19 @@ const ogpImageURL = new URL(path, canonicalURL);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <AstroSeo
-      title={title ? title : 'Platform Engineering Kaigi 2024'}
-      titleTemplate={useTitleTemplate ? '%s | Platform Engineering Kaigi 2024' : undefined}
-      description={description ? description : 'Platform Engineering Kaigi 2024'}
+      title={title ? title : 'Platform Engineering Kaigi 2025'}
+      titleTemplate={useTitleTemplate ? '%s | Platform Engineering Kaigi 2025' : undefined}
+      description={description ? description : 'Platform Engineering Kaigi 2025'}
       canonical={canonicalURL.href}
       openGraph={{
         url: canonicalURL.href,
-        title: title ? title : 'Platform Engineering Kaigi 2024',
-        description: description ? description : 'Platform Engineering Kaigi 2024',
-        site_name: 'Platform Engineering Kaigi 2024',
+        title: title ? title : 'Platform Engineering Kaigi 2025',
+        description: description ? description : 'Platform Engineering Kaigi 2025',
+        site_name: 'Platform Engineering Kaigi 2025',
         images: [
           {
             url: ogpImageURL.href,
-            alt: title ? title : 'Platform Engineering Kaigi 2024',
+            alt: title ? title : 'Platform Engineering Kaigi 2025',
           },
         ],
       }}
@@ -49,14 +48,21 @@ const ogpImageURL = new URL(path, canonicalURL);
       }}
     />
 
+
     <meta name="google-site-verification" content={googleSiteVerificationId} />
     {<GoogleAnalytics id={String(googleAnalyticsId)} partytown={true} />}
-
+    
     <CustomStyles />
-    <link rel="icon" href="/pek2024_trademark.ico" type="image/x-icon" />
+    <link rel="icon" href="/pek2025_trademark.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
-  <body class="antialiased text-page bg-light dark:text-slate-300 tracking-tight dark:bg-dark">
+  <body class="font-sans pek2025-page bg-pek2025-primary-50">
     <slot />
     <BasicScripts />
   </body>

@@ -21,7 +21,7 @@ export interface Props {
 const { id, abstract, speaker } = Astro.props;
 
 const avatarUrl = speaker.avatar_url;
-const relativeImagePath = avatarUrl?.startsWith('https://') ? avatarUrl : `/pek2024_trademark.png`;
+const relativeImagePath = avatarUrl?.startsWith('https://') ? avatarUrl : `/pek_trademark.png`;
 
 // 会社名/所属団体名を取得
 const affiliationRegex = /■会社名\/所属団体名 - Company\/Organizations□\s*(.*?)(\s*■|$)/g;

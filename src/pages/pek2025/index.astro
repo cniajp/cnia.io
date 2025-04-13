@@ -1,0 +1,175 @@
+---
+import Layout from '~/layouts/pek2025/PageLayout.astro';
+import { Icon } from 'astro-icon/components';
+import { Image } from "astro:assets";
+import LogoTradeMark from "~/assets/images/pek_trademark.png";
+import LogoText from "~/assets/images/pek2025/logo_text.png";
+
+const meta = {
+  title: "Platform Engineering Kaigi 2025 | PEK2025",
+  description: "PEK2025 は Platform Engineeringに特化したカンファレンス。最新のプラットフォームエンジニアリングの知見と実践を共有する場です。"
+};
+---
+
+<Layout meta={meta}>
+  <div class="pek2025-page flex flex-col min-h-screen bg-gradient-to-b from-pek2025-primary-50 to-white">
+
+    <main class="flex-grow container mx-auto px-4 py-12">
+      <section class="flex flex-col md:flex-row items-center justify-center">
+        <div class="space-y-6">
+          <div class="flex flex-col md:flex-row items-center justify-between">
+            <div class="flex justify-center items-center">
+              <Image
+                src={LogoTradeMark}
+                alt="Platform Engineering Kaigi 2025"
+                width="600"
+                height="600"
+                class="w-full max-w-lg h-auto"
+                loading="lazy"
+              />
+            </div>
+            <div class="flex justify-center items-center">
+              <Image
+                src={LogoText}
+                alt="PLATFORM ENGINEERING KAIGI 2025"
+                width="800"
+                height="400"
+                class="w-full max-w-2xl h-auto"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="text-center mt-8">
+            <h2 class="text-2xl md:text-4xl font-bold text-pek2025-primary-600 mb-2">2025年9月18日（木）</h2>
+            <p class="text-xl md:text-2xl text-gray-700 font-semibold">中野セントラルパークカンファレンスにて開催</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="my-16 h-[1px] w-full bg-gray-200"></div>
+
+      <section id="about" class="py-12 space-y-8">
+        <div class="text-center space-y-4">
+          <h2 class="text-3xl md:text-4xl font-bold text-pek2025-primary-600">Platform Engineering Kaigi(PEK) 2025 について</h2>
+          <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+            PEK2025 は、プラットフォームエンジニアリングに関する知識と経験を共有するための専門カンファレンスです。
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 mt-12">
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-pek2025-primary-100 rounded-full flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-pek2025-primary-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-pek2025-primary-700 mb-2">開催日程</h3>
+            <div class="space-y-2 mb-4">
+              <p class="text-gray-700">2025年9月18日（木）</p>
+              <p class="text-gray-700">開会: 10:00 / 閉会: 18:00 </p>
+              <p class="text-gray-700">懇親会: 18:30 - 20:00</p>
+            </div>
+            <div class="flex flex-col items-start space-y-2 mt-4">
+              <p class="text-pek2025-primary-700 font-bold text-md">カレンダーに追加</p>
+              <a href="/calendar/pek2025.ics" class="text-pek2025-primary-600 text-xs underline inline-flex items-center hover:text-pek2025-primary-700 transition-colors" download>
+                カレンダー(.ics)をダウンロード
+              </a>
+              <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Platform+Engineering+Kaigi+(PEK)+2025&dates=20250918T010000Z/20250918T090000Z&details=プラットフォームエンジニアリングに関する知識と経験を共有する専門カンファレンス&location=中野セントラルパークカンファレンス&ctz=Asia/Tokyo" class="text-pek2025-primary-600 text-xs underline inline-flex items-center hover:text-pek2025-primary-700 transition-colors" target="_blank">
+                Googleカレンダーに追加
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-pek2025-secondary-100 rounded-full flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-pek2025-secondary-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-pek2025-primary-700 mb-2">開催場所</h3>
+            <p class="text-gray-700">
+              <a href="https://www.nakano-centralpark.jp/conference/" target="_blank" rel="noopener noreferrer" class="text-pek2025-primary-600 underline inline-flex items-center">
+                中野セントラルパークカンファレンス
+                <Icon name="tabler:external-link" class="w-4 h-4 ml-2" />
+              </a>
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-pek2025-accent-100 rounded-full flex items-center justify-center mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-pek2025-tertiary-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-pek2025-primary-700 mb-2">参加対象</h3>
+            <p class="text-gray-700">プラットフォームエンジニア、SRE、インフラエンジニア、アプリケーション開発者および開発生産性向上に関心のあるCTO、CIOなど</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="sponsors" class="py-12 space-y-8 mt-16 bg-white rounded-2xl border border-gray-100 shadow-sm">
+        <div class="text-center space-y-4">
+          <h2 class="text-3xl md:text-4xl font-bold text-pek2025-primary-600">スポンサー募集</h2>
+          <p class="text-xl text-gray-700 max-w-4xl mx-auto px-4">
+            PEK2025では、イベントをサポートしていただけるスポンサー企業を募集しています。<br />
+            Platform Engineeringに関心のある技術者との接点を得る絶好の機会です。
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto px-4 mt-8">
+          <div class="bg-pek2025-primary-50 p-6 rounded-xl">
+            <h3 class="text-xl font-bold text-pek2025-primary-700 mb-3">コミュニティ貢献</h3>
+            <p class="text-gray-700">
+              日本の Platform Engineering コミュニティの発展に貢献し、技術の普及を促進することができます。
+            </p>
+          </div>
+
+          <div class="bg-pek2025-accent-50 p-6 rounded-xl">
+            <h3 class="text-xl font-bold text-pek2025-tertiary-600 mb-3">ブランド露出</h3>
+            <p class="text-gray-700">
+              ロゴ掲載やブース出展を通じて、 Platform Engineering に関心のある技術者に対して効果的なブランディングが可能です。
+            </p>
+          </div>
+
+          <div class="bg-pek2025-secondary-50 p-6 rounded-xl">
+            <h3 class="text-xl font-bold text-pek2025-secondary-700 mb-3">採用活動</h3>
+            <p class="text-gray-700">
+              高度な技術を持つエンジニアとの接点を得ることで、質の高い採用活動につなげることができます。
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center justify-center mt-10 space-y-4">
+          <p class="text-lg text-gray-700 max-w-4xl text-center px-4">
+            スポンサープランの詳細や特典内容については、スポンサー募集ページをご覧ください。 <br />
+          </p>
+          <a
+            href="https://pfem.notion.site/Platform-Engineering-Kaigi-2025-1b221b0141e080cf84bfd3d86e013c57"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-pek2025-tertiary-600 hover:bg-pek2025-tertiary-700 text-white py-6 px-8 text-lg rounded-md inline-flex items-center"
+          >
+            スポンサー募集詳細を見る
+            <Icon name="tabler:external-link" class="w-4 h-4 ml-2" />
+          </a>
+        </div>
+      </section>
+    </main>
+
+  </div>
+</Layout>

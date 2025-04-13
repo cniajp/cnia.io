@@ -1,0 +1,61 @@
+---
+import { Icon } from "astro-icon/components";
+
+---
+
+<footer class="bg-pek2025-primary-600 text-white py-12">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-center items-start">
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-lg font-semibold mb-4">リンク</h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="hover:text-pek2025-primary-200">
+                ホーム
+              </a>
+            </li>
+            <li>
+              <a href="#about" class="hover:text-pek2025-primary-200">
+                概要
+              </a>
+            </li>
+            <li>
+              <a href="#sponsors" class="hover:text-pek2025-primary-200">
+                スポンサー募集
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-4">フォロー</h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="https://x.com/cnia_pfem#" target="_blank" rel="noopener noreferrer" class="hover:text-pek2025-primary-200 flex items-center">
+                X
+                <Icon name="tabler:external-link" class="w-4 h-4 ml-2" />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/@platformengineeringmeetup-2626" target="_blank" rel="noopener noreferrer" class="hover:text-pek2025-primary-200 flex items-center">
+                YouTube
+                <Icon name="tabler:external-link" class="w-4 h-4 ml-2" />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-span-2 md:col-span-1">
+          <h3 class="text-lg font-semibold mb-4">お問い合わせ</h3>
+          <p class="mt-2">
+            <a href="https://pfem.notion.site/1b621b0141e080e792ffc9c3e34af7c3" target="_blank" rel="noopener noreferrer" class="text-white hover:text-pek2025-primary-200">
+              お問い合わせフォーム
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-pek2025-primary-500 mt-12 pt-8 text-center text-pek2025-primary-200">
+      <p>© {new Date().getFullYear()} Platform Engineering Kaigi Team / All rights reserved.</p>
+    </div>
+  </div>
+</footer>

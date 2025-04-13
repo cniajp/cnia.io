@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --pek2025-background: 0 0% 100%;
+    --pek2025-foreground: 222.2 84% 4.9%;
+
+    --pek2025-card: 0 0% 100%;
+    --pek2025-card-foreground: 222.2 84% 4.9%;
+
+    --pek2025-popover: 0 0% 100%;
+    --pek2025-popover-foreground: 222.2 84% 4.9%;
+
+    --pek2025-primary: 203 100% 36%;
+    --pek2025-primary-foreground: 210 40% 98%;
+
+    --pek2025-secondary: 246 25% 49%;
+    --pek2025-secondary-foreground: 210 40% 98%;
+
+    --pek2025-accent: 36 100% 48%;
+    --pek2025-accent-foreground: 222.2 47.4% 11.2%;
+
+    --pek2025-muted: 210 40% 96.1%;
+    --pek2025-muted-foreground: 215.4 16.3% 46.9%;
+
+    --pek2025-destructive: 0 84.2% 60.2%;
+    --pek2025-destructive-foreground: 210 40% 98%;
+
+    --pek2025-border: 214.3 31.8% 91.4%;
+    --pek2025-input: 214.3 31.8% 91.4%;
+    --pek2025-ring: 203 100% 36%;
+
+    --pek2025-radius: 0.5rem;
+  }
+}
+
+@layer base {
+  .pek2025-page * {
+    @apply border-pek2025-border;
+  }
+  .pek2025-page {
+    @apply bg-pek2025-background text-pek2025-foreground;
+  }
+}
+
+.font-sans {
+  font-family: 'Noto Sans JP', sans-serif;
+}

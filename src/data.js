@@ -29,8 +29,8 @@ export const headerData = {
       ],
     },
     {
-      text: 'PEK2024',
-      href: '/pek2024',
+      text: 'PEK2025',
+      href: '/pek2025',
     },
   ],
   socialLinks: [
