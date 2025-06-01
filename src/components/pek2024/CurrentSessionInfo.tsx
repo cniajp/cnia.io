@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import type { ForteeTimeTableTalk } from "~/types";
-import * as forteeHelper from '~/utils/pek2024/fortee';
+import * as forteeHelper from '~/utils/fortee';
 
 export const CurrentSessionInfo = (
   {

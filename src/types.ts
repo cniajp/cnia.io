@@ -116,3 +116,29 @@ export interface ForteeTimeTableResponse {
 export interface PEK2024ProposalList {
   proposals: PEK2024Proposal[];
 }
+
+// 共通のPEK型定義（年度に依存しない）
+export interface PEKProposal {
+  uuid: string;
+  url: string;
+  title: string;
+  abstract: string;
+  accepted: boolean;
+  speaker: {
+    name: string;
+    kana: string;
+    twitter: string;
+    avatar_url: string;
+  };
+  created: string;
+  feedback: {
+    open: boolean;
+  };
+  // 動画・スライドURL（年度により有無が異なる可能性）
+  video_url?: string;
+  slide_url?: string;
+}
+
+export interface PEKProposalList {
+  proposals: PEKProposal[];
+}
