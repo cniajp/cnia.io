@@ -1,18 +1,8 @@
 ---
 import { Image } from 'astro:assets';
 import { fetchTags } from '../../utils/fetchTags.ts';
+import type { ForteeTag, Speaker } from '../../types';
 
-export interface Tag {
-  text: string;
-  backgroundColor: string | undefined;
-  color: string | undefined;
-}
-interface Speaker {
-  name: string;
-  kana?: string;
-  twitter?: string;
-  avatar_url?: string;
-}
 export interface Props {
   id: string;
   url: string;
@@ -26,7 +16,7 @@ const { id, url, title, abstract, speaker } = Astro.props;
 const avatarUrl = speaker.avatar_url;
 const relativeImagePath = avatarUrl?.startsWith('https://') ? avatarUrl : `/pek_trademark.png`;
 
-let tags: Tag[] = [];
+let tags: ForteeTag[] = [];
 async function loadTags() {
   return await fetchTags(url);
 }

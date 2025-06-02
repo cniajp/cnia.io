@@ -1,7 +1,8 @@
 import axios from 'axios';
 import cheerio from 'cheerio';
+import type { ForteeTag } from '../types'; // タグの型定義をインポート
 
-export async function fetchTags(url: string) {
+export async function fetchTags(url: string): Promise<ForteeTag[]> {
   try {
     // ページのHTMLを取得
     const { data } = await axios.get(url);
@@ -12,8 +13,8 @@ export async function fetchTags(url: string) {
     const tags = $('.tag')
       .map((i, el) => {
         const text = $(el).text().trim(); // タグのテキスト
-        const backgroundColor = $(el).css('background-color'); // CSSから背景色を取得
-        const color = $(el).css('color'); // CSSから文字色を取得
+        const backgroundColor = $(el).css('background-color') ?? 'rgba(0, 128, 128, 1)'; // CSSから背景色を取得.
+        const color = $(el).css('color') ?? 'rgba(255, 255, 255, 1)'; // CSSから文字色を取得.取れなければ白色を使用
 
         return { text, backgroundColor, color };
       })

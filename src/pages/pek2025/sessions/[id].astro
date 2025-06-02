@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import axios from 'axios';
 
 import Layout from '../../../layouts/pek2025/PageLayout.astro';
-import { type Tag } from '../../../components/pek2024/SessionInfo.astro';
+import type { ForteeTag } from '../../../types';
 import SocialShare from '../../../components/common/SocialShare.astro';
 import { fetchTags } from '../../../utils/fetchTags';
 import { getForteeApiUrl, getAffiliation, getJobTitle, getSpeakerProfile, getTalkAbstract } from '../../../utils/fortee';
@@ -31,7 +31,7 @@ const relativeImagePath = avatarUrl?.startsWith('https://') ? avatarUrl : `/pek_
 
 const url = session?.url ?? '';
 
-let tags: Tag[] = [];
+let tags: ForteeTag[] = [];
 async function loadTags() {
   return await fetchTags(url);
 }
