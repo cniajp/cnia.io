@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import type { ForteeTimeTableTalk } from "~/types";
-import * as forteeHelper from '~/utils/pek2024/fortee';
+import * as forteeHelper from '~/utils/fortee';
 
 export const CurrentSessionInfo = (
   {
@@ -119,15 +119,15 @@ export const CurrentSessionInfo = (
       {
         session.tags.map((tag, i) => {
           // 全角と半角のカッコとその中身を除去
-          const processedText = tag.name.replace(/\s*[(（].*?[)）]\s*/g, '').trim();
+          const processedText = tag.text.replace(/\s*[(（].*?[)）]\s*/g, '').trim();
           return (
             <p
               key={i}
               className="px-1.5 py-0.5 mr-2 mb-2 rounded"
               style={{
                 fontSize: '14px',
-                backgroundColor: tag.color_background,
-                color: tag.color_text,
+                backgroundColor: tag.backgroundColor,
+                color: tag.color,
               }}
             >
               {processedText}

@@ -1,4 +1,8 @@
-import { type PEK2024Proposal } from '../../types';
+import type { PEKProposal } from '../types';
+
+// 年度別API URL生成
+export const getForteeApiUrl = (year: number) => 
+  `https://fortee.jp/platform-engineering-kaigi-${year}/api/proposals`;
 
 // 会社名/所属団体名
 export const getAffiliation = (str: string) => {
@@ -31,4 +35,4 @@ export const getTalkAbstract = (str: string) => {
   const abstractMatch = abstractRegex.exec(str);
   const talkAbstract = abstractMatch ? abstractMatch[1].trim() : '';
   return talkAbstract;
-}
+};

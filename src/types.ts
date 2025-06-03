@@ -62,9 +62,9 @@ export interface PEK2024Proposal {
 }
 
 export interface ForteeTag {
-  name: string;
-  color_text: string;
-  color_background: string;
+  text: string;
+  color: string;
+  backgroundColor: string;
 }
 
 export type ForteeTimeTableTalk = {
@@ -115,4 +115,33 @@ export interface ForteeTimeTableResponse {
 
 export interface PEK2024ProposalList {
   proposals: PEK2024Proposal[];
+}
+
+export interface Speaker {
+  name: string;
+  kana: string;
+  twitter?: string;
+  avatar_url?: string;
+}
+
+// 共通のPEK型定義（年度に依存しない）
+export interface PEKProposal {
+  uuid: string;
+  url: string;
+  title: string;
+  abstract: string;
+  accepted: boolean;
+  speaker: Speaker;
+  created: string;
+  feedback: {
+    open: boolean;
+  };
+  // 動画・スライドURL（年度により有無が異なる可能性）
+  video_url?: string;
+  slide_url?: string;
+  blog_url?: string;
+}
+
+export interface PEKProposalList {
+  proposals: PEKProposal[];
 }
