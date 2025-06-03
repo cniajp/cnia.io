@@ -3,7 +3,14 @@ name: Scheduled Cloudflare Pages Rebuild
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 * * * *'  # 毎時0分（1時間に1回）に実行
+    - cron: '0 0 * * *'    # JST 09:00
+    - cron: '0 2 * * *'    # JST 11:00
+    - cron: '0 4 * * *'    # JST 13:00
+    - cron: '0 6 * * *'    # JST 15:00
+    - cron: '0 8 * * *'    # JST 17:00
+    - cron: '0 10 * * *'   # JST 19:00
+    - cron: '0 12 * * *'   # JST 21:00
+    - cron: '0 14 * * *'   # JST 23:00
 
 jobs:
   trigger:
