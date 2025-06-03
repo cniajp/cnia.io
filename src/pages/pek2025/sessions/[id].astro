@@ -9,9 +9,6 @@ import { fetchTags } from '../../../utils/fetchTags';
 import { getForteeApiUrl, getAffiliation, getJobTitle, getSpeakerProfile, getTalkAbstract } from '../../../utils/fortee';
 import { type PEKProposalList } from '../../../types';
 
-// モックデータをインポート
-// import { mockPEK2025ProposalList, mockTags } from '../../../mock/pek2025-sessions';
-
 export async function getStaticPaths() {
   const { data } = await axios.get<PEKProposalList>(
     getForteeApiUrl(2025)
@@ -119,7 +116,6 @@ const talkAbstract = getTalkAbstract(session.abstract);
             </div>
 
             <div class="border-t border-pek2025-border pt-6">
-              {/* カテゴリタグを表示 */}
               {categoryTag && (
                 <div class="mb-4 flex items-center gap-2 flex-wrap">
                   <span
