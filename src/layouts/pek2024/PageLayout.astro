@@ -1,6 +1,6 @@
 ---
 import Layout from '~/layouts/pek2024/BaseLayout.astro';
-import type { PEK2024MetaSEO } from '~/types';
+import type { PEKMetaSEO } from '~/types';
 
 import Header from '~/components/pek2024/Header.astro';
 import Footer from '~/components/pek2024/Footer.astro';
@@ -8,7 +8,7 @@ import Footer from '~/components/pek2024/Footer.astro';
 import { headerData, footerData } from '~/pek2024_data';
 
 export interface Props {
-  meta?: PEK2024MetaSEO
+  meta?: PEKMetaSEO
 }
 
 const { meta } = Astro.props;
