@@ -10,13 +10,17 @@ import { getForteeApiUrl, getAffiliation, getJobTitle, getSpeakerProfile, getTal
 import { type PEKProposalList } from '../../../types';
 import { Icon } from 'astro-icon/components';
 
+// モックデータをインポート
+// import { mockPEK2025ProposalList, mockTags } from '../../../mock/pek2025-sessions';
+
 export async function getStaticPaths() {
   const { data } = await axios.get<PEKProposalList>(
     getForteeApiUrl(2025)
   );
   const sessionsList = data.proposals;
   return sessionsList
-    .filter((session) => session.accepted === true)
+    // プロポーザル募集中はコメントアウト
+    // .filter((session) => session.accepted === true)
     .map((session) => ({
       params: { id: session.uuid.toString() },
       props: { session },

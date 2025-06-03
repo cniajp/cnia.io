@@ -1,0 +1,75 @@
+---
+import { Image } from 'astro:assets';
+import { fetchTags } from '../../utils/fetchTags.ts';
+import { getAffiliation, getTalkAbstract } from '../../utils/fortee';
+import type { Speaker, ForteeTag } from '../../types';
+
+export interface Props {
+  id: string;
+  url: string;
+  title: string;
+  abstract: string;
+  speaker: Speaker;
+}
+
+const { id, url, title, abstract, speaker } = Astro.props;
+
+const avatarUrl = speaker.avatar_url;
+const relativeImagePath = avatarUrl?.startsWith('https://') ? avatarUrl : `/pek_trademark.png`;
+
+let tags: ForteeTag[] = [];
+async function loadTags() {
+  return await fetchTags(url);
+}
+tags = await loadTags();
+
+// 会社名/所属団体名を取得
+const affiliation = getAffiliation(speaker.kana ?? '');
+// トーク概要を取得
+const talkAbstract = getTalkAbstract(abstract ?? '');
+---
+
+<a href={`/pek2025/sessions/${id}`} class="block text-black no-underline">
+  <div class="card h-full flex flex-col justify-between bg-white rounded-xl p-4 relative group border border-gray-100 hover:shadow-lg transition-all duration-200">
+    <div
+      class="absolute inset-0 bg-pek2025-primary-50 opacity-0 group-hover:opacity-30 transition-opacity duration-200 rounded-xl"
+    >
+    </div>
+    <div class="relative z-10">
+      <h3 class="text-lg font-bold text-pek2025-primary-700 mb-3">{title}</h3>
+    </div>
+    <div class="flex flex-wrap items-center mt-2 relative z-10">
+      {
+        tags.map((tag) => {
+          // 全角と半角のカッコとその中身を除去
+          const processedText = tag.text.replace(/\s*[(（].*?[)）]\s*/g, '').trim();
+          return (
+            <p
+              class="px-2 py-1 mr-2 mb-2 rounded-md text-xs font-medium"
+              style={`background-color: ${tag.backgroundColor}; color: ${tag.color};`}
+            >
+              {processedText}
+            </p>
+          );
+        })
+      }
+    </div>
+    <div class="flex items-center mt-3 relative z-10">
+      <Image
+        src={relativeImagePath}
+        alt={`${speaker.name}のアイコン`}
+        style={{ borderRadius: '50%' }}
+        width={50}
+        height={50}
+        class="border-2 border-pek2025-primary-200"
+      />
+      <div class="ml-3">
+        <p class="text-sm font-bold text-pek2025-primary-700">{speaker.name}</p>
+        <p class="text-xs text-gray-600">{affiliation}</p>
+      </div>
+    </div>
+    <div class="mt-3 text-sm text-gray-700 relative z-10">
+      {talkAbstract.length > 100 ? `${talkAbstract.substring(0, 100)}...` : talkAbstract}
+    </div>
+  </div>
+</a>
