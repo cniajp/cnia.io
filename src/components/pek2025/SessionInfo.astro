@@ -28,16 +28,6 @@ const affiliation = getAffiliation(speaker.kana ?? '');
 // トーク概要を取得
 const talkAbstract = getTalkAbstract(abstract ?? '');
 
-// 名前からイニシャルを生成
-const getInitials = (name: string) => {
-  return name
-    .split(" ")
-    .map((part) => part.charAt(0))
-    .join("")
-    .toUpperCase()
-    .slice(0, 2);
-};
-
 // tagsの0番目をカテゴリとして使用、残りをタグとして使用
 const categoryTag = tags.length > 0 ? tags[0] : null;
 const displayTags = tags.length > 1 ? tags.slice(1) : [];
@@ -65,19 +55,13 @@ const categoryText = categoryTag ? categoryTag.text.replace(/\s*[(（].*?[)）]\
 
       <div class="flex items-center gap-3 mb-4">
         <div class="relative w-10 h-10">
-          {avatarUrl ? (
-            <Image
-              src={relativeImagePath}
-              alt={`${speaker.name}のアイコン`}
-              width={40}
-              height={40}
-              class="rounded-full border-2 border-gray-200"
-            />
-          ) : (
-            <div class="w-10 h-10 bg-pek2025-primary-100 text-pek2025-primary-700 font-semibold text-sm rounded-full flex items-center justify-center border-2 border-gray-200">
-              {getInitials(speaker.name)}
-            </div>
-          )}
+          <Image
+            src={relativeImagePath}
+            alt={`${speaker.name}のアイコン`}
+            width={50}
+            height={50}
+            class="rounded-full border-2 border-gray-200"
+          />
         </div>
 
         <div class="flex-1 min-w-0">
