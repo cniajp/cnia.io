@@ -158,77 +158,96 @@ import Layout from '../../../layouts/pek2025/PageLayout.astro';
       <div
         class="text-2xl md:text-3xl font-bold leading-tighter tracking-tighter mt-12 mb-4 text-center max-w-3xl mx-auto"
       >
-        <h2>補足・注意事項</h2>
-      </div>
-      <div class="max-w-3xl mx-auto">
-        <ul class="list-disc ml-8">
-          <li>お一人で複数のご応募が可能ですが、採択はお一人様につき一件までとなります。</li>
-          <li>複数名でのご応募も可能です。</li>
-          <li>
-            スライドおよびセッション動画のアーカイブ公開可否は、ご選択いただけます。
-            ただし、動画アーカイブを希望されない場合でも当日のご講演内容はライブ配信されますので、あらかじめご了承ください。
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="max-w-3xl mx-auto">
-      <div
-        class="text-2xl md:text-3xl font-bold leading-tighter tracking-tighter mt-12 mb-4 text-center max-w-3xl mx-auto"
-      >
-        <h2>お問い合わせ</h2>
+        <h2>審査基準</h2>
       </div>
       <div class="max-w-3xl mx-auto">
         <p>
-          CFPに関するお問い合わせは
-          <a href="https://pfem.notion.site/1b621b0141e080e792ffc9c3e34af7c3" class="underline-link">フォーム</a>
-          よりお願いいたします。
+          プロポーザルは以下の基準で審査いたします。
+          <ul class="list-disc ml-8 mt-2">
+            <li><strong>関連性</strong>：Platform Engineeringに関連する内容であること</li>
+            <li><strong>明瞭性</strong>：セッション内容が明確で理解しやすく記述されていること</li>
+            <li><strong>信頼性</strong>：実体験に基づく正確な知見や情報であること</li>
+            <li><strong>実践的価値</strong>：参加者の実務に活かせる具体的な価値を提供すること</li>
+          </ul>
         </p>
       </div>
+
+      <div class="max-w-3xl mx-auto">
+        <div
+          class="text-2xl md:text-3xl font-bold leading-tighter tracking-tighter mt-12 mb-4 text-center max-w-3xl mx-auto"
+        >
+          <h2>補足・注意事項</h2>
+        </div>
+        <div class="max-w-3xl mx-auto">
+          <ul class="list-disc ml-8">
+            <li>お一人で複数のご応募が可能ですが、採択はお一人様につき一件までとなります。</li>
+            <li>複数名でのご応募も可能です。</li>
+            <li>
+              スライドおよびセッション動画のアーカイブ公開可否は、ご選択いただけます。
+              ただし、動画アーカイブを希望されない場合でも当日のご講演内容はライブ配信されますので、あらかじめご了承ください。
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="max-w-3xl mx-auto">
+        <div
+          class="text-2xl md:text-3xl font-bold leading-tighter tracking-tighter mt-12 mb-4 text-center max-w-3xl mx-auto"
+        >
+          <h2>お問い合わせ</h2>
+        </div>
+        <div class="max-w-3xl mx-auto">
+          <p>
+            CFPに関するお問い合わせは
+            <a href="https://pfem.notion.site/1b621b0141e080e792ffc9c3e34af7c3" class="underline-link">フォーム</a>
+            よりお願いいたします。
+          </p>
+        </div>
+      </div>
+
+      <style>
+        .underline-link {
+          text-decoration: underline;
+        }
+
+        .btn.btn-flat {
+          overflow: hidden;
+          padding: 1rem 4rem;
+          color: #fff;
+          border-radius: 0;
+          background: var(--aw-themeColor-blue);
+          position: relative;
+          z-index: 1;
+        }
+
+        .btn.btn-flat span {
+          position: relative;
+        }
+
+        .btn.btn-flat:before {
+          position: absolute;
+          top: 0;
+          left: 30px;
+          width: 150%;
+          height: 500%;
+          content: '';
+          -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out;
+          -webkit-transform: translateX(-85%) translateY(-70%) rotate(135deg);
+          transform: translateX(-85%) translateY(-70%) rotate(135deg);
+          background: var(--aw-themeColor-yellow);
+          z-index: -1;
+        }
+
+        .btn.btn-flat:hover:before {
+          -webkit-transform: translateX(-15%) translateY(-25%) rotate(135deg);
+          transform: translateX(-15%) translateY(-25%) rotate(135deg);
+        }
+
+        .btn.btn-flat:hover {
+          color: #000;
+        }
+      </style>
     </div>
-
-    <style>
-      .underline-link {
-        text-decoration: underline;
-      }
-
-      .btn.btn-flat {
-        overflow: hidden;
-        padding: 1rem 4rem;
-        color: #fff;
-        border-radius: 0;
-        background: var(--aw-themeColor-blue);
-        position: relative;
-        z-index: 1;
-      }
-
-      .btn.btn-flat span {
-        position: relative;
-      }
-
-      .btn.btn-flat:before {
-        position: absolute;
-        top: 0;
-        left: 30px;
-        width: 150%;
-        height: 500%;
-        content: '';
-        -webkit-transition: all 0.5s ease-in-out;
-        transition: all 0.5s ease-in-out;
-        -webkit-transform: translateX(-85%) translateY(-70%) rotate(135deg);
-        transform: translateX(-85%) translateY(-70%) rotate(135deg);
-        background: var(--aw-themeColor-yellow);
-        z-index: -1;
-      }
-
-      .btn.btn-flat:hover:before {
-        -webkit-transform: translateX(-15%) translateY(-25%) rotate(135deg);
-        transform: translateX(-15%) translateY(-25%) rotate(135deg);
-      }
-
-      .btn.btn-flat:hover {
-        color: #000;
-      }
-    </style>
   </div>
 </Layout>
