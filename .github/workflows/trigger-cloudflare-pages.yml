@@ -1,6 +1,7 @@
 name: Scheduled Cloudflare Pages Rebuild
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 * * * *'  # 毎時0分（1時間に1回）に実行
 
