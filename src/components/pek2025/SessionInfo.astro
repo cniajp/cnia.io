@@ -10,10 +10,9 @@ export interface Props {
   title: string;
   abstract: string;
   speaker: Speaker;
-  category?: string;
 }
 
-const { id, url, title, abstract, speaker, category = "技術セッション" } = Astro.props;
+const { id, url, title, abstract, speaker } = Astro.props;
 
 const avatarUrl = speaker.avatar_url;
 const relativeImagePath = avatarUrl?.startsWith('https://') ? avatarUrl : `/pek_trademark.png`;
@@ -39,16 +38,12 @@ const getInitials = (name: string) => {
     .slice(0, 2);
 };
 
-// カテゴリ別のスタイル定義
-const categoryColors = {
-  "基調講演": "bg-pek2025-primary-100 text-pek2025-primary-700 border-pek2025-primary-200",
-  "技術セッション": "bg-pek2025-secondary-100 text-pek2025-secondary-700 border-pek2025-secondary-200",
-  "事例紹介": "bg-pek2025-tertiary-100 text-pek2025-tertiary-700 border-pek2025-tertiary-200",
-  "パネルディスカッション": "bg-pek2025-accent-100 text-pek2025-accent-700 border-pek2025-accent-200",
-  "ワークショップ": "bg-gray-100 text-gray-700 border-gray-200",
-} as const;
+// tagsの0番目をカテゴリとして使用、残りをタグとして使用
+const categoryTag = tags.length > 0 ? tags[0] : null;
+const displayTags = tags.length > 1 ? tags.slice(1) : [];
 
-const categoryStyle = categoryColors[category as keyof typeof categoryColors] || categoryColors["技術セッション"];
+// カテゴリテキストを取得（カッコ内を除去）
+const categoryText = categoryTag ? categoryTag.text.replace(/\s*[(（].*?[)）]\s*/g, '').trim() : "技術セッション";
 ---
 
 <a href={`/pek2025/sessions/${id}`} class="block text-black no-underline">
@@ -56,8 +51,17 @@ const categoryStyle = categoryColors[category as keyof typeof categoryColors] ||
     <div class="p-4 pb-4">
       <div class="flex items-start justify-between gap-3 mb-4">
         <h3 class="text-xl font-bold text-gray-900 leading-tight line-clamp-2 flex-1">{title}</h3>
-        <span class={`${categoryStyle} shrink-0 font-medium px-2 py-1 rounded-md text-xs border`}>{category}</span>
       </div>
+      {categoryTag && (
+          <div class="mb-4 flex items-center gap-2 flex-wrap">
+          <span 
+            class="px-1.5 py-0.5 rounded shrink-0 font-medium"
+            style={`font-size: 14px; background-color: ${categoryTag.backgroundColor}; color: ${categoryTag.color};`}
+          >
+            {categoryText}
+          </span>
+        </div>
+      )}
 
       <div class="flex items-center gap-3 mb-4">
         <div class="relative w-10 h-10">
@@ -92,14 +96,15 @@ const categoryStyle = categoryColors[category as keyof typeof categoryColors] ||
       <div class="space-y-4">
         <p class="text-gray-700 text-sm leading-relaxed line-clamp-4">{talkAbstract}</p>
 
-        {tags.length > 0 && (
-          <div class="flex flex-wrap gap-2">
-            {tags.map((tag) => {
+        {displayTags.length > 0 && (
+          <div class="flex flex-wrap gap-1">
+            {displayTags.map((tag) => {
               // 全角と半角のカッコとその中身を除去
               const processedText = tag.text.replace(/\s*[(（].*?[)）]\s*/g, '').trim();
               return (
                 <span
-                  class="text-xs bg-gray-50 text-gray-600 border-gray-300 hover:bg-gray-100 px-2 py-1 rounded-md border font-medium"
+                  class="px-1.5 py-0.5 mr-2 mb-1 rounded"
+                  style={`font-size: 14px; background-color: ${tag.backgroundColor}; color: ${tag.color};`}
                 >
                   {processedText}
                 </span>
