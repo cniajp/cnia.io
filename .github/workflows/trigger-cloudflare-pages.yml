@@ -8,6 +8,8 @@ on:
 jobs:
   trigger:
     runs-on: ubuntu-latest
+    environment:
+      name: cloudflare-api
     steps:
       - name: Trigger Cloudflare Pages deployment
         run: |
