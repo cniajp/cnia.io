@@ -52,7 +52,7 @@ const sortedSessions = allSessionss.sort((a, b) => {
                 image: session.data.image,
                 path: `/pfem/sessions/${session.slug}`,
                 name: session.data.speakerInfo.name,
-                company: session.data.speakerInfo.company,
+                company: session.data.speakerInfo.company || '',
               }}
             />
           ))

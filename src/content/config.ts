@@ -21,7 +21,7 @@ const post = defineCollection({
 const pek2024Blog = defineCollection({
   schema: z.object({
     title: z.string(),
-    description: z.string().optional(),
+    description: z.string(),
     image: z.string().optional(),
 
     canonical: z.string().url().optional(),
@@ -85,6 +85,9 @@ const pfemSession = defineCollection({
 const pek2024JobBoads = defineCollection({
   schema: z.object({
     image: z.string(),
+    rank: z.string(),
+    name: z.string(),
+    href: z.string().url(),
   }),
 });
 
