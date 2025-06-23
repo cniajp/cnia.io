@@ -117,7 +117,5 @@ export const sponsorsData = {
     { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
     { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
   ],
-  Lunch: [
-    { name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' },
-  ],
+  Lunch: [{ name: 'XXX', src: import('~/assets/images/pek2024/pek2024_horizontal.png'), href: 'https://www.cnia.io/' }],
 };

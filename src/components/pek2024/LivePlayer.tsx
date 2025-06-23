@@ -1,51 +1,33 @@
-import { useEffect, useState } from "react";
-import { CurrentSessionInfo } from "./CurrentSessionInfo";
-import type { ForteeTimeTableTalk } from "~/types"
-
+import { useEffect, useState } from 'react';
+import { CurrentSessionInfo } from './CurrentSessionInfo';
+import type { ForteeTimeTableTalk } from '~/types';
 
 type Track = 'Track A' | 'Track B';
 // TODO: url を実際のものに変更
 const YOUTUBE_URLS: Record<Track, string> = {
   'Track A': 'https://www.youtube.com/embed/53tNbf8Us78?si=5NFRLNaQk207yymx&autoplay=1&mute=1',
-  'Track B': 'https://www.youtube.com/embed/Hsob6TGTAPo?si=OuEuLS9NTyNmBxCm&autoplay=1&mute=1'
-}
+  'Track B': 'https://www.youtube.com/embed/Hsob6TGTAPo?si=OuEuLS9NTyNmBxCm&autoplay=1&mute=1',
+};
 
 const OPENING_TIME = {
   start_time: '2024-07-09T10:10:00+09:00',
   end_time: '2024-07-09T10:20:00+09:00',
-}
+};
 const EVENT_END_TIME = '2024-07-09T18:00:00+09:00';
 const DEBUG = false;
 
-export const LivePlayer = (
-  {
-    timeTable
-  }: {
-    timeTable: ForteeTimeTableTalk[]
-  }
-) => {
-  const [
-    track,
-    setTrack,
-  ] = useState<Track>('Track A');
-  const [
-    isOpening,
-    setIsOpening
-  ] = useState<boolean>(false);
-  const [
-    isEventStarted,
-    setIsEventStarted
-  ] = useState<boolean>(false);
-  const [
-    debugTime
-  ] = useState<Date>(new Date());
+export const LivePlayer = ({ timeTable }: { timeTable: ForteeTimeTableTalk[] }) => {
+  const [track, setTrack] = useState<Track>('Track A');
+  const [isOpening, setIsOpening] = useState<boolean>(false);
+  const [isEventStarted, setIsEventStarted] = useState<boolean>(false);
+  const [debugTime] = useState<Date>(new Date());
   // hh:mm 形式にフォーマットする関数
   const formatTime = (date: Date): string => {
     return Intl.DateTimeFormat('ja-JP', {
       hour: 'numeric',
       minute: 'numeric',
-    }).format(date)
-  }
+    }).format(date);
+  };
 
   useEffect(() => {
     const checkOpening = () => {
@@ -60,13 +42,14 @@ export const LivePlayer = (
       setIsEventStarted(currentTime > openingStartTime && currentTime < eventEndTime);
     };
     const intervalId = setInterval(checkOpening, 5000);
-    
+
     return () => {
       clearInterval(intervalId);
-    }
+    };
   }, []);
 
-  return <div className="flex flex-col items-center w-full">
+  return (
+    <div className="flex flex-col items-center w-full">
       <div className="flex justify-center my-4 w-full">
         <button
           className={`w-1/2 md:w-1/4 mx-1 px-4 py-2 rounded-md ${track === 'Track A' ? 'bg-themeColor-purple' : 'bg-gray-300'}`}
@@ -89,8 +72,7 @@ export const LivePlayer = (
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
           className="aspect-video w-full h-auto"
-        >
-        </iframe>
+        ></iframe>
       </div>
       {
         // イベント開催中の場合、セッション情報を表示
@@ -105,16 +87,14 @@ export const LivePlayer = (
                     {formatTime(new Date(OPENING_TIME.start_time))} 〜 {formatTime(new Date(OPENING_TIME.end_time))}
                   </p>
                 </div>
-              ) : 
-              // 現在時刻に応じてセッション情報を表示
-              <CurrentSessionInfo
-                timeTable={timeTable}
-                track={track}
-                debug={DEBUG}
-              />
+              ) : (
+                // 現在時刻に応じてセッション情報を表示
+                <CurrentSessionInfo timeTable={timeTable} track={track} debug={DEBUG} />
+              )
             }
           </div>
         )
       }
     </div>
+  );
 };

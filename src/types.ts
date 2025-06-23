@@ -1,4 +1,4 @@
-import type {AstroSeoProps} from '@astrolib/seo';
+import type { AstroSeoProps } from '@astrolib/seo';
 export interface Post {
   id: string;
   slug: string;
@@ -41,7 +41,7 @@ export interface MetaSEO {
 export interface PEKMetaSEO extends AstroSeoProps {
   imagePath?: string;
   useTitleTemplate?: boolean;
-};
+}
 
 export interface PEK2024Proposal {
   uuid: string;

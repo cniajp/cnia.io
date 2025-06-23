@@ -28,8 +28,8 @@ PEKは、CNIAが運営するPlatform Engineeringに関するカンファレン�
 
 このウェブサイトは、以下の技術を用いて構築されています。
 
-*   [Astro](https://astro.build/)
-*   [Tailwind CSS](https://tailwindcss.com/)
+- [Astro](https://astro.build/)
+- [Tailwind CSS](https://tailwindcss.com/)
 
 ### ディレクトリ構成
 
@@ -50,16 +50,16 @@ PEKは、CNIAが運営するPlatform Engineeringに関するカンファレン�
 
 各ディレクトリの説明:
 
-*   `public/`: ウェブサイトで利用する静的なファイルを格納します。
-*   `src/`: ウェブサイトのソースコードを格納します。
-*   `src/assets/`: 画像やスタイルシートなどのアセットファイルを格納します。
-*   `src/components/`: Astroコンポーネントを格納します。
-*   `src/content/`: ブログ記事などのコンテンツを格納します。
-*   `src/layouts/`: ページのレイアウトを定義します。
-*   `src/pages/`: ページを定義します。
-*   `src/utils/`: ユーティリティ関数を格納します。
-*   `package.json`: プロジェクトの依存関係やスクリプトを定義します。
-*   `astro.config.mjs`: Astroの設定を記述します。
+- `public/`: ウェブサイトで利用する静的なファイルを格納します。
+- `src/`: ウェブサイトのソースコードを格納します。
+- `src/assets/`: 画像やスタイルシートなどのアセットファイルを格納します。
+- `src/components/`: Astroコンポーネントを格納します。
+- `src/content/`: ブログ記事などのコンテンツを格納します。
+- `src/layouts/`: ページのレイアウトを定義します。
+- `src/pages/`: ページを定義します。
+- `src/utils/`: ユーティリティ関数を格納します。
+- `package.json`: プロジェクトの依存関係やスクリプトを定義します。
+- `astro.config.mjs`: Astroの設定を記述します。
 
 ## ライセンス
 

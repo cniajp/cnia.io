@@ -30,10 +30,12 @@ const pek2024Blog = defineCollection({
 
     category: z.string().optional(),
     tags: z.array(z.string()).optional(),
-    author: z.object({
-      name: z.string(),
-      icon: z.string().optional(),
-    }).optional(),
+    author: z
+      .object({
+        name: z.string(),
+        icon: z.string().optional(),
+      })
+      .optional(),
     draft: z.boolean().optional(),
   }),
 });

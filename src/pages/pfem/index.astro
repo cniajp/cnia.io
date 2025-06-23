@@ -11,7 +11,6 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import Upcoming from '~/components/widgets/Upcoming.astro';
 import SessionCard from '~/components/pfem/SessionCard.astro';
 
-
 const meta = {
   title: 'Platform Engineering Meetup',
   description: 'Platform Engineeringについて考え方を学び、事例を共有していく勉強会',
@@ -21,30 +20,27 @@ const sessions = await getCollection('pfem-session', ({ data }) => {
   return data.draft !== true;
 });
 // event.date と slug でソートして、最新の6件を取得
-const sortedSessions = sessions.sort((a, b) => {
-  if (a.data.event.date < b.data.event.date) {
-    return 1;
-  } else if (a.data.event.date > b.data.event.date) {
-    return -1;
-  } else {
-    if (a.slug > b.slug) {
+const sortedSessions = sessions
+  .sort((a, b) => {
+    if (a.data.event.date < b.data.event.date) {
       return 1;
-    } else {
+    } else if (a.data.event.date > b.data.event.date) {
       return -1;
+    } else {
+      if (a.slug > b.slug) {
+        return 1;
+      } else {
+        return -1;
+      }
     }
-  }
-}).slice(0,6);
+  })
+  .slice(0, 6);
 ---
 
 <Layout {meta}>
   <Hero>
     <Fragment slot="subtitle">
-      <Picture
-        src={import('~/assets/images/logo_on_white@4x.png')}
-        alt=""
-        sizes="400"
-        widths={[2000]}
-      />
+      <Picture src={import('~/assets/images/logo_on_white@4x.png')} alt="" sizes="400" widths={[2000]} />
     </Fragment>
   </Hero>
 
@@ -98,10 +94,8 @@ const sortedSessions = sessions.sort((a, b) => {
   />
 
   <div class="inset-0 p-6 mx-auto space-y-6 sm:space-y-12 bg-blue-50">
-      <div class="mb-8 md:mx-auto text-center max-w-3xl">
-      <p class="text-base text-primary dark:text-blue-200 font-semibold tracking-wide uppercase">
-        sessions
-      </p>
+    <div class="mb-8 md:mx-auto text-center max-w-3xl">
+      <p class="text-base text-primary dark:text-blue-200 font-semibold tracking-wide uppercase">sessions</p>
       <h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
         過去のセッション
       </h2>
@@ -109,18 +103,20 @@ const sortedSessions = sessions.sort((a, b) => {
     <div class="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {
         sortedSessions.map((session) => (
-          <SessionCard session={{
-            title: session.data.title,
-            description: undefined,
-            eventName: session.data.event.name,
-            eventDate: session.data.event.date,
-            category: undefined,
-            tags: undefined,
-            image: session.data.image,
-            path: `/pfem/sessions/${session.slug}`,
-            name: session.data.speakerInfo.name,
-            company: session.data.speakerInfo.company,
-          }}/>
+          <SessionCard
+            session={{
+              title: session.data.title,
+              description: undefined,
+              eventName: session.data.event.name,
+              eventDate: session.data.event.date,
+              category: undefined,
+              tags: undefined,
+              image: session.data.image,
+              path: `/pfem/sessions/${session.slug}`,
+              name: session.data.speakerInfo.name,
+              company: session.data.speakerInfo.company,
+            }}
+          />
         ))
       }
     </div>
@@ -128,59 +124,60 @@ const sortedSessions = sessions.sort((a, b) => {
       <a href="/pfem/sessions" class="px-8 py-3 text-lg font-semibold text-white bg-primary rounded-full">
         もっと見る
       </a>
-  </div>
-  <FullContent title={'メディア掲載事例'} highlight="Media">
-    <Fragment slot="content">
-      <ul>
-        <li class="my-2">
-          <a class="underline" href="https://atmarkit.itmedia.co.jp/ait/articles/2304/11/news005.html"
-            >@IT - 「Platform Engineering」は何を解決するのか？　誰が何をするものなのか？</a
-          >
-        </li>
-        <li class="my-2">
-          <a
-            class="underline"
-            href="https://www.publickey1.jp/blog/23/platform_engineeringplatform_engineering_meetup_1.html"
-            >Publickey - 「Platform
-            Engineeringへの招待」、開発者の生産性を高めるプラットフォームを作り、運営していくための考え方とは（前編）</a
-          >
-        </li>
-        <li class="my-2">
-          <a
-            class="underline"
-            href="https://www.publickey1.jp/blog/23/platform_engineeringplatform_engineering_meetup_1_1.html"
-            >Publickey - 「Platform
-            Engineeringへの招待」、開発者の生産性を高めるプラットフォームを作り、運営していくための考え方とは（後編）</a
-          >
-        </li>
-      </ul>
-    </Fragment>
-  </FullContent>
+    </div>
+    <FullContent title={'メディア掲載事例'} highlight="Media">
+      <Fragment slot="content">
+        <ul>
+          <li class="my-2">
+            <a class="underline" href="https://atmarkit.itmedia.co.jp/ait/articles/2304/11/news005.html"
+              >@IT - 「Platform Engineering」は何を解決するのか？　誰が何をするものなのか？</a
+            >
+          </li>
+          <li class="my-2">
+            <a
+              class="underline"
+              href="https://www.publickey1.jp/blog/23/platform_engineeringplatform_engineering_meetup_1.html"
+              >Publickey - 「Platform
+              Engineeringへの招待」、開発者の生産性を高めるプラットフォームを作り、運営していくための考え方とは（前編）</a
+            >
+          </li>
+          <li class="my-2">
+            <a
+              class="underline"
+              href="https://www.publickey1.jp/blog/23/platform_engineeringplatform_engineering_meetup_1_1.html"
+              >Publickey - 「Platform
+              Engineeringへの招待」、開発者の生産性を高めるプラットフォームを作り、運営していくための考え方とは（後編）</a
+            >
+          </li>
+        </ul>
+      </Fragment>
+    </FullContent>
 
-  <Features2
-    title={'スポンサー'}
-    highlight="Sponsors"
-    subtitle={'イベントを支援してくださるスポンサー様を募集しています'}
-    items={[
-      {
-        title: '会場スポンサー',
-        icon: 'tabler:home-2',
-        description:
-          'イベントの開催会場をご提供いただくスポンサープランです。<br/>スポンサーセッション枠のご提供およびロゴの掲載を行います。',
-      },
-      {
-        title: 'フードスポンサー',
-        icon: 'tabler:tools-kitchen-2',
-        description:
-          'イベント終了後の懇親会で食事をご提供いただくプランです。<br/>イベント内でのLT枠のご提供およびロゴの掲載を行います。',
-      },
-      {
-        title: '通年スポンサー',
-        icon: 'tabler:gift',
-        description:
-          'Platform Engineering Meetupを通年で支えていただくプランです。<br/>サイトへのロゴの掲載、スポンサー期間中の全アーカイブへのロゴ掲載、特別コラボレーションのセッションなどを行います。',
-      },
-    ]}
-  />
-  <CallToAction title={'お問い合わせ'} callToAction={{ text: 'Contact us', href: '/form' }} />
+    <Features2
+      title={'スポンサー'}
+      highlight="Sponsors"
+      subtitle={'イベントを支援してくださるスポンサー様を募集しています'}
+      items={[
+        {
+          title: '会場スポンサー',
+          icon: 'tabler:home-2',
+          description:
+            'イベントの開催会場をご提供いただくスポンサープランです。<br/>スポンサーセッション枠のご提供およびロゴの掲載を行います。',
+        },
+        {
+          title: 'フードスポンサー',
+          icon: 'tabler:tools-kitchen-2',
+          description:
+            'イベント終了後の懇親会で食事をご提供いただくプランです。<br/>イベント内でのLT枠のご提供およびロゴの掲載を行います。',
+        },
+        {
+          title: '通年スポンサー',
+          icon: 'tabler:gift',
+          description:
+            'Platform Engineering Meetupを通年で支えていただくプランです。<br/>サイトへのロゴの掲載、スポンサー期間中の全アーカイブへのロゴ掲載、特別コラボレーションのセッションなどを行います。',
+        },
+      ]}
+    />
+    <CallToAction title={'お問い合わせ'} callToAction={{ text: 'Contact us', href: '/form' }} />
+  </div>
 </Layout>

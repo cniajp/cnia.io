@@ -25,12 +25,14 @@ canonical: https://www.cnia.io/conference-pek2024
 本イベントは、Platform Engineeringの世界に深く潜り込むための絶好の機会です。最新のトレンド、実践的な知見、そしてこの分野のトップランナーたちとの交流を通じて、テクノロジーの未来を切り拓いていきましょう。
 
 ## 本イベントで学べること
+
 - Platform Engineeringの最新ベストプラクティス
 - スタートアップから大企業まで、さまざまなPlatform Engineering実践事例
 - セキュリティおよびコンプライアンスと開発生産性の両立
 - 内部開発者ポータルおよび内部開発者プラットフォームの構築方法
 
 ## キーノートスピーカー
+
 - Manuel Pais氏 (書籍 Team Topologies 共著者)
 
 Manuel Pais is co-author of Team Topologies: organizing business and technology teams for fast flow. Recognized by TechBeacon as a DevOps thought leader, Manuel is an independent IT organizational consultant and trainer, focused on team interactions, delivery practices and accelerating flow. Manuel is also a LinkedIn instructor on Continuous Delivery.
@@ -38,6 +40,7 @@ Manuel Pais is co-author of Team Topologies: organizing business and technology 
 - 中島大一 氏(株式会社メルカリ)
 
 ## セッションタイトル(抜粋)
+
 - Platform Engineering とSREの門
 - プラットフォームエンジニアリングの功罪
 - セキュリティとコンプライアンスを保ちつつ生産性の高い開発を実現するためのプラットフォーム
@@ -46,18 +49,20 @@ Manuel Pais is co-author of Team Topologies: organizing business and technology 
 - 大規模エンタープライズの全員参加が可能な内部開発者ポータルの野望
 
 ## 開催概要
+
 - 名称： Platform Engineering Kaigi 2024
 - テーマ: DevOpsの荒波を乗りこえる、エンジニアの羅針盤
 - 想定参加者: プラットフォームエンジニア、SRE、インフラエンジニア、アプリケーション開発者
 - 日時：2024年7月9日（火）10:00～18:00
 - イベント形式： ハイブリッド開催(現地会場+オンライン)
 - 現地会場: docomo R&D OPENLAB ODAIBA
-- 参加費: 現地参加: 3,000円  オンライン参加: 無料
+- 参加費: 現地参加: 3,000円 オンライン参加: 無料
 
 参加方法：以下ウェブサイトより、事前の参加登録が必要
 https://www.cnia.io/pek2024
 
 ## 併催セミナー概要
+
 - 日時: 2024年7月10日（水）、7月11日（木）
 - 講師: Manuel Pais氏
 
@@ -70,9 +75,11 @@ https://www.cnia.io/pek2024
 [https://www.cnia.io/pek2024/tp-seminar](https://www.cnia.io/pek2024/tp-seminar)
 
 ## 主催・運営
+
 - 一般社団法人クラウドネイティブイノベーターズ協会
 
 ## 協賛
+
 - 株式会社タイミー
 - 株式会社エーピーコミュニケーションズ
 - 株式会社サイバーエージェント
@@ -91,7 +98,9 @@ https://www.cnia.io/pek2024
 - 株式会社メルカリ
 
 ## 一般社団法人クラウドネイティブイノベーターズ協会について
+
 一般社団法人クラウドネイティブイノベーターズ協会は、日本におけるクラウドネイティブ技術の普及を推進するため、人材育成の支援と交流の場を提供するための団体です。Platform Engineering Meetupの運営や技術コミュニティのハイブリッド開催支援などを行っています。
 
 ## 本イベントに関するお問い合わせ
+
 [問い合わせフォーム](https://docs.google.com/forms/d/e/1FAIpQLSeWL_-HO1KA06B3S1yT8Hrv1_gAQY5ws7hAuhSi_Vn4ySGcAg/viewform)

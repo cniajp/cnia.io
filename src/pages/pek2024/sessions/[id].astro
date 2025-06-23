@@ -6,14 +6,18 @@ import Layout from '../../../layouts/pek2024/PageLayout.astro';
 import type { ForteeTag } from '../../../types';
 import SocialShare from '../../../components/common/SocialShare.astro';
 import { fetchTags } from '../../../utils/fetchTags';
-import { getForteeApiUrl, getAffiliation, getJobTitle, getSpeakerProfile, getTalkAbstract } from '../../../utils/fortee';
+import {
+  getForteeApiUrl,
+  getAffiliation,
+  getJobTitle,
+  getSpeakerProfile,
+  getTalkAbstract,
+} from '../../../utils/fortee';
 import { type PEKProposalList } from '../../../types';
 import { Icon } from 'astro-icon/components';
 
 export async function getStaticPaths() {
-  const { data } = await axios.get<PEKProposalList>(
-    getForteeApiUrl(2024)
-  );
+  const { data } = await axios.get<PEKProposalList>(getForteeApiUrl(2024));
   const sessionsList = data.proposals;
   return sessionsList
     .filter((session) => session.accepted === true)
@@ -96,9 +100,7 @@ const talkAbstract = getTalkAbstract(session.abstract);
               <div class="relative flex flex-col min-w-0 break-words w-full mb-2">
                 <div class="flex-auto">
                   <a href={session.slide_url as string} target="_blank" rel="noopener noreferrer">
-                    <button
-                      class="bg-themeColor-orange hover:bg-themeColor-yellow text-white font-bold py-2 px-4 rounded inline-flex items-center"
-                    >
+                    <button class="bg-themeColor-orange hover:bg-themeColor-yellow text-white font-bold py-2 px-4 rounded inline-flex items-center">
                       スライドを見る
                       <Icon name="tabler:external-link" class="w-4 h-4 ml-2" />
                     </button>
@@ -173,7 +175,6 @@ const talkAbstract = getTalkAbstract(session.abstract);
                 <p class="mt-2 text-sm whitespace-pre-line">{speakerProfile}</p>{' '}
               </div>
             </div>
-
 
             <SocialShare
               url={Astro.request.url}

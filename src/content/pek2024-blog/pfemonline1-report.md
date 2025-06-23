@@ -38,33 +38,36 @@ Platform Engineeringは特定のツールを使うことが目的ではなく、
 では、どんなセッションがあったのかを簡単にご紹介します。
 
 ### Hello World, Backstage！
+
 ![](../../../public/pek2024/blog/pfemonline1-report/session1.png)
 
 トップバッターを飾っていただいたのは、「Backstageとは何か」という内容を語っていただいた田中さんです。  
 本イベントのオープニングにふさわしく、Platform EngineeringにおけるGoleden Pathの重要性や、Backstageの基本的な概念について、わかりやすく解説していただきました。
 
 ### 入門Backstage：System Modelの理解と活用方法
+
 ![](../../../public/pek2024/blog/pfemonline1-report/session2.png)
 
 2本目のセッションでは、小泉さんよりBackstageの内部データ構造概念であるSystem Modelについて解説していただきました。
 Backstageのコア機能であるSoftware Catalogにおいて、登録するエンティティの種類やその依存関係の表現方法、さらには現場で有用なTipsとしてTerraformのStateファイルからの登録方法についてもご紹介いただきました。
 
 ### Backstage×Kubernetes×AWSで魅せるセルフサービスの世界
+
 ![](../../../public/pek2024/blog/pfemonline1-report/session3.png)
 
 3本目のセッションでは、北村さんによるAWS上のKubernetesとBackstageを連携させるGolden Pathをご紹介いただきました。
 Terraformでのインフラ作成やArgoCDを用いたGitOpsの実現例について詳細に解説いただき、最後にはテンプレート作成における勘所についても触れていただきました。
 
 ### Backstage のプラグイン使って色々可視化してみた
-![](../../../public/pek2024/blog/pfemonline1-report/session4.png)
 
+![](../../../public/pek2024/blog/pfemonline1-report/session4.png)
 
 4本目は、岡さんによるプラグインの活用方法についてのセッションです。
 Backstageのプラグイン機構の内部構造について解説いただき、さらには実際にプラグインを用いて可視化に役立てている事例について語っていただきました。
 
 ### OPA(Orchestrate Platforms and Applications)on AWSの活用について
-![](../../../public/pek2024/blog/pfemonline1-report/session5.png)
 
+![](../../../public/pek2024/blog/pfemonline1-report/session5.png)
 
 最後のセッションは、山名さんによるOPA on AWSの紹介です。
 AWSのリソース作成に特化したプラグイン・テンプレートをあらかじめ組み込んで提供されているOPA on AWSについて、実際の画面を使ったデモを交え詳細に解説いただきました。
