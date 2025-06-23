@@ -1,12 +1,12 @@
 ---
-import { Picture } from "astro:assets";
+import { Picture } from 'astro:assets';
 
 import { BLOG } from '~/config.mjs';
 import type { Post } from '~/types';
 
 import { findImage } from '~/utils/images';
 import { getPermalink } from '~/utils/permalinks';
-import { getFormattedDate } from "~/utils/utils";
+import { getFormattedDate } from '~/utils/utils';
 
 export interface Props {
   post: Post;
@@ -16,11 +16,12 @@ const { post } = Astro.props;
 const image = await findImage(post.image);
 ---
 
-  <li class="my-2 list-item  mx-5">
-    {
-      BLOG?.post?.disabled ? (
-        post.title
-      ) : (
+<li class="my-2 list-item mx-5">
+  {
+    BLOG?.post?.disabled ? (
+      post.title
+    ) : (
+      <>
         <span class="mr-3">{getFormattedDate(post.publishDate)}</span>
         <a
           href={getPermalink(post.permalink, 'post')}
@@ -28,6 +29,7 @@ const image = await findImage(post.image);
         >
           {post.title}
         </a>
-      )
-    }
-  </li>
+      </>
+    )
+  }
+</li>
