@@ -37,7 +37,7 @@ if (!images[imagePath])
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     // team-member-cardクラスのリンクをクリックしたときに新しいタブで開く
-    const links: NodeListOf<HTMLAnchorElement> = document.querySelectorAll('a');
+    const links = document.querySelectorAll('a');
     links.forEach((link) => {
       if (!link.classList.contains('team-member-card')) return;
       link.addEventListener('click', (e) => {
