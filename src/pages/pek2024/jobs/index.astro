@@ -9,67 +9,43 @@ const getContent = async (job) => {
   return {
     data: job.data,
     Content,
-  }
+  };
 };
 
 // rank毎にコンテンツを取得
 const result = await Promise.all(
-  ranks.map(rank => getCollection('pek2024-job-boards', (board) => board.data.rank === rank && board.body !== ""))
+  ranks.map((rank) => getCollection('pek2024-job-boards', (board) => board.data.rank === rank && board.body !== ''))
 );
 // それぞれのコンテンツを render して含める
-const [
-  platinumContents,
-  goldContents,
-  silverContents,
-  bronzeContents,
-  lunchContents,
-] = await Promise.all(
-  result.map(async contents => {
-    return await Promise.all(contents.map(getContent))
+const [platinumContents, goldContents, silverContents, bronzeContents, lunchContents] = await Promise.all(
+  result.map(async (contents) => {
+    return await Promise.all(contents.map(getContent));
   })
 );
-
 ---
-<Layout meta={{
-  title: 'PEK2024 ジョブボード',
-  description: 'Platform Engineering Kaigi 2024 スポンサー様の求人情報',
-}}>
+
+<Layout
+  meta={{
+    title: 'PEK2024 ジョブボード',
+    description: 'Platform Engineering Kaigi 2024 スポンサー様の求人情報',
+  }}
+>
   <section class="py-10 md:py-14">
     <div class="mb-10 text-center max-w-3xl mx-auto">
       <p class="text-base text-gray-600 font-semibold tracking-wide uppercase">Jobs</p>
       <h2 class="text-4xl md:text-5xl font-bold leading-tight tracking-tight">ジョブボード</h2>
     </div>
     <div class="bg-gray-100 py-8 px-2 md:px-4 max-w-6xl mx-auto">
-      <h2 class='text-slate-600 px-2 text-2xl font-bold mb-4 underline decoration-[#b2b19f]'>Platinum</h2>
-      {
-        platinumContents.map(({data, Content}) => (
-          <JobCard data={data} Content={Content} />
-        ))
-      }
-      <h2 class='text-slate-600 px-2 text-2xl font-bold mb-4 underline decoration-amber-300'>Gold</h2>
-      {
-        goldContents.map(({data, Content}) => (
-          <JobCard data={data} Content={Content} />
-        ))
-      }
-      <h2 class='text-slate-600 px-2 text-2xl font-bold mb-4 underline decoration-stone-200'>Silver</h2>
-      {
-        silverContents.map(({data, Content}) => (
-          <JobCard data={data} Content={Content} />
-        ))
-      }
-      <h2 class='text-slate-600 px-2 text-2xl font-bold mb-4 underline decoration-yellow-600'>Bronze</h2>
-      {
-        bronzeContents.map(({data, Content}) => (
-          <JobCard data={data} Content={Content} />
-        ))
-      }
-      <h2 class='px-2 text-2xl font-bold mb-4 underline decoration-lime-300'>Lunch</h2>
-      {
-        lunchContents.map(({data, Content}) => (
-          <JobCard data={data} Content={Content} />
-        ))
-      }
+      <h2 class="text-slate-600 px-2 text-2xl font-bold mb-4 underline decoration-[#b2b19f]">Platinum</h2>
+      {platinumContents.map(({ data, Content }) => <JobCard data={data} Content={Content} />)}
+      <h2 class="text-slate-600 px-2 text-2xl font-bold mb-4 underline decoration-amber-300">Gold</h2>
+      {goldContents.map(({ data, Content }) => <JobCard data={data} Content={Content} />)}
+      <h2 class="text-slate-600 px-2 text-2xl font-bold mb-4 underline decoration-stone-200">Silver</h2>
+      {silverContents.map(({ data, Content }) => <JobCard data={data} Content={Content} />)}
+      <h2 class="text-slate-600 px-2 text-2xl font-bold mb-4 underline decoration-yellow-600">Bronze</h2>
+      {bronzeContents.map(({ data, Content }) => <JobCard data={data} Content={Content} />)}
+      <h2 class="px-2 text-2xl font-bold mb-4 underline decoration-lime-300">Lunch</h2>
+      {lunchContents.map(({ data, Content }) => <JobCard data={data} Content={Content} />)}
     </div>
   </section>
 </Layout>

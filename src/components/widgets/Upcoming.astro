@@ -1,6 +1,4 @@
 ---
-import { Icon } from 'astro-icon/components';
-
 interface Item {
   event?: string;
   connpassUrl?: string;
@@ -44,24 +42,26 @@ const {
             )}
 
             {subtitle && (
-              <p
-                class="max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400"
-                set:html={subtitle}
-              />
+              <p class="max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400" set:html={subtitle} />
             )}
           </div>
         )
       }
       <div class={`grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-12 dark:text-white items-stretch`}>
         {
-          items.map(({ event, connpassUrl, date, place}) => (
+          items.map(({ event, connpassUrl, date, place }) => (
             <div class="relative flex flex-col p-6 bg-white dark:bg-slate-900 rounded shadow-lg hover:shadow-md transition border border-transparent dark:border-slate-800">
               <h3 class="font-bold">{event}</h3>
-              <div>{date} - {place}</div>
-              {connpassUrl?
-                <div class="underline"><a href={connpassUrl}>参加申込み(Connpass)</a></div> 
-              : ""}
-              
+              <div>
+                {date} - {place}
+              </div>
+              {connpassUrl ? (
+                <div class="underline">
+                  <a href={connpassUrl}>参加申込み(Connpass)</a>
+                </div>
+              ) : (
+                ''
+              )}
             </div>
           ))
         }

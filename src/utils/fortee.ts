@@ -1,8 +1,5 @@
-import type { PEKProposal } from '../types';
-
 // 年度別API URL生成
-export const getForteeApiUrl = (year: number) => 
-  `https://fortee.jp/platform-engineering-kaigi-${year}/api/proposals`;
+export const getForteeApiUrl = (year: number) => `https://fortee.jp/platform-engineering-kaigi-${year}/api/proposals`;
 
 // 会社名/所属団体名
 export const getAffiliation = (str: string) => {

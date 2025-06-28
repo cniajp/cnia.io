@@ -1,7 +1,7 @@
 ---
 import { type PEK2024Proposal } from '~/types';
 
-type TrackType = "Track A" | "Track B";
+type TrackType = 'Track A' | 'Track B';
 
 export interface Props {
   title?: string;
@@ -10,45 +10,41 @@ export interface Props {
   sponsor: boolean;
   session?: PEK2024Proposal;
   trackType: TrackType;
-};
+}
 
 const schedule = Astro.props;
 ---
+
 <>
   <div class="flex">
-    {schedule.trackType === "Track A" ? (
-      <p class="text-sm font-semibold text-slate-100 bg-themeColor-purple rounded-md px-2">
-        {schedule.trackType}
-      </p>
-    ) : (
-      <p class="text-sm font-semibold text-slate-100 bg-themeColor-orange rounded-md px-2">
-        {schedule.trackType}
-      </p>
-    )
+    {
+      schedule.trackType === 'Track A' ? (
+        <p class="text-sm font-semibold text-slate-100 bg-themeColor-purple rounded-md px-2">{schedule.trackType}</p>
+      ) : (
+        <p class="text-sm font-semibold text-slate-100 bg-themeColor-orange rounded-md px-2">{schedule.trackType}</p>
+      )
     }
-    {schedule.sponsor && (
-      <p class="text-sm font-semibold text-slate-100 bg-themeColor-yellow rounded-md px-2 ml-2">
-        Sponsor
-      </p>
-    )}
+    {
+      schedule.sponsor && (
+        <p class="text-sm font-semibold text-slate-100 bg-themeColor-yellow rounded-md px-2 ml-2">Sponsor</p>
+      )
+    }
   </div>
   <p class="text-xs font-bold text-gray-900">
-    {schedule.session ? (
-      <a class="hover:underline" href={`/pek2024/sessions/${schedule.session.uuid}`}>
-        {schedule.session?.title}
-      </a>
-    ) : (
-      schedule.title
-    )}
+    {
+      schedule.session ? (
+        <a class="hover:underline" href={`/pek2024/sessions/${schedule.session.uuid}`}>
+          {schedule.session?.title}
+        </a>
+      ) : (
+        schedule.title
+      )
+    }
   </p>
   <p class="text-sm text-gray-500">
     {schedule.affiliation}
   </p>
   <p class="text-sm font-semibold text-gray-500">
-    {schedule.session ? (
-      schedule.session?.speaker.name
-    ) : (
-      schedule.speakers?.join(', ')
-    )}
+    {schedule.session ? schedule.session?.speaker.name : schedule.speakers?.join(', ')}
   </p>
 </>
