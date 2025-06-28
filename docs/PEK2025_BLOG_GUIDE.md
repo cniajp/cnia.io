@@ -30,7 +30,7 @@ tags: ['タグ1', 'タグ2', 'タグ3']
 author:
   name: '著者名'
   icon: '~/assets/images/pek2025/teamMembers/author-name.jpg' # オプション
-image: '~/assets/images/pek2025/blog/article-header.jpg' # ヘッダー画像（オプション）
+image: '/pek2025/blog/記事ファイル名/article-header.jpg' # ヘッダー画像（オプション）
 draft: false # true にすると非公開
 ---
 ```
@@ -46,7 +46,7 @@ draft: false # true にすると非公開
 | `tags`        | ❌   | タグ（配列形式、3個程度推奨）      | `["PEK2025", "Platform Engineering"]`                 |
 | `author.name` | ❌   | 著者名                             | "PEK2025運営チーム"                                   |
 | `author.icon` | ❌   | 著者アイコン画像パス               | `~/assets/images/pek2025/teamMembers/author.jpg`      |
-| `image`       | ❌   | ヘッダー画像パス（1200×675px推奨） | `~/assets/images/pek2025/blog/article-header.jpg`     |
+| `image`       | ❌   | ヘッダー画像パス（1200×675px推奨） | `/pek2025/blog/記事ファイル名/article-header.jpg`     |
 | `draft`       | ❌   | 下書きフラグ（true で非公開）      | `false`                                               |
 
 ## 🎨 推奨カテゴリ
@@ -88,15 +88,38 @@ draft: false # true にすると非公開
 記事内で画像を使用する場合：
 
 ```markdown
-![画像の説明](~/assets/images/pek2025/blog/image-name.jpg)
+![画像の説明](/pek2025/blog/記事ファイル名/image-name.jpg)
 ```
 
 ### 画像ファイルの配置
 
-画像ファイルは以下のディレクトリに配置：
+画像ファイルは記事ごとにディレクトリを作成して配置：
 
+**ファイル配置場所**:
 ```
-src/assets/images/pek2025/blog/
+public/pek2025/blog/記事ファイル名/
+```
+
+**記事内での記述パス** (`public` は省略):
+```markdown
+![画像の説明](/pek2025/blog/記事ファイル名/image-name.jpg)
+```
+
+**例**: `sample-post.md` の記事の場合
+
+ファイル配置：
+```
+public/pek2025/blog/sample-post/
+├── header-image.jpg
+├── screenshot-1.png
+└── diagram.png
+```
+
+記事内での参照：
+```markdown
+![ヘッダー画像](/pek2025/blog/sample-post/header-image.jpg)
+![スクリーンショット](/pek2025/blog/sample-post/screenshot-1.png)
+![図解](/pek2025/blog/sample-post/diagram.png)
 ```
 
 ### 画像の推奨仕様
