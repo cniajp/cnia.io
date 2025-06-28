@@ -53,13 +53,22 @@ draft: false  # true にすると非公開
 
 - **お知らせ** - 開催情報、重要な告知
 - **技術解説** - Platform Engineering関連の技術記事
-- **イベントレポート** - 過去のイベントや関連イベントのレポート
+- **report** - 過去のイベントや関連イベントのレポート
 - **スピーカー紹介** - 登壇者の紹介記事
 - **スポンサー紹介** - スポンサー企業の紹介
+- **exhibit** - 展示・企画関連の記事
+- **food** - 食事・おやつ関連の記事
+- **Reception** - 受付・案内関連の記事
+- **Publishing** - 出版・書籍関連の記事
 
 ## 🏷️ 推奨タグ
 
+### イベント関連
 - `PEK2025` - PEK2025関連の記事
+- `PFEM` - Platform Engineering Meetup関連
+- `お知らせ` - 重要な告知・案内
+
+### 技術関連
 - `Platform Engineering` - プラットフォームエンジニアリング
 - `DevOps` - DevOps関連
 - `SRE` - Site Reliability Engineering
