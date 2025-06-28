@@ -91,9 +91,32 @@ const pek2024JobBoads = defineCollection({
   }),
 });
 
+const pek2025Blog = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    image: z.string().optional(),
+
+    canonical: z.string().url().optional(),
+
+    publishDate: z.date().or(z.string()),
+
+    category: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    author: z
+      .object({
+        name: z.string(),
+        icon: z.string().optional(),
+      })
+      .optional(),
+    draft: z.boolean().optional(),
+  }),
+});
+
 export const collections = {
   'pek2024-blog': pek2024Blog,
   'pek2024-job-boards': pek2024JobBoads,
+  'pek2025-blog': pek2025Blog,
   'pfem-session': pfemSession,
   post: post,
 };
