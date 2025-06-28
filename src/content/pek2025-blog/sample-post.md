@@ -1,12 +1,12 @@
 ---
-title: "PEK2025開催に向けて"
-description: "Platform Engineering Kaigi 2025の開催に向けた準備状況と今後の予定についてお知らせします。"
+title: 'PEK2025開催に向けて'
+description: 'Platform Engineering Kaigi 2025の開催に向けた準備状況と今後の予定についてお知らせします。'
 image: /pek2025/blog/sample-post/ogp.png
 publishDate: 2025-06-28
-category: "お知らせ"
-tags: ["PEK2025", "Platform Engineering", "カンファレンス"]
+category: 'お知らせ'
+tags: ['PEK2025', 'Platform Engineering', 'カンファレンス']
 author:
-  name: "PEK2025運営チーム"
+  name: 'PEK2025運営チーム'
 draft: false
 ---
 
