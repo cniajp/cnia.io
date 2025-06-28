@@ -54,13 +54,24 @@ const getUrl = (id: string) => `/pek2025/blog/${id}`;
               <article class="bg-white rounded-xl shadow-sm border border-pek2025-border hover:shadow-md transition-shadow">
                 <a href={getUrl(post.id)} class="block">
                   <div class="aspect-video overflow-hidden rounded-t-xl">
-                    <Image
-                      src={post.data.image ? post.data.image : defaultThumbnail}
-                      class="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
-                      alt={post.data.description || ''}
-                      width={600}
-                      height={314}
-                    />
+                    {post.data.image ? (
+                      <Image
+                        src={post.data.image}
+                        class="p-4 w-full h-full object-contain hover:scale-105 transition-transform duration-300"
+                        alt={post.data.description || ''}
+                        width={600}
+                        height={314}
+                        inferSize={false}
+                      />
+                    ) : (
+                      <Image
+                        src={defaultThumbnail}
+                        class="p-4 w-full h-full object-contain hover:scale-105 transition-transform duration-300"
+                        alt={post.data.description || ''}
+                        width={600}
+                        height={314}
+                      />
+                    )}
                   </div>
                 </a>
                 
