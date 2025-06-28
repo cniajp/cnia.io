@@ -96,11 +96,13 @@ draft: false # true にすると非公開
 画像ファイルは記事ごとにディレクトリを作成して配置：
 
 **ファイル配置場所**:
+
 ```
 public/pek2025/blog/記事ファイル名/
 ```
 
 **記事内での記述パス** (`public` は省略):
+
 ```markdown
 ![画像の説明](/pek2025/blog/記事ファイル名/image-name.jpg)
 ```
@@ -108,6 +110,7 @@ public/pek2025/blog/記事ファイル名/
 **例**: `sample-post.md` の記事の場合
 
 ファイル配置：
+
 ```
 public/pek2025/blog/sample-post/
 ├── header-image.jpg
@@ -116,6 +119,7 @@ public/pek2025/blog/sample-post/
 ```
 
 記事内での参照：
+
 ```markdown
 ![ヘッダー画像](/pek2025/blog/sample-post/header-image.jpg)
 ![スクリーンショット](/pek2025/blog/sample-post/screenshot-1.png)
