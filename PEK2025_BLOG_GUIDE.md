@@ -30,6 +30,7 @@ tags: ["タグ1", "タグ2", "タグ3"]
 author:
   name: "著者名"
   icon: "~/assets/images/pek2025/teamMembers/author-name.jpg"  # オプション
+image: "~/assets/images/pek2025/blog/article-header.jpg"  # ヘッダー画像（オプション）
 draft: false  # true にすると非公開
 ---
 ```
@@ -45,6 +46,7 @@ draft: false  # true にすると非公開
 | `tags` | ❌ | タグ（配列形式、3個程度推奨） | `["PEK2025", "Platform Engineering"]` |
 | `author.name` | ❌ | 著者名 | "PEK2025運営チーム" |
 | `author.icon` | ❌ | 著者アイコン画像パス | `~/assets/images/pek2025/teamMembers/author.jpg` |
+| `image` | ❌ | ヘッダー画像パス（1200×675px推奨） | `~/assets/images/pek2025/blog/article-header.jpg` |
 | `draft` | ❌ | 下書きフラグ（true で非公開） | `false` |
 
 ## 🎨 推奨カテゴリ
@@ -78,16 +80,6 @@ draft: false  # true にすると非公開
 - `Automation` - 自動化関連
 
 ## 🖼️ 画像の使用
-
-### ヘッダー画像
-
-記事のヘッダー画像を設定する場合：
-
-```yaml
----
-image: "~/assets/images/pek2025/blog/article-header.jpg"
----
-```
 
 ### 記事内画像
 
