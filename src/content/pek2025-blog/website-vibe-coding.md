@@ -2,6 +2,7 @@
 title: 'VibeCodingでPEK2025サイトを構築した話'
 description: 'AIを活用したVibeCodingという手法で、v0によるデザイン生成からClineを使った実装まで、PEK2025サイト構築の開発プロセスを詳しく解説します。'
 publishDate: 2025-06-30
+image: '/pek2025/blog/website-vibe-coding/ogp.png'
 category: '技術解説'
 tags: ['PEK2025', 'VibeCoding', 'v0', 'Cline']
 author:
