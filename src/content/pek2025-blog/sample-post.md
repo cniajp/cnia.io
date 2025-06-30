@@ -7,7 +7,7 @@ category: 'お知らせ'
 tags: ['PEK2025', 'Platform Engineering', 'カンファレンス']
 author:
   name: 'PEK2025運営チーム'
-draft: false
+draft: true
 ---
 
 Platform Engineering Kaigi 2025（PEK2025）の開催に向けて、準備が着々と進んでいます。
