@@ -1,5 +1,5 @@
 import axios from 'axios';
-import cheerio from 'cheerio';
+import * as cheerio from 'cheerio';
 import type { ForteeTag } from '../types'; // タグの型定義をインポート
 
 export async function fetchTags(url: string): Promise<ForteeTag[]> {
