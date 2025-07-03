@@ -23,14 +23,16 @@ results.forEach((result) => {
 
 // 画像パスを事前に解決
 async function resolveSponsorsWithSrc(result) {
-  return await Promise.all(result.map(async (sponsor) => {
-    const mod = await images[sponsor.data.image]();
-    return {
-      src: mod.default.src,
-      name: sponsor.data.name,
-      href: sponsor.data.href,
-    };
-  }));
+  return await Promise.all(
+    result.map(async (sponsor) => {
+      const mod = await images[sponsor.data.image]();
+      return {
+        src: mod.default.src,
+        name: sponsor.data.name,
+        href: sponsor.data.href,
+      };
+    })
+  );
 }
 
 const [platinumSponsors, goldSponsors, silverSponsors, bronzeSponsors, lunchSponsors] = await Promise.all(
