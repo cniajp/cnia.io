@@ -20,9 +20,7 @@ export interface Props {
 const { highlight, title, subtitle, items, image, isReversed = false } = Astro.props;
 ---
 
-<section
-  class:list={[ 'bg-themeColor-blue dark:bg-slate-800 py-16 md:py-20 text-white']}
->
+<section class:list={['bg-themeColor-blue dark:bg-slate-800 py-16 md:py-20 text-white']}>
   <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
     <div class="mb-10 md:mx-auto text-center md:mb-12 max-w-3xl">
       <p class="text-base dark:text-blue-200 font-semibold tracking-wide uppercase">{highlight}</p>

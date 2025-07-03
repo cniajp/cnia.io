@@ -20,7 +20,17 @@ results.forEach((result) => {
   });
 });
 
-const sponsorsByRank = results.reduce((acc, result, index) => {
+interface Sponsor {
+  src: string;
+  name: string;
+  href: string;
+}
+
+type SponsorsByRank = {
+  [rank: string]: Sponsor[];
+};
+
+const sponsorsByRank = results.reduce<SponsorsByRank>((acc, result, index) => {
   acc[ranks[index]] = result.map((sponsor) => ({
     src: sponsor.data.image,
     name: sponsor.data.name,
@@ -40,7 +50,7 @@ const sponsorsByRank = results.reduce((acc, result, index) => {
             class="sponsor-rank-slide absolute top-0 left-0 w-full opacity-0 transition-opacity duration-500"
           >
             <div class="flex flex-wrap justify-center items-center">
-              {(sponsors as any).map((sponsor) => (
+              {sponsors.map((sponsor) => (
                 <div class="mx-4 my-6 flex items-center justify-center" style="width: 120px; height: 48px;">
                   <a href={sponsor.href} target="_blank" rel="noopener noreferrer" class="sponsor-link">
                     <Picture

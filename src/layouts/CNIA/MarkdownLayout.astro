@@ -3,7 +3,12 @@ import Layout from '~/layouts/CNIA/PageLayout.astro';
 
 import { MetaSEO } from '~/types';
 
-export interface Props {}
+export interface Props {
+  frontmatter: {
+    title: string;
+    [key: string]: any;
+  };
+}
 
 const { frontmatter } = Astro.props;
 

@@ -1,6 +1,4 @@
 ---
-import { Icon } from 'astro-icon/components';
-
 interface Item {
   title: string;
   description?: string;
@@ -22,7 +20,6 @@ const {
   subtitle = await Astro.slots.render('subtitle'),
   highlight,
   content = await Astro.slots.render('content'),
-  items = [],
   isReversed = false,
   isAfterContent = false,
 } = Astro.props;

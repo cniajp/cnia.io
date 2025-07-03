@@ -23,10 +23,11 @@ canonical: https://www.cnia.io/fy23-report
 ## 決算報告書
 
 ### 貸借対照表
+
 ![貸借対照表](/images/posts/fy23-bs.png)
 
-
 ### 損益計算書
+
 ![損益計算書](/images/posts/fy23-pl.png)
 
 詳細は[2023年度 決算書](https://drive.google.com/file/d/1buPSdOsGn6roYPRd6h_gSk0HvTDtgRx1/view?usp=drive_link)をご覧ください。

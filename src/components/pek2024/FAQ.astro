@@ -21,17 +21,19 @@ const { highlight, title, items } = Astro.props as FAQProps;
     </div>
   </div>
   <div class="max-w-4xl mx-auto px-4">
-    {items.map((item) => (
-      <div class="faq-item mb-4 border-2 overflow-hidden font-bold">
-        <button class="faq-question flex justify-between items-center w-full py-3 px-4" aria-expanded="false">
-          <span>{item.title}</span>
-          <span class="expand-icon">+</span>
-        </button>
-        <div class="faq-answer hidden px-4 py-3 border-t-2 bg-blue-50 text-black font-medium text-sm">
-          <p>{item.description}</p>
+    {
+      items.map((item) => (
+        <div class="faq-item mb-4 border-2 overflow-hidden font-bold">
+          <button class="faq-question flex justify-between items-center w-full py-3 px-4" aria-expanded="false">
+            <span>{item.title}</span>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="faq-answer hidden px-4 py-3 border-t-2 bg-blue-50 text-black font-medium text-sm">
+            <p>{item.description}</p>
+          </div>
         </div>
-      </div>
-    ))}
+      ))
+    }
   </div>
 </section>
 
@@ -42,11 +44,11 @@ const { highlight, title, items } = Astro.props as FAQProps;
         const answer = button.nextElementSibling;
         const expanded = button.getAttribute('aria-expanded') === 'true';
         const icon = button.querySelector('.expand-icon');
-  
+
         // aria-expanded属性をトグル
         button.setAttribute('aria-expanded', String(!expanded));
         answer?.classList.toggle('hidden');
-        
+
         // アイコンのテキストを切り替え
         icon!.textContent = expanded ? '+' : '-';
         // .rotatedクラスをトグルして回転エフェクトを適用

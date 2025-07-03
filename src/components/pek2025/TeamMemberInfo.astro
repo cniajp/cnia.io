@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+export interface Props {
+  name: string;
+  url: string;
+  imagePath: string;
+}
+
+const { name, url, imagePath } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/images/pek2025/teamMembers/*.{jpeg,jpg,png,gif}'
+);
+if (!images[imagePath])
+  throw new Error(
+    `"${imagePath}" does not exist in glob: "/src/assets/images/pek2025/teamMembers/*.{jpeg,jpg,png,gif}"`
+  );
+---
+
+<a
+  href={url}
+  class="flex flex-col items-center p-2 md:m-2 md:rounded-lg md:bg-slate-200 md:hover:bg-slate-300"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label={`${name}のリンク`}
+>
+  <div class="flex-shrink-0">
+    <Image
+      src={images[imagePath]()}
+      alt={`${name}のアイコン`}
+      style={{ objectFit: 'contain', borderRadius: '50%' }}
+      width={200}
+      height={200}
+    />
+  </div>
+  <div class="hidden md:block md:text-xs break-words font-bold mt-2 text-slate-800 text-center">
+    <p>{name}</p>
+  </div>
+</a>

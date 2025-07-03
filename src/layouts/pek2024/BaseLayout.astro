@@ -9,7 +9,7 @@ import { AstroSeo } from '@astrolib/seo';
 import { SITE } from '~/config.mjs';
 
 export interface Props {
-  meta?: PEKMetaSEO
+  meta?: PEKMetaSEO;
 }
 
 const { language = 'en', textDirection = 'ltr', googleAnalyticsId, googleSiteVerificationId } = SITE;
@@ -20,7 +20,7 @@ const path = imagePath ? imagePath : '/pek2024_ogp.png';
 const ogpImageURL = new URL(path, canonicalURL);
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang={language} dir={textDirection} class="2xl:text-[20px]">
   <head>
     <meta charset="UTF-8" />
@@ -50,7 +50,7 @@ const ogpImageURL = new URL(path, canonicalURL);
     />
 
     <meta name="google-site-verification" content={googleSiteVerificationId} />
-    {<GoogleAnalytics id={String(googleAnalyticsId)} partytown={true} />}
+    {(<GoogleAnalytics id={String(googleAnalyticsId)} partytown={true} />)}
 
     <CustomStyles />
     <link rel="icon" href="/pek_trademark.ico" type="image/x-icon" />

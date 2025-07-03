@@ -8,7 +8,7 @@ import { GoogleAnalytics } from '@astrolib/analytics';
 import { AstroSeo } from '@astrolib/seo';
 
 export interface Props {
-  meta?: PEKMetaSEO
+  meta?: PEKMetaSEO;
 }
 
 const { language = 'ja', textDirection = 'ltr', googleAnalyticsId, googleSiteVerificationId } = SITE;
@@ -19,7 +19,7 @@ const path = imagePath ? imagePath : '/pek2025_ogp.png';
 const ogpImageURL = new URL(path, canonicalURL);
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang={language} dir={textDirection} class="2xl:text-[20px]">
   <head>
     <meta charset="UTF-8" />
@@ -48,18 +48,14 @@ const ogpImageURL = new URL(path, canonicalURL);
       }}
     />
 
-
     <meta name="google-site-verification" content={googleSiteVerificationId} />
-    {<GoogleAnalytics id={String(googleAnalyticsId)} partytown={true} />}
-    
+    {(<GoogleAnalytics id={String(googleAnalyticsId)} partytown={true} />)}
+
     <CustomStyles />
     <link rel="icon" href="/pek_trademark.ico" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
   </head>
 
   <body class="font-sans pek2025-page bg-pek2025-primary-50">

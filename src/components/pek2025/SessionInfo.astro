@@ -33,7 +33,7 @@ const categoryTag = tags.length > 0 ? tags[0] : null;
 const displayTags = tags.length > 1 ? tags.slice(1) : [];
 
 // カテゴリテキストを取得（カッコ内を除去）
-const categoryText = categoryTag ? categoryTag.text.replace(/\s*[(（].*?[)）]\s*/g, '').trim() : "技術セッション";
+const categoryText = categoryTag ? categoryTag.text.replace(/\s*[(（].*?[)）]\s*/g, '').trim() : '技術セッション';
 ---
 
 <a href={`/pek2025/sessions/${id}`} class="block text-black no-underline">
@@ -42,16 +42,18 @@ const categoryText = categoryTag ? categoryTag.text.replace(/\s*[(（].*?[)）]\
       <div class="flex items-start justify-between gap-3 mb-4">
         <h3 class="text-xl font-bold text-gray-900 leading-tight line-clamp-2 flex-1">{title}</h3>
       </div>
-      {categoryTag && (
+      {
+        categoryTag && (
           <div class="mb-4 flex items-center gap-2 flex-wrap">
-          <span 
-            class="px-1.5 py-0.5 rounded shrink-0 font-medium"
-            style={`font-size: 14px; background-color: ${categoryTag.backgroundColor}; color: ${categoryTag.color};`}
-          >
-            {categoryText}
-          </span>
-        </div>
-      )}
+            <span
+              class="px-1.5 py-0.5 rounded shrink-0 font-medium"
+              style={`font-size: 14px; background-color: ${categoryTag.backgroundColor}; color: ${categoryTag.color};`}
+            >
+              {categoryText}
+            </span>
+          </div>
+        )
+      }
 
       <div class="flex items-center gap-3 mb-4">
         <div class="relative w-10 h-10">
@@ -68,7 +70,12 @@ const categoryText = categoryTag ? categoryTag.text.replace(/\s*[(（].*?[)）]\
           <div class="font-semibold text-gray-900 text-sm truncate">{speaker.name}</div>
           <div class="flex items-center gap-1 text-xs text-gray-600">
             <svg class="h-3 w-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+              ></path>
             </svg>
             <span class="truncate">{affiliation}</span>
           </div>
@@ -80,22 +87,24 @@ const categoryText = categoryTag ? categoryTag.text.replace(/\s*[(（].*?[)）]\
       <div class="space-y-4">
         <p class="text-gray-700 text-sm leading-relaxed line-clamp-4">{talkAbstract}</p>
 
-        {displayTags.length > 0 && (
-          <div class="flex flex-wrap gap-1">
-            {displayTags.map((tag) => {
-              // 全角と半角のカッコとその中身を除去
-              const processedText = tag.text.replace(/\s*[(（].*?[)）]\s*/g, '').trim();
-              return (
-                <span
-                  class="px-1.5 py-0.5 mr-2 mb-1 rounded"
-                  style={`font-size: 14px; background-color: ${tag.backgroundColor}; color: ${tag.color};`}
-                >
-                  {processedText}
-                </span>
-              );
-            })}
-          </div>
-        )}
+        {
+          displayTags.length > 0 && (
+            <div class="flex flex-wrap gap-1">
+              {displayTags.map((tag) => {
+                // 全角と半角のカッコとその中身を除去
+                const processedText = tag.text.replace(/\s*[(（].*?[)）]\s*/g, '').trim();
+                return (
+                  <span
+                    class="px-1.5 py-0.5 mr-2 mb-1 rounded"
+                    style={`font-size: 14px; background-color: ${tag.backgroundColor}; color: ${tag.color};`}
+                  >
+                    {processedText}
+                  </span>
+                );
+              })}
+            </div>
+          )
+        }
       </div>
     </div>
   </div>

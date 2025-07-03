@@ -1,4 +1,5 @@
 ---
+import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
 export interface Props {
   imagePath: string;
@@ -8,18 +9,11 @@ export interface Props {
 
 const { imagePath, path, altText } = Astro.props;
 
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/pek2024/banner/*.{jpeg,jpg,png,gif}')
-if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "/src/assets/images/pek2024/banner/*.{jpeg,jpg,png,gif}"`);
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/pek2024/banner/*.{jpeg,jpg,png,gif}');
+if (!images[imagePath])
+  throw new Error(`"${imagePath}" does not exist in glob: "/src/assets/images/pek2024/banner/*.{jpeg,jpg,png,gif}"`);
 ---
-<a
-  href={path}
-  class="m-2 shadow-lg"
-  target="_blank"
->
-  <Image
-    src={images[imagePath]()}
-    alt={altText || ''}
-    width={600}
-    
-  />
+
+<a href={path} class="m-2 shadow-lg" target="_blank">
+  <Image src={images[imagePath]()} alt={altText || ''} width={600} />
 </a>

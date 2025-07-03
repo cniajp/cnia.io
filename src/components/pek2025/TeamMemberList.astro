@@ -1,0 +1,134 @@
+---
+import TeamMemberInfo from '~/components/pek2025/TeamMemberInfo.astro';
+
+const teamMemberList = [
+  {
+    imagePath: 'tsukaman.png',
+    url: 'https://www.t-pl.us',
+    name: '＿・）つかまん',
+  },
+  {
+    imagePath: 'azuma.png',
+    url: 'https://x.com/azuma_alvin',
+    name: 'Azuma',
+  },
+  {
+    imagePath: 'ishikawapro.png',
+    url: 'https://x.com/ishikawa__pro',
+    name: 'ishikawa-pro',
+  },
+  {
+    imagePath: 'jacopen.png',
+    url: 'https://jacopen.wells.jp/',
+    name: 'jacopen',
+  },
+  {
+    imagePath: 'kasaikou.png',
+    url: 'https://x.com/kasaikou_kk',
+    name: 'kasaikou',
+  },
+  {
+    imagePath: 'mikit.png',
+    url: 'https://x.com/mikit_t',
+    name: 'mikit',
+  },
+  {
+    imagePath: 'nakamura.png',
+    url: 'https://www.linkedin.com/in/takuya-nakamura/',
+    name: 'Takuya Nakamura',
+  },
+  {
+    imagePath: 'nekoruri.png',
+    url: 'https://x.com/nekoruri',
+    name: 'nekoruri',
+  },
+  {
+    imagePath: 'tanayan.png',
+    url: 'https://x.com/tananyan29',
+    name: 'tanayan',
+  },
+  {
+    imagePath: 'ii.png',
+    url: 'https://x.com/kaitoii11',
+    name: 'いい',
+  },
+  {
+    imagePath: 'ishigaki.png',
+    url: 'https://x.com/tokyo_jjjx',
+    name: 'Junki Ishigaki',
+  },
+  {
+    imagePath: 'katsumaru.png',
+    url: 'https://x.com/shin1988',
+    name: 'かつまる',
+  },
+  {
+    imagePath: 'kenchyan.png',
+    url: 'https://www.linkedin.com/in/kentaro-higashi/',
+    name: 'ケンちゃん',
+  },
+  {
+    imagePath: 'shina.png',
+    url: 'https://twitter.com/dshina',
+    name: '四七秀貴@dshina',
+  },
+  {
+    imagePath: 'sogokun.png',
+    url: 'https://sogo.dev/',
+    name: 'SogoKato',
+  },
+  {
+    imagePath: 'dero.png',
+    url: 'https://x.com/dero1to',
+    name: 'デロ',
+  },
+  {
+    imagePath: 'namayasai.png',
+    url: 'https://x.com/namayasai_tech',
+    name: 'なまやさい',
+  },
+  {
+    imagePath: 'bashi.png',
+    url: 'https://x.com/bashi8128',
+    name: 'いたばし',
+  },
+  {
+    imagePath: 'hiro.png',
+    url: 'https://x.com/yannKazu1',
+    name: 'tokudomi',
+  },
+  {
+    imagePath: 'yu.png',
+    url: 'https://x.com/yut_720',
+    name: 'yut',
+  },
+  {
+    imagePath: 'yoshikawa.png',
+    url: 'https://x.com/ussvgr',
+    name: 'よしかわ',
+  },
+  {
+    imagePath: 'ruitomo.png',
+    url: 'https://x.com/ruitomowoyobu?s=21',
+    name: 'Ruitomo',
+  },
+];
+---
+
+<section class="bg-themeColor-purple py-10 md:py-14 px-3 md:px-6 text-white">
+  <div class="mb-10 text-center md:mb-12 max-w-3xl mx-auto">
+    <p class="text-base text-200 tracking-wide uppercase mb-1">meet the team</p>
+    <h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4">スタッフ紹介</h2>
+  </div>
+  <div class="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-7 lg:grid-cols-9 max-w-7xl mx-auto">
+    {
+      teamMemberList.map((member) => (
+        <TeamMemberInfo
+          name={member.name}
+          url={member.url}
+          imagePath={`/src/assets/images/pek2025/teamMembers/${member.imagePath}`}
+        />
+      ))
+    }
+  </div>
+</section>
