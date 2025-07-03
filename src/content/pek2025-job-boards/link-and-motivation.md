@@ -1,6 +1,6 @@
 ---
 name: 株式会社リンクアンドモチベーション
-rank: gold
+plan: gold
 image: /src/assets/images/pek2025/sponsor/logo/dummy_591-228.png
 href: https://www.cnia.io
 ---

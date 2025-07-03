@@ -94,7 +94,7 @@ const pek2024JobBoards = defineCollection({
 const pek2025JobBoards = defineCollection({
   schema: z.object({
     name: z.string(),
-    rank: z.string(),
+    plan: z.string(),
     image: z.string(),
     href: z.string().url(),
   }),

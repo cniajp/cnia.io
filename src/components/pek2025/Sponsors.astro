@@ -2,10 +2,10 @@
 import { getCollection } from 'astro:content';
 import type { ImageMetadata } from 'astro';
 
-// rank毎にコンテンツを取得
-const ranks = ['platinum', 'gold', 'silver', 'bronze', 'lunch'];
+// plan毎にコンテンツを取得
+const plans = ['platinum', 'gold', 'silver', 'bronze', 'lunch'];
 const results = await Promise.all(
-  ranks.map((rank) => getCollection('pek2025-job-boards', (board) => board.data.rank === rank))
+  plans.map((plan) => getCollection('pek2025-job-boards', (board) => board.data.plan === plan))
 );
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
