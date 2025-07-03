@@ -96,8 +96,6 @@ const pek2025JobBoards = defineCollection({
     name: z.string(),
     rank: z.string(),
     image: z.string(),
-    rank: z.string(),
-    name: z.string(),
     href: z.string().url(),
   }),
 });
@@ -126,10 +124,11 @@ const pek2025Blog = defineCollection({
 
 export const collections = {
   'pek2024-blog': pek2024Blog,
-  'pek2024-job-boards': pek2024JobBoads,
+  'pek2024-job-boards': pek2024JobBoards,
+  'pek2025-job-boards': pek2025JobBoards,
   'pek2025-blog': pek2025Blog,
   'pfem-session': pfemSession,
   post: post,
   pek2024Blog: pek2024Blog,
-  pek2024JobBoads: pek2024JobBoads,
+  pek2024JobBoards: pek2024JobBoards,
 };
