@@ -66,11 +66,6 @@
   @apply rotate-45 translate-y-[-8px] translate-x-[14px];
 }
 
-/* Mobile menu overlay styles */
-#header.h-screen {
-  @apply fixed inset-0 bg-white dark:bg-gray-900 z-50;
-}
-
-#header.h-screen nav {
-  @apply flex flex-col justify-center items-center h-full;
+#header.scroll {
+  @apply shadow-md md:shadow-md bg-pek2025-background md:backdrop-blur-sm dark:bg-slate-900;
 }
