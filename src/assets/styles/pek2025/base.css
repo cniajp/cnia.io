@@ -48,3 +48,29 @@
 .font-sans {
   font-family: 'Noto Sans JP', sans-serif;
 }
+
+/* Hamburger menu styles */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+[data-aw-toggle-menu] path {
+  @apply transition;
+}
+
+[data-aw-toggle-menu].expanded g > path:first-child {
+  @apply -rotate-45 translate-y-[15px] translate-x-[-3px];
+}
+
+[data-aw-toggle-menu].expanded g > path:last-child {
+  @apply rotate-45 translate-y-[-8px] translate-x-[14px];
+}
+
+/* Mobile menu overlay styles */
+#header.h-screen {
+  @apply fixed inset-0 bg-white dark:bg-gray-900 z-50;
+}
+
+#header.h-screen nav {
+  @apply flex flex-col justify-center items-center h-full;
+}
