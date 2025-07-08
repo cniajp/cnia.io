@@ -82,11 +82,20 @@ const pfemSession = defineCollection({
   }),
 });
 
-const pek2024JobBoads = defineCollection({
+const pek2024JobBoards = defineCollection({
   schema: z.object({
-    image: z.string(),
-    rank: z.string(),
     name: z.string(),
+    rank: z.string(),
+    image: z.string(),
+    href: z.string().url(),
+  }),
+});
+
+const pek2025JobBoards = defineCollection({
+  schema: z.object({
+    name: z.string(),
+    plan: z.string(),
+    image: z.string(),
     href: z.string().url(),
   }),
 });
@@ -115,8 +124,11 @@ const pek2025Blog = defineCollection({
 
 export const collections = {
   'pek2024-blog': pek2024Blog,
-  'pek2024-job-boards': pek2024JobBoads,
+  'pek2024-job-boards': pek2024JobBoards,
+  'pek2025-job-boards': pek2025JobBoards,
   'pek2025-blog': pek2025Blog,
   'pfem-session': pfemSession,
   post: post,
+  pek2024Blog: pek2024Blog,
+  pek2024JobBoards: pek2024JobBoards,
 };
