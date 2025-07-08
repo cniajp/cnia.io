@@ -48,3 +48,24 @@
 .font-sans {
   font-family: 'Noto Sans JP', sans-serif;
 }
+
+/* Hamburger menu styles */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+[data-aw-toggle-menu] path {
+  @apply transition;
+}
+
+[data-aw-toggle-menu].expanded g > path:first-child {
+  @apply -rotate-45 translate-y-[15px] translate-x-[-3px];
+}
+
+[data-aw-toggle-menu].expanded g > path:last-child {
+  @apply rotate-45 translate-y-[-8px] translate-x-[14px];
+}
+
+#header.scroll {
+  @apply shadow-md md:shadow-md bg-pek2025-background md:backdrop-blur-sm dark:bg-slate-900;
+}
